@@ -7,9 +7,9 @@ main:
   - name: Tour/了解
     url: tour
     weight: 10
-  - name: Research/研究
-    url: research
-    weight: 12
+  # - name: Research/研究
+  #   url: research
+  #   weight: 12
   - name: News/新闻
     url: post
     weight: 20
