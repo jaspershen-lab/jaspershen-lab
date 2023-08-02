@@ -9,9 +9,8 @@ headless: false
 # Order that this section appears on the page.
 weight: 10
 
-title: Projects
-subtitle: 'We are committed to **open science**, and most of our projects and publications are made **open-source**, including data and code. Here is a sample of open projects at CardiffNLP.'
-
+title: Research
+subtitle: 'Projects'
 content:
   # Page type to display. E.g. project.
   page_type: project
@@ -27,11 +26,19 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Twitter
+  - name: Mass spectrometry
     tag: twitter
-  - name: Embeddings
+  - name: Microbiome
     tag: embeddings
-  - name: Shared Tasks
+  - name: Multi-omics
+    tag: sharedtask
+  - name: Wearable
+    tag: sharedtask
+  - name: Aging
+    tag: sharedtask
+  - name: Pregnancy
+    tag: sharedtask
+  - name: Other
     tag: sharedtask
 
 design:
