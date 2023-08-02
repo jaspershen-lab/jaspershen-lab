@@ -4,12 +4,12 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Tour
-    url: tour
-    weight: 10
   - name: Research
     url: research
-    weight: 12
+    weight: 10
+  - name: Software
+    url: software
+    weight: 11
   - name: News
     url: post
     weight: 20
@@ -23,5 +23,10 @@ main:
     url: publication
     weight: 50
   - name: Contact
-    url: contact
+    url: '#contact'
     weight: 60
+  - name: GitHub
+    icon: github
+    icon_pack: fab
+    url: 'https://github.com/jaspershen-lab'
+    weight: 70

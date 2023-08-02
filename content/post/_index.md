@@ -2,6 +2,6 @@
 banner:
   caption: ""
   image: ""
-title: Latest News
+title: News
 view: compact
 ---

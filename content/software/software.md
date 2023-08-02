@@ -9,7 +9,7 @@ headless: false
 # Order that this section appears on the page.
 weight: 10
 
-title: Research
+title: Software
 subtitle: ''
 content:
   # Page type to display. E.g. project.

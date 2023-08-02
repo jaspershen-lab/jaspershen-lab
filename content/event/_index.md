@@ -2,6 +2,6 @@
 banner:
   caption: ""
   image: ""
-title: Recent & Upcoming Events
+title: Events
 view: compact
 ---
