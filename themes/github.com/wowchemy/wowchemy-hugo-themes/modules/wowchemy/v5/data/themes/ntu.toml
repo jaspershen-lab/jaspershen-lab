@@ -1,0 +1,23 @@
+# Theme metadata
+name = "ntu"
+
+[light]
+  # Primary
+  primary = "#b21f2f"
+
+  # Menu
+  menu_primary = "#fff"
+  menu_text = "#001e61"
+  menu_text_active = "#b21f2f"
+  menu_title = "#b21f2f"
+
+  # Home sections
+  home_section_odd = "rgb(255, 255, 255)"
+  home_section_even = "rgb(247, 247, 247)"
+
+[dark]
+  # Primary
+  primary = "#bbdefb"
+
+  link = "#bbdefb"
+  link_hover = "#bbdefb"

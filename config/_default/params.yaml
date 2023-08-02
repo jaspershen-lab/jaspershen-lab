@@ -6,8 +6,8 @@
 # Appearance
 
 appearance:
-  theme_day: Minimal
-  theme_night: Minimal
+  theme_day: ntu
+  theme_night: ntu
   font: Minimal
   font_size: L
 
@@ -45,9 +45,9 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Jasper Shen'
     license:
-      enable: true
+      enable: false
       allow_derivatives: true
       share_alike: true
       allow_commercial: false

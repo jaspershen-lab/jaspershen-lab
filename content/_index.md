@@ -10,8 +10,7 @@ sections:
 
       The **Jasper Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
     title: |
-      Jasper Shen
-      Research Lab
+      Jasper Shen Lab
       
 - block: collection
   content:
