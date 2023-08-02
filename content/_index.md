@@ -8,10 +8,11 @@ sections:
     text: |
       <br>
 
-      The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+      The **Jasper Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
     title: |
-      Wowchemy
-      Research Group
+      Jasper Shen
+      Research Lab
+      
 - block: collection
   content:
     count: 5
