@@ -46,16 +46,16 @@ sections:
     loop: true
     slide_height: ""
 
-# - block: hero
-#   content:
-#     image:
-#       filename: welcome.jpg
-#     text: |
-#       <br>
-# 
-#       The **Jasper Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
-#     title: |
-#       Jasper Shen Lab
+- block: hero
+  content:
+    image:
+      filename: welcome.jpg
+    text: |
+      <br>
+
+      The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
+    title: |
+      Shen Lab
 
 - block: features
   id: research
@@ -100,9 +100,9 @@ sections:
     columns: '1'
 
 # - block: portfolio
-#   id: research
+#   id: research_brief
 #   content:
-#     title: Research
+#     title:
 #     filters:
 #       folders:
 #         - research
@@ -126,6 +126,28 @@ sections:
 #     view: showcase
 #     # For Showcase view, flip alternate rows?
 #     flip_alt_rows: false
+    
+- block: collection
+  id: research_brief
+  content:
+    count: 100
+    filters:
+      author: ""
+      category: ""
+      exclude_featured: false
+      publication_type: ""
+      tag: ""
+    offset: 0
+    order: desc
+    subtitle: null
+    title: ""
+    text: 
+    filters:
+      folders:
+        - research_brief
+  design:
+    columns: "1"
+    view: community/showcase2
     
 - block: portfolio
   id: software
