@@ -61,36 +61,36 @@ sections:
   id: research
   content:
     title: Research
-    items:
-      - name: Microbiome
-        description: 
-        icon: bacterium
-        icon_pack: fas
-      - name: Metabolomics
-        description: 
-        icon: dataverse
-        icon_pack: ai
-      - name: Wearable
-        description: 
-        icon: digital-ocean
-        icon_pack: fab
-      - name: Precision medicine
-        description: 
-        icon: dna
-        icon_pack: fas
-      - name: Aging
-        description: 
-        icon: person-cane
-        icon_pack: fas
-      - name: Pregnancy
-        description:
-        icon: person-pregnant
-        icon_pack: fas
     text: |-
       {{% callout note %}}
       [Detailed research can be found here](./research/).
       {{% /callout %}}
     align: left
+    items:
+      - name: "[Metabolomics](https://en.wikipedia.org/wiki/Metabolomics)"
+        description: 
+        icon: ":computer:"
+        icon_pack: emoji
+      - name: "[Microbiome](https://en.wikipedia.org/wiki/Microbiome)"
+        description: 
+        icon: ":microbe:"
+        icon_pack: emoji
+      - name: "[Wearable](https://pubmed.ncbi.nlm.nih.gov/31021744/)"
+        description: 
+        icon: ":watch:"
+        icon_pack: emoji
+      - name: '[Precision medicine](https://snyderlab.stanford.edu/)'
+        description: 
+        icon: ":dna:"
+        icon_pack: emoji
+      - name: "[Aging](https://en.wikipedia.org/wiki/Ageing)"
+        description: 
+        icon: ":person_white_hair:"
+        icon_pack: emoji
+      - name: "[Pregnancy](https://pubmed.ncbi.nlm.nih.gov/31969484/)"
+        description:
+        icon: ":pregnant_woman:"
+        icon_pack: emoji
     filters:
       folders:
         - research
@@ -159,12 +159,9 @@ sections:
 - block: collection
   id: publication
   content:
-    count: 3
+    count: 2
     title: Recent Publications
-    text: |-
-      {{% callout note %}}
-      [All Publications can be found here](./publication/).
-      {{% /callout %}}
+    text: 
     filters:
       folders:
         - publication
@@ -176,7 +173,7 @@ sections:
 - block: collection
   id: news
   content:
-    count: 5
+    count: 2
     filters:
       author: ""
       category: ""
@@ -188,10 +185,7 @@ sections:
     page_type: post
     subtitle: null
     title: Latest News
-    text: |-
-      {{% callout note %}}
-      [All News can be found here](./post/).
-      {{% /callout %}}
+    text: 
   design:
     columns: "1"
     view: compact
@@ -219,12 +213,9 @@ sections:
 - block: collection
   id: event
   content:
-    count: 5
+    count: 2
     title: Recent Events
-    text: |-
-      {{% callout note %}}
-      [All Events can be found here](./event/).
-      {{% /callout %}}
+    text: 
     filters:
       folders:
         - event
@@ -233,6 +224,14 @@ sections:
     columns: '1'
     view: compact
 
+# - block: markdown
+#   content:
+#     title: Gallery
+#     text: |-
+#       {{< gallery album = "lab" >}}
+#   design:
+#     columns: '1'
+    
 - block: tag_cloud
   content:
     title: Popular Topics

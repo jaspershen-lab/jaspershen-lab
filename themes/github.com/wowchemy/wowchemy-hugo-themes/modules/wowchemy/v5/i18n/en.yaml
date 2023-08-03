@@ -123,13 +123,13 @@
   translation: See all
 
 - id: more_posts
-  translation: See all posts
+  translation: All news
 
 - id: more_talks
-  translation: See all events
+  translation: All events
 
 - id: more_publications
-  translation: See all publications
+  translation: All publications
 
 # Contact widget
 
