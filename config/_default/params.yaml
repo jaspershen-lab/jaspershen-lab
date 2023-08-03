@@ -33,10 +33,12 @@ marketing:
 
 header:
   navbar:
+    block: navbar
     enable: true
-    align: l
+    align: r
     show_logo: true
     show_language: false
+    show_translations: true
     show_day_night: true
     show_search: true
     highlight_active_link: true
@@ -62,6 +64,9 @@ locale:
 # Site features
 
 features:
+  responses:
+    positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new)'
+    negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
   syntax_highlighter:
     enable: true
     extra_languages:
@@ -75,6 +80,7 @@ features:
     url: 'https://github.com/jaspershen-lab/jaspershen-lab'
     content_dir: content
     branch: main
+    editable: true
   avatar:
     gravatar: true
     shape: circle
@@ -107,7 +113,7 @@ features:
 extensions:
   cms:
     branch: main
-    local_backend: false
+    local_backend: true
   academicons:
     enable: true
 
@@ -116,3 +122,10 @@ extensions:
 publications:
   date_format: January 2006
   citation_style: apa
+
+params:
+  social:
+    - icon: github
+      icon_pack: fab
+      link: https://github.com/jaspershen-lab
+
