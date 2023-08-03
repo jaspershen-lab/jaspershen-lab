@@ -14,7 +14,7 @@ education:
     year: 2008
 email: ""
 first_name: Nelson
-highlight_name: false
+highlight_name: true
 interests:
 - Artificial Intelligence
 - Computational Linguistics
@@ -23,7 +23,7 @@ last_name: Bighetti
 organizations:
 - name: Stanford University
   url: ""
-role: Professor of Artificial Intelligence
+role: Professor
 social:
 - icon: envelope
   icon_pack: fas
