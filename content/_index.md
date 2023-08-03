@@ -204,7 +204,6 @@ sections:
     - Principal Investigators
     - Researchers
     - Grad Students
-    - Administration
   design:
     show_interests: false
     show_role: true
