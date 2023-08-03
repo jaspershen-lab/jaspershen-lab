@@ -54,6 +54,7 @@ sections:
       <br>
 
       The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
+      {{% cta cta_link="./people/" cta_text="Join US →" %}}
     title: |
       Shen Lab
 
