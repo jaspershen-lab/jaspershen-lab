@@ -71,10 +71,10 @@ sections:
   id: research
   content:
     title: Research `:microscope:`
-    text: |-
-      {{% callout note %}}
-      [Detailed research can be found here](./research/).
-      {{% /callout %}}
+    # text: |-
+    #   {{% callout note %}}
+    #   [Detailed research can be found here](./research/).
+    #   {{% /callout %}}
     align: left
     items:
       - name: "[Metabolomics](https://en.wikipedia.org/wiki/Metabolomics)"
@@ -104,7 +104,7 @@ sections:
     filters:
       folders:
         - research
-    subtitle: 
+    subtitle: "[Detailed research can be found here](./research/) :point_right:"
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
@@ -163,6 +163,8 @@ sections:
   id: software
   content:
     title: Software `:desktop_computer:`
+    subtitle: "[All software can be found here](./all_software/) :point_right:"
+    text: ""
     filters:
       folders:
         - software
@@ -176,16 +178,22 @@ sections:
     buttons:
       - name: All
         tag: '*'
-      - name: Deep Learning
-        tag: Deep Learning
+      - name: Microbiome
+        tag: Microbiome
+      - name: Mass Spectrometry
+        tag: Mass Spectrometry
+      - name: Wearable
+        tag: Wearable
+      - name: Multi-omics
+        tag: Multi-omics
       - name: Other
-        tag: Demo
+        tag: Other
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
-    view: showcase
+    view: community/showcase3
     # For Showcase view, flip alternate rows?
-    flip_alt_rows: false
+    flip_alt_rows: true
     
 
 - block: collection
@@ -228,10 +236,11 @@ sections:
     sort_ascending: true
     sort_by: Params.last_name
     title: Team `:busts_in_silhouette:`
-    text: |-
-      {{% callout note %}}
-      [All team member can be found here](./people/).
-      {{% /callout %}}
+    subtitle: "[All team member can be found here](./people/) :point_right:"
+    # text: |-
+    #   {{% callout note %}}
+    #   [All team member can be found here](./people/).
+    #   {{% /callout %}}
     user_groups:
     - Principal Investigators
     - Researchers
