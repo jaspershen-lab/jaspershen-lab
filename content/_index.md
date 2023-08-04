@@ -190,7 +190,7 @@ sections:
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
-    view: community/showcase3
+    view: community/compact2
     # For Showcase view, flip alternate rows?
     flip_alt_rows: true
     

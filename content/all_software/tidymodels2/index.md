@@ -17,7 +17,11 @@ links:
     icon_pack: fas
     name: Link
     url: https://twitter.com/georgecushen
-url_code: 'https://twitter.com/georgecushen'
+  - icon: github
+    icon_pack: fab
+    name: Link
+    url: https://twitter.com/georgecushen
+url_code: ''
 url_pdf: ''
 url_slides: ''
 url_video: ''

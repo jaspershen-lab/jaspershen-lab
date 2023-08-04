@@ -13,9 +13,13 @@ image:
   focal_point: Smart
 
 links:
-  - icon: twitter
+  - icon: square-up-right
+    icon_pack: fas
+    name: Link
+    url: https://twitter.com/georgecushen
+  - icon: github
     icon_pack: fab
-    name: Follow
+    name: Link
     url: https://twitter.com/georgecushen
 url_code: ''
 url_pdf: ''
