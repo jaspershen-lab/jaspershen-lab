@@ -12,7 +12,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: Meet the Team
+    title: Meet the Team `:busts_in_silhouette:`
     user_groups:
     - Principal Investigators
     - Researchers
