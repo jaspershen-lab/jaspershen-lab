@@ -26,7 +26,8 @@ main:
     url: '#contact'
     weight: 60
   - name: <i class="fa-brands fa-github"></i>
-    icon: github
-    icon_pack: fab
     url: 'https://github.com/jaspershen-lab'
     weight: 70
+  - name: <i class="fa-brands fa-twitter"></i>
+    url: 'https://twitter.com/elonmusk'
+    weight: 80
