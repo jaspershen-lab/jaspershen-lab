@@ -54,14 +54,23 @@ sections:
       <br>
 
       The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
+      {{% cta cta_link="./people/" cta_text="Meet the Team →" %}} 
       {{% cta cta_link="./people/" cta_text="Join US →" %}}
     title: |
       Shen Lab
 
+# - block: about.avatar
+#   id: about
+#   content:
+#     # Choose a user profile to display (a folder name within `content/authors/`)
+#     username: admin
+#     # Override your profile text from `authors/admin/_index.md`?
+#     text: The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
+
 - block: features
   id: research
   content:
-    title: Research
+    title: Research `:microscope:`
     text: |-
       {{% callout note %}}
       [Detailed research can be found here](./research/).
@@ -153,7 +162,7 @@ sections:
 - block: portfolio
   id: software
   content:
-    title: Software
+    title: Software `:desktop_computer:`
     filters:
       folders:
         - software
@@ -183,7 +192,7 @@ sections:
   id: publication
   content:
     count: 2
-    title: Recent Publications
+    title: Recent Publications `:page_with_curl:`
     text: 
     filters:
       folders:
@@ -207,7 +216,7 @@ sections:
     order: desc
     page_type: post
     subtitle: null
-    title: Latest News
+    title: Latest News `:newspaper:`
     text: 
   design:
     columns: "1"
@@ -218,7 +227,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: Team
+    title: Team `:busts_in_silhouette:`
     text: |-
       {{% callout note %}}
       [All team member can be found here](./people/).
@@ -235,8 +244,8 @@ sections:
 - block: collection
   id: event
   content:
-    count: 2
-    title: Recent Events
+    count: 3
+    title: Recent Events `:ticket:`
     text: 
     filters:
       folders:
@@ -249,21 +258,22 @@ sections:
 # - block: markdown
 #   content:
 #     title: Gallery
+#     subtitle: ''
 #     text: |-
-#       {{< gallery album = "lab" >}}
+#       {{< gallery album="lab" >}}
 #   design:
 #     columns: '1'
     
 - block: tag_cloud
   content:
-    title: Popular Topics
+    title: Popular Topics `:whale:`
   design:
     columns: '1'
 
 - block: contact
   id: contact
   content:
-    title: Contact
+    title: Contact `:incoming_envelope:`
     subtitle:
     text: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.

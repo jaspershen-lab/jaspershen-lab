@@ -2,10 +2,11 @@
 date: "2022-10-24"
 image:
   placement: 1
-  caption: "Photo by [Geo](https://github.com/gcushen/)"
+  caption: ""
   focal_point: "Center"
   preview_only: false
-  alt_text: An optional description of the image for screen readers.
+  alt_text: 
+  filename: coders.jpg
 sections:
 - block: people
   content:
@@ -33,6 +34,26 @@ sections:
       
   design:
     columns: '1'
+    
+- block: markdown
+  content:
+    title:
+    subtitle: ''
+    text:
+  design:
+    columns: '1'
+    background:
+      image: 
+        filename: team.jpg
+        filters:
+          brightness: 1
+        parallax: false
+        position: center
+        size: cover
+        text_color_light: true
+    spacing:
+      padding: ['20px', '0', '20px', '0']
+    css_class: fullscreen
     
 title: People
 type: landing

@@ -1,7 +1,7 @@
 ---
 banner:
   caption: ""
-  image: ""
+  image: "events.jpg"
 title: Events
 view: compact
 ---

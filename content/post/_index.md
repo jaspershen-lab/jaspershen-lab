@@ -1,7 +1,7 @@
 ---
 banner:
   caption: ""
-  image: ""
+  image: "news.jpg"
 title: News
 view: compact
 ---
