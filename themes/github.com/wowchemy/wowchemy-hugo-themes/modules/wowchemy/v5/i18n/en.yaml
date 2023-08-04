@@ -265,7 +265,7 @@
 # Published with
 
 - id: published_with
-  translation: Powered by {wowchemy}.
+  translation: Powered by {wowchemy} and [Hugo](https://gohugo.io/). `:grin:`
 
 # Feedback widget
 

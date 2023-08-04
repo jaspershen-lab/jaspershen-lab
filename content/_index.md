@@ -49,15 +49,14 @@ sections:
 - block: hero
   content:
     image:
-      filename: welcome.jpg
+      filename: join_us.jpg
     text: |
       <br>
 
-      The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
-      {{% cta cta_link="./people/" cta_text="Meet the Team →" %}} 
+      Dr. Emily Carter is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
       {{% cta cta_link="./people/" cta_text="Join US →" %}}
     title: |
-      Shen Lab
+      Opportunities
 
 # - block: about.avatar
 #   id: about
@@ -256,6 +255,7 @@ sections:
   content:
     count: 3
     title: Recent Events `:ticket:`
+    subtitle: ":point_right: [All events can be found here](./event/)"
     text: 
     filters:
       folders:
