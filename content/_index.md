@@ -104,7 +104,7 @@ sections:
     filters:
       folders:
         - research
-    subtitle: "[Detailed research can be found here](./research/) :point_right:"
+    subtitle: ":point_right: [Detailed research can be found here](./research/)"
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
@@ -149,7 +149,7 @@ sections:
       tag: ""
     offset: 0
     order: desc
-    subtitle: null
+    subtitle: ""
     title: ""
     text: 
     filters:
@@ -163,7 +163,7 @@ sections:
   id: software
   content:
     title: Software `:desktop_computer:`
-    subtitle: "[All software can be found here](./all_software/) :point_right:"
+    subtitle: ":point_right: [All software can be found here](./all_software/)"
     text: ""
     filters:
       folders:
@@ -199,8 +199,9 @@ sections:
 - block: collection
   id: publication
   content:
-    count: 2
+    count: 5
     title: Recent Publications `:page_with_curl:`
+    subtitle: ":point_right: [All publication can be found here](./publication/)"
     text: 
     filters:
       folders:
@@ -223,7 +224,7 @@ sections:
     offset: 0
     order: desc
     page_type: post
-    subtitle: null
+    subtitle: ":point_right: [All news can be found here](./post/)"
     title: Latest News `:newspaper:`
     text: 
   design:
@@ -236,7 +237,7 @@ sections:
     sort_ascending: true
     sort_by: Params.last_name
     title: Team `:busts_in_silhouette:`
-    subtitle: "[All team member can be found here](./people/) :point_right:"
+    subtitle: ":point_right: [All team member can be found here](./people/)"
     # text: |-
     #   {{% callout note %}}
     #   [All team member can be found here](./people/).
