@@ -9,6 +9,7 @@ address:
   postcode: "94305"
   region: CA
   street: 450 Serra Mall
+commentable: true
 all_day: false
 authors: []
 date: "2030-06-01T13:00:00Z"

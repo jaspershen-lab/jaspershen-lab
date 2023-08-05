@@ -4,30 +4,30 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Research
+  - name: 🔬 Research
     url: '#research'
     weight: 10
-  - name: Software
+  - name: 🖥️ Software
     url: '#software'
     weight: 11
-  - name: Publications
+  - name: 📃 Publications
     url: '#publication'
     weight: 12
-  - name: News
+  - name: 📰 News
     url: '#news'
     weight: 20
-  - name: Team
+  - name: 👥 Team
     url: '#people'
     weight: 30
-  - name: Events
+  - name: 🎫 Events
     url: '#event'
     weight: 40
-  - name: Contact
+  - name: 📨 Contact
     url: '#contact'
     weight: 60
-  - name: <i class="fa-brands fa-github"></i>
-    url: 'https://github.com/jaspershen-lab'
+  - name: <i class="fa-brands fa-github"></i> GitHub
+    url: '#github'
     weight: 70
-  - name: <i class="fa-brands fa-twitter"></i>
-    url: 'https://twitter.com/elonmusk'
+  - name: <i class="fa-brands fa-twitter"></i> Twitter
+    url: '#twitter'
     weight: 80

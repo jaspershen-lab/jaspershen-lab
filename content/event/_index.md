@@ -2,6 +2,7 @@
 banner:
   caption: ""
   image: "events.jpg"
-title: Events
+title: 🎫 Events
 view: compact
+commentable: true
 ---

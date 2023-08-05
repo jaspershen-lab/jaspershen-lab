@@ -13,6 +13,7 @@ education:
     institution: Massachusetts Institute of Technology
     year: 2008
 email: ""
+commentable: true
 first_name: Nelson
 highlight_name: true
 interests:

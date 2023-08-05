@@ -1,10 +1,13 @@
 ---
 date: "2023-08-01"
+title: Software
+type: landing
+
 sections:
 - block: portfolio
   id: software
   content:
-    title: Software `:desktop_computer:`
+    title: 🖥️ Software
     text: ""
     filters:
       folders:
@@ -55,8 +58,5 @@ sections:
     spacing:
       padding: ['20px', '0', '20px', '0']
     css_class: fullscreen
-
-title: Software
-type: landing
 ---
 

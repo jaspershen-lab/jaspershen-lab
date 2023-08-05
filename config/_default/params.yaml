@@ -21,7 +21,7 @@ marketing:
     description: 'A highly-customizable Hugo research group theme powered by Wowchemy website builder.'
     twitter: 'wowchemy'
   analytics:
-    google_analytics: ''
+    google_analytics: '143314205'
     baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
@@ -35,7 +35,7 @@ header:
   navbar:
     block: navbar
     enable: true
-    align: r
+    align: l
     show_logo: true
     show_language: false
     show_translations: true
@@ -86,17 +86,17 @@ features:
     gravatar: true
     shape: circle
   comment:
-    provider: ''
+    provider: 'giscus'
     disqus:
       shortname: ''
       show_count: true
     commento:
       url: ''
     giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
+      repo: 'jaspershen-lab/jaspershen-lab'
+      repo_id: 'R_kgDOKCc44Q'
+      category: 'Announcements'
+      category_id: 'DIC_kwDOKCc44c4CYXS_'
   search:
     provider: wowchemy
     algolia:

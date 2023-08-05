@@ -1,5 +1,7 @@
 ---
 date: "2023-08-01"
+title: null
+type: landing
 sections:
 - block: slider
   content:
@@ -69,7 +71,7 @@ sections:
 - block: features
   id: research
   content:
-    title: Research `:microscope:`
+    title: 🔬 Research 
     # text: |-
     #   {{% callout note %}}
     #   [Detailed research can be found here](./research/).
@@ -161,7 +163,7 @@ sections:
 - block: collection
   id: software
   content:
-    title: Software `:desktop_computer:`
+    title: 🖥️ Software
     subtitle: ":point_right: [All software can be found here](./all_software/)"
     text: ""
     filters:
@@ -179,7 +181,7 @@ sections:
   id: publication
   content:
     count: 5
-    title: Recent Publications `:page_with_curl:`
+    title: 📃 Recent Publications 
     subtitle: ":point_right: [All publication can be found here](./publication/)"
     text: 
     filters:
@@ -204,7 +206,7 @@ sections:
     order: desc
     page_type: post
     subtitle: ":point_right: [All news can be found here](./post/)"
-    title: Latest News `:newspaper:`
+    title: 📰 Latest News
     text: 
   design:
     columns: "1"
@@ -215,7 +217,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: Team `:busts_in_silhouette:`
+    title: 👥 Team
     subtitle: ":point_right: [All team member can be found here](./people/)"
     # text: |-
     #   {{% callout note %}}
@@ -234,7 +236,7 @@ sections:
   id: event
   content:
     count: 3
-    title: Recent Events `:ticket:`
+    title: 🎫 Recent Events
     subtitle: ":point_right: [All events can be found here](./event/)"
     text: 
     filters:
@@ -245,25 +247,10 @@ sections:
     columns: '1'
     view: compact
 
-# - block: markdown
-#   content:
-#     title: Gallery
-#     subtitle: ''
-#     text: |-
-#       {{< gallery album="lab" >}}
-#   design:
-#     columns: '1'
-    
-- block: tag_cloud
-  content:
-    title: Popular Topics `:whale:`
-  design:
-    columns: '1'
-
 - block: contact
   id: contact
   content:
-    title: Contact `:incoming_envelope:`
+    title: 📨 Contact
     subtitle:
     text: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
@@ -284,7 +271,7 @@ sections:
     contact_links:
       - icon: twitter
         icon_pack: fab
-        name: DM Me
+        name: Follow us on Twitter
         link: 'https://twitter.com/Twitter'
       - icon: video
         icon_pack: fas
@@ -303,6 +290,38 @@ sections:
   design:
     columns: '1'
 
-title: null
-type: landing
+- block: markdown
+  id: github
+  content:
+    title: 😺 GitHub
+    subtitle: ":point_right: [GitHub can be found here](https://github.com/jaspershen-lab)"
+    text: |-
+      <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
+  design:
+    columns: '1'
+
+- block: markdown
+  id: twitter
+  content:
+    title: 🐦 Twitter
+    subtitle: ''
+    text: |-
+      <a class="twitter-timeline" data-height="800" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  design:
+    columns: '1'
+
+# - block: markdown
+#   content:
+#     title: Twitter
+#     subtitle: ''
+#     text: |-
+#       {{< gallery album="lab" >}}
+#   design:
+#     columns: '1'
+
+- block: tag_cloud
+  content:
+    title: ""
+  design:
+    columns: '1'
 ---

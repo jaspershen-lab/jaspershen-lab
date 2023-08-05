@@ -2,6 +2,6 @@
 banner:
   caption: ""
   image: "news.jpg"
-title: News
+title: 📰 News
 view: community/compact3
 ---
