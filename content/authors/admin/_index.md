@@ -15,16 +15,16 @@ education:
 email: ""
 commentable: true
 first_name: Nelson
+last_name: Bighetti
 highlight_name: true
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
-last_name: Bighetti
+- 🖥️ Artificial Intelligence
+- 📱 Computational Linguistics
+- 💰 Information Retrieval
 organizations:
 - name: Stanford University
   url: ""
-role: Professor
+role: Assistant Professor
 social:
 - icon: envelope
   icon_pack: fas
@@ -37,6 +37,15 @@ social:
   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
+  link: https://github.com/gcushen
+- icon: linkedin
+  icon_pack: fab
+  link: https://github.com/gcushen
+- icon: cv
+  icon_pack: ai
+  link: https://github.com/gcushen
+- icon: orcid
+  icon_pack: ai
   link: https://github.com/gcushen
 superuser: true
 title: Nelson Bighetti

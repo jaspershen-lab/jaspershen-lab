@@ -171,7 +171,7 @@ sections:
         - software
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
-    columns: '1'
+    columns: '2'
     view: community/compact2
     # For Showcase view, flip alternate rows?
     flip_alt_rows: true
@@ -189,7 +189,7 @@ sections:
         - publication
       exclude_featured: false
   design:
-    columns: '1'
+    columns: '2'
     view: card
     
 - block: collection
@@ -209,7 +209,7 @@ sections:
     title: 📰 Latest News
     text: 
   design:
-    columns: "1"
+    columns: "2"
     view: compact
 
 - block: people
@@ -244,7 +244,7 @@ sections:
         - event
       exclude_featured: false
   design:
-    columns: '1'
+    columns: '2'
     view: compact
 
 - block: contact
@@ -266,16 +266,19 @@ sections:
       country: United States
       country_code: US
     office_hours:
-      - 'Monday 10:00 to 13:00'
-      - 'Wednesday 09:00 to 10:00'
+      - 'Weekdays 9:00 to 18:00'
     contact_links:
-      - icon: twitter
-        icon_pack: fab
-        name: Follow us on Twitter
-        link: 'https://twitter.com/Twitter'
+      # - icon: twitter
+      #   icon_pack: fab
+      #   name: Follow us on Twitter
+      #   link: 'https://twitter.com/Twitter'
       - icon: video
         icon_pack: fas
         name: Zoom Me
+        link: 'https://zoom.com'
+      - icon: weixin
+        icon_pack: fab
+        name: Follow us on WeChat
         link: 'https://zoom.com'
     # Automatically link email and phone or display as text?
     autolink: true
@@ -288,7 +291,7 @@ sections:
         # Enable CAPTCHA challenge to reduce spam?
         captcha: false
   design:
-    columns: '1'
+    columns: '2'
 
 - block: markdown
   id: github
@@ -298,7 +301,7 @@ sections:
     text: |-
       <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
   design:
-    columns: '1'
+    columns: '2'
 
 - block: markdown
   id: twitter
@@ -308,7 +311,7 @@ sections:
     text: |-
       <a class="twitter-timeline" data-height="800" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   design:
-    columns: '1'
+    columns: '2'
 
 # - block: markdown
 # - id: photo

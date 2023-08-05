@@ -9,10 +9,16 @@
   {{ end }}
   {{ partial $footer_section_path . }}
   
+  <p class="powered-by">
+      {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
+
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> and
+      <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a><br>
+      Jasper Shen at <a href="https://mathrice.fr">Stanford University</a>
+      {{ with site.GetPage "/terms.md" }}<br>{{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}{{ end }}
+  </p>
+  
   <p>
-    Jasper Shen at <a href="https://mathrice.fr">Stanford University</a>
-    <br>
-    
     <i class="fa-brands fa-github"></i> <a href="https://github.com/jaspershen-lab/jaspershen-lab" target="_blank" rel="noopener">GitHub</a>
 &nbsp;
         <i class="fa-brands fa-weixin"></i> <a href="https://github.com/jaspershen-lab/jaspershen-lab" target="_blank" rel="noopener">Wechat</a>
@@ -26,17 +32,7 @@
             <i class="fa-solid fa-location-dot"></i> <a href="https://github.com/jaspershen-lab/jaspershen-lab" target="_blank" rel="noopener">Address</a>
    
     </p>
-
-      <center>
-    <img src="https://www.computerhope.com/cdn/media/logo-200-gray.png" alt="logo" class="center" width="10%" height="345">
-    </center>
-
+    
     <hr>
-  
-      <p class="powered-by">
-      {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
-
-      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> and
-      <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a><br>
   
 </footer>
