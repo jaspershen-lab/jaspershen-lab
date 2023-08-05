@@ -31,3 +31,6 @@ main:
   - name: <i class="fa-brands fa-twitter"></i> Twitter
     url: '#twitter'
     weight: 80
+  - name: 📸 Photo
+    url: '#photo'
+    weight: 90

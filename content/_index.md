@@ -311,11 +311,12 @@ sections:
     columns: '1'
 
 # - block: markdown
+# - id: photo
 #   content:
-#     title: Twitter
+#     title: 📸 Lab Photos
 #     subtitle: ''
 #     text: |-
-#       {{< gallery album="lab" >}}
+#       {{< gallery album="demo" >}}
 #   design:
 #     columns: '1'
 
