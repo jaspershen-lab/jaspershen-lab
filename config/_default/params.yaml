@@ -48,7 +48,7 @@ header:
 footer:
   block: minimal2
   copyright:
-    notice: '© {year} Jasper Shen'
+    notice: '© {year} Jasper Shen @ [Stanford University](https://mathrice.fr)'
     license:
       enable: false
       allow_derivatives: true

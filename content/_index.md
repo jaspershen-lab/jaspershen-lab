@@ -290,6 +290,10 @@ sections:
       netlify:
         # Enable CAPTCHA challenge to reduce spam?
         captcha: false
+      # Coordinates to display a map - set your map provider in `params.yaml`
+      coordinates:
+        latitude: '37.4275'
+        longitude: '-122.1697'
   design:
     columns: '2'
 
