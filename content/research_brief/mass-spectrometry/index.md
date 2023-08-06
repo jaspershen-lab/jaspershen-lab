@@ -1,6 +1,6 @@
 ---
 date: "2020-12-01"
-title: Metabolomics `:computer:` `:watch:` `:dna:`
+title: 💻 ⌚ 🧬 Metabolomics 
 ---
 
 Metabolomics is the scientific study of chemical processes involving metabolites, the small molecule substrates, intermediates, and products of cell metabolism.

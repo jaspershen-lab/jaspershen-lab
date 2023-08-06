@@ -2,7 +2,7 @@
 date: "2020-12-02"
 image:
   focal_point: top
-title: Aging `:person_white_hair:`
+title: 🧑 Aging
 ---
 
 Ageing (or aging in American English) is the process of becoming older. The term refers mainly to humans, many other animals, and fungi, whereas for example, bacteria, perennial plants and some simple animals are potentially biologically immortal.

@@ -2,7 +2,7 @@
 date: "2020-12-02"
 image:
   focal_point: top
-title: Pregnancy `:pregnant_woman:`
+title: 🤰 Pregnancy 
 ---
 
 CDeep phenotyping during pregnancy offers an opportunity to define the antecedents of lifelong health and wellness, and to improve pregnancy outcomes.

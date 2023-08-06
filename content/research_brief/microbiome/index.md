@@ -2,7 +2,7 @@
 date: "2020-12-02"
 image:
   focal_point: top
-title: Microbiome `:microbe:`
+title: 🦠 Microbiome 
 ---
 
 A microbiome (from Ancient Greek μικρός (mikrós) 'small', and βίος (bíos) 'life') is the community of microorganisms that can usually be found living together in any given habitat. It was defined more precisely in 1988 by Whipps et al. as "a characteristic microbial community occupying a reasonably well-defined habitat which has distinct physio-chemical properties.
