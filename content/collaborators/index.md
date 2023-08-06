@@ -16,7 +16,7 @@ sections:
     user_groups:
     - Collaborators
   design:
-    show_interests: true
+    show_interests: false
     show_role: true
     show_social: true
     show_organizations: true

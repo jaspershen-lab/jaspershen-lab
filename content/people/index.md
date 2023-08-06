@@ -8,6 +8,11 @@ image:
   alt_text: 
   filename: coders.jpg
 sections:
+# - block: about.biography
+#   id: about
+#   content:
+#     title: PI
+#     username: admin
 - block: people
   content:
     sort_ascending: true
