@@ -11,15 +11,19 @@ sections:
 - block: markdown
   content:
     title: 👥 Meet Our Team
-    subtitle: ''
-    text:
+    subtitle: 🤝 [Our collaborators can be found here](https://jaspershen-lab.github.io/collaborators/)
+    text: |-
+      I'd be happy to help you with your query! However, "our team" is a bit vague. Could you please provide more context or specify what kind of information you're looking for regarding "our team"? Are you looking for tips on building a team, managing a team, or something else entirely? The more details you provide, the better I can assist you.
+      {{% callout note %}}
+      [Our collaborators can be found here](../collaborators/).
+      {{% /callout %}}
   design:
     columns: '1'
     background:
       image: 
         filename: team.jpg
       filters:
-        brightness: 0.9
+        brightness: 0
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
