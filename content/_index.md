@@ -109,6 +109,19 @@ sections:
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
+    background:
+      image: 
+        filename: research.jpg
+      filters:
+        brightness: 0
+      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+      size: cover
+      # Image focal point. Options include `left`, `center` (default), or `right`.
+      position: center
+      # Use a fun parallax-like fixed background effect on desktop? true/false
+      parallax: true
+      # Text color (true=light, false=dark, or remove for the dynamic theme color).
+      text_color_light: true
 
 - block: collection
   id: research_brief
@@ -147,10 +160,11 @@ sections:
     view: community/compact2
     # For Showcase view, flip alternate rows?
     flip_alt_rows: true
-    image:
-      filename: code.jpg
+    background:
+      image: 
+        filename: code2.jpg
       filters:
-        brightness: 0.6
+        brightness: 0
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -178,7 +192,7 @@ sections:
 - block: collection
   id: news
   content:
-    count: 2
+    count: 10
     filters:
       author: ""
       category: ""
@@ -193,7 +207,20 @@ sections:
     text: 
   design:
     columns: "2"
-    view: compact
+    view: list
+    background:
+      image: 
+        filename: news2.jpg
+      filters:
+        brightness: 0
+      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+      size: cover
+      # Image focal point. Options include `left`, `center` (default), or `right`.
+      position: center
+      # Use a fun parallax-like fixed background effect on desktop? true/false
+      parallax: true
+      # Text color (true=light, false=dark, or remove for the dynamic theme color).
+      text_color_light: true
 
 - block: people
   id: people
@@ -229,6 +256,19 @@ sections:
   design:
     columns: '2'
     view: compact
+    background:
+      image: 
+        filename: event2.jpg
+      filters:
+        brightness: 0
+      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+      size: cover
+      # Image focal point. Options include `left`, `center` (default), or `right`.
+      position: center
+      # Use a fun parallax-like fixed background effect on desktop? true/false
+      parallax: true
+      # Text color (true=light, false=dark, or remove for the dynamic theme color).
+      text_color_light: true
 
 - block: contact
   id: contact
@@ -289,6 +329,19 @@ sections:
       <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
   design:
     columns: '2'
+    background:
+      image: 
+        filename: github.jpg
+      filters:
+        brightness: 0
+      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+      size: cover
+      # Image focal point. Options include `left`, `center` (default), or `right`.
+      position: center
+      # Use a fun parallax-like fixed background effect on desktop? true/false
+      parallax: true
+      # Text color (true=light, false=dark, or remove for the dynamic theme color).
+      text_color_light: true
 
 - block: markdown
   id: twitter
@@ -315,4 +368,17 @@ sections:
     title: ""
   design:
     columns: '1'
+    background:
+      image: 
+        filename: galary.jpg
+      filters:
+        brightness: 0
+      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+      size: cover
+      # Image focal point. Options include `left`, `center` (default), or `right`.
+      position: center
+      # Use a fun parallax-like fixed background effect on desktop? true/false
+      parallax: true
+      # Text color (true=light, false=dark, or remove for the dynamic theme color).
+      text_color_light: true
 ---
