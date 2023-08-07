@@ -1,5 +1,5 @@
 ---
-date: "2020-12-01"
+date: "2023-08-06"
 title: Richard Hendricks Wins First Place in the Wowchemy Prize
 commentable: true
 ---
