@@ -10,30 +10,19 @@ sections:
       background:
         color: '#666'
         image:
-          filename: coders.jpg
+          filename: multi-omics.jpg
           filters:
-            brightness: 0.7
+            brightness: 0.8
         position: right
       content: Take a look at what we're working on...
-      title: "\U0001F44B Welcome to the group"
+      title: "👋 Welcome to the group 👋"
     - align: left
-      background:
-        color: '#555'
-        image:
-          filename: contact.jpg
-          filters:
-            brightness: 0.7
-        position: center
-      content: Share your knowledge with the group and explore exciting new topics
-        together!
-      title: Lunch & Learn ☕️
-    - align: right
       background:
         color: '#333'
         image:
-          filename: code.jpg
+          filename: group_photo.jpg
           filters:
-            brightness: 0.5
+            brightness: 0.8
         position: center
       content: Just opened last month!
       link:
@@ -42,6 +31,23 @@ sections:
         text: Join us
         url: ../contact/
       title: World-Class Semiconductor Lab
+    - align: left
+      background:
+        color: '#555'
+        image:
+          filename: contact.jpg
+          filters:
+            brightness: 0.8
+        position: center
+      content: Share your knowledge with the group and explore exciting new topics
+        together!
+      link:
+        # icon: graduation-cap
+        # icon_pack: fas
+        text: 📨 Contact us
+        url: ../contact/
+      title: ☕️ Lunch & Learn ☕️
+      
   design:
     interval: 5000
     is_fullscreen: true
@@ -112,8 +118,8 @@ sections:
     background:
       image: 
         filename: research.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 0.4
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -163,8 +169,8 @@ sections:
     background:
       image: 
         filename: code2.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 0.5
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -211,8 +217,8 @@ sections:
     background:
       image: 
         filename: news2.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 0.8
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -259,8 +265,8 @@ sections:
     background:
       image: 
         filename: event2.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 1
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -342,8 +348,8 @@ sections:
     background:
       image: 
         filename: github.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 1
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -363,7 +369,6 @@ sections:
   design:
     columns: '2'
 
-
 - block: markdown
   id: photo
   content:
@@ -381,8 +386,8 @@ sections:
     background:
       image: 
         filename: galary.jpg
-      filters:
-        brightness: 0
+        filters:
+          brightness: 1
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
