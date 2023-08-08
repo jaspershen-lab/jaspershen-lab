@@ -62,7 +62,7 @@ sections:
       <iframe width='100%' height='700' src="https://docs.google.com/spreadsheets/d/1SdmT8HUF7bNdddzfAxXsrrzuBBv8nMmyn15Hm-3d650/edit?usp=sharing"></iframe>
   design:
     columns: '1'
-    
+
 - block: markdown
   content:
     title:
