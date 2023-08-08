@@ -27,10 +27,19 @@ main:
     weight: 60
   - name: <i class="fa-brands fa-github"></i> GitHub
     url: '#github'
+    weight: 65
+  - name: ✈️ More
+    identifier: more
     weight: 70
   - name: <i class="fa-brands fa-twitter"></i> Twitter
+    parent: more
     url: '#twitter'
-    weight: 80
-  - name: 📸 Photo
-    url: '#photo'
     weight: 90
+  - name: 📸 Photo
+    parent: more
+    url: '#photo'
+    weight: 100
+  - name: 🤝 Collaborators
+    parent: more
+    url: 'collaborators'
+    weight: 110
