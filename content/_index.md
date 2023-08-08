@@ -321,6 +321,15 @@ sections:
     columns: '2'
 
 - block: markdown
+  content:
+    title: 
+    text: |-
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.204215852551!2d-122.15243152416453!3d37.408647733166056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba9668905241%3A0x12fb78358a01dfe9!2s3165%20Porter%20Dr%2C%20Palo%20Alto%2C%20CA%2094304!5e0!3m2!1sen!2sus!4v1691293034620!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  design:
+    columns: '1'
+
+
+- block: markdown
   id: github
   content:
     title: 😺 GitHub
