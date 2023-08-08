@@ -19,7 +19,7 @@ links:
     url: https://twitter.com/georgecushen
   - icon: github
     icon_pack: fab
-    name: Link
+    name: Code
     url: https://twitter.com/georgecushen
 url_code: ''
 url_pdf: ''
