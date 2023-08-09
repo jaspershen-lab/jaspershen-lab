@@ -280,13 +280,13 @@ sections:
   id: contact
   content:
     title: 📨 Contact
-    subtitle:
+    subtitle: ":point_right: [More social media](./contact/)"
     text: |-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
     # Contact (add or remove contact options as necessary)
     email: test@example.org
     phone: 888 888 88 88
-    appointment_url: 'https://calendly.com'
+    # appointment_url: 'https://calendly.com'
     # address:
     #   street: 450 Serra Mall
     #   city: Stanford
@@ -294,17 +294,17 @@ sections:
     #   postcode: '94305'
     #   country: United States
     #   country_code: US
-    office_hours:
-      - 'Weekdays 9:00 to 18:00'
+    # office_hours:
+    #   - 'Weekdays 9:00 to 18:00'
     contact_links:
       # - icon: twitter
       #   icon_pack: fab
       #   name: Follow us on Twitter
       #   link: 'https://twitter.com/Twitter'
-      - icon: video
-        icon_pack: fas
-        name: Zoom Me
-        link: 'https://zoom.com'
+      # - icon: video
+      #   icon_pack: fas
+      #   name: Zoom Me
+      #   link: 'https://zoom.com'
       - icon: weixin
         icon_pack: fab
         name: Follow us on WeChat
@@ -326,15 +326,14 @@ sections:
   design:
     columns: '2'
 
-- block: markdown
-  content:
-    title: 🌍 Address
-    subtitle: 👉 450 Serra Mall, CA 94304, USA
-    text: |-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.204215852551!2d-122.15243152416453!3d37.408647733166056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba9668905241%3A0x12fb78358a01dfe9!2s3165%20Porter%20Dr%2C%20Palo%20Alto%2C%20CA%2094304!5e0!3m2!1sen!2sus!4v1691293034620!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  design:
-    columns: '2'
-
+# - block: markdown
+#   content:
+#     title: 🌍 Address
+#     subtitle: 👉 450 Serra Mall, CA 94304, USA
+#     text: |-
+#       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.204215852551!2d-122.15243152416453!3d37.408647733166056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba9668905241%3A0x12fb78358a01dfe9!2s3165%20Porter%20Dr%2C%20Palo%20Alto%2C%20CA%2094304!5e0!3m2!1sen!2sus!4v1691293034620!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+#   design:
+#     columns: '2'
 
 - block: markdown
   id: github
@@ -359,24 +358,24 @@ sections:
       # Text color (true=light, false=dark, or remove for the dynamic theme color).
       text_color_light: true
 
-- block: markdown
-  id: twitter
-  content:
-    title: 🐦 Twitter
-    subtitle: ''
-    text: |-
-      <a class="twitter-timeline" data-height="800" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  design:
-    columns: '2'
+# - block: markdown
+#   id: twitter
+#   content:
+#     title: 🐦 Twitter
+#     subtitle: ''
+#     text: |-
+#       <a class="twitter-timeline" data-height="800" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+#   design:
+#     columns: '2'
 
-- block: markdown
-  id: photo
-  content:
-    title: 📸 Lab Photos
-    subtitle: ''
-    text: 
-  design:
-    columns: '1'
+# - block: markdown
+#   id: photo
+#   content:
+#     title: 📸 Lab Photos
+#     subtitle: ''
+#     text: 
+#   design:
+#     columns: '1'
 
 - block: tag_cloud
   content:

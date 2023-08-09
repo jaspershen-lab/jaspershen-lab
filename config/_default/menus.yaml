@@ -31,15 +31,15 @@ main:
   - name: ✈️ More
     identifier: more
     weight: 70
-  - name: <i class="fa-brands fa-twitter"></i> Twitter
-    parent: more
-    url: '#twitter'
-    weight: 90
-  - name: 📸 Photo
-    parent: more
-    url: '#photo'
-    weight: 100
   - name: 🤝 Collaborators
     parent: more
     url: 'collaborators'
-    weight: 110
+    weight: 80
+  - name: <i class="fa-brands fa-twitter"></i> Twitter
+    parent: more
+    url: 'twitter'
+    weight: 90
+  - name: 📸 Photo
+    parent: more
+    url: 'photo'
+    weight: 100
