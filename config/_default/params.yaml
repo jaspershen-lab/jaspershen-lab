@@ -6,9 +6,9 @@
 # Appearance
 
 appearance:
-  theme_day: ntu
-  theme_night: ntu
-  font: Minimal
+  theme_day: ntu2
+  theme_night: ntu2
+  font: ntu2
   font_size: L
 
 # SEO
@@ -48,7 +48,7 @@ header:
 footer:
   block: minimal2
   copyright:
-    notice: '© {year} Jasper Shen @ [Stanford University](https://mathrice.fr)'
+    notice: '© {year} Jasper Shen Lab@ [Stanford University](https://mathrice.fr)'
     license:
       enable: false
       allow_derivatives: true
