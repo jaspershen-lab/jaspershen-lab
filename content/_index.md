@@ -80,7 +80,7 @@ sections:
     title: 🔬 Research 
     # text: |-
     #   {{% callout note %}}
-    #   [Detailed research can be found here](./research/).
+    #   [Detailed Research](./research/).
     #   {{% /callout %}}
     align: left
     items:
@@ -111,7 +111,7 @@ sections:
     filters:
       folders:
         - research
-    subtitle: ":point_right: [Detailed research can be found here](./research/)"
+    subtitle: ":point_right: [Detailed Research](./research/)"
   design:
     # Choose how many columns the section has. Valid values: '1' or '2'.
     columns: '1'
@@ -155,7 +155,7 @@ sections:
   id: software
   content:
     title: 🖥️ Software
-    subtitle: ":point_right: [All software can be found here](./all_software/)"
+    subtitle: ":point_right: [All Software](./all_software/)"
     text: ""
     filters:
       folders:
@@ -185,7 +185,7 @@ sections:
   content:
     count: 5
     title: 📃 Recent Publications 
-    subtitle: ":point_right: [All publication can be found here](./publication/)"
+    subtitle: ":point_right: [All Publications](./publication/)"
     text: 
     filters:
       folders:
@@ -208,7 +208,7 @@ sections:
     offset: 0
     order: desc
     page_type: post
-    subtitle: ":point_right: [All news can be found here](./post/)"
+    subtitle: ":point_right: [All News](./post/)"
     title: 📰 Latest News
     text: 
   design:
@@ -234,10 +234,10 @@ sections:
     sort_ascending: true
     sort_by: Params.last_name
     title: 👥 Team
-    subtitle: ":point_right: [All team member can be found here](./people/)"
+    subtitle: ":point_right: [All Team Members](./people/)"
     # text: |-
     #   {{% callout note %}}
-    #   [All team member can be found here](./people/).
+    #   [All team members](./people/).
     #   {{% /callout %}}
     user_groups:
     - Principal Investigators
@@ -253,7 +253,7 @@ sections:
   content:
     count: 3
     title: 🎫 Recent Events
-    subtitle: ":point_right: [All events can be found here](./event/)"
+    subtitle: ":point_right: [All Events](./event/)"
     text: 
     filters:
       folders:
@@ -339,7 +339,7 @@ sections:
   id: github
   content:
     title: 😺 GitHub
-    subtitle: ":point_right: [GitHub can be found here](https://github.com/jaspershen-lab2)"
+    subtitle: ":point_right: [GitHub Link](https://github.com/jaspershen-lab2)"
     text: |-
       <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
   design:

@@ -7,12 +7,12 @@ main:
   - name: 🔬 Research
     url: '#research'
     weight: 10
-  - name: 🖥️ Software
+  - name: 🏆 Software/Publications
     url: '#software'
     weight: 11
-  - name: 📃 Publications
-    url: '#publication'
-    weight: 12
+  # - name: 📃 Publications
+  #   url: '#publication'
+  #   weight: 12
   - name: 📰 News
     url: '#news'
     weight: 20
