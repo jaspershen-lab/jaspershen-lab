@@ -44,8 +44,10 @@ sections:
     sort_by: Params.last_name
     title: 👥 Other members
     user_groups:
-    - Researchers
-    - Grad Students
+    - Postdocs
+    - Research Scientist
+    - Graduate Students
+    - Undergraduate Students
     - Administration
     - Visitors
     - Alumni

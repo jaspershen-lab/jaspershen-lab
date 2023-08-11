@@ -240,9 +240,9 @@ sections:
     #   [All team members](./people/).
     #   {{% /callout %}}
     user_groups:
-    - Principal Investigators
+    - Principal Investigator
     - Researchers
-    - Grad Students
+    - Students
   design:
     show_interests: false
     show_role: true
@@ -335,28 +335,28 @@ sections:
 #   design:
 #     columns: '2'
 
-- block: markdown
-  id: github
-  content:
-    title: 😺 GitHub
-    subtitle: ":point_right: [GitHub Link](https://github.com/jaspershen-lab2)"
-    text: |-
-      <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
-  design:
-    columns: '2'
-    background:
-      image: 
-        filename: github.jpg
-        filters:
-          brightness: 1
-      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
-      # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
-      # Use a fun parallax-like fixed background effect on desktop? true/false
-      parallax: true
-      # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
+# - block: markdown
+#   id: github
+#   content:
+#     title: 😺 GitHub
+#     subtitle: ":point_right: [GitHub Link](https://github.com/jaspershen-lab2)"
+#     text: |-
+#       <img src="http://ghchart.rshah.org/jaspershen" alt="jaspershen-lab" width = "100%"/>
+#   design:
+#     columns: '2'
+#     background:
+#       image: 
+#         filename: github.jpg
+#         filters:
+#           brightness: 1
+#       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+#       size: cover
+#       # Image focal point. Options include `left`, `center` (default), or `right`.
+#       position: center
+#       # Use a fun parallax-like fixed background effect on desktop? true/false
+#       parallax: true
+#       # Text color (true=light, false=dark, or remove for the dynamic theme color).
+#       text_color_light: true
 
 # - block: markdown
 #   id: twitter

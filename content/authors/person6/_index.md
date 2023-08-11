@@ -23,7 +23,7 @@ last_name: Bighetti
 organizations:
 - name: Stanford University
   url: ""
-role: Professor of Artificial Intelligence
+role: Visiting Student
 social:
 - icon: envelope
   icon_pack: fas
@@ -40,6 +40,7 @@ social:
 superuser: true
 title: Nelson Bighetti
 user_groups:
+- Researchers
 - Visitors
 ---
 
