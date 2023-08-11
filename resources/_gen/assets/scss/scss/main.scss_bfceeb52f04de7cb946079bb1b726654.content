@@ -7352,11 +7352,11 @@ a:focus {
 
 .dark a,
 .dark h3.article-title a:hover {
-  color: #7c9a92; }
+  color: #9fedd4; }
 
 .dark a:not(.btn):hover,
 .dark a:not(.btn):focus {
-  color: #7c9a92; }
+  color: #9fedd4; }
 
 pre,
 code {
@@ -9001,7 +9001,7 @@ html[dir='rtl'] body {
   color: #007C48; }
 
 .home-section.dark a {
-  color: #7c9a92; }
+  color: #9fedd4; }
 
 /* Override dark colors that may be inherited from body.dark */
 .home-section.dark,
