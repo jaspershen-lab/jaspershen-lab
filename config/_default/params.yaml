@@ -98,7 +98,7 @@ features:
       category: 'Announcements'
       category_id: 'DIC_kwDOKCc44c4CYXS_'
   search:
-    provider: algolia
+    provider: wowchemy
     algolia:
       app_id: 'KZN4XT95B1'
       api_key: 'ffb4e7ce2faa874ed5f9d8a121f86c2a'
