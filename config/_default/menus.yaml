@@ -7,12 +7,12 @@ main:
   - name: 🔬 Research
     url: '#research'
     weight: 10
-  - name: 🏆 Software/Publications
+  - name: 🖥️ Software
     url: '#software'
     weight: 11
-  # - name: 📃 Publications
-  #   url: '#publication'
-  #   weight: 12
+  - name: 📃 Publications
+    url: '#publication'
+    weight: 12
   - name: 📰 News
     url: '#news'
     weight: 20
@@ -35,11 +35,15 @@ main:
     parent: more
     url: 'collaborators'
     weight: 80
-  - name: <i class="fa-brands fa-twitter"></i> Twitter
-    parent: more
-    url: 'twitter'
-    weight: 90
   - name: 📸 Photo
     parent: more
     url: 'photo'
-    weight: 100
+    weight: 90
+  - name: <i class="fa-brands fa-github"></i> GitHub
+    parent: more
+    url: 'https://github.com/yewton/yewton.net'
+    weight: 110
+  - name: <i class="fa-brands fa-twitter"></i> Twitter
+    parent: more
+    url: 'https://twitter.com/elonmusk?ref_src=twsrc%5Etfw'
+    weight: 110

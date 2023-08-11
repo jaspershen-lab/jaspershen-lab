@@ -98,11 +98,11 @@ features:
       category: 'Announcements'
       category_id: 'DIC_kwDOKCc44c4CYXS_'
   search:
-    provider: wowchemy
+    provider: algolia
     algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
+      app_id: 'KZN4XT95B1'
+      api_key: 'ffb4e7ce2faa874ed5f9d8a121f86c2a'
+      index_name: 'jaspershen-lab'
       show_logo: true
   map:
     provider: 'mapnik'
