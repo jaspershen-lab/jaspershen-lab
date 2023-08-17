@@ -7,5 +7,5 @@ google_fonts = "family=Bruno+Ace&family=Limelight&family=Poppins:ital,wght@0,100
 # Font families
 heading_font = "Limelight"
 body_font = "Poppins"
-nav_font = "Limelight"
-mono_font = "Limelight"
+nav_font = "Poppins"
+mono_font = "Poppins"

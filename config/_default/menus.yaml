@@ -25,9 +25,9 @@ main:
   - name: 📨 Contact
     url: '#contact'
     weight: 60
-  - name: <i class="fa-brands fa-github"></i> GitHub
-    url: '#github'
-    weight: 65
+  # - name: <i class="fa-brands fa-github"></i> GitHub
+  #   url: '#github'
+  #   weight: 65
   - name: ✈️ More
     identifier: more
     weight: 70
@@ -39,11 +39,11 @@ main:
     parent: more
     url: 'photo'
     weight: 90
-  - name: <i class="fa-brands fa-github"></i> GitHub
-    parent: more
-    url: 'https://github.com/yewton/yewton.net'
-    weight: 110
-  - name: <i class="fa-brands fa-twitter"></i> Twitter
-    parent: more
-    url: 'https://twitter.com/elonmusk?ref_src=twsrc%5Etfw'
-    weight: 110
+  # - name: <i class="fa-brands fa-github"></i> GitHub
+  #   parent: more
+  #   url: 'https://github.com/yewton/yewton.net'
+  #   weight: 110
+  # - name: <i class="fa-brands fa-twitter"></i> Twitter
+  #   parent: more
+  #   url: 'https://twitter.com/elonmusk?ref_src=twsrc%5Etfw'
+  #   weight: 110

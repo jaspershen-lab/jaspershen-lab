@@ -47,6 +47,20 @@ social:
 - icon: orcid
   icon_pack: ai
   link: https://github.com/gcushen
+- display:
+    header: true
+  icon: github
+  icon_pack: fab
+  label: Follow us on GitHub
+  link: https://github.com/gcushen
+- display:
+    header: true
+  icon: twitter
+  icon_pack: fab
+  label: Follow us on Twitter
+  link: https://github.com/gcushen
+status:
+  icon: ☕️
 superuser: true
 title: Nelson Bighetti
 user_groups:
