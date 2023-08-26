@@ -368,14 +368,14 @@ sections:
 #   design:
 #     columns: '2'
 
-# - block: markdown
-#   id: photo
-#   content:
-#     title: 📸 Lab Photos
-#     subtitle: ''
-#     text: 
-#   design:
-#     columns: '1'
+- block: markdown
+  id: photo
+  content:
+    title: 📸 Lab Photos
+    subtitle: ''
+    text: '{{< gallery album="lab2" >}}'
+  design:
+    columns: '1'
 
 - block: tag_cloud
   content:
