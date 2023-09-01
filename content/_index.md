@@ -198,7 +198,7 @@ sections:
 - block: collection
   id: news
   content:
-    count: 10
+    count: 5
     filters:
       author: ""
       category: ""

@@ -69,6 +69,8 @@ features:
     positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new)'
     negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
   syntax_highlighter:
+    theme_light: dracula
+    theme_dark: dracula
     enable: true
     extra_languages:
       - r
@@ -86,17 +88,17 @@ features:
     gravatar: true
     shape: circle
   comment:
-    provider: 'giscus'
+    provider: 'disqus'
     disqus:
-      shortname: ''
+      shortname: 'blog-at8qrhng8b'
       show_count: true
     commento:
       url: ''
     giscus:
-      repo: 'jaspershen-lab/jaspershen-lab'
-      repo_id: 'R_kgDOKCc44Q'
-      category: 'Announcements'
-      category_id: 'DIC_kwDOKCc44c4CYXS_'
+      repo: ''
+      repo_id: ''
+      category: ''
+      category_id: ''
   search:
     provider: wowchemy
     algolia:
