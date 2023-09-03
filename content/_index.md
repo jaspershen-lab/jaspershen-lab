@@ -168,7 +168,7 @@ sections:
     flip_alt_rows: true
     background:
       image: 
-        filename: code2.jpg
+        filename: "code.jpg"
         filters:
           brightness: 0.5
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
@@ -313,9 +313,9 @@ sections:
     autolink: true
     # Email form provider
     form:
-      provider: netlify
+      provider: formspree
       formspree:
-        id:
+        id: xpzgpjby
       netlify:
         # Enable CAPTCHA challenge to reduce spam?
         captcha: false
