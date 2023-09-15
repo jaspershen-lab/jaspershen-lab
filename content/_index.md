@@ -15,7 +15,7 @@ sections:
             brightness: 0.8
         position: right
       content: Take a look at what we're working on...
-      title: "👋 Welcome to the group 👋"
+      title: "👋 Welcome to our group 👋"
     - align: left
       background:
         color: '#333'
