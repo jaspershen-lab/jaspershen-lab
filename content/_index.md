@@ -170,7 +170,7 @@ sections:
       image:
         filename: "code.jpg"
         filters:
-          brightness: 0.5
+          brightness: 0.2
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
