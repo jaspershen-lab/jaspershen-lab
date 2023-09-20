@@ -215,8 +215,8 @@ sections:
     columns: "2"
     view: list
     background:
-      image:
-        filename: news2.jpg
+      video:
+        filename: news-background.mp4
         filters:
           brightness: 0.8
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
@@ -264,9 +264,9 @@ sections:
     view: compact
     background:
       image:
-        filename: event2.jpg
+        filename: events.jpg
         filters:
-          brightness: 1
+          brightness: 0.15
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -383,8 +383,8 @@ sections:
   design:
     columns: '1'
     background:
-      image:
-        filename: galary.jpg
+      video:
+        filename: tags_background.mp4
         filters:
           brightness: 1
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
