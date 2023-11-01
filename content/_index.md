@@ -1,5 +1,5 @@
 ---
-date: "2023-08-01"
+date: "2023-11-01"
 title: null
 type: landing
 sections:
@@ -24,13 +24,13 @@ sections:
           filters:
             brightness: 0.8
         position: center
-      content: Just opened last month!
+      content: Omics and Health!
       link:
         icon: graduation-cap
         icon_pack: fas
         text: Join us
         url: ../contact/
-      title: World-Class Semiconductor Lab
+      title: The Omics for Health
     - align: left
       background:
         color: '#555'
@@ -39,14 +39,13 @@ sections:
           filters:
             brightness: 0.8
         position: center
-      content: Share your knowledge with the group and explore exciting new topics
-        together!
+      content: Please Reach Out Us!
       link:
         # icon: graduation-cap
         # icon_pack: fas
         text: 📨 Contact us
         url: ../contact/
-      title: ☕️ Lunch & Learn ☕️
+      title: ☕️ Talking and Learning ☕️
       
   design:
     interval: 5000
@@ -61,7 +60,7 @@ sections:
     text: |
       <br>
 
-      Dr. Emily Carter is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
+      Dr. Jasper Shen is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
       {{% cta cta_link="./people/" cta_text="Join US →" %}}
     title: |
       Opportunities
@@ -281,19 +280,18 @@ sections:
   content:
     title: 📨 Contact
     subtitle: ":point_right: [More social media](./contact/)"
-    text: |-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
+    text: 
     # Contact (add or remove contact options as necessary)
     email: test@example.org
     phone: 888 888 88 88
     # appointment_url: 'https://calendly.com'
-    # address:
-    #   street: 450 Serra Mall
-    #   city: Stanford
-    #   region: CA
-    #   postcode: '94305'
-    #   country: United States
-    #   country_code: US
+    address:
+      street: 450 Serra Mall
+      city: Stanford
+      region: CA
+      postcode: '94305'
+      country: United States
+      country_code: US
     # office_hours:
     #   - 'Weekdays 9:00 to 18:00'
     contact_links:
@@ -313,9 +311,11 @@ sections:
     autolink: true
     # Email form provider
     form:
-      provider: formspree
       formspree:
         id: xpzgpjby
+      netlify:
+        captcha: false
+      provider: formspree
       netlify:
         # Enable CAPTCHA challenge to reduce spam?
         captcha: false

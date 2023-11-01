@@ -19,20 +19,14 @@ sections:
     email: test@example.org
     form:
       formspree:
-        id: null
+        id: xpzgpjby
       netlify:
         captcha: false
-      provider: netlify
+      provider: formspree
     office_hours:
-    - Monday 10:00 to 13:00
-    - Wednesday 09:00 to 10:00
-    phone: 888 888 88 88
-    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus
-      augue non tempor egestas. Proin nisl nunc, dignissim in accumsan dapibus, auctor
-      ullamcorper neque. Quisque at elit felis. Vestibulum ante ipsum primis in faucibus
-      orci luctus et ultrices posuere cubilia curae; Aenean eget elementum odio. Cras
-      interdum eget risus sit amet aliquet. In volutpat, nisl ut fringilla dignissim,
-      arcu nisl suscipit ante, at accumsan sapien nisl eu eros.
+    - Monday - Friday 09:00 to 18:00
+    phone: +1 571 267 9283
+    text: 
     title: Contact
   design:
     columns: "1"
@@ -42,24 +36,24 @@ sections:
 #     subtitle: ""
 #     text: null
 #     title: null
-#   design:
-#     background:
-#       image:
-#         filename: contact.jpg
-#         filters:
-#           brightness: 1
-#         parallax: false
-#         position: center
-#         size: cover
-#         text_color_light: true
-#     columns: "1"
-#     css_class: fullscreen
-#     spacing:
-#       padding:
-#       - 20px
-#       - "0"
-#       - 20px
-#       - "0"
+  design:
+    background:
+      image:
+        filename: contact_us.jpg
+        filters:
+          brightness: 1
+        parallax: false
+        position: center
+        size: cover
+        text_color_light: true
+    columns: "1"
+    css_class: fullscreen
+    spacing:
+      padding:
+      - 20px
+      - "0"
+      - 20px
+      - "0"
 title: Contact
 type: landing
 ---

@@ -39,7 +39,7 @@ content:
         position: center
         color: '#333'
         brightness: 0.5
-        media: welcome.jpg
+        media: group_photo.jpg
         fit: cover
       link:
         icon: graduation-cap
