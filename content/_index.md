@@ -14,8 +14,13 @@ sections:
           filters:
             brightness: 0.8
         position: right
-      content: Take a look at what we're working on...
-      title: "👋 Welcome to our group 👋"
+      content: Learn more about what we're working on...
+      link:
+        icon: flask
+        icon_pack: fas
+        text: Our research
+        url: ../research/
+      title: "👋 Welcome to Shen's group@NTU 👋"
     - align: left
       background:
         color: '#333'
