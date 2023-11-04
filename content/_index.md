@@ -10,7 +10,7 @@ sections:
       background:
         color: '#666'
         image:
-          filename: multi-omics2.jpg
+          filename: multi-omics.jpg
           filters:
             brightness: 0.8
         position: right
@@ -61,7 +61,7 @@ sections:
 - block: hero
   content:
     image:
-      filename: join_us2.jpg
+      filename: join_us.jpg
     text: |
       <br>
 
