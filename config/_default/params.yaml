@@ -85,7 +85,7 @@ features:
     branch: main
     editable: true
   avatar:
-    gravatar: true
+    gravatar: false
     shape: circle
   comment:
     provider: 'disqus'

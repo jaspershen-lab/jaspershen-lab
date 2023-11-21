@@ -287,14 +287,14 @@ sections:
     subtitle: ":point_right: [More social media](./contact/)"
     text: 
     # Contact (add or remove contact options as necessary)
-    email: test@example.org
-    phone: 888 888 88 88
+    email: shenxt1990@outlook.com
+    phone: +1 571-267-9283
     # appointment_url: 'https://calendly.com'
     address:
-      street: 450 Serra Mall
+      street: 3165 Porter Drive
       city: Stanford
       region: CA
-      postcode: '94305'
+      postcode: '94304'
       country: United States
       country_code: US
     # office_hours:
@@ -311,7 +311,15 @@ sections:
       - icon: weixin
         icon_pack: fab
         name: Follow us on WeChat
-        link: 'https://zoom.com'
+        link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
+      - icon: twitter
+        icon_pack: fab
+        name: Follow us on Twitter
+        link: https://twitter.com/xiaotaoshen1990
+      - icon: github
+        icon_pack: fab
+        name: Follow us on Github
+        link: https://github.com/jaspershen-lab
     # Automatically link email and phone or display as text?
     autolink: true
     # Email form provider

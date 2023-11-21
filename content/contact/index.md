@@ -1,5 +1,5 @@
 ---
-date: "2022-10-24"
+date: "2023-11-20"
 sections:
 - block: contact
   content:
@@ -7,16 +7,16 @@ sections:
       city: Stanford
       country: United States
       country_code: US
-      postcode: "94305"
+      postcode: "94304"
       region: CA
-      street: 450 Serra Mall
+      street: 3165 Porter Drive
     appointment_url: https://calendly.com
     autolink: true
     coordinates:
       latitude: "37.4275"
       longitude: "-122.1697"
-    directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-    email: test@example.org
+    # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+    email: shenxt1990@outlook.com
     form:
       formspree:
         id: xpzgpjby
@@ -25,7 +25,24 @@ sections:
       provider: formspree
     office_hours:
     - Monday - Friday 09:00 to 18:00
-    phone: +1 571 267 9283
+    contact_links:
+      # - icon: video
+      #   icon_pack: fas
+      #   name: Zoom Me
+      #   link: 'https://zoom.com'
+      - icon: weixin
+        icon_pack: fab
+        name: Follow us on WeChat
+        link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
+      - icon: twitter
+        icon_pack: fab
+        name: Follow us on Twitter
+        link: https://twitter.com/xiaotaoshen1990
+      - icon: github
+        icon_pack: fab
+        name: Follow us on Github
+        link: https://github.com/jaspershen-lab
+    phone: +1 571-267-9283
     text: 
     title: Contact
   design:
@@ -39,7 +56,7 @@ sections:
   design:
     background:
       image:
-        filename: contact_us.jpg
+        filename: 
         filters:
           brightness: 1
         parallax: false
