@@ -155,26 +155,39 @@ sections:
     columns: "1"
     view: community/showcase2
     
-- block: collection
+- block: portfolio
   id: software
   content:
     title: 🖥️ Software
-    subtitle: ":point_right: [All Software](./all_software/)"
+    # subtitle: ":point_right: [All Software](./all_software/)"
     text: ""
+    buttons:
+    - name: All
+      tag: '*'
+    - name: Metabolomics
+      tag: Metabolomics
+    - name: Multi-omics
+      tag: Multi-omics
+    - name: Others
+      tag: Others
+    default_button_index: 0
     filters:
       folders:
         - software
   design:
-    # Choose how many columns the section has. Valid values: '1' or '2'.
-    columns: '2'
-    view: community/compact2
-    # For Showcase view, flip alternate rows?
-    flip_alt_rows: true
+    columns: "2"
+    flip_alt_rows: false
+    view: community/compact4
     background:
-      image:
-        filename: "code.jpg"
+      video:
+      # Name of video in `assets/media/`.
+        filename: pexels_videos_2699 (1080p).mp4
         filters:
-          brightness: 0.2
+          brightness: 0.5
+      # image: 
+      #   filename: coding.mp4
+      #   filters:
+      #     brightness: 0.5
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
@@ -300,10 +313,6 @@ sections:
     # office_hours:
     #   - 'Weekdays 9:00 to 18:00'
     contact_links:
-      # - icon: twitter
-      #   icon_pack: fab
-      #   name: Follow us on Twitter
-      #   link: 'https://twitter.com/Twitter'
       # - icon: video
       #   icon_pack: fas
       #   name: Zoom Me
