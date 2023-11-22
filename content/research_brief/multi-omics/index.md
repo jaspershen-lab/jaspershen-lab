@@ -1,6 +1,7 @@
 ---
 date: "2020-12-01"
-title: 💻 ⌚ 🧬 Multi-Omics Data Integration
+title: 💻 ⌚ 🧬 Multi-Omics Data Integration 
+weight: 1
 ---
 
 Metabolomics is the scientific study of chemical processes involving metabolites, the small molecule substrates, intermediates, and products of cell metabolism.

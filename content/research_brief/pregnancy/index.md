@@ -2,10 +2,11 @@
 date: "2020-12-02"
 image:
   focal_point: top
-title: 🤰 Pregnancy and Pregnancy-related Diseases
+title: 🤰 Pregnancy and Pregnancy-related Diseases 
+weight: 3
 ---
 
-CDeep phenotyping during pregnancy offers an opportunity to define the antecedents of lifelong health and wellness, and to improve pregnancy outcomes.
+Deep phenotyping during pregnancy offers an opportunity to define the antecedents of lifelong health and wellness, and to improve pregnancy outcomes.
 
 <!--more-->
 

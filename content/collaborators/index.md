@@ -14,7 +14,8 @@ sections:
     sort_by: Params.last_name
     title: 🤝 Our Collaborators
     user_groups:
-    - Collaborators
+    - Academia
+    - Industry
   design:
     show_interests: false
     show_role: true

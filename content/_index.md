@@ -136,8 +136,9 @@ sections:
 - block: collection
   id: research
   content:
-    subtitle: ":point_right: [Detailed Research](./research/)"
     title: 🔬 Research
+    subtitle: ":point_right: [Detailed Research](./research/)"
+    text: "Our research is focused on the development of computational methods for the analysis of multi-omics data, with a particular emphasis on metabolomics and microbiome data. We are also interested in the application of these methods to precision medicine, aging, pregnancy, and other health-related areas."
     count: 100
     filters:
       author: ""
