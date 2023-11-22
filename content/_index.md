@@ -10,7 +10,7 @@ sections:
       background:
         color: '#666'
         image:
-          filename: multi-omics.jpg
+          filename: multi-omics2.jpg
           filters:
             brightness: 0.8
         position: right
@@ -65,7 +65,7 @@ sections:
     text: |
       <br>
 
-      Dr. Jasper Shen is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
+      Dr. Xiaotao Shen is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
       {{% cta cta_link="./people/" cta_text="Join US →" %}}
     title: |
       Opportunities
@@ -78,64 +78,66 @@ sections:
 #     # Override your profile text from `authors/admin/_index.md`?
 #     text: The **Shen Lab** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2024.
 
-- block: features
-  id: research
-  content:
-    title: 🔬 Research 
-    # text: |-
-    #   {{% callout note %}}
-    #   [Detailed Research](./research/).
-    #   {{% /callout %}}
-    align: left
-    items:
-      - name: "[Metabolomics](https://en.wikipedia.org/wiki/Metabolomics)"
-        description: 
-        icon: ":computer:"
-        icon_pack: emoji
-      - name: "[Microbiome](https://en.wikipedia.org/wiki/Microbiome)"
-        description: 
-        icon: ":microbe:"
-        icon_pack: emoji
-      - name: "[Wearable](https://pubmed.ncbi.nlm.nih.gov/31021744/)"
-        description: 
-        icon: ":watch:"
-        icon_pack: emoji
-      - name: '[Precision medicine](https://snyderlab.stanford.edu/)'
-        description: 
-        icon: ":dna:"
-        icon_pack: emoji
-      - name: "[Aging](https://en.wikipedia.org/wiki/Ageing)"
-        description: 
-        icon: ":person_white_hair:"
-        icon_pack: emoji
-      - name: "[Pregnancy](https://pubmed.ncbi.nlm.nih.gov/31969484/)"
-        description:
-        icon: ":pregnant_woman:"
-        icon_pack: emoji
-    filters:
-      folders:
-        - research
-    subtitle: ":point_right: [Detailed Research](./research/)"
-  design:
-    # Choose how many columns the section has. Valid values: '1' or '2'.
-    columns: '1'
-    background:
-      image:
-        filename: research.jpg
-        filters:
-          brightness: 0.4
-      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
-      # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
-      # Use a fun parallax-like fixed background effect on desktop? true/false
-      parallax: true
-      # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
+# - block: features
+#   id: research
+#   content:
+#     title: 🔬 Research 
+#     # text: |-
+#     #   {{% callout note %}}
+#     #   [Detailed Research](./research/).
+#     #   {{% /callout %}}
+#     align: left
+#     items:
+#       - name: "[Metabolomics](https://en.wikipedia.org/wiki/Metabolomics)"
+#         description: 
+#         icon: ":computer:"
+#         icon_pack: emoji
+#       - name: "[Microbiome](https://en.wikipedia.org/wiki/Microbiome)"
+#         description: 
+#         icon: ":microbe:"
+#         icon_pack: emoji
+#       - name: "[Wearable](https://pubmed.ncbi.nlm.nih.gov/31021744/)"
+#         description: 
+#         icon: ":watch:"
+#         icon_pack: emoji
+#       - name: '[Precision medicine](https://snyderlab.stanford.edu/)'
+#         description: 
+#         icon: ":dna:"
+#         icon_pack: emoji
+#       - name: "[Aging](https://en.wikipedia.org/wiki/Ageing)"
+#         description: 
+#         icon: ":person_white_hair:"
+#         icon_pack: emoji
+#       - name: "[Pregnancy](https://pubmed.ncbi.nlm.nih.gov/31969484/)"
+#         description:
+#         icon: ":pregnant_woman:"
+#         icon_pack: emoji
+#     filters:
+#       folders:
+#         - research
+#     subtitle: ":point_right: [Detailed Research](./research/)"
+#   design:
+#     # Choose how many columns the section has. Valid values: '1' or '2'.
+#     columns: '1'
+#     background:
+#       image:
+#         filename: research.jpg
+#         filters:
+#           brightness: 0.4
+#       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+#       size: cover
+#       # Image focal point. Options include `left`, `center` (default), or `right`.
+#       position: center
+#       # Use a fun parallax-like fixed background effect on desktop? true/false
+#       parallax: true
+#       # Text color (true=light, false=dark, or remove for the dynamic theme color).
+#       text_color_light: true
 
 - block: collection
-  id: research_brief
+  id: research
   content:
+    subtitle: ":point_right: [Detailed Research](./research/)"
+    title: 🔬 Research
     count: 100
     filters:
       author: ""
@@ -145,9 +147,6 @@ sections:
       tag: ""
     offset: 0
     order: desc
-    subtitle: ""
-    title: ""
-    text: 
     filters:
       folders:
         - research_brief
@@ -181,21 +180,21 @@ sections:
     background:
       video:
       # Name of video in `assets/media/`.
-        filename: pexels_videos_2699 (1080p).mp4
+        # filename: pexels_videos_2699 (1080p).mp4
         filters:
-          brightness: 0.5
+          # brightness: 0.5
       # image: 
       #   filename: coding.mp4
       #   filters:
       #     brightness: 0.5
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
+      # size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
+      # position: center
       # Use a fun parallax-like fixed background effect on desktop? true/false
       parallax: true
       # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
+      # text_color_light: false
     
 - block: collection
   id: publication
@@ -209,8 +208,8 @@ sections:
         - publication
       exclude_featured: false
   design:
-    columns: '2'
-    view: card
+    columns: '1'
+    view: showcase
     
 - block: collection
   id: news
@@ -283,7 +282,7 @@ sections:
       image:
         filename: events.jpg
         filters:
-          brightness: 0.15
+          brightness: 0.55
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
