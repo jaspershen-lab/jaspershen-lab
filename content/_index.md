@@ -394,10 +394,28 @@ sections:
   id: photo
   content:
     title: 📸 Lab Photos
-    subtitle: ''
-    text: '{{< gallery album="lab2" >}}'
-  design:
-    columns: '1'
+    subtitle: ':point_right: [More photos](./photo/)'
+    text: |-
+      <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+      <div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"
+      data-link="https://photos.app.goo.gl/1cFFZCA5wH4xzbTN8"
+      data-title="Lab Photos"
+      data-description="7 new items added to shared album"
+      data-delay="2">
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc9AuciX07C5ZrdmrGK6U1aDCox1BVvbgRrZuQxvG6Wuq4mlEDKnQrUnWaXElgZpnApWze97-fQWZoTMhXhXw3u8f3oTeU72IgzcrOgOelhLw1_-dok=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc9Z5PSe4PWAGbmVLY3cqf9qeEsmK89Hfrh6q9spaCh36OJbAmqucLv3Jed1t3axEbMky6Ya1lbxRjUt2vDZZo7CDaJn-8IBYr5IlVcPWaM8yszyCB4=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc_UUcx9DBLYnuBE7nkJijtBNdQxZoDWgPofSnGKhZ8GV1kpMdyhMz1o6I7dMwNIdOrMRNQ9bXeb-qP0BctZYABIRkr_6JR2vPhhlr4CBxuSyz_UFJ8=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc8Pufc0dixWvcKANuGXRd-fAmaLKx3bI_u6FinktowRQKYrQDvvw4lDarWJmGW0FEZixX5GGSHZwZkMHM-WbUca1TEq_him1qtgGD--DgDj-q5Xysw=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc92I-weyQms7TxE0v0n-UnSBMBPjMJOoLbrN_1_BhoPiUuH-6GN5hg1rgNdy7jWFHn9gUQEcYbfiA0y7NQzjCQfnCBCjKSuVOPejKqELkTdfhPeoX0=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc-m-RnvEYxhusGLkJ7SisSL06Z_knrqOSWiIC-16rhwdbENyIYfX_jRYrVBz1E7iX1j-UlST5wRdHjzJXioa7DPkCJbCqr--fiZYU659gEGquDMvHI=w1920-h1080"></object>
+      <object data="https://lh3.googleusercontent.com/pw/AIL4fc__Vz74-iENbiuia2rVFypIYHR02nx0L9fpn1QsZ4LIlKv-1o1aSdA4KE2NnLiubSmdpOf1qtjt7jKuAGClbTkazddSK3aWTS36JAN7HEijs_Un_NY=w1920-h1080"></object>
+      </div>
+#     # text: '{{< gallery album="lab" >}}'
+#     text: '<iframe src="https://photos.app.goo.gl/1cFFZCA5wH4xzbTN8" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+# '
+#   design:
+#     columns: '1'
+
 
 - block: tag_cloud
   content:
