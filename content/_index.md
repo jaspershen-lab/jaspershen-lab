@@ -10,11 +10,11 @@ sections:
       background:
         color: '#666'
         image:
-          filename: multi-omics2.jpg
+          filename: multi-omics3.jpg
           filters:
-            brightness: 0.8
+            brightness: 0.7
         position: right
-      content: Learn more about what we're working on...
+      content: Multi-Omics for Health
       link:
         icon: flask
         icon_pack: fas
@@ -29,13 +29,13 @@ sections:
           filters:
             brightness: 0.8
         position: center
-      content: Omics and Health!
+      content: We Welcome You to Join Us!
       link:
         icon: graduation-cap
         icon_pack: fas
         text: Join us
         url: ../contact/
-      title: The Omics for Health
+      title: 🌍 Meet Our Group Members 🌍
     - align: left
       background:
         color: '#555'
@@ -50,7 +50,7 @@ sections:
         # icon_pack: fas
         text: 📨 Contact us
         url: ../contact/
-      title: ☕️ Talking and Learning ☕️
+      title: ☕️ Talking and Collaboration ☕️
       
   design:
     interval: 5000
@@ -232,10 +232,10 @@ sections:
     columns: "2"
     view: list
     background:
-      video:
-        filename: news-background.mp4
+      image:
+        filename: news.jpg
         filters:
-          brightness: 0.8
+          brightness: 0.5
       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
       size: cover
       # Image focal point. Options include `left`, `center` (default), or `right`.
