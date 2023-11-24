@@ -25,7 +25,7 @@ sections:
       background:
         color: '#333'
         image:
-          filename: group_photo.jpg
+          filename: group_photo2.jpg
           filters:
             brightness: 0.8
         position: center
@@ -48,7 +48,7 @@ sections:
       link:
         # icon: graduation-cap
         # icon_pack: fas
-        text: 📨 Contact us
+        text: 📨 Contact Us
         url: ../contact/
       title: ☕️ Talking and Collaboration ☕️
       
