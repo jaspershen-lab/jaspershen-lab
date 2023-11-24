@@ -18,7 +18,7 @@ sections:
       link:
         icon: flask
         icon_pack: fas
-        text: Our research
+        text: Our Research
         url: ../research/
       title: "👋 Welcome to Shen's group@NTU Singapore 👋"
     - align: center
@@ -33,8 +33,8 @@ sections:
       link:
         icon: graduation-cap
         icon_pack: fas
-        text: Join us
-        url: ../contact/
+        text: Meet Our Team
+        url: ../team/
       title: 🌍 Meet Our Group Members 🌍
     - align: center
       background:
@@ -391,7 +391,7 @@ sections:
   id: photo
   content:
     title: 📸 Lab Photos
-    subtitle: ':point_right: [More photos](./photo/)'
+    subtitle: ':point_right: [More Photos](./photo/)'
     text: |-
       <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
       <div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"

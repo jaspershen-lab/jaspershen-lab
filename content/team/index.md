@@ -38,7 +38,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 👥 Other members
+    title: 👥 Other Members
     user_groups:
     - Postdocs
     - Research Scientist
