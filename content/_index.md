@@ -10,7 +10,7 @@ sections:
       background:
         color: '#666'
         image:
-          filename: multi-omics3.jpg
+          filename: multi-omics4.jpg
           filters:
             brightness: 0.7
         position: right
