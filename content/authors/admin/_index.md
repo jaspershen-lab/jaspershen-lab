@@ -27,6 +27,9 @@ organizations:
   url: ""
 role: Nanyang Assistant Professor
 social:
+- icon: house
+  icon_pack: fas
+  link: https://jaspershen.github.io/
 - icon: envelope
   icon_pack: fas
   link: mailto:shenxt1990@outlook.com

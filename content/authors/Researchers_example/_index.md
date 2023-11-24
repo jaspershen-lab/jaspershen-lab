@@ -25,6 +25,12 @@ organizations:
   url: ""
 role: Postdocs
 social:
+- icon: house
+  icon_pack: fas
+  link: 
+- icon: linkedin
+  icon_pack: fab
+  link: 
 - icon: envelope
   icon_pack: fas
   link: 

@@ -20,8 +20,8 @@ sections:
         icon_pack: fas
         text: Our research
         url: ../research/
-      title: "👋 Welcome to Shen's group@NTU 👋"
-    - align: left
+      title: "👋 Welcome to Shen's group@NTU Singapore 👋"
+    - align: center
       background:
         color: '#333'
         image:
@@ -36,7 +36,7 @@ sections:
         text: Join us
         url: ../contact/
       title: 🌍 Meet Our Group Members 🌍
-    - align: left
+    - align: center
       background:
         color: '#555'
         image:
@@ -60,15 +60,15 @@ sections:
 
 - block: hero
   content:
+    title: Opportunities
     image:
-      filename: join_us.jpg
+      filename: join_us2.jpg
     text: |
       <br>
 
-      Dr. Xiaotao Shen is eager to recruit several Ph.D. students and postdocs who share her enthusiasm for advancing the frontiers of knowledge. 
-      {{% cta cta_link="./people/" cta_text="Join US →" %}}
-    title: |
-      Opportunities
+      We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of multi-omics research, focusing on innovative algorithm and method development for the integration of multi-omics data, particularly in the areas of microbiome and metabolome, and their impact on human health. 
+      Positions Available are PhD Students, Postdoctoral Researchers, Research Assistants, and Lab Manager.
+      {{% cta cta_link="./news/2023-11-23-recruitment/" cta_text="More information →" %}}
 
 # - block: about.avatar
 #   id: about
@@ -210,22 +210,19 @@ sections:
       exclude_featured: false
   design:
     columns: '1'
-    view: showcase
+    view: compact
     
 - block: collection
   id: news
   content:
-    count: 5
+    count: 10
     filters:
-      author: ""
-      category: ""
+      folders:
+        - news
       exclude_featured: false
-      publication_type: ""
-      tag: ""
     offset: 0
     order: desc
-    page_type: post
-    subtitle: ":point_right: [All News](./post/)"
+    subtitle: ":point_right: [All News](./news/)"
     title: 📰 Latest News
     text: 
   design:
@@ -246,15 +243,15 @@ sections:
       text_color_light: true
 
 - block: people
-  id: people
+  id: team
   content:
     sort_ascending: true
     sort_by: Params.last_name
     title: 👥 Team
-    subtitle: ":point_right: [All Team Members](./people/)"
+    subtitle: ":point_right: [All Team Members](./team/)"
     # text: |-
     #   {{% callout note %}}
-    #   [All team members](./people/).
+    #   [All team members](./team/).
     #   {{% /callout %}}
     user_groups:
     - Principal Investigator
@@ -297,7 +294,7 @@ sections:
   id: contact
   content:
     title: 📨 Contact
-    subtitle: ":point_right: [More social media](./contact/)"
+    # subtitle: ":point_right: [More social media](./contact/)"
     text: 
     # Contact (add or remove contact options as necessary)
     email: shenxt1990@outlook.com

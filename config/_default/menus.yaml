@@ -17,7 +17,7 @@ main:
     url: '#news'
     weight: 20
   - name: Team
-    url: '#people'
+    url: '#team'
     weight: 30
   - name: Events
     url: '#event'
