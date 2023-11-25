@@ -66,8 +66,8 @@ sections:
     text: |
       <br>
 
-      We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of multi-omics research, focusing on innovative algorithm and method development for the integration of multi-omics data, particularly in the areas of microbiome and metabolome, and their impact on human health. 
-      Positions Available are PhD Students, Postdoctoral Researchers, Research Assistants, and Lab Manager.
+      We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of **multi-omics research**, focusing on innovative algorithm and method development for the **integration of multi-omics data**, particularly in the areas of **microbiome and metabolome**, and their impact on human health. 
+      Positions Available are **PhD Students, Postdoctoral Researchers, Research Assistants, and Lab Manager**.
       {{% cta cta_link="./news/2023-11-23-recruitment/" cta_text="More information →" %}}
 
 # - block: about.avatar
@@ -138,7 +138,7 @@ sections:
   content:
     title: 🔬 Research
     subtitle: ":point_right: [Detailed Research](./research/)"
-    text: "Our research is focused on the development of computational methods for the analysis of multi-omics data, with a particular emphasis on metabolomics and microbiome data. We are also interested in the application of these methods to precision medicine, aging, pregnancy, and other health-related areas."
+    text: "Our research is focused on the development of computational methods for the analysis of <u>multi-omics data</u>, with a particular emphasis on <u>metabolomics and microbiome data</u>. We are also interested in the application of these methods to <u>precision medicine, aging, pregnancy, and other health-related areas</u>."
     count: 100
     filters:
       author: ""
