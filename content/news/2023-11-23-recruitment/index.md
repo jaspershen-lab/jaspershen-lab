@@ -98,4 +98,4 @@ For **Postdoctoral, PhD, and Research Assistant** roles, submit your CV, a cover
 
 For **Visiting Scholar** roles, please forward your CV and a cover letter to xiaotao.shen@outlook.com.
 
-For the **Laboratory Manager** position, send your CV and a cover letter to xiaotao.shen@outlook.com.
+For the **Laboratory Manager**, send your CV and a cover letter to xiaotao.shen@outlook.com.
