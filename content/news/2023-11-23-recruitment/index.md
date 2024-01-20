@@ -14,29 +14,88 @@ title: 2023-11-23 Opportunities in Shen Lab
 #   url: file/Bio-X_Poster-Xiaotao-Shen.pdf
 ---
 
-**Join Shen Lab at Nanyang Technological University: Opportunities in Multi-Omics Research for Human Health**
+**Join Shen Lab at Nanyang Technological University Singapore: Opportunities in Multi-Omics Research for Human Health**
 
-We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of multi-omics research, focusing on innovative algorithm and method development for the integration of multi-omics data, particularly in the areas of microbiome and metabolome, and their impact on human health.
+We are thrilled to announce a range of open positions at Shen Lab, Nanyang Technological University, Singapore. Join our dynamic team, which is spearheading the field of multi-omics research. Our focus lies in developing groundbreaking algorithms and methods to integrate multi-omics data. We particularly emphasize research in microbiome and metabolome and their implications for human health, including aging and pregnancy-related diseases.
 
-**Positions Available:**
-- **PhD Students:** Dive deep into cutting-edge research, develop your expertise, and contribute to groundbreaking discoveries.
-- **Postdoctoral Researchers:** Expand your research horizons, lead projects, and collaborate with a network of experts in the field.
-- **Research Assistants:** Gain valuable hands-on experience in a dynamic research environment, supporting key projects and initiatives.
-- **Lab Manager:** Play a crucial role in the smooth operation of our lab, facilitating research activities and managing resources efficiently.
+Dr. Xiaotao Shen has been honored with the esteemed [Nanyang Assistant Professorship (NAP)](https://www.ntu.edu.sg/research/research-careers/nanyang-assistant-professorship-(nap)). With the Presidential Young Professorship (PYP) at the National University of Singapore (NUS), they are among Singapore's most prestigious awards, given to young researchers to establish and lead their research groups. This accolade ensures stable funding for the lab, providing a solid foundation for our research endeavors.
 
-**We Offer:**
-- A collaborative and innovative research environment.
-- Access to state-of-the-art facilities and technologies.
-- Opportunities for professional development and growth.
-- A supportive community passionate about multi-omics research and its implications for human health.
+**Current Openings:**
 
-**Ideal Candidates Should Have:**
-- A strong academic background in relevant fields.
-- A keen interest in multi-omics research, algorithm development, and data integration.
-- For PhD and postdoc positions: previous research experience in related areas is highly desirable.
-- For the lab manager role: strong organizational skills and experience in lab management.
+## Laboratory Manager
 
-**Application Process:**
-Interested candidates are invited to submit their CV, a cover letter detailing their research interests and experience, and contact information for references to [email address]. 
+Join us as a laboratory manager, where you'll play a crucial role in:
 
-Join us in our quest to advance human health through cutting-edge multi-omics research. We look forward to your applications!
+- Overseeing and coordinating daily laboratory operations.
+- Handling lab equipment and supplies procurement and maintenance.
+- Ensuring compliance with laboratory safety standards.
+- Overseeing financial aspects, including budgeting and expenditure.
+
+**What we offer:**
+
+- A competitive compensation and benefits package.
+- A vibrant, collaborative, and innovative research setting.
+- Ample opportunities for professional advancement.
+
+## Postdoctoral Research Fellow in Multi-Omics Data Integration
+
+**We are looking for candidates with:**
+- A robust background in bioinformatics, computational biology, or related fields. 
+- Proficiency in data analysis using R, Python, or similar programming languages.
+- Excellent communication skills and a team-oriented mindset.
+- A strong track record of publications or preprints in relevant areas.
+- Proficiency in English and exceptional writing abilities.
+- Prior experience in microbiome and metabolome research is advantageous.
+
+**What we offer:**
+
+- A stimulating, collaborative, and forward-thinking research environment.
+- Access to cutting-edge facilities and tools.
+- Professional development and growth opportunities.
+- A competitive salary and benefits package.
+- A lively, multicultural urban setting with a high quality of life.
+- Opportunities for international travel and collaborations across the globe.
+
+## PhD Candidates in Multi-Omics Data Integration and Alzheimer's Disease
+
+**We seek candidates with:**
+
+- A strong foundation in bioinformatics, computational biology, or related fields.
+- Excellent communication skills and a collaborative nature.
+- Proficiency in English and strong writing capabilities.
+
+**What we offer:**
+
+- Comprehensive scholarships and stipends.
+- A collaborative, innovative research atmosphere.
+- Access to modern facilities and technology.
+- Opportunities for professional growth and international collaboration.
+
+## Research Assistant in Bioinformatics and Computational Biology
+
+**We seek candidates with:**
+
+- A foundation in bioinformatics, computational biology, or related fields.
+- Experience in data analysis using programming languages like R and Python.
+- Excellent communication skills and a team-player attitude.
+- Proficiency in English and strong writing skills.
+- Experience in microbiome, proteome, and metabolome research is a plus.
+
+**What we offer:**
+
+- A dynamic, innovative research environment.
+- State-of-the-art facilities and technology.
+- Professional growth opportunities.
+- Pathways to apply for PhD programs at NTU.
+
+## Visiting Scholars
+
+We invite scholars at any career stage for short-term or long-term collaborative visits. We offer an engaging research environment, access to advanced facilities and technologies, and numerous professional development opportunities.
+
+## Application Process
+
+For **Postdoctoral, PhD, and Research Assistant** roles, submit your CV, a cover letter, and contact information for two or three references to xiaotao.shen@outlook.com.
+
+For **Visiting Scholar** roles, please forward your CV and a cover letter to xiaotao.shen@outlook.com.
+
+For the **Laboratory Manager** position, send your CV and a cover letter to xiaotao.shen@outlook.com.
