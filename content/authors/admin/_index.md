@@ -14,7 +14,7 @@ education:
 email: ""
 commentable: true
 first_name: Xiaotao
-last_name: Shen
+last_name: SHEN
 highlight_name: true
 interests:
 - 🖥️ Bioinformatics
@@ -63,7 +63,7 @@ social:
 status:
   icon: ☕️
 superuser: true
-title: Xiaotao Shen
+title: Xiaotao SHEN/申小涛
 user_groups:
 - Principal Investigator
 ---
