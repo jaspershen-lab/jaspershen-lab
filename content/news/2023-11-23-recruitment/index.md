@@ -18,7 +18,7 @@ title: 2023-11-23 Opportunities in Shen Lab
 
 We are thrilled to announce a range of open positions at Shen Lab, Nanyang Technological University, Singapore. Join our dynamic team, which is spearheading the field of multi-omics research. Our focus lies in developing groundbreaking algorithms and methods to integrate multi-omics data. We particularly emphasize research in microbiome and metabolome and their implications for human health, including aging and pregnancy-related diseases.
 
-Dr. Xiaotao Shen has been honored with the esteemed [Nanyang Assistant Professorship (NAP)](https://www.ntu.edu.sg/research/research-careers/nanyang-assistant-professorship-(nap)). With the Presidential Young Professorship (PYP) at the National University of Singapore (NUS), they are among Singapore's most prestigious awards, given to young researchers to establish and lead their research groups. This accolade ensures stable funding for the lab, providing a solid foundation for our research endeavors.
+Dr. Xiaotao Shen has been honored with the esteemed Nanyang Assistant Professorship (NAP). The NAP scheme is awarded to outstanding early career scientists who are exceptional scholars in their field. One of Singapore’s most prestigious awards, this accolade ensures stable funding for the lab, providing a solid foundation for our research endeavors within a highly-ranked global university.”
 
 **Current Openings:**
 
