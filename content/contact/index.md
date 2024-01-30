@@ -16,7 +16,7 @@ sections:
       latitude: "37.4275"
       longitude: "-122.1697"
     # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-    email: shenxt1990@outlook.com
+    email: xiaotao.shen@outlook.com
     form:
       formspree:
         id: xpzgpjby

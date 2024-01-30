@@ -297,7 +297,7 @@ sections:
     # subtitle: ":point_right: [More social media](./contact/)"
     text: 
     # Contact (add or remove contact options as necessary)
-    email: shenxt1990@outlook.com
+    email: xiaotao.shen@outlook.com
     phone: +1 571-267-9283
     # appointment_url: 'https://calendly.com'
     address:

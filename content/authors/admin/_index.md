@@ -32,7 +32,7 @@ social:
   link: https://jaspershen.github.io/
 - icon: envelope
   icon_pack: fas
-  link: mailto:shenxt1990@outlook.com
+  link: mailto:xiaotao.shen@outlook.com
 - display:
     header: true
   icon: github
