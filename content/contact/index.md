@@ -4,7 +4,7 @@ sections:
 - block: contact
   content:
     address:
-      city: Stanford
+      city: Palo Alto
       country: United States
       country_code: US
       postcode: "94304"
