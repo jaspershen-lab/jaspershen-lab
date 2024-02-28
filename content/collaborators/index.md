@@ -12,7 +12,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 🤝 Our Collaborators
+    title: 🤝 Collaborators
     user_groups:
     - Academia
     - Industry

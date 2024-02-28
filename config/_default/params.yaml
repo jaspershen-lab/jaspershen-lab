@@ -9,7 +9,7 @@ appearance:
   theme_day: ntu2
   theme_night: ntu2
   font: ntu3
-  font_size: M
+  font_size: L
 
 # SEO
 
@@ -35,7 +35,7 @@ header:
   navbar:
     block: navbar
     enable: true
-    align: l
+    align: r
     show_logo: true
     show_language: false
     show_translations: true

@@ -136,7 +136,7 @@ sections:
 - block: collection
   id: research
   content:
-    title: 🔬 Research
+    title: 🔬 RESEARCH
     subtitle: ":point_right: [Detailed Research](./research/)"
     text: "Our research is focused on the development of computational methods for the analysis of <u>multi-omics data</u>, with a particular emphasis on <u>metabolomics and microbiome data</u>. We are also interested in the application of these methods to <u>precision medicine, aging, pregnancy, and other health-related areas</u>."
     count: 100
@@ -158,7 +158,7 @@ sections:
 - block: portfolio
   id: software
   content:
-    title: 🖥️ Software
+    title: 🖥️ SOFTWARE
     # subtitle: ":point_right: [All Software](./all_software/)"
     text: ""
     buttons:
@@ -201,7 +201,7 @@ sections:
   id: publication
   content:
     count: 5
-    title: 📃 Recent Publications 
+    title: 📃 PUBLICATION
     subtitle: ":point_right: [All Publications](./publication/)"
     text: 
     filters:
@@ -223,7 +223,7 @@ sections:
     offset: 0
     order: desc
     subtitle: ":point_right: [All News](./news/)"
-    title: 📰 Latest News
+    title: 📰 NEWS
     text: 
   design:
     columns: "2"
@@ -247,7 +247,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 👥 Team
+    title: 👥 TEAM
     subtitle: ":point_right: [All Team Members](./team/)"
     # text: |-
     #   {{% callout note %}}
@@ -266,7 +266,7 @@ sections:
   id: event
   content:
     count: 3
-    title: 🎫 Recent Events
+    title: 🎫 EVENT
     subtitle: ":point_right: [All Events](./event/)"
     text: 
     filters:
@@ -293,7 +293,7 @@ sections:
 - block: contact
   id: contact
   content:
-    title: 📨 Contact
+    title: 📨 CONTACT
     # subtitle: ":point_right: [More social media](./contact/)"
     text: 
     # Contact (add or remove contact options as necessary)
@@ -390,7 +390,7 @@ sections:
 - block: markdown
   id: photo
   content:
-    title: 📸 Lab Photos
+    title: 📸 Photo
     subtitle: ':point_right: [More Photos](./photo/)'
     text: |-
       <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
