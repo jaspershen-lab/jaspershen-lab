@@ -14,13 +14,13 @@ sections:
           filters:
             brightness: 0.7
         position: right
-      content: Multi-Omics for Health
+      content: 
       link:
         icon: flask
         icon_pack: fas
-        text: Our Research
+        text: Research
         url: ../research/
-      title: "👋 Welcome to Shen's group@NTU Singapore 👋"
+      title: "👋 Welcome to Shen's Lab@NTU Singapore 👋"
     - align: center
       background:
         color: '#333'
@@ -29,13 +29,13 @@ sections:
           filters:
             brightness: 0.8
         position: center
-      content: We Welcome You to Join Us!
+      content: 
       link:
         icon: graduation-cap
         icon_pack: fas
-        text: Meet Our Team
+        text: Team
         url: ../team/
-      title: 🌍 Meet Our Group Members 🌍
+      title: 🌍 Meet Our Team Members 🌍
     - align: center
       background:
         color: '#555'
@@ -44,11 +44,11 @@ sections:
           filters:
             brightness: 0.8
         position: center
-      content: Please Reach Out Us!
+      content: 
       link:
         # icon: graduation-cap
         # icon_pack: fas
-        text: 📨 Contact Us
+        text: 📨 Contact
         url: ../contact/
       title: ☕️ Talking and Collaboration ☕️
       
