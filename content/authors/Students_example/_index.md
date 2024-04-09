@@ -50,4 +50,4 @@ user_groups:
 - Graduate Students
 ---
 
-We are recuiting graduate students. Please contact us if you are interested in our research.
+We are recruiting graduate students. Please [contact us](https://www.shen-lab.org/news/2023-11-23-recruitment/) if you are interested in our research.

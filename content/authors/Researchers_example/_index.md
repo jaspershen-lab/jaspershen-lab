@@ -50,5 +50,5 @@ user_groups:
 - Postdocs
 ---
 
-We are recuiting Postdocs. Please contact us if you are interested in our research.
+We are recruiting Postdocs and Research Assistant. Please [contact us](https://www.shen-lab.org/news/2023-11-23-recruitment/) if you are interested in our research.
 

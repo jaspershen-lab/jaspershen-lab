@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/wei-shao-438782115/
 superuser: false
-title: Dr. Wei Shao
+title: Prof. Wei Shao
 user_groups:
 - Academia
 ---
