@@ -20,7 +20,7 @@ sections:
         icon_pack: fas
         text: Research
         url: ../research/
-      title: "👋 Welcome to Shen's Lab@NTU Singapore 👋"
+      title: "👋 Welcome to Shen Lab@NTU, Singapore 👋"
     - align: center
       background:
         color: '#333'
