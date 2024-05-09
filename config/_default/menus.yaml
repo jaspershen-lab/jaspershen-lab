@@ -31,14 +31,18 @@ main:
   - name: MORE
     identifier: more
     weight: 70
-  - name: Collaborators
+  - name: PHOTO
+    parent: more
+    url: 'photo'
+    weight: 80
+  - name: COLLABORATORS
     parent: more
     url: 'collaborators'
-    weight: 80
-  - name: Photo
-    parent: more
-    url: '#photo'
     weight: 90
+  - name: RESOURCES
+    parent: more
+    url: 'https://www.notion.so/shen-lab/Introduction-0760b19e8a714ca1a91068b4a46305dd?pvs=4'
+    weight: 100
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   parent: more
   #   url: 'https://github.com/yewton/yewton.net'
