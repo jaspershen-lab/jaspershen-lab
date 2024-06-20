@@ -4,17 +4,17 @@ sections:
 - block: contact
   content:
     address:
-      city: Palo Alto
-      country: United States
-      country_code: US
-      postcode: "94304"
-      region: CA
-      street: 3165 Porter Drive
+      city: Singapore
+      country: Singapore
+      country_code: SG
+      postcode: "636921"
+      region: Singapore
+      street: 59 Nanyang Dr
     appointment_url: https://calendly.com
     autolink: true
     coordinates:
-      latitude: "37.4275"
-      longitude: "-122.1697"
+      latitude: "1.344921644620385"
+      longitude: "103.67854067345625"
     # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
     email: xiaotao.shen@outlook.com
     form:

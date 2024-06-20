@@ -298,15 +298,15 @@ sections:
     text: 
     # Contact (add or remove contact options as necessary)
     email: xiaotao.shen@outlook.com
-    phone: +1 571-267-9283
+    phone: +65 83042333
     # appointment_url: 'https://calendly.com'
     address:
-      street: 3165 Porter Drive
-      city: Stanford
-      region: CA
-      postcode: '94304'
-      country: United States
-      country_code: US
+      street: 59 Nanyang Dr
+      city: Singapore
+      region: Singapore
+      postcode: '636921'
+      country: Singapore
+      country_code: SG
     # office_hours:
     #   - 'Weekdays 9:00 to 18:00'
     contact_links:
