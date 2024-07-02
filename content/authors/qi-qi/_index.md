@@ -2,37 +2,29 @@
 bio: Metabolomics, Multi-omics, Bioinformatics, Systems Biology.
 education:
   courses:
-  - course: Postdoctoral Research Fellow
-    institution: Stanford University School of Medicine
-    year: 2019-
-  - course: Ph.D. in Bioinformatics and Systems Biology
-    institution: University of Chinese Academy of Sciences
-    year: 2013-2018
-  - course: BSc in Biotechnology
-    institution: Inner Mongolia University
-    year: 2009-2013
-email: ""
+  - course: BSc Biomedical Statistics
+    institution: Xi’an Jiaotong-Liverpool University
+    year: 2021-2025
+email: "Qi.Qi21@student.xjtlu.edu.cn"
 commentable: true
 first_name: Qi
 last_name: QI
 highlight_name: true
 interests:
 - 🖥️ Bioinformatics
-- 📱 Wearable
 - 💰 Multi-omics
-- 👴 Aging and Aging related diseases
-- 🤰 Pregnancy and Pregnancy related diseases
+- 💻 Deep learning
 organizations:
-- name: Nanyang Technological University Singapore
+- name: Xi’an Jiaotong-Liverpool University
   url: ""
 role: Intern
 social:
 - icon: house
   icon_pack: fas
-  link: https://jaspershen.github.io/
+  link: https://github.com/qqqq414
 - icon: envelope
   icon_pack: fas
-  link: mailto:xiaotao.shen@ntu.edu.sg
+  link: Qi.Qi21@student.xjtlu.edu.cn
 - display:
     header: true
   icon: github
@@ -41,35 +33,18 @@ social:
   link: https://github.com/jaspershen-lab
 - display:
     header: true
-  icon: twitter
-  icon_pack: fab
-  label: Follow us on Twitter
-  link: https://twitter.com/xiaotaoshen1990
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?hl=en&user=3TK9yz8AAAAJ
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/shenxt/
 # - icon: cv
 #   icon_pack: ai
-#   link: https://jaspershen.github.io/file/XiaotaoShen_CV.pdf
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/my-orcid?orcid=0000-0002-9608-9964
-- icon: weixin
-  icon_pack: fab
-  link: https://jaspershen.github.io/image/wechat_QR.jpg
+#   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf
 status:
   icon: ☕️
-superuser: true
-title: Qi QI
+superuser: false
+title: Qi Qi
 user_groups:
 - Students
 - Intern
 ---
 
-My overarching research interests are bioinformatics algorithms development for multi-omics data, and their application to precision medicine. Specifically, I am interested in bioinformatics algorithm development, including 1) Comprehensive analysis workflow and deep learning for LC-MS data, 2) Metabolic network analysis, 3) Wearable and multi-omics data integration, and 4) microbiome and metabolome data integration. I also employed the developed bioinformatics algorithms as a unique systems biology approach to study the potential biomarkers and mechanisms of 1) pregnancy and related diseases, 2) aging and related diseases, and 3) cancer. 
-
- :dog: :school: :u7533: :smile: :facepunch: :fist: :family: :panda_face: :earth_asia: :tada: :cn:
+My primary research interests revolve around developing bioinformatics algorithms for multi-omics data and applying these methods to precision medicine. Moreover, my work explores the intersection of technology and biology, with a strong focus on utilizing deep learning and machine learning techniques in the field of bioinformatics.
+ 
 
