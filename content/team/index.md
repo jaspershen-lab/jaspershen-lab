@@ -44,6 +44,7 @@ sections:
     - Research Scientist
     - Graduate Students
     - Undergraduate Students
+    - Intern
     - Administration
     - Visitors
     - Alumni
