@@ -4,14 +4,14 @@ education:
   courses:
   - course: Postdoctoral Research Fellow
     institution: Stanford University School of Medicine
-    year: 2019-
+    year: 2019/4-2024/4
   - course: Ph.D. in Bioinformatics and Systems Biology
     institution: University of Chinese Academy of Sciences
-    year: 2013-2018
+    year: 2013/9-2018/12
   - course: BSc in Biotechnology
     institution: Inner Mongolia University
-    year: 2009-2013
-email: ""
+    year: 2009/9-2013/7
+email: "xiaotao.shen@ntu.edu.sg"
 commentable: true
 first_name: Xiaotao
 last_name: SHEN
