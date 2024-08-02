@@ -5,9 +5,6 @@ education:
   - course: Master Degree (Biostatistics)
     institution: Columbia University
     year: 2020-2022
-  - course: Bachelor Degree
-    institution: University of Chinese Academy of Sciences
-    year: 2013/9-2018/12
   - course: Bachelor Degree (Mathematics and Data Science)
     institution: New York University Shanghai
     year: 2016-2020
