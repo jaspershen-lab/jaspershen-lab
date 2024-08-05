@@ -42,7 +42,7 @@ superuser: false
 title: Zijing DU
 user_groups:
 - Students
-- PhD Candidate
+- Graduate Students
 ---
 
 My primary research interests revolve around the epidemiology of eye diseases and systemic diseases, and exploring disease mechanisms based on wearable devices and multi-omics approaches.
