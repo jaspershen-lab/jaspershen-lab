@@ -46,8 +46,8 @@ social:
 superuser: true
 title: We want you!
 user_groups:
-- Researchers
-- Postdocs
+- Researchers1
+- Postdocs1
 ---
 
 We are recruiting Postdocs and Research Assistant. Please [contact us](https://www.shen-lab.org/news/2023-11-23-recruitment/) if you are interested in our research.
