@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Southern Medical University
   url: ""
-role: PhD Candidate
+role: Visiting PhD Student
 social:
 - icon: house
   icon_pack: fas

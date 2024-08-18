@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Xi’an Jiaotong-Liverpool University
   url: ""
-role: Intern
+role: Remote Intern
 social:
 - icon: house
   icon_pack: fas
@@ -39,7 +39,7 @@ social:
 status:
   icon: ☕️
 superuser: false
-title: Qi Qi
+title: Qi QI
 user_groups:
 - Students
 - Intern
