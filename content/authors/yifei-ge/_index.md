@@ -33,9 +33,9 @@ social:
   link: https://github.com/GriffyGe
 - display:
     header: true
-- icon: cv
-  icon_pack: ai
-  link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf
+# - icon: cv
+#   icon_pack: ai
+#   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf
 status:
   icon: ☕️
 superuser: false
