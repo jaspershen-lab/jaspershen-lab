@@ -41,7 +41,6 @@ status:
 superuser: false
 title: Zirui QIANG
 user_groups:
-- Students
 - Intern
 ---
 

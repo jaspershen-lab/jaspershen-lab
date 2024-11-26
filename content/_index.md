@@ -257,6 +257,7 @@ sections:
     - Principal Investigator
     - Researchers
     - Students
+    - Intern
   design:
     show_interests: false
     show_role: true

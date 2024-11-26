@@ -41,7 +41,6 @@ status:
 superuser: false
 title: Qi QI
 user_groups:
-- Students
 - Intern
 ---
 

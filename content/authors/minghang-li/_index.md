@@ -41,7 +41,6 @@ status:
 superuser: false
 title: Minghang LI
 user_groups:
-- Students
 - Intern
 ---
 

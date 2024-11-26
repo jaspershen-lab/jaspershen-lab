@@ -39,7 +39,7 @@ social:
 status:
   icon: ☕️
 superuser: false
-title: Sahana Rahim
+title: Sahana RAHIM
 user_groups:
 - Students
 - Undergraduate Students
