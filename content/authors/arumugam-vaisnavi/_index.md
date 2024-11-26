@@ -8,7 +8,7 @@ education:
 email: "VAISNAVI001@e.ntu.edu.sg"
 commentable: true
 first_name: Vaisnavi
-last_name: Arumugam
+last_name: ARUMUGAM
 highlight_name: false
 interests:
 - 🖥 Bioinformatics
@@ -39,7 +39,7 @@ social:
 status:
   icon: ☕️
 superuser: false
-title: Vaisnavi Arumugam
+title: Vaisnavi ARUMUGAM
 user_groups:
 - Students
 - Undergraduate Students
