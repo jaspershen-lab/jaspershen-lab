@@ -28,13 +28,21 @@ main:
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   url: '#github'
   #   weight: 65
+  
+  - name: PHOTOS
+    identifier: photos
+    weight: 61
+  - name: 2024
+    parent: photos
+    url: 'photo-2024'
+    weight: 62
   - name: MORE
     identifier: more
     weight: 70
-  - name: PHOTO
-    parent: more
-    url: 'photo'
-    weight: 80
+  # - name: PHOTO
+  #   parent: more
+  #   url: 'photo'
+  #   weight: 80
   - name: COLLABORATORS
     parent: more
     url: 'collaborators'
