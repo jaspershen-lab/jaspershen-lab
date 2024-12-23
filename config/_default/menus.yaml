@@ -49,7 +49,7 @@ main:
     weight: 90
   - name: RESOURCES
     parent: more
-    url: 'https://www.notion.so/shen-lab/Introduction-0760b19e8a714ca1a91068b4a46305dd?pvs=4'
+    url: 'https://shen-lab.notion.site/0-Table-of-Contents-165e0ae7803880f5896bc7883de9d89c'
     weight: 100
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   parent: more
