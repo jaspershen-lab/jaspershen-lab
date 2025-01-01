@@ -32,6 +32,10 @@ main:
   - name: PHOTOS
     identifier: photos
     weight: 61
+  - name: 2025
+    parent: photos
+    url: 'photo-2025'
+    weight: 61
   - name: 2024
     parent: photos
     url: 'photo-2024'
