@@ -41,7 +41,8 @@ status:
 superuser: false
 title: Qi QI
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My primary research interests revolve around developing bioinformatics algorithms for multi-omics data and applying these methods to precision medicine. Moreover, my work explores the intersection of technology and biology, with a strong focus on utilizing deep learning and machine learning techniques in the field of bioinformatics.

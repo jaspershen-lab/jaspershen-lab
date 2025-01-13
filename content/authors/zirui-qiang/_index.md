@@ -41,7 +41,8 @@ status:
 superuser: false
 title: Zirui QIANG
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 As for my research direction in bioinformatics, I am drawn to its potential to revolutionize healthcare through the integration of computer science and biology. The ability to apply computational techniques to analyze complex biological data, such as genomic sequences and protein structures, opens up new avenues for understanding diseases and developing personalized treatments. 

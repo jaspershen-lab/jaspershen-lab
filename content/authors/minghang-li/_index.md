@@ -41,7 +41,8 @@ status:
 superuser: false
 title: Minghang LI
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My research focuses on developing fast and efficient software tailored for biological data analysis, with a particular emphasis on theoretical method development. I am especially interested in the application of these methods to wearable technologies, which I believe are crucial for advancing personalized precision medicine and continuous health monitoring. My goal is to create holistic, robust, and powerful software that enhances the collection and analysis of wearable device data, and ultimately, driving meaningful insights from these datasets.
