@@ -71,6 +71,17 @@ sections:
         </style>
 
         <div class="gallery">
+        
+          <div class="image-container">
+            <img src="lab/2025-1-14-first-lab-meeting.jpeg" alt="2025/1/15 First lab meeting" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/1/15 First lab meeting</div>
+          </div>
+        
+          <div class="image-container">
+            <img src="lab/2025-1-14-lab.jpeg" alt="2025/1/15 First lab photo" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/1/15 First lab photo</div>
+          </div>
+          
           <div class="image-container">
             <img src="lab/lab-2024-12-19.jpg" alt="Dinner gathering with lab members" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/12/19 Dinner gathering with lab members</div>
@@ -110,88 +121,4 @@ sections:
 title: Photos
 type: landing
 ---
-
-
-# ---
-# date: "2024-12-22"
-# sections:
-# - block: markdown
-#   id: photo
-#   content:
-#     title: 📸 Lab Photos 2024
-#     subtitle: ''
-#     text: |-
-#     
-#     <style>
-#     .gallery {
-#     display: flex;
-#     flex-wrap: wrap;
-#     gap: 10px;
-#     }
-#     .gallery img {
-#     max-width: 48%;
-#     cursor: pointer;
-#     border: 1px solid #ddd;
-#     border-radius: 4px;
-#     }
-#     .gallery img:hover {
-#     border: 1px solid #000;
-#     }
-#     </style>
-# 
-#     <div class="gallery">
-#     <a href="lab/lab-2024-12-19.jpg" target="_blank"><img src="lab/lab-2024-12-19.jpg" alt="Photo 1"></a>
-#     <a href="lab/2024-11-19-editor-visiting.jpg" target="_blank"><img src="lab/2024-11-19-editor-visiting.jpg" alt="Photo 2"></a>
-#     <a href="lab/2024-10-14-jingxiang-arrival.jpg" target="_blank"><img src="lab/2024-10-14-jingxiang-arrival.jpg" alt="Photo 3"></a>
-#     <a href="lab/2024-5-21-first-day-in-office.jpg" target="_blank"><img src="lab/2024-5-21-first-day-in-office.jpg" alt="Photo 4"></a>
-#     </div>
-# 
-# # 
-# #       <hr>
-# #       <figure>
-# #       <center><img src="lab/lab-2024-12-19.jpg" alt="2024-12-19 lab dinner" width="60%"></center>
-# #       <figcaption>12/19/2024: lab dinner</figcaption>
-# #       </figure>
-# #       
-# #       <hr>
-# #       <!-- figure2 -->
-# #       <figure>
-# #       <center><img src="lab/2024-11-19-editor-visiting.jpg" alt="mass-spec" width="60%"></center>
-# #       <figcaption>11/19/2024: Editor visiting</figcaption>
-# #       </figure>
-# #     
-# #       <hr>
-# #       <!-- figure2 -->
-# #       <figure>
-# #       <center><img src="lab/2024-10-14-jingxiang-arrival.jpg" alt="mass-spec" width="60%"></center>
-# #       <figcaption>10/14/2024: Jingxiang arrival</figcaption>
-# #       </figure>
-# #       
-# #       <hr>
-# #       <!-- figure3 -->
-# #       <figure>
-# #       <center><img src="lab/lab-dinner-2024-9-17.jpg" alt="mass-spec" width="60%"></center>
-# #       <figcaption>9/17/2024: lab dinner</figcaption>
-# #       </figure>
-# #       
-# #       <hr>
-# #       <!-- figure4 -->
-# #       <figure>
-# #       <center><img src="lab/2024-5-21-first-day-in-office.jpg" alt="mass-spec" width="60%"></center>
-# #       <figcaption>5/21/2024: first day in the office</figcaption>
-# #       </figure>
-# 
-#   design:
-#     columns: '1'
-#     
-# title: Photos
-# type: landing
-# ##https://www.labnol.org/embed/google/photos/
-# ##https://www.publicalbum.org/blog/embedding-google-photos-albums
-# ---
-
-
-
-
-
 
