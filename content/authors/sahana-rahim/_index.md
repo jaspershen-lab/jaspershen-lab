@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: URECA Student
+role: URECA Student (2024-)
 social:
 - icon: house
   icon_pack: fas

@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: National University of Singapore
   url: ""
-role: Intern Master student
+role: Intern Master student (2024-)
 social:
 - icon: house
   icon_pack: fas

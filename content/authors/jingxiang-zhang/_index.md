@@ -20,7 +20,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Postdoctoral Research Fellow
+role: Research Fellow (2024-)
 social:
 - icon: house
   icon_pack: fas
