@@ -73,6 +73,11 @@ sections:
         <div class="gallery">
         
           <div class="image-container">
+            <img src="lab/2025-1-24-lab-lunch.jpg" alt="2025/1/24 Lab lunch for Chinese New Year" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/1/24 Lab lunch for Chinese New Year</div>
+          </div>
+        
+          <div class="image-container">
             <img src="lab/2025-1-14-first-lab-meeting.jpeg" alt="2025/1/15 First lab meeting" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2025/1/15 First lab meeting</div>
           </div>
