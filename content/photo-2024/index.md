@@ -75,30 +75,42 @@ sections:
             <img src="lab/lab-2024-12-19.jpg" alt="Dinner gathering with lab members" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/12/19 Dinner gathering with lab members</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-11-19-editor-visiting.jpg" alt="Editor visiting our lab" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/11/19/Editor visiting our lab</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-10-14-jingxiang-arrival.jpg" alt="Jingxiang's arrival at the lab" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/10/14 Jingxiang's arrival at the lab</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-5-21-first-day-in-office.jpg" alt="First day in the new office" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/5/21 First day in the new office</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-12-4-xiaotao.jpeg" alt="Xiaotao presenting research" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/12/4 Xiaotao presenting research</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-11-2-aging-conference.jpeg" alt="Presentation at the Aging Conference" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/11/2 Presentation at the Aging Conference</div>
           </div>
+          
           <div class="image-container">
             <img src="lab/2024-10-31-visiting westlake university.jpeg" alt="Visiting Westlake University" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/10/31 Visiting Westlake University</div>
           </div>
+          
+          <div class="image-container">
+            <img src="lab/2024-9-17-lab-dinner.jpg" alt="Dinner gathering with lab members" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2024/09/17 Dinner gathering with lab members</div>
+          </div>
+        
         </div>
 
         <script>

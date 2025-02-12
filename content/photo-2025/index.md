@@ -91,6 +91,7 @@ sections:
             <img src="lab/lab-2024-12-19.jpg" alt="Dinner gathering with lab members" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2024/12/19 Dinner gathering with lab members</div>
           </div>
+          
         </div>
 
         <script>

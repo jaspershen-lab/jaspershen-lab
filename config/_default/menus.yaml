@@ -47,13 +47,21 @@ main:
   #   parent: more
   #   url: 'photo'
   #   weight: 80
+  - name: SINGAPORE PHENOME CENTER
+    parent: more
+    url: 'https://www.ntu.edu.sg/spc'
+    weight: 80
   - name: COLLABORATORS
     parent: more
     url: 'collaborators'
     weight: 90
-  - name: RESOURCES
+  - name: SHEN-LAB-NOTION
     parent: more
     url: 'https://shen-lab.notion.site/0-Table-of-Contents-165e0ae7803880f5896bc7883de9d89c'
+    weight: 91
+  - name: SHEN-LAB-MEETING
+    parent: more
+    url: 'https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing'
     weight: 100
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   parent: more
