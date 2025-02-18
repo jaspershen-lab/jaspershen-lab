@@ -1,6 +1,6 @@
 ---
 organizations:
-- name: University of Pittsburgh
+- name: Harvard University
 role: Assistant Professor
 social:
 - display:

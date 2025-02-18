@@ -1,15 +1,15 @@
 ---
 organizations:
-- name: Stanford University
-role: Research Scientist
+- name: Medical College of Wisconsin
+role: Assistant Professor
 social:
 - display:
     header: true
 - icon: link
   icon_pack: fas
-  link: https://www.linkedin.com/in/liang-liang/
+  link: https://obgyn.mcw.edu/people/liang/
 superuser: false
-title:  Dr. Liang Liang
+title:  Prof. Liang Liang
 user_groups:
 - Academia
 ---
