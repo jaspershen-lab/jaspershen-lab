@@ -45,6 +45,7 @@ sections:
     - Graduate Students
     - Undergraduate Students
     - Intern
+    - Visiting Scholar
     - Administration
     - Visitors
     - Alumni
