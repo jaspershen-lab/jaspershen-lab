@@ -19,7 +19,7 @@ sections:
         icon: link
         icon_pack: fas
         text: Link
-        url: ../publication/Application of Wearable Devices in Diabetes Management/
+        url: ../publication/application-of-wearable-devices-in-diabetes-management/
       title: "New publication: Application of Wearable Devices in Diabetes Management"
     - align: center
       background:
