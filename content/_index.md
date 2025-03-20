@@ -10,7 +10,7 @@ sections:
       background:
         color: '#666'
         image:
-          filename: bib-2025-pregnancy.jpg
+          filename: bib-2025-pregnancy.png
           filters:
             brightness: 0.6
         position: right
