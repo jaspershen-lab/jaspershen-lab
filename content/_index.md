@@ -10,6 +10,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: h&m-2025.png
+          filters:
+            brightness: 0.6
+        position: right
+      content: 
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/Application of Wearable Devices in Diabetes Management/
+      title: "New publication: Application of Wearable Devices in Diabetes Management"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: bib-2025-pregnancy.png
           filters:
             brightness: 0.6
