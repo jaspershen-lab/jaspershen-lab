@@ -10,6 +10,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: bib-2025-pregnancy.jpg
+          filters:
+            brightness: 0.6
+        position: right
+      content: 
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/longitudinal-urine-metabolic-profiling-and-gestational-age-prediction-in-pregnancy/
+      title: "New publication: Longitudinal Urine Metabolic Profiling and Gestational Age Prediction in Pregnancy"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: multi-omics4.jpg
           filters:
             brightness: 0.7
