@@ -43,7 +43,7 @@ social:
     header: true
   icon: twitter
   icon_pack: fab
-  label: Follow us on Twitter
+  label: Follow us on X
   link: https://twitter.com/xiaotaoshen1990
 - icon: google-scholar
   icon_pack: ai

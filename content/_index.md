@@ -351,7 +351,7 @@ sections:
         link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
       - icon: twitter
         icon_pack: fab
-        name: Follow us on Twitter
+        name: Follow us on X
         link: https://twitter.com/xiaotaoshen1990
       - icon: github
         icon_pack: fab

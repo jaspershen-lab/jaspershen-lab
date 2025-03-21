@@ -36,13 +36,13 @@ sections:
         link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
       - icon: twitter
         icon_pack: fab
-        name: Follow us on Twitter
+        name: Follow us on X
         link: https://twitter.com/xiaotaoshen1990
       - icon: github
         icon_pack: fab
         name: Follow us on Github
         link: https://github.com/jaspershen-lab
-    phone: +1 571-267-9283
+    phone: +65 83042333
     text: 
     title: Contact
   design:
