@@ -71,6 +71,12 @@ sections:
         </style>
 
         <div class="gallery">
+
+        <div class="image-container">
+            <img src="lab/2025-3-21-SPC.jpeg" alt="2025/3/21 SPC" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/3/21 SPC</div>
+          </div>
+          
         
         <div class="image-container">
             <img src="lab/2025-3-7-Dr. Fen Pan-arrival.jpeg" alt="2025/3/7 Dr. Fen Pan arrival" onclick="toggleZoom(this.parentElement)">
