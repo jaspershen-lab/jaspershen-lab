@@ -73,6 +73,21 @@ sections:
         <div class="gallery">
 
         <div class="image-container">
+            <img src="lab/2025-3-27-mike-spc.jpg" alt="2025/3/27 Mike visited SPC" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/3/27 Mike visited SPC</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-3-27-mike-shen-lab.jpg" alt="2025/3/27 Mike visited Shen lab" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/3/27 Mike visited Shen lab</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-3-26-fireside chat with mike.jpg" alt="2025/3/26 Fireside chat with Mike" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/3/26 Fireside chat with Mike</div>
+          </div>
+
+        <div class="image-container">
             <img src="lab/2025-3-21-SPC.jpeg" alt="2025/3/21 SPC" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2025/3/21 SPC</div>
           </div>
