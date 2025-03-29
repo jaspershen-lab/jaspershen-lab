@@ -63,6 +63,10 @@ main:
     parent: more
     url: 'https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing'
     weight: 100
+  - name: MD7115-Xiaotao Shen
+    parent: more
+    url: 'https://rpubs.com/Jasper/MD7115-Xiaotao'
+    weight: 110
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   parent: more
   #   url: 'https://github.com/yewton/yewton.net'
