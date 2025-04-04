@@ -55,9 +55,9 @@ main:
     parent: more
     url: 'collaborators'
     weight: 90
-  - name: SHEN-LAB-NOTION
+  - name: SHEN-LAB-HANDBOOK
     parent: more
-    url: 'https://shen-lab.notion.site/0-Table-of-Contents-165e0ae7803880f5896bc7883de9d89c'
+    url: 'https://www.shen-lab.org/shen-lab-handbook/'
     weight: 91
   - name: SHEN-LAB-MEETING
     parent: more
