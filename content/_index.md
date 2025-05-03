@@ -10,6 +10,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: h&m-2025-2.png
+          filters:
+            brightness: 0.6
+        position: right
+      content: 
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/application-of-llms-transformer-based-models-for-metabolite-annotation-in-metabolomics/
+      title: "New publication: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: h&m-2025.png
           filters:
             brightness: 0.6
