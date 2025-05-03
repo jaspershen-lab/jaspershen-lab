@@ -8,7 +8,7 @@ education:
 email: "panfenx@163.com"
 commentable: true
 first_name: Fen
-last_name: Pan
+last_name: PAN
 highlight_name: true
 interests:
 - 💰 Psychiatry
@@ -38,7 +38,7 @@ social:
 status:
   icon: 👻
 superuser: false
-title: Fen Pan
+title: Fen PAN
 user_groups:
 - Researchers
 - Visiting Scholar
