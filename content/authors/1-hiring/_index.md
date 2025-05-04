@@ -29,7 +29,7 @@ social:
   link: https://twitter.com/xiaotaoshen1990
 status:
   icon: ☕️
-superuser: false
+superuser: true
 title: We Need You
 user_groups:
 - Join US

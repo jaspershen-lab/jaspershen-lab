@@ -143,11 +143,6 @@ sections:
             <div class="caption">2025/1/15 First lab photo</div>
           </div>
           
-          <div class="image-container">
-            <img src="lab/lab-2024-12-19.jpg" alt="Dinner gathering with lab members" onclick="toggleZoom(this.parentElement)">
-            <div class="caption">2024/12/19 Dinner gathering with lab members</div>
-          </div>
-          
         </div>
 
         <script>
