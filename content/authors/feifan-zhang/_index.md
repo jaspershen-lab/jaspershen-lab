@@ -21,20 +21,20 @@ organizations:
   url: ""
 role: PhD Candidate (2025-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/cgxjdzz
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/cgxjdzz
 - icon: envelope
   icon_pack: fas
   link: FEIFAN004@e.ntu.edu.sg
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
-  link: https://github.com/jaspershen-lab
+  # label: Follow us on GitHub
+  link: https://github.com/cgxjdzz
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

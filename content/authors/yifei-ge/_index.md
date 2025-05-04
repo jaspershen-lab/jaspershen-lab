@@ -19,20 +19,20 @@ organizations:
   url: ""
 role: PhD Candidate (2025-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/GriffyGe
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/GriffyGe
 - icon: envelope
   icon_pack: fas
   link: Yifeii.Ge@outlook.com
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
+  # label: Follow us on GitHub
   link: https://github.com/GriffyGe
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

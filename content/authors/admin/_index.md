@@ -34,16 +34,16 @@ social:
   icon_pack: fas
   link: mailto:xiaotao.shen@ntu.edu.sg
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
-  link: https://github.com/jaspershen-lab
+  # label: Follow us on GitHub
+  link: https://github.com/jaspershen
 - display:
-    header: true
+    header: false
   icon: twitter
   icon_pack: fab
-  label: Follow us on X
+  # label: Follow us on X
   link: https://twitter.com/xiaotaoshen1990
 - icon: google-scholar
   icon_pack: ai

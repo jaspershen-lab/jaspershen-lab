@@ -18,20 +18,20 @@ organizations:
   url: ""
 role: Visiting Scholar (2025-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/Ginny-77
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/Ginny-77
 - icon: envelope
   icon_pack: fas
   link: lsg941@126.com
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
+  # label: Follow us on GitHub
   link: https://github.com/jaspershen-lab
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: 

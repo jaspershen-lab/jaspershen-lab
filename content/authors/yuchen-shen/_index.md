@@ -19,20 +19,20 @@ organizations:
   url: "https://www.zju.edu.cn/"
 role: Remote Intern
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/EthanShenx
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/EthanShenx
 - icon: envelope
   icon_pack: fas
   link: coellearthx@gmail.com
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
   label: Follow us on GitHub
-  link: https://github.com/jaspershen-lab
+  link: https://github.com/EthanShenx
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

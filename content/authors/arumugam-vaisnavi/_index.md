@@ -19,20 +19,20 @@ organizations:
   url: ""
 role: FYP Undergraduate (2024-)
 social:
-- icon: house
-  icon_pack: fas
-  link: 
+# - icon: house
+#   icon_pack: fas
+#   link: 
 - icon: envelope
   icon_pack: fas
   link: VAISNAVI001@e.ntu.edu.sg
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
+  # label: Follow us on GitHub
   link: https://github.com/jaspershen-lab
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/vaisnavi27/resume/blob/main/CV%20(Arumugam%20Vaisnavi).pdf

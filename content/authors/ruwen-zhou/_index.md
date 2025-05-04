@@ -22,20 +22,20 @@ organizations:
   url: ""
 role: PhD Candidate (Co-supervised with Prof. Sunny Wong)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/Carmenzhou
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/Carmenzhou
 - icon: envelope
   icon_pack: fas
   link: ruwen001@e.ntu.edu.sg
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
+  # label: Follow us on GitHub
   link: https://github.com/Carmenzhou
 - display:
-    header: true
+    header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

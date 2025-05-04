@@ -28,13 +28,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: clare_chifang@outlook.com
-- display:
-    header: false
   icon: github
   icon_pack: fab
   link: https://github.com/ChiffonHsu
-- display:
-    header: false
 - icon: cv
   icon_pack: ai
   link: https://github.com/ChiffonHsu/Repository/blob/main/CV_Hsu%20Chi%20Fang.pdf

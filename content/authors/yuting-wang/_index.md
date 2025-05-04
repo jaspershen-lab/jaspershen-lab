@@ -22,9 +22,9 @@ organizations:
   url: ""
 role: Incoming PhD Candidate (2025-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/ytwangZero
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/ytwangZero
 - icon: envelope
   icon_pack: fas
   link: ytwangzero@outlook.com

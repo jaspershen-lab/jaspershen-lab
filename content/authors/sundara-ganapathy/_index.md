@@ -21,18 +21,18 @@ organizations:
   url: ""
 role: FYP Undergraduate (2024-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/sundara00
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/sundara00
 - icon: envelope
   icon_pack: fas
   link: SUNDARAG001@e.ntu.edu.sg
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
-  link: https://github.com/jaspershen-lab
+  # label: Follow us on GitHub
+  link: https://github.com/sundara00
 status:
   icon: ☕️
 superuser: false

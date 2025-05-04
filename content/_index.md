@@ -303,6 +303,7 @@ sections:
     - Researchers
     - Students
     - Intern
+    - Join US
   design:
     show_interests: false
     show_role: true

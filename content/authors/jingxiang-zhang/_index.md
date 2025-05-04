@@ -22,17 +22,17 @@ organizations:
   url: ""
 role: Research Fellow (2024-)
 social:
-- icon: house
-  icon_pack: fas
-  link: https://github.com/zhangjx89
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/zhangjx89
 - icon: envelope
   icon_pack: fas
   link: mailto:zhangjingxiang97@163.com
 - display:
-    header: true
+    header: false
   icon: github
   icon_pack: fab
-  label: Follow us on GitHub
+  # label: Follow us on GitHub
   link: https://github.com/zhangjx89
 status:
   icon: ☕️

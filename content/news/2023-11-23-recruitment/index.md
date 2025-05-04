@@ -94,8 +94,8 @@ We invite scholars at any career stage for short-term or long-term collaborative
 
 ## Application Process
 
-For **Postdoctoral, PhD, and Research Assistant** roles, submit your CV, a cover letter, and contact information for two or three references to xiaotao.shen@outlook.com.
+For **Postdoctoral, PhD, and Research Assistant** roles, submit your CV, a cover letter, and contact information for two or three references to xiaotao.shen@ntu.edu.sg.
 
-For **Visiting Scholar** roles, please forward your CV and a cover letter to xiaotao.shen@outlook.com.
+For **Visiting Scholar** roles, please forward your CV and a cover letter to xiaotao.shen@ntu.edu.sg.
 
-For the **Laboratory Manager**, send your CV and a cover letter to xiaotao.shen@outlook.com.
+For the **Laboratory Manager**, send your CV and a cover letter to xiaotao.shen@ntu.edu.sg.

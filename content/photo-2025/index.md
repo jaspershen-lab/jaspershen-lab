@@ -73,6 +73,26 @@ sections:
         <div class="gallery">
 
         <div class="image-container">
+            <img src="lab/2025-4-30-jinzhuo-wang-visit-ntu-2.jpeg" alt="2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-4-30-jinzhuo-wang-visit-ntu-1.jpeg" alt="2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-4-24-xiaotao-visit-sjtu-fudan-2.jpeg" alt="2025/4/24 Xiaotao visited Fudan University" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/4/24 Xiaotao visited Fudan University</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-4-24-xiaotao-visit-sjtu-fudan-1.jpeg" alt="2025/4/24 Xiaotao visited Shanghai Jiaotong University" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/4/24 Xiaotao visited Shanghai Jiaotong University</div>
+          </div>
+
+        <div class="image-container">
             <img src="lab/2025-3-27-mike-spc.jpg" alt="2025/3/27 Mike visited SPC" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2025/3/27 Mike visited SPC</div>
           </div>
@@ -90,6 +110,11 @@ sections:
         <div class="image-container">
             <img src="lab/2025-3-21-SPC.jpeg" alt="2025/3/21 SPC" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2025/3/21 SPC</div>
+          </div>
+          
+        <div class="image-container">
+            <img src="lab/2025-3-19-metanotitia-visited-spc.jpeg" alt="2025/3/19 Metanotitia visited SPC" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/3/19 Metanotitia visited SPC</div>
           </div>
           
         
