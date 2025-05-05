@@ -70,7 +70,7 @@ sections:
       background:
         color: '#333'
         image:
-          filename: group_photo2.jpg
+          filename: group_photo3.png
           filters:
             brightness: 0.8
         position: center
