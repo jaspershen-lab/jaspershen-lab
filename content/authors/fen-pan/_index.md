@@ -40,8 +40,9 @@ status:
 superuser: false
 title: Fen PAN
 user_groups:
-- Researchers
-- Visiting Scholar
+- Researchers2
+- Visiting Scholar2
+- Alumni
 ---
 
 Fen Pan M.D. female born in NOV. 1990 , an attending psychiatrist in the Department of Psychiatry, First Affiliated Hospital, College of Medicine, Zhejiang University. Study on the accelerated rTMS treatment of MDD patients with suicidal ideation. We investigated the efficacy of MRI-based neuronavigation-guided daily high-dose rTMS for rapidly improving suicidal ideation in treatment-naive patients with MDD. We also detected if rTMS improves suicidal ideation and depressive symptoms by influencing BDNF, TrkB and VGF levels. Multi-omics approaches based on the analysis of different body fluids and tissues using a variety of analytical platforms have the potential to provide a deeper understanding of microbiota-gut-brain axis's role in MDD.
