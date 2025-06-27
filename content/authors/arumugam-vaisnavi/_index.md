@@ -41,8 +41,9 @@ status:
 superuser: false
 title: Vaisnavi ARUMUGAM
 user_groups:
-- Students
-- Undergraduate Students
+- Students2
+- Undergraduate Students2
+- Alumni
 ---
 
 My research interests include areas such as bioinformatics and molecular biology.  I am interested to widen my expertise in using bioinformatics tools to analyse biological data and make meaningful contributions in the area of public health. 

@@ -73,6 +73,51 @@ sections:
         <div class="gallery">
 
         <div class="image-container">
+            <img src="lab/2025-6-5-ASMS2.jpeg" alt="2025/6/5 Dr. Xiaota Shen presented at ASMS2025 USA" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/6/5 Dr. Xiaota Shen presented at ASMS2025 USA</div>
+          </div>
+        
+        <div class="image-container">
+            <img src="lab/2025-6-5-ASMS1.jpeg" alt="2025/6/5 Dr. Xiaota Shen presented at ASMS2025 USA" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/6/5 Dr. Xiaota Shen presented at ASMS2025 USA</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-5-19-new member Chloe.jpeg" alt="2025/5/19 new member Chloe" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/19 new member Chloe</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-5-14-Sundara.jpg" alt="2025/5/14 Sundara presentation" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/14 Sundara presentation</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-5-11-Jingxiang presentation1.jpg" alt="2025/5/11 Jingxiang presentation" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/11 Jingxiang presentation</div>
+          </div>
+          
+        <div class="image-container">
+            <img src="lab/2025-5-11-Jingxiang presentation2.jpg" alt="2025/5/11 Jingxiang presentation" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/11 Jingxiang presentation</div>
+          </div>
+          
+        <div class="image-container">
+            <img src="lab/2025-5-11-Jingxiang presentation3.jpg" alt="2025/5/11 Jingxiang presentation" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/11 Jingxiang presentation</div>
+          </div>
+          
+        <div class="image-container">
+            <img src="lab/2025-5-10-lab-lunch.jpeg" alt="2025/5/10 lab lunch for Dr. Fen Pan" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/5/10 lab lunch for Dr. Fen Pan</div>
+          </div>
+          
+        <div class="image-container">
+            <img src="lab/2025-5-8-Yifei-presentation.jpg" alt="2025/5/18 Yifei presentation" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025-5-8-Yifei-presentation.jpg</div>
+          </div>
+
+        <div class="image-container">
             <img src="lab/2025-4-30-jinzhuo-wang-visit-ntu-2.jpeg" alt="2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU" onclick="toggleZoom(this.parentElement)">
             <div class="caption">2025/4/30 Dr. Jinzhuo Wang from PKU visited NTU</div>
           </div>
