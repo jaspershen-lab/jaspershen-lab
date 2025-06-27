@@ -10,7 +10,7 @@ author_notes:
 authors:
 - Xiao Wang
 - Yijiang Liu
--  Chao Jiang
+- Chao Jiang
 - Jia Liu
 - Zinuo Huang
 - Hong Yan
@@ -24,7 +24,7 @@ authors:
 - Xuebin Zhang
 - admin
 
-featured: false
+featured: true
 publication: BioRxiv
 publication_types:
 - "3"
