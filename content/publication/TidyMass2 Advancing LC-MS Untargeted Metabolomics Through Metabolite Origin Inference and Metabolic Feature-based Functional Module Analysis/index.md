@@ -1,12 +1,11 @@
 ---
-title: "TidyMass2: Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis"
+title: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 
-abstract: "TidyMass2 :Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis"
+abstract: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 
 author_notes:
 - Equal contribution
 - Equal contribution
-
 authors:
 - Xiao Wang
 - Yijiang Liu
@@ -24,12 +23,12 @@ authors:
 - Xuebin Zhang
 - admin
 
-featured: true
-publication: BioRxiv
+featured: false
+publication: 'bioRxiv'
 publication_types:
 - "3"
-publishDate: 2026-06-27
-summary: "TidyMass2 :Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis"
+publishDate: "2026-06-27T00:00:00Z"
+summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 links:
 - icon: link
   icon_pack: fas
