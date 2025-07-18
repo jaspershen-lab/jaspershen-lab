@@ -20,14 +20,14 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Incoming PhD Candidate (2025-)
+role: PhD Candidate (2025-)
 social:
-# - icon: house
-#   icon_pack: fas
-#   link: https://github.com/ytwangZero
+- icon: house
+  icon_pack: fas
+  link: https://ytwangzero.github.io/
 - icon: envelope
   icon_pack: fas
-  link: ytwangzero@outlook.com
+  link: yuting012@e.ntu.edu.sg
 - display:
     header: false
   icon: github

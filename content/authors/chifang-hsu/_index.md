@@ -20,7 +20,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Incomning PhD Candidate (2025-)
+role: PhD Candidate (2025-)
 social:
 - icon: house
   icon_pack: fas
