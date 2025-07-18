@@ -24,7 +24,7 @@ authors:
 - admin
 
 featured: false
-publication: 'bioRxiv'
+publication: bioRxiv
 publication_types:
 - 3
 publishDate: 2025-06-27
