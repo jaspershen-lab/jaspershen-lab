@@ -10,7 +10,6 @@ authors:
 - Xiao Wang
 - Yijiang Liu
 - Chao Jiang
-- Jia Liu
 - Zinuo Huang
 - Hong Yan
 - Sunny Wong

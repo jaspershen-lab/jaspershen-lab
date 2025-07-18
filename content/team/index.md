@@ -44,10 +44,9 @@ sections:
     - Research Scientist
     - Graduate Students
     - Undergraduate Students
-    - Intern
     - Visiting Scholar
+    - Intern
     - Administration
-    - Visitors
     - Alumni
   design:
     show_interests: true
