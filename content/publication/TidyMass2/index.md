@@ -37,5 +37,5 @@ links:
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1.full.pdf
+  url: publication/TidyMass an object-oriented reproducible analysis framework for LC–MS data.pdf
 ---
