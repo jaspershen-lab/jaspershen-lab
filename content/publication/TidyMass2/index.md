@@ -1,7 +1,7 @@
 ---
-title: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
+title: TidyMass an object-oriented reproducible analysis framework for LC–MS data
 
-abstract: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
+abstract: Reproducibility, traceability, and transparency have been long-standing issues for metabolomics data analysis. Multiple tools have been developed, but limitations still exist. Here, we present the tidyMass project (https://www.tidymass.org/), a comprehensive R-based computational framework that can achieve the traceable, shareable, and reproducible workflow needs of data processing and analysis for LC-MS-based untargeted metabolomics. TidyMass is an ecosystem of R packages that share an underlying design philosophy, grammar, and data structure, which provides a comprehensive, reproducible, and object-oriented computational framework. The modular architecture makes tidyMass a highly flexible and extensible tool, which other users can improve and integrate with other tools to customize their own pipeline.
 
 author_notes:
 - Equal contribution
@@ -28,7 +28,7 @@ publication: bioRxiv
 publication_types:
 - 3
 publishDate: 2025-06-27
-summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
+summary: Reproducibility, traceability, and transparency have been long-standing issues for metabolomics data analysis. Multiple tools have been developed, but limitations still exist. Here, we present the tidyMass project (https://www.tidymass.org/), a comprehensive R-based computational framework that can achieve the traceable, shareable, and reproducible workflow needs of data processing and analysis for LC-MS-based untargeted metabolomics. TidyMass is an ecosystem of R packages that share an underlying design philosophy, grammar, and data structure, which provides a comprehensive, reproducible, and object-oriented computational framework. The modular architecture makes tidyMass a highly flexible and extensible tool, which other users can improve and integrate with other tools to customize their own pipeline.
 links:
 - icon: link
   icon_pack: fas
@@ -37,5 +37,5 @@ links:
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: publication/TidyMass an object-oriented reproducible analysis framework for LC–MS data.pdf
+  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1
 ---
