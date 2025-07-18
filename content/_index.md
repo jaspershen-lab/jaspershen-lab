@@ -309,33 +309,33 @@ sections:
     show_role: true
     show_social: true
     
-- block: collection
-  id: event
-  content:
-    count: 3
-    title: 🎫 EVENT
-    subtitle: ":point_right: [All Events](./event/)"
-    text: 
-    filters:
-      folders:
-        - event
-      exclude_featured: false
-  design:
-    columns: '2'
-    view: compact
-    background:
-      image:
-        filename: events.jpg
-        filters:
-          brightness: 0.55
-      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
-      # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
-      # Use a fun parallax-like fixed background effect on desktop? true/false
-      parallax: true
-      # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
+# - block: collection
+#   id: event
+#   content:
+#     count: 3
+#     title: 🎫 EVENT
+#     subtitle: ":point_right: [All Events](./event/)"
+#     text: 
+#     filters:
+#       folders:
+#         - event
+#       exclude_featured: false
+#   design:
+#     columns: '2'
+#     view: compact
+#     background:
+#       image:
+#         filename: events.jpg
+#         filters:
+#           brightness: 0.55
+#       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+#       size: cover
+#       # Image focal point. Options include `left`, `center` (default), or `right`.
+#       position: center
+#       # Use a fun parallax-like fixed background effect on desktop? true/false
+#       parallax: true
+#       # Text color (true=light, false=dark, or remove for the dynamic theme color).
+#       text_color_light: true
 
 - block: contact
   id: contact

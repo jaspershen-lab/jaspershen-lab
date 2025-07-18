@@ -19,9 +19,9 @@ main:
   - name: TEAM
     url: '#team'
     weight: 30
-  - name: EVENT
-    url: '#event'
-    weight: 40
+  # - name: EVENT
+  #   url: '#event'
+  #   weight: 40
   - name: CONTACT
     url: '#contact'
     weight: 60
