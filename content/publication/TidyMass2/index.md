@@ -1,34 +1,33 @@
 ---
-title: TidyMass an object-oriented reproducible analysis framework for LC–MS data
+title: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics
 
-abstract: Reproducibility, traceability, and transparency have been long-standing issues for metabolomics data analysis. Multiple tools have been developed, but limitations still exist. Here, we present the tidyMass project (https://www.tidymass.org/), a comprehensive R-based computational framework that can achieve the traceable, shareable, and reproducible workflow needs of data processing and analysis for LC-MS-based untargeted metabolomics. TidyMass is an ecosystem of R packages that share an underlying design philosophy, grammar, and data structure, which provides a comprehensive, reproducible, and object-oriented computational framework. The modular architecture makes tidyMass a highly flexible and extensible tool, which other users can improve and integrate with other tools to customize their own pipeline.
+abstract: Liquid Chromatography-Mass Spectrometry (LC-MS) untargeted metabolomics has become a cornerstone of modern biomedical research, enabling the analysis of complex metabolite profiles in biological systems. 
 
 author_notes:
 - Equal contribution
 - Equal contribution
-- Equal contribution
 
 authors:
+- Yijiang Liu
+- Feifan Zhang
+- Yifei Ge
+- Qiao Liu
+- Siyu he
 - admin
-- Hong Yan
-- Chuchu Wang
-- Peng Gao
-- Caroline Johnson
-- Michael Snyder
 
-featured: true
-publication: Nature Communications
+featured: false
+publication: Health and Metabolism
 publication_types:
-- 2
+- "2"
 publishDate: 2025-06-27
-summary: Reproducibility, traceability, and transparency have been long-standing issues for metabolomics data analysis. Multiple tools have been developed, but limitations still exist. Here, we present the tidyMass project (https://www.tidymass.org/), a comprehensive R-based computational framework that can achieve the traceable, shareable, and reproducible workflow needs of data processing and analysis for LC-MS-based untargeted metabolomics. TidyMass is an ecosystem of R packages that share an underlying design philosophy, grammar, and data structure, which provides a comprehensive, reproducible, and object-oriented computational framework. The modular architecture makes tidyMass a highly flexible and extensible tool, which other users can improve and integrate with other tools to customize their own pipeline.
+summary: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics
 links:
 - icon: link
   icon_pack: fas
   name: Link
-  url: https://www.nature.com/articles/s41467-022-32155-w
+  url: https://www.sciltp.com/journals/hm/2025/2/2504000541/718
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: publication/TidyMass an object-oriented reproducible analysis framework for LC–MS data.pdf
+  url: publication/Application of LLMs Transformer Based Models for Metabolite Annotation in Metabolomics.pdf
 ---
