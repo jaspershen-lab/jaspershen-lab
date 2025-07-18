@@ -1,33 +1,41 @@
 ---
-title: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics
+title: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 
-abstract: Liquid Chromatography-Mass Spectrometry (LC-MS) untargeted metabolomics has become a cornerstone of modern biomedical research, enabling the analysis of complex metabolite profiles in biological systems. 
+abstract: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 
 author_notes:
 - Equal contribution
 - Equal contribution
 
 authors:
+- Xiao Wang
 - Yijiang Liu
-- Feifan Zhang
+- Chao Jiang
+- Zinuo Huang
+- Hong Yan
+- Sunny Wong
+- Caroline H. Johnson
+- Jingxiang Zhang
 - Yifei Ge
-- Qiao Liu
-- Siyu he
+- Feifan Zhang
+- Renfu Lai
+- Peng Gao
+- Xuebin Zhang
 - admin
 
 featured: false
-publication: Health and Metabolism
+publication: bioRxiv
 publication_types:
-- "2"
+- 3
 publishDate: 2025-06-27
-summary: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics
+summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 links:
 - icon: link
   icon_pack: fas
   name: Link
-  url: https://www.sciltp.com/journals/hm/2025/2/2504000541/718
+  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: publication/Application of LLMs Transformer Based Models for Metabolite Annotation in Metabolomics.pdf
+  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1.full.pdf
 ---
