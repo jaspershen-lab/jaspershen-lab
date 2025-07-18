@@ -6,6 +6,7 @@ abstract: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite O
 author_notes:
 - Equal contribution
 - Equal contribution
+
 authors:
 - Xiao Wang
 - Yijiang Liu
@@ -25,8 +26,8 @@ authors:
 featured: false
 publication: 'bioRxiv'
 publication_types:
-- "3"
-publishDate: "2026-06-27T00:00:00Z"
+- 3
+publishDate: 2025-06-27
 summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 links:
 - icon: link
