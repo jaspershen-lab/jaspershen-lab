@@ -9,14 +9,13 @@ sections:
       text: |
         <style>
         .gallery {
-          columns: 2;
-          column-gap: 10px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); /* 两列 */
+          gap: 10px; /* 图片之间的间距 */
         }
 
         .image-container {
           position: relative;
-          margin-bottom: 10px;
-          break-inside: avoid;
           display: block;
         }
 

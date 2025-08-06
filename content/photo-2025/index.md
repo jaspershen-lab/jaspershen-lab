@@ -9,14 +9,13 @@ sections:
       text: |
         <style>
         .gallery {
-          columns: 2;
-          column-gap: 10px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); /* 两列 */
+          gap: 10px; /* 图片之间的间距 */
         }
 
         .image-container {
           position: relative;
-          margin-bottom: 10px;
-          break-inside: avoid;
           display: block;
         }
 
@@ -71,6 +70,35 @@ sections:
         </style>
 
         <div class="gallery">
+
+        <div class="image-container">
+            <img src="lab/2025-8-5-lab-photo.jpg" alt="2025/8/5 Lab group photo" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/8/5 Lab group photo</div>
+          </div>
+
+
+        <div class="image-container">
+            <img src="lab/2025-8-3-yifei-yuting.jpg" alt="2025/8/3 Dinner with lab members" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/8/3 Dinner with lab members</div>
+          </div>
+
+        <div class="image-container">
+            <img src="lab/2025-7-22-sundara.jpg" alt="2025/7/22 Sundara received the Koh Boon Hwee Scholars Award" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/7/22 Sundara received the Koh Boon Hwee Scholars Award</div>
+          </div>
+
+
+        <div class="image-container">
+            <img src="lab/2025-7-11-guiyang.jpg" alt="2025/7/11 Xiaotao Presented at the 5th Environmental Exposure and Health International Symposium" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/7/11 Xiaotao Presented at the 5th Environmental Exposure and Health International Symposium</div>
+          </div>
+
+
+        <div class="image-container">
+            <img src="lab/2025-7-2-xiaotao-fudan.jpg" alt="2025/7/2 Visiting Fudan University" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/7/2 Visiting Fudan University</div>
+          </div>
+
 
         <div class="image-container">
             <img src="lab/2025-6-5-ASMS2.jpeg" alt="2025/6/5 Dr. Xiaota Shen presented at ASMS2025 USA" onclick="toggleZoom(this.parentElement)">
