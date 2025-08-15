@@ -67,9 +67,31 @@ sections:
             columns: 1;
           }
         }
+        
+          /* （可选）更大屏时增加列数 */
+        @media (min-width: 1200px) {
+        .gallery { column-count: 3; }
+        }
+        @media (min-width: 1600px) {
+        .gallery { column-count: 4; }
+        }
+        
+        
         </style>
 
+
+
+
+
+
         <div class="gallery">
+
+
+        <div class="image-container">
+            <img src="lab/2025-8-15-lab-dinner.jpg" alt="2025/8/15 Lab dinner" onclick="toggleZoom(this.parentElement)">
+            <div class="caption">2025/8/15 Lab dinner</div>
+          </div>
+
 
         <div class="image-container">
             <img src="lab/2025-8-5-lab-photo.jpg" alt="2025/8/5 Lab group photo" onclick="toggleZoom(this.parentElement)">
