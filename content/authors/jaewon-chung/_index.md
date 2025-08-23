@@ -40,7 +40,8 @@ status:
 superuser: false
 title: Jaewon CHUNG
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My research interests: My work focuses on bridging neuroscience and data science to model and interpret complex brain-related diseases. I am especially interested in using computational approaches to analyze multi-omics and neural signals in psychiatric and cognitive disorders.

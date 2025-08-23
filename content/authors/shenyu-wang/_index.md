@@ -39,7 +39,8 @@ status:
 superuser: false
 title: Shenyu WANG
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My research interests: My academic interest lies in modelling disease pathology through integrative multi-omics approaches. In particular, I’m enthusiastic about using bioinformatics and machine learning to understand aging-related diseases and psychiatric illnesses, especially using multi-omics data like epigenomics, transcriptomics, and metabolomics.

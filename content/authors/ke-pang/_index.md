@@ -41,8 +41,8 @@ status:
 superuser: false
 title: Ke PANG
 user_groups:
-- Students
-- Graduate Students
+- Intern2
+- Alumni
 ---
 
 I am a medical student specializing in gastroenterology, with a research focus on the clinical epidemiology and multi-omics investigation of precancerous colorectal lesions.
