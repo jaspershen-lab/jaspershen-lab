@@ -40,6 +40,10 @@ main:
     parent: photos
     url: 'photo-2024'
     weight: 62
+  - name: 2023
+    parent: photos
+    url: 'photo-2023'
+    weight: 63
   - name: MORE
     identifier: more
     weight: 70
