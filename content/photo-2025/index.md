@@ -141,21 +141,14 @@ sections:
           </div>
         </div>
 
-        <!-- 7月 -->
+        <!-- June - July -->
         <div class="month-block">
-          <div class="month-title">July 2025</div>
+          <div class="month-title">June - July 2025</div>
           <div class="gallery">
             <div class="image-container"><img src="lab/2025-7-22-sundara.jpg" alt="2025/7/22 Sundara received the Koh Boon Hwee Scholars Award"><div class="caption">2025/7/22 Sundara received the Koh Boon Hwee Scholars Award</div></div>
             <div class="image-container"><img src="lab/2025-7-11-guiyang.jpg" alt="2025/7/11 Xiaotao presented at the 5th Environmental Exposure and Health International Symposium"><div class="caption">2025/7/11 Xiaotao presented at the 5th Environmental Exposure and Health International Symposium</div></div>
             <div class="image-container"><img src="lab/2025-7-2-yijiang-presentation.jpg" alt="2025/7/2 Yijiang's presentation"><div class="caption">2025/7/2 Yijiang's presentation</div></div>
             <div class="image-container"><img src="lab/2025-7-2-xiaotao-fudan.jpg" alt="2025/7/2 Visiting Fudan University"><div class="caption">2025/7/2 Visiting Fudan University</div></div>
-          </div>
-        </div>
-
-        <!-- 6月 -->
-        <div class="month-block">
-          <div class="month-title">June 2025</div>
-          <div class="gallery">
             <div class="image-container"><img src="lab/2025-6-5-ASMS1.jpeg" alt="2025/6/5 Dr. Xiaotao Shen presented at ASMS2025 USA"><div class="caption">2025/6/5 Dr. Xiaotao Shen presented at ASMS2025 USA</div></div>
           </div>
         </div>
@@ -198,18 +191,11 @@ sections:
           </div>
         </div>
 
-        <!-- 2月 -->
-        <div class="month-block">
-          <div class="month-title">February 2025</div>
-          <div class="gallery">
-            <div class="image-container"><img src="lab/2025-2-14-welcome-dr.shaoguang-li.jpg" alt="2025/2/14 Lab dinner for Prof. Shaoguang Li"><div class="caption">2025/2/14 Lab dinner for Prof. Shaoguang Li</div></div>
-          </div>
-        </div>
-
         <!-- 1月 -->
         <div class="month-block">
-          <div class="month-title">January 2025</div>
+          <div class="month-title">January- February 2025</div>
           <div class="gallery">
+            <div class="image-container"><img src="lab/2025-2-14-welcome-dr.shaoguang-li.jpg" alt="2025/2/14 Lab dinner for Prof. Shaoguang Li"><div class="caption">2025/2/14 Lab dinner for Prof. Shaoguang Li</div></div>
             <div class="image-container"><img src="lab/2025-1-24-lab-lunch.jpg" alt="2025/1/24 Lab lunch for Chinese New Year"><div class="caption">2025/1/24 Lab lunch for Chinese New Year</div></div>
             <div class="image-container"><img src="lab/2025-1-14-first-lab-meeting.jpeg" alt="2025/1/15 First lab meeting"><div class="caption">2025/1/15 First lab meeting</div></div>
             <div class="image-container"><img src="lab/2025-1-14-lab.jpeg" alt="2025/1/15 First lab photo"><div class="caption">2025/1/15 First lab photo</div></div>
