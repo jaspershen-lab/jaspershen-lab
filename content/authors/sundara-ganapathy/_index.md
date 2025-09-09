@@ -19,7 +19,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: FYP Undergraduate (2024-)
+role: FYP Undergraduate (2024-2025)
 social:
 # - icon: house
 #   icon_pack: fas

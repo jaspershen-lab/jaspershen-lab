@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Harbin Institute of Technology
   url: ""
-role: Intern
+role: Intern (2024)
 social:
 - icon: house
   icon_pack: fas

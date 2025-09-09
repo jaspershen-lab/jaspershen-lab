@@ -19,7 +19,7 @@ interests:
 organizations: 
 - name: Korea Advanced Institute of Science and Technology, South Korea
   url: "https://portal.kaist.ac.kr/"
-role: Summer Intern
+role: Summer Intern (2025)
 social:
 - icon: envelope
   icon_pack: fas

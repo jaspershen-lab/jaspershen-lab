@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Southern Medical University
   url: ""
-role: Visiting PhD Student (2024-)
+role: Visiting PhD Student (2024-2025)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -41,8 +41,9 @@ status:
 superuser: false
 title: Zijing DU
 user_groups:
-- Students
-- Graduate Students
+- Students2
+- Graduate Students2
+- Alumni
 ---
 
 My primary research interests revolve around the epidemiology of eye diseases and systemic diseases, and exploring disease mechanisms based on wearable devices and multi-omics approaches.

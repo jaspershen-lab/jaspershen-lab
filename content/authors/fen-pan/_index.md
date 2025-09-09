@@ -16,7 +16,7 @@ interests:
 organizations:
 - name:  Zhejiang University
   url: ""
-role: Visiting Scholar (2025-)
+role: Visiting Scholar (2025)
 social:
 # - icon: house
 #   icon_pack: fas

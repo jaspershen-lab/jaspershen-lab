@@ -18,7 +18,7 @@ interests:
 organizations:
 - name: The University of Hong Kong
   url: "https://www.hku.hk"
-role: Remote Intern
+role: Remote Intern (2025-)
 social:
 - icon: envelope
   icon_pack: fas

@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: ETH Zurich
   url: "https://ethz.ch/en.html"
-role: Remote Intern
+role: Remote Intern (2024)
 social:
 - icon: house
   icon_pack: fas

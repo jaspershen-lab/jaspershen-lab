@@ -18,7 +18,7 @@ interests:
 organizations:
 - name: The Chinese University of Hong Kong, Shenzhen
   url: "https://www.cuhk.edu.cn/en"
-role: Remote Intern
+role: Remote Intern (2025)
 social:
 - icon: envelope
   icon_pack: fas

@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Xi’an Jiaotong-Liverpool University
   url: ""
-role: Remote Intern
+role: Remote Intern (2024)
 social:
 - icon: house
   icon_pack: fas

@@ -18,7 +18,7 @@ interests:
 organizations:
 - name: Huazhong Agricultural University
   url: "https://www.hzau.edu.cn/"
-role: Summer Intern
+role: Summer Intern (2025)
 social:
 - icon: house
   icon_pack: fas

@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Chinese Academy of Medical Sciences & Peking Union Medical College
   url: ""
-role: Visiting PhD Student (2025-)
+role: Visiting PhD Student (2025)
 social:
 # - icon: house
 #   icon_pack: fas

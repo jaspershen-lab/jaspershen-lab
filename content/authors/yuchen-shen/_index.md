@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Zhejiang University
   url: "https://www.zju.edu.cn/"
-role: Remote Intern
+role: Remote Intern (2025-)
 social:
 # - icon: house
 #   icon_pack: fas
