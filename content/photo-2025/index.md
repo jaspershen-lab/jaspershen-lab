@@ -128,6 +128,17 @@ sections:
         }
         </style>
 
+        <!-- September -->
+        <div class="month-block">
+          <div class="month-title">September 2025</div>
+          <div class="gallery">
+            <div class="image-container"><img src="lab/2025-9-12-hkbu.jpeg" alt="2025/9/12 Xiaotao gave a invited talk at HKBU"><div class="caption">2025/9/12 Xiaotao gave a invited talk at HKBU</div></div>
+            <div class="image-container"><img src="lab/2025-9-8-DISCOVERY & DEVELOPMENT SUMMIT ASIA1.jpg" alt="2025/9/9 Shen lab at DISCOVERY & DEVELOPMENT SUMMIT ASIA"><div class="caption">2025/9/9 Shen lab at DISCOVERY & DEVELOPMENT SUMMIT ASIA</div></div>
+            <div class="image-container"><img src="lab/2025-9-8-DISCOVERY & DEVELOPMENT SUMMIT ASIA2.jpg" alt="2025/9/10 Xiaotao's presentation at DISCOVERY & DEVELOPMENT SUMMIT ASIA"><div class="caption">2025/9/10 Xiaotao's presentation at DISCOVERY & DEVELOPMENT SUMMIT ASIA</div></div>
+            <div class="image-container"><img src="lab/2025-9-8-DISCOVERY & DEVELOPMENT SUMMIT ASIA3.jpg" alt="2025/9/10 Yifei's presentation at DISCOVERY & DEVELOPMENT SUMMIT ASIA"><div class="caption">2025/9/10 Yifei's presentation at DISCOVERY & DEVELOPMENT SUMMIT ASIA</div></div>
+          </div>
+        </div>
+
         <!-- 8月 -->
         <div class="month-block">
           <div class="month-title">August 2025</div>
