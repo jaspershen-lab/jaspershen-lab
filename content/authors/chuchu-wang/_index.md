@@ -1,7 +1,7 @@
 ---
 organizations:
-- name: Stanford University
-role: Postdoc
+- name: Nanyang Technological University Singapore
+role: Nanyang Assistant Professor
 social:
 - display:
     header: true
@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/chuchu-wang-71331190/
 superuser: false
-title: Dr. Chuchu Wang
+title: Prof. Chuchu Wang
 user_groups:
 - Academia
 ---

@@ -6,6 +6,18 @@ abstract: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite O
 author_notes:
 - Equal contribution
 - Equal contribution
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- "* Corresponding author"
+- "* Corresponding author"
+- "* Corresponding author"
 
 authors:
 - Xiao Wang

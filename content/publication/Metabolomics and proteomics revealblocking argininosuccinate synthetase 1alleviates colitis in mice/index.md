@@ -7,6 +7,30 @@ author_notes:
 - Equal contribution
 - Equal contribution
 - Equal contribution
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- "* Corresponding author"
+- "* Corresponding author"
+- "* Corresponding author"
 
 authors:
 - Shijia Liu
@@ -32,7 +56,7 @@ authors:
 - Weichen Xu
 - Jinjun Shan
 - Yongming Li
-- Yi Xu,
+- Yi Xu
 - admin
 - Gang Cao 
 - Wei Zhou

@@ -1,7 +1,7 @@
 ---
 organizations:
-- name: Stanford University
-role: Postdoc
+- name: Fudan University
+role: Assistant Professor
 social:
 - display:
     header: true
@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/xinzhou-uchc/
 superuser: false
-title: Dr. Xin Zhou
+title: Prof. Xin Zhou
 user_groups:
 - Academia
 ---
