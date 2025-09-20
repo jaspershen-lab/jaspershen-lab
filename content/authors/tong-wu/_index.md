@@ -19,7 +19,7 @@ interests:
 organizations:
 - name: Tianjin University of Traditional Chinese Medicine
   url: ""
-role: Visiting PhD Student (2025-)
+role: Visiting PhD Student (2025)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -43,8 +43,9 @@ status:
 superuser: false
 title: Tong Wu
 user_groups:
-- Students
-- Graduate Students
+- Alumni
+- Students1
+- Graduate Students1
 ---
 
 I am a PhD candidate in Traditional Chinese Medicine, focusing on applying artificial intelligence to novel drug discovery, development, and mechanistic studies of TCM-derived compounds.
