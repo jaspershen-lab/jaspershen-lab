@@ -9,7 +9,7 @@ email: "bspchemy@gmail.com"
 commentable: true
 first_name: Shunpeng
 last_name: BAI
-highlight_name: false
+highlight_name: true
 interests:
 - ⛏  Embedded Dev
 - 💰  Multi-omics

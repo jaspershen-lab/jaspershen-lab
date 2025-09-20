@@ -9,7 +9,7 @@ email: "minghli@ethz.ch"
 commentable: true
 first_name: Minghang
 last_name: LI
-highlight_name: false
+highlight_name: true
 interests:
 - ⌚️ Wearable devices
 - 💰 Multi-omics

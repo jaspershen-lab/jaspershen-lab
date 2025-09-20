@@ -12,7 +12,7 @@ email: "FEIFAN004@e.ntu.edu.sg"
 commentable: true
 first_name: Feifan
 last_name: ZHANG
-highlight_name: false
+highlight_name: true
 interests:
 - 🖥 Bioinformatics
 - 💻 Artificial Intelligence

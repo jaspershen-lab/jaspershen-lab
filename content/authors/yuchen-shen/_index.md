@@ -9,7 +9,7 @@ email: "coellearthx@gmail.com"
 commentable: true
 first_name: Yuchen
 last_name: SHEN
-highlight_name: false
+highlight_name: true
 interests:
 - 📉 Statistics
 - 💰 Multi-omics

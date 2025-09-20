@@ -6,7 +6,7 @@ email: ""
 commentable: true
 first_name: Scientist
 last_name: FUTURE
-highlight_name: false
+highlight_name: true
 interests:
 - 🖥️ Omics 
 - 👴 Biomedicine

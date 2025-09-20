@@ -9,7 +9,7 @@ email: "shenyuwang@link.cuhk.edu.cn"
 commentable: true
 first_name: Shenyu
 last_name: WANG
-highlight_name: false
+highlight_name: true
 interests:
 - 📂 Bioinformatics (Multi-omics)
 - 💻 Machine Learning

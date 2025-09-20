@@ -9,7 +9,7 @@ email: "ayy5samantha@gmail.com"
 commentable: true
 first_name: Yi Tong
 last_name: WU
-highlight_name: false
+highlight_name: true
 interests:
 - Biotechnology
 - Biochemistry

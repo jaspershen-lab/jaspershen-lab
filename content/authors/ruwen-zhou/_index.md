@@ -12,7 +12,7 @@ email: "ruwen001@e.ntu.edu.sg"
 commentable: true
 first_name: Ruwen
 last_name: ZHOU
-highlight_name: false
+highlight_name: true
 interests:
 - 🖥 Biostatistics
 - 💰 Mathematics

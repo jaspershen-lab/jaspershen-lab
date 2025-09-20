@@ -12,7 +12,7 @@ email: "drkajal25@gmail.com"
 commentable: true
 first_name: Kajal
 last_name: Agrawal
-highlight_name: false
+highlight_name: true
 interests:
 - 🧫 Oral and Gut Microbiome
 - 🦷 Periodontal Disease,  Oral systemic disease 

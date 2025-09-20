@@ -10,7 +10,7 @@ email: "SUNDARAG001@e.ntu.edu.sg"
 commentable: true
 first_name: Sundara Ganapathy S/O
 last_name: LETCHIMANAN
-highlight_name: false
+highlight_name: true
 interests:
 - 🖥 Bioinformatics
 - 💻 Population Health

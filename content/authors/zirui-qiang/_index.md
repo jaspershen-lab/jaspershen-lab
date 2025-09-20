@@ -9,7 +9,7 @@ email: "zirui_qiang@outlook.com"
 commentable: true
 first_name: Zirui
 last_name: QIANG
-highlight_name: false
+highlight_name: true
 interests:
 - 🖥️ Bioinformatics
 - 💰 Multi-omics
