@@ -3,7 +3,7 @@ name = "ntu2"
 
 [light]
   # Primary
-  primary = "#007C48"
+  primary = "#b21f2f"
 
   # Menu
   menu_primary = "#fff"
