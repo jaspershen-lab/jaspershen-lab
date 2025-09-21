@@ -8,7 +8,7 @@ education:
 email: "2020105039@stu.njau.edu.com"
 commentable: true
 first_name: Chunlei
-last_name: Zhang
+last_name: ZHANG
 highlight_name: true
 interests:
 - ⌚️ Multi-omics
@@ -39,7 +39,7 @@ social:
 status:
   icon: 👻
 superuser: false
-title: Chunlei Zhang
+title: Chunlei ZHANG
 user_groups:
 - Students
 - Graduate Students

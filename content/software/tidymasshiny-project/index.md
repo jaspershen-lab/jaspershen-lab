@@ -24,3 +24,5 @@ url_slides: ""
 url_video: ""
 ---
 
+`TidyMassShiny` is a Shiny application that provides an interactive interface for the TidyMass project, enabling users to perform comprehensive metabolomics data analysis and visualization with ease.
+

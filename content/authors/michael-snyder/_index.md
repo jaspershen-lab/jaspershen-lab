@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://med.stanford.edu/snyderlab/about.html
 superuser: false
-title: Prof. Michael Snyder
+title: Prof. Michael SNYDER
 user_groups:
 - Academia
 ---

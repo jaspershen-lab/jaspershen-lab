@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.zhulab.cn/
 superuser: false
-title: Prof. Zheng-Jiang Zhu
+title: Prof. Zheng-Jiang ZHU
 user_groups:
 - Academia
 ---

@@ -7,9 +7,9 @@ social:
     header: true
 - icon: link
   icon_pack: fas
-  link: https://penggaolab.github.io/
+  link: https://hsph.harvard.edu/research/gao-lab/
 superuser: false
-title: Prof. Peng Gao
+title: Prof. Peng GAO
 user_groups:
 - Academia
 ---

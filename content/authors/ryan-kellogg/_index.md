@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://rthm.com/
 superuser: false
-title: Dr. Ryan Kellogg
+title: Dr. Ryan KELLOGG
 user_groups:
 - Industry
 ---

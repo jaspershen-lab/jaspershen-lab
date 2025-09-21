@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://sai-zhang.com/
 superuser: false
-title: Prof. Sai Zhang
+title: Prof. Sai ZHANG
 user_groups:
 - Academia
 ---

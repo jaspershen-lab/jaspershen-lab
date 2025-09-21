@@ -7,9 +7,9 @@ social:
     header: true
 - icon: link
   icon_pack: fas
-  link: https://www.linkedin.com/in/wei-shao-438782115/
+  link: https://mirthai.medicine.ufl.edu/sample-page/the-pi/
 superuser: false
-title: Prof. Wei Shao
+title: Prof. Wei SHAO
 user_groups:
 - Academia
 ---

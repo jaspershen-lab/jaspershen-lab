@@ -8,7 +8,7 @@ education:
 email: "tongwu929@gmail.com"
 commentable: true
 first_name: Tong
-last_name: Wu
+last_name: WU
 highlight_name: true
 interests:
 - 💻 AI-driven drug design
@@ -41,7 +41,7 @@ social:
 status:
   icon: 👩🏻‍💻
 superuser: false
-title: Tong Wu
+title: Tong WU
 user_groups:
 - Alumni
 - Students1

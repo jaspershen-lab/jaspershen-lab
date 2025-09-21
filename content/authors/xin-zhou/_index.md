@@ -1,15 +1,15 @@
 ---
 organizations:
 - name: Fudan University
-role: Assistant Professor
+role: Professor
 social:
 - display:
     header: true
 - icon: link
   icon_pack: fas
-  link: https://www.linkedin.com/in/xinzhou-uchc/
+  link: https://imien.fudan.edu.cn/info/1015/1767.htm
 superuser: false
-title: Prof. Xin Zhou
+title: Prof. Xin ZHOU
 user_groups:
 - Academia
 ---

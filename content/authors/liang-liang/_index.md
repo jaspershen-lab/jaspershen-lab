@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://obgyn.mcw.edu/people/liang/
 superuser: false
-title:  Prof. Liang Liang
+title:  Prof. Liang LIANG
 user_groups:
 - Academia
 ---

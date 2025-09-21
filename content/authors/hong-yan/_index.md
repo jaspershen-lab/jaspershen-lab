@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://medicine.yale.edu/lab/cjohnson/profile/hong_yan/
 superuser: false
-title: Dr. Yan Hong
+title: Dr. Hong YAN
 user_groups:
 - Academia
 ---
