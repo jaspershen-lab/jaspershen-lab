@@ -31,8 +31,7 @@ status:
 superuser: false
 title: Kajal AGRAWAL
 user_groups:
-- Students
-- Graduate Students
+- Co-supervised Students
 
 ---
 My research focuses on understanding the oral and gut microbiome in the context of Asian Diet and systemic conditions like uveitis and Diabetes. With a clinical background in periodontology and research experience in microbiome medicine, I would employ multi-omics and translational approaches to identify novel biomarkers and therapeutic targets. I am currently a PhD candidate at NTU, Singapore, working on the MAPS and PROTON studies under the mentorship of Prof. Sunny Wong.

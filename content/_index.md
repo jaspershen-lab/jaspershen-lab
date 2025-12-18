@@ -317,6 +317,7 @@ sections:
     - Principal Investigator
     - Researchers
     - Students
+    - Co-supervised Students
     - Intern
     - Join US
   design:

@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: National University of Singapore
   url: ""
-role: Intern Master student (2024-)
+role: Intern Master student (2024-2026)
 social:
 - icon: house
   icon_pack: fas
@@ -41,7 +41,8 @@ status:
 superuser: false
 title: Yiying CHEN
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My research interest is in developing deep learning-based tools for optimizing the processing of mass spectrometry-based metabolomics data. By leveraging large language models to automate data quality assessment, I aim to enhance the application of metabolomics in precision medicine, improving biomarker discovery and early disease diagnosis.

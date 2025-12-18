@@ -44,8 +44,7 @@ status:
 superuser: false
 title: Ruwen ZHOU
 user_groups:
-- Students
-- Graduate Students
+- Co-supervised Students
 ---
 
 My research focuses on data analysis of gut microbiome data, with a specialization in biostatistics, mathematical modeling, and bioinformatics. I aim to uncover insights into microbial communities and their interactions with diet and health.

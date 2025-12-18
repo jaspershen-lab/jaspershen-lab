@@ -43,6 +43,7 @@ sections:
     - Postdocs
     - Research Scientist
     - Graduate Students
+    - Co-supervised Students
     - Undergraduate Students
     - Visiting Scholar
     - Intern

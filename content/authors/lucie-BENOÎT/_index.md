@@ -16,7 +16,7 @@ interests:
 organizations:
 - name: ISEN Lille
   url: ""
-role: Intern Master student (2025-)
+role: Exchange student (2025-)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -40,7 +40,7 @@ superuser: false
 title: Lucie BENOIT
 user_groups:
 - Students
-- Graduate Students
+- Undergraduate Students
 ---
 
 “The important thing is to never stop questioning,” said Einstein. Guided by this mindset, I have developed a strong interest in the pharmaceutical field and drug discovery. My current focus is on applying bioinformatics and language modeling in drug design.
