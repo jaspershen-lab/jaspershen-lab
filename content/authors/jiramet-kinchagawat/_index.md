@@ -8,7 +8,7 @@ education:
 email: "JIRAMET001@e.ntu.edu.sg"
 commentable: true
 first_name: Jiramet
-last_name: Kinchagawat
+last_name: KINCHAGAWAT
 highlight_name: true
 interests:
 - 💰 Multi-omics
@@ -33,7 +33,7 @@ social:
 status:
   icon: ☕️
 superuser: false
-title: Jiramet Kinchagawat
+title: Jiramet KINCHAGAWAT
 user_groups:
 - Students
 - PhD Students

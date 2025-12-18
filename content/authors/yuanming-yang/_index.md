@@ -8,7 +8,7 @@ education:
 email: "yang_yuanming@126.com"
 commentable: true
 first_name: Yuanming
-last_name: Yang
+last_name: YANG
 highlight_name: true
 interests:
 - 💰 scRNA-seq
@@ -38,7 +38,7 @@ social:
 status:
   icon: 👻
 superuser: false
-title: Yuanming Yang
+title: Yuanming YANG
 user_groups:
 - Researchers
 - Visiting Scholar
