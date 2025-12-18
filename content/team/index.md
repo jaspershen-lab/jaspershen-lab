@@ -42,8 +42,10 @@ sections:
     user_groups:
     - Postdocs
     - Research Scientist
-    - Graduate Students
+    - PhD Students
     - Co-supervised Students
+    - Visiting PhD Students
+    - Master Students
     - Undergraduate Students
     - Visiting Scholar
     - Intern

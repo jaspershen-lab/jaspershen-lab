@@ -40,7 +40,7 @@ superuser: false
 title: Chi Fang HSU
 user_groups:
 - Students
-- Graduate Students
+- PhD Students
 ---
 
 I study how environmental pollutants aggravate inflammatory diseases, particularly their role in triggering neuroinflammation, neurobehavioral disorders, and gut microbiome disruption in at-risk populations. Using multi-omics and machine learning, I uncover pollutant-disease mechanisms, identify microbiome biomarkers, and develop strategies to reduce health risks in vulnerable individuals with chronic inflammation.

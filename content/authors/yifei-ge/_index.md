@@ -42,7 +42,7 @@ superuser: false
 title: Yifei GE
 user_groups:
 - Students
-- Graduate Students
+- PhD Students
 ---
 
 My research interest is developing machine learning-based bioinformatics tools to integrate multi-omics data, especially metagenomic and metabolomic data. Using these integration approaches, I aim to shed biological insights into microbiota-host interactions shaping human health and apply the research findings to solve real-world medical challenges.

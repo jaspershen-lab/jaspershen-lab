@@ -44,7 +44,7 @@ superuser: false
 title: Yijiang LIU
 user_groups:
 - Students
-- Graduate Students
+- PhD Students
 ---
 
 My research interests include bioinformatics, biostatistics and machine learning. Inspired by the rapid development of artificial intelligence, I am particularly interested in combining biology and data science to provide solutions to health-related problems.

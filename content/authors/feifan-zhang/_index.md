@@ -44,7 +44,7 @@ superuser: false
 title: Feifan ZHANG
 user_groups:
 - Students
-- Graduate Students
+- PhD Students
 ---
 
 Although artificial intelligence technology is advancing rapidly, its applications in the fields of bioinformatics and clinical medicine remain relatively limited. I have a strong interest in developing AI algorithms for these two fields and hope to drive innovation and breakthroughs in them.

@@ -36,7 +36,7 @@ superuser: false
 title: Jiramet Kinchagawat
 user_groups:
 - Students
-- Graduate Students
+- PhD Students
 ---
 
 My research focuses on the interface between multi-omics data and machine learning for clinical applications, particularly on understanding the contribution of each omics layer to the classification process of machine-learning models. I hope that this work will translate into insights for developing bioinformatics tools that are both efficient and effective in clinical settings.
