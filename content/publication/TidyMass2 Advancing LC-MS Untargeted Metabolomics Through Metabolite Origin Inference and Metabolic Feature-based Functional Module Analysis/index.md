@@ -36,18 +36,18 @@ authors:
 - admin
 
 featured: false
-publication: bioRxiv
+publication: Nature Communications
 publication_types:
-- 3
-publishDate: 2025-06-27
+- 2
+publishDate: 2026-01-17
 summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
 links:
 - icon: link
   icon_pack: fas
   name: Link
-  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1
+  url: https://www.nature.com/articles/s41467-026-68464-7
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: https://www.biorxiv.org/content/10.1101/2025.05.09.652992v1.full.pdf
+  url: https://www.nature.com/articles/s41467-026-68464-7
 ---
