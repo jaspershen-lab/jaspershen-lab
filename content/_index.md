@@ -270,7 +270,7 @@ sections:
       exclude_featured: false
   design:
     columns: '1'
-    view: compact
+    view: showcase
     
 - block: collection
   id: news

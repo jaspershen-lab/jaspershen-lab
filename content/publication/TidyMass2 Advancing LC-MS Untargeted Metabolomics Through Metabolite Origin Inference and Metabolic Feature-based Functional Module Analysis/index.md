@@ -40,7 +40,7 @@ publication: Nature Communications
 publication_types:
 - 2
 publishDate: 2026-01-17
-summary: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis
+summary: Nature Communications
 links:
 - icon: link
   icon_pack: fas

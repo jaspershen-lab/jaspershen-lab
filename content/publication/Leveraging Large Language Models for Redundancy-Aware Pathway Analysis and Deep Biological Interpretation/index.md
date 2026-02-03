@@ -38,7 +38,7 @@ publication: bioRxiv
 publication_types:
 - 3
 publishDate: 2025-09-20
-summary: Leveraging Large Language Models for Redundancy-Aware Pathway Analysis and Deep Biological Interpretation
+summary: bioRxiv
 links:
 - icon: link
   icon_pack: fas

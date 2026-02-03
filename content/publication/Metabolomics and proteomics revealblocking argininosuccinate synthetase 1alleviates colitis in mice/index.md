@@ -66,7 +66,7 @@ publication: Nature Communications
 publication_types:
 - 2
 publishDate: 2025-07-30
-summary: "Metabolomics and proteomics reveal blocking argininosuccinate synthetase 1 alleviates colitis in mice"
+summary: Nature Communications
 links:
 - icon: link
   icon_pack: fas

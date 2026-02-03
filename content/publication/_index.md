@@ -8,5 +8,5 @@ text: |-
       {{% callout note %}}
       [All publications can be found here](./post/).
       {{% /callout %}}
-view: list
+view: 4
 ---
