@@ -21,6 +21,14 @@ sections:
     show_role: true
     show_social: true
     show_organizations: true
+
+- block: markdown
+  content:
+    title: 🌍 Collaborator Map
+    text: |-
+      {{< collaborator_map >}}
+  design:
+    columns: '1'
     
 # - block: markdown
 #   content:
