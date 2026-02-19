@@ -49,5 +49,5 @@ links:
 - icon: file-pdf
   icon_pack: fas
   name: PDF
-  url: https://www.nature.com/articles/s41467-026-68464-7
+  url: publication/TidyMass2- advancing LC-MS untargeted metabolomics through metabolite origin inference and metabolic feature-based functional module analysis.pdf
 ---

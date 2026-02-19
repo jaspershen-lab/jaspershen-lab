@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Zhejiang University
   url: "https://www.zju.edu.cn/"
-role: Remote Intern (2025-)
+role: Remote Intern (2025)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -41,7 +41,8 @@ status:
 superuser: false
 title: Yuchen SHEN
 user_groups:
-- Intern
+- Intern2
+- Alumni
 ---
 
 My research ambition is twofold: to decipher multi-omics data for a better understanding of human physiology particularly metabolism, and to leverage the data for translational applications. My prior work focused on applying transcriptomics and epigenomics to maternal breast health and metabolic diseases such as obesity. Building on this foundation, my current research interest lies in how to integrate metabolomics and microbiome data with other omic layers to address fundamental biological questions, tackle clinical challenges, and ultimately benefit populations in marginalized communities.

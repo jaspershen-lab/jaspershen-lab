@@ -10,6 +10,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: nc-2026-tidymass2.png
+          filters:
+            brightness: 0.6
+        position: right
+      content: 
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/tidymass2-advancing-lc-ms-untargeted-metabolomics-through-metabolite-origin-inference-and-metabolic-feature-based-functional-module-analysis/
+      title: "New publication: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: nc-2025-uc.png
           filters:
             brightness: 0.6

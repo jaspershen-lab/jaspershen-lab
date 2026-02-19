@@ -16,7 +16,7 @@ interests:
 organizations:
 - name: Fujian Medical University
   url: ""
-role: Visiting Scholar (2025-)
+role: Visiting Scholar (2025-2026)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -40,8 +40,9 @@ status:
 superuser: false
 title: Shaoguang LI
 user_groups:
-- Researchers
-- Visiting Scholar
+- Researchers2
+- Visiting Scholar2
+- Alumni
 ---
 
 S haoguang L i P h . female born in Aug. 1984 , an associate professor in the Department of Pharmaceutical
