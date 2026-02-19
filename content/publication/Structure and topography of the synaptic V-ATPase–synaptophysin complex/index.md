@@ -27,7 +27,7 @@ authors:
 - Qiang Guo
 - Axel T. Brunger
 
-featured: true
+featured: false
 publication: Nature
 publication_types:
 - 2

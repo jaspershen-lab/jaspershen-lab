@@ -218,7 +218,7 @@ sections:
     filters:
       author: ""
       category: ""
-      exclude_featured: false
+      exclude_featured: true
       publication_type: ""
       tag: ""
     offset: 0
@@ -282,7 +282,7 @@ sections:
     filters:
       folders:
         - publication
-      exclude_featured: false
+      featured_only: true
   design:
     columns: '1'
     view: showcase

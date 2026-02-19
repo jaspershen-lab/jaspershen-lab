@@ -33,3 +33,57 @@ section#news .view-list-item > a {
   pointer-events: none;
   cursor: default;
 }
+
+/* Footer: stack sections vertically on tablet/mobile */
+.custom-footer-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 24px;
+}
+
+.custom-footer-col-support,
+.custom-footer-col-contact {
+  flex: 2;
+}
+
+.custom-footer-col-visitors,
+.custom-footer-col-spacer {
+  flex: 1;
+}
+
+@media (max-width: 991.98px) {
+  .custom-footer-grid {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px 12px;
+  }
+
+  .custom-footer-col {
+    width: 100%;
+    flex: none;
+  }
+
+  .custom-footer-col-spacer {
+    display: none;
+  }
+
+  .custom-footer-col + .custom-footer-col {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 14px;
+  }
+
+  .custom-footer-globe {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 110px;
+    overflow: hidden;
+  }
+
+  .custom-footer-globe > * {
+    transform: scale(0.33);
+    transform-origin: top center;
+  }
+}

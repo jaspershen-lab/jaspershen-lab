@@ -13,7 +13,7 @@ authors:
 - admin
 - Chao Jiang
 doi: ""
-featured: true
+featured: false
 image:
   caption: ''
   focal_point: ""

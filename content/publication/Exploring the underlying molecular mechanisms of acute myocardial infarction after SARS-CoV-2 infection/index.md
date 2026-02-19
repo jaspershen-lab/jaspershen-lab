@@ -19,7 +19,7 @@ authors:
 - Fanpu Ji
 - Jie Deng
 
-featured: true
+featured: false
 publication: American Heart Journal Plus Cardiology Research and Practice
 publication_types:
 - 2
