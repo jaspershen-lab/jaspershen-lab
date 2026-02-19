@@ -1,0 +1,38 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+
+      {{ with .Content }}
+      <div class="article-style">{{ . }}</div>
+      {{ end }}
+
+      {{ $pub_pages := .Pages.ByDate.Reverse }}
+      {{ $year_groups := $pub_pages.GroupByDate "2006" }}
+
+      <div id="container-publications">
+        {{ range $year_group := $year_groups }}
+          <h2 class="pub-year-heading">{{ $year_group.Key }}</h2>
+
+          {{ range $index, $item := $year_group.Pages }}
+            {{ if $item.Params.publication_types }}
+              {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
+            {{ else }}
+              {{ $.Scratch.Set "pubtype" 0 }}
+            {{ end }}
+
+            <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}">
+              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{- end -}}

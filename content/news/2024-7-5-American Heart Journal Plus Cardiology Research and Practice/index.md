@@ -12,10 +12,10 @@ links:
   icon_pack: fas
   name: Link
   url: https://www.sciencedirect.com/science/article/pii/S2666602224000600
-- icon: file-pdf
-  icon_pack: fas
-  name: PDF
-  url: publication/Exploring the underlying molecular mechanisms of acute myocardial infarction after SARS-CoV-2 infection.pdf
+# - icon: file-pdf
+#   icon_pack: fas
+#   name: PDF
+#   url: publication/Exploring the underlying molecular mechanisms of acute myocardial infarction after SARS-CoV-2 infection.pdf
 ---
 
 Our paper: Exploring the underlying molecular mechanisms of acute myocardial infarction after SARS-CoV-2 infection has been accepted for publication in American Heart Journal Plus Cardiology Research and Practice. 

@@ -33,7 +33,7 @@ authors:
 - Chuchu Wang
 - admin
 
-featured: false
+featured: true
 publication: bioRxiv
 publication_types:
 - 3

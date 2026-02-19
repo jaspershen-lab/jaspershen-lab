@@ -19,3 +19,17 @@
   transform: scale(1.08);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
+
+// Publication year section headings
+.pub-year-heading {
+  margin-top: 1.6rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+// Disable title navigation only in homepage News block
+section#news .view-list-item > a {
+  pointer-events: none;
+  cursor: default;
+}

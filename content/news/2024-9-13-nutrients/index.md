@@ -12,10 +12,10 @@ links:
   icon_pack: fas
   name: Link
   url: https://www.mdpi.com/2072-6643/16/18/3079
-- icon: file-pdf
-  icon_pack: fas
-  name: PDF
-  # url: publication/Nonlinear dynamics of multi-omics profiles during human aging.pdf
+# - icon: file-pdf
+#   icon_pack: fas
+#   name: PDF
+#   # url: publication/Nonlinear dynamics of multi-omics profiles during human aging.pdf
 ---
 
 Our paper: Interindividual Variability in Postprandial Plasma Fructose Patterns in Adults has been accepted for publication in Nutrients. 

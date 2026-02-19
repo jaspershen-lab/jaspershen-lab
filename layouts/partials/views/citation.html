@@ -1,0 +1,49 @@
+{{ $item := .item }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
+{{ $disable_title_link := false }}
+{{ with .page }}
+  {{ if and (eq .Kind "section") (in (slice "publication" "news") .Type) }}
+    {{ $disable_title_link = true }}
+  {{ end }}
+{{ end }}
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  {{/* APA Style */}}
+  {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
+
+  <a href="{{ $item.RelPermalink }}"{{ if $disable_title_link }} onclick="event.preventDefault(); return false;" aria-disabled="true"{{ end }}>{{ $item.Title }}</a>.
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}
+  </span>.
+  {{ if $item.Params.publication_short }}
+    <strong><em>{{- $item.Params.publication_short | markdownify -}}</em></strong> ({{- $item.Date.Format "2006" -}}).
+  {{ else if $item.Params.publication }}
+    <strong><em>{{- $item.Params.publication | markdownify -}}</em></strong> ({{- $item.Date.Format "2006" -}}).
+  {{ else }}
+    ({{- $item.Date.Format "2006" -}}).
+  {{ end }}
+  <p>{{ partial "page_links" (dict "page" $item "is_list" 1) }}</p>
+
+  {{/* MLA Style */}}
+  {{ else }}
+
+  <a href="{{ $item.RelPermalink }}"{{ if $disable_title_link }} onclick="event.preventDefault(); return false;" aria-disabled="true"{{ end }}>{{ $item.Title }}</a>.
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}
+  </span>.
+  {{ if $item.Params.publication_short }}
+    <strong><em>{{- $item.Params.publication_short | markdownify -}}</em></strong> ({{- $item.Date.Format "2006" -}}).
+  {{ else if $item.Params.publication }}
+    <strong><em>{{- $item.Params.publication | markdownify -}}</em></strong> ({{- $item.Date.Format "2006" -}}).
+  {{ else }}
+    ({{- $item.Date.Format "2006" -}}).
+  {{ end }}
+
+  {{ if $has_attachments }}
+  <div class="btn-links">
+    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+  </div>
+  {{ end }}
+
+  {{ end }}
+</div>

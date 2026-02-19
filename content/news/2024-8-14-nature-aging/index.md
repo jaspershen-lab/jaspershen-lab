@@ -12,10 +12,10 @@ links:
   icon_pack: fas
   name: Link
   url: https://pubmed.ncbi.nlm.nih.gov/39143318/
-- icon: file-pdf
-  icon_pack: fas
-  name: PDF
-  url: publication/Nonlinear dynamics of multi-omics profiles during human aging.pdf
+# - icon: file-pdf
+#   icon_pack: fas
+#   name: PDF
+#   url: publication/Nonlinear dynamics of multi-omics profiles during human aging.pdf
 ---
 
 Our paper: Nonlinear dynamics of multi-omics profiles during human aging has been accepted for publication in Nature Aging. 

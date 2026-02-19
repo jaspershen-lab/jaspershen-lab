@@ -12,10 +12,10 @@ links:
   icon_pack: fas
   name: Link
   url: https://academic.oup.com/bib/article/26/1/bbaf059/8016252
-- icon: file-pdf
-  icon_pack: fas
-  name: PDF
-  # url: publication/Longitudinal Urine Metabolic Profiling and Gestational Age Prediction in Pregnancy.pdf
+# - icon: file-pdf
+#   icon_pack: fas
+#   name: PDF
+#   # url: publication/Longitudinal Urine Metabolic Profiling and Gestational Age Prediction in Pregnancy.pdf
 ---
 
 Our paper: *Longitudinal Urine Metabolic Profiling and Gestational Age Prediction in Pregnancy* has been published in *Briefing in Bioinformatics*. 
