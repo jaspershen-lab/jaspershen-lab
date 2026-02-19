@@ -9672,3 +9672,12 @@ div.chart {
 
 .cta-group {
   justify-content: center; }
+
+.people-widget .avatar {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transform-origin: center center;
+  will-change: transform; }
+
+.people-widget .avatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18); }
