@@ -1,7 +1,7 @@
 ---
 banner:
   caption: ""
-  image: "news.jpg"
+  # image: "news.jpg"
 title: 📰 News
 view: 4
 ---

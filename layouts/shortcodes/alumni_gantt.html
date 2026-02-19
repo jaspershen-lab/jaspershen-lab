@@ -1,0 +1,92 @@
+{{- $authorsSection := site.GetPage "section" "authors" -}}
+{{- $authors := slice -}}
+{{- if $authorsSection -}}
+  {{- $authors = where $authorsSection.Pages "Params.user_groups" "intersect" (slice "Alumni") -}}
+  {{- $authors = sort $authors "Title" "asc" -}}
+{{- end -}}
+
+{{- $rows := slice -}}
+{{- $roles := slice -}}
+{{- $minYear := 2024 -}}
+{{- $maxYear := 2026 -}}
+
+{{- range $authors -}}
+  {{- $groups := .Params.user_groups | default (slice "Unknown") -}}
+  {{- $firstGroup := index $groups 0 | default "Unknown" -}}
+  {{- $role := replaceRE "[0-9]+$" "" $firstGroup -}}
+  {{- $role = replace $role "_" " " -}}
+  {{- $roleKey := urlize $role -}}
+
+  {{- $roleText := .Params.role | default "" -}}
+  {{- $period := "" -}}
+  {{- $periodMatches := findRE "[0-9]{4}(?:-[0-9]{4})?" $roleText 1 -}}
+  {{- if gt (len $periodMatches) 0 -}}
+    {{- $period = index $periodMatches 0 -}}
+  {{- end -}}
+  {{- $start := $minYear -}}
+  {{- $end := add $start 1 -}}
+  {{- if $period -}}
+    {{- $parts := split $period "-" -}}
+    {{- $start = int (index $parts 0) -}}
+    {{- if gt (len $parts) 1 -}}
+      {{- $end = int (index $parts 1) -}}
+    {{- else -}}
+      {{- $end = add $start 1 -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if lt $start $minYear -}}{{- $minYear = $start -}}{{- end -}}
+  {{- if gt $end $maxYear -}}{{- $maxYear = $end -}}{{- end -}}
+
+  {{- $rows = $rows | append (dict
+    "name" .Title
+    "link" .RelPermalink
+    "start" $start
+    "end" $end
+    "role" $role
+    "roleKey" $roleKey
+    "sortKey" (printf "%04d-%04d-%s" $start $end .Title)
+  ) -}}
+  {{- if not (in $roles $role) -}}
+    {{- $roles = $roles | append $role -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $minYear $maxYear -}}
+  {{- $maxYear = add $minYear 1 -}}
+{{- end -}}
+
+{{- $rows = sort $rows "sortKey" "asc" -}}
+
+<div class="alumni-gantt" style="--min-year: {{ $minYear }}; --max-year: {{ $maxYear }};">
+  <div class="gantt-legend">
+    {{ range $roles }}
+      <span class="gantt-legend-item role-{{ urlize . }}">
+        <span class="gantt-legend-dot"></span>{{ . }}
+      </span>
+    {{ end }}
+  </div>
+
+  <div class="gantt-axis">
+    {{- $yearSpan := sub $maxYear $minYear -}}
+    {{- range seq $minYear $maxYear -}}
+      {{- $left := div (mul (sub . $minYear) 100.0) $yearSpan -}}
+      <span style="left: {{ $left }}%;">{{ . }}</span>
+    {{- end -}}
+  </div>
+
+  {{ range $rows }}
+    <div class="gantt-row role-{{ .roleKey }}">
+      <div class="gantt-name">
+        <a href="{{ .link }}">{{ .name }}</a>
+      </div>
+      <div class="gantt-track">
+        <span
+          class="gantt-bar"
+          style="--start: {{ .start }}; --end: {{ .end }};"
+          title="{{ .name }} | {{ .role }} | {{ .start }} - {{ .end }}"
+        ></span>
+      </div>
+    </div>
+  {{ end }}
+</div>

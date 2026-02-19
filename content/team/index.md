@@ -8,26 +8,26 @@ image:
   alt_text: 
   filename: coders.jpg
 sections:
-- block: markdown
-  content:
-    title: 👥 Meet Our Team
-    subtitle: 🤝 [Our collaborators can be found here](/collaborators/)
-    text: ""
-  design:
-    columns: '1'
-    background:
-      image:
-        filename: team.jpg
-        filters:
-          brightness: 0.5
-      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
-      # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
-      # Use a fun parallax-like fixed background effect on desktop? true/false
-      parallax: true
-      # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
+# - block: markdown
+#   content:
+#     title: 👥 Meet Our Team
+#     subtitle: 🤝 [Our collaborators can be found here](/collaborators/)
+#     text: ""
+#   design:
+#     columns: '1'
+#     background:
+#       image:
+#         filename: team.jpg
+#         filters:
+#           brightness: 0.5
+#       #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
+#       size: cover
+#       # Image focal point. Options include `left`, `center` (default), or `right`.
+#       position: center
+#       # Use a fun parallax-like fixed background effect on desktop? true/false
+#       parallax: true
+#       # Text color (true=light, false=dark, or remove for the dynamic theme color).
+#       text_color_light: true
 
 - block: about.biography
   content:
@@ -57,6 +57,14 @@ sections:
     show_social: true
     show_organizations: true
     
+- block: markdown
+  content:
+    title: Alumni Timeline
+    text: |-
+      {{< alumni_gantt >}}
+  design:
+    columns: '1'
+
 - block: markdown
   content:
     title: Alumni Summary

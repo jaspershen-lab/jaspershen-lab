@@ -9730,3 +9730,111 @@ section#news .view-list-item > a {
   .custom-footer-globe > * {
     transform: scale(0.33);
     transform-origin: top center; } }
+
+/* Team page: alumni gantt */
+.alumni-gantt {
+  margin: 0 auto;
+  max-width: 1100px; }
+
+.gantt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 0 0 10px 240px; }
+
+.gantt-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  font-weight: 600; }
+
+.gantt-legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: var(--role-color, #375a9e); }
+
+.gantt-axis {
+  position: relative;
+  height: 24px;
+  margin: 0 0 10px 240px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+.gantt-axis span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7); }
+
+.gantt-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+  transform-origin: left center;
+  transition: transform 0.2s ease, background-color 0.2s ease; }
+
+.gantt-row:hover {
+  transform: scale(1.02);
+  background: rgba(0, 0, 0, 0.03); }
+
+.gantt-name {
+  text-align: right;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding-right: 8px; }
+
+.gantt-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease; }
+
+.gantt-row:hover .gantt-name a {
+  color: #b21f2f;
+  text-decoration: underline; }
+
+.gantt-track {
+  position: relative;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  overflow: hidden; }
+
+.gantt-bar {
+  position: absolute;
+  top: 3px;
+  height: 16px;
+  border-radius: 5px;
+  background: var(--role-color, #375a9e);
+  left: calc((var(--start) - var(--min-year)) * 100% / (var(--max-year) - var(--min-year)));
+  width: calc((var(--end) - var(--start)) * 100% / (var(--max-year) - var(--min-year)));
+  min-width: 10px;
+  transition: height 0.2s ease, top 0.2s ease, box-shadow 0.2s ease; }
+
+.gantt-row:hover .gantt-bar {
+  top: 2px;
+  height: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); }
+
+.role-intern {
+  --role-color: #2a9d8f; }
+
+.role-researchers {
+  --role-color: #c97d10; }
+
+.role-students {
+  --role-color: #7b2cbf; }
+
+.role-alumni {
+  --role-color: #6c757d; }
+
+@media (max-width: 991.98px) {
+  .alumni-gantt {
+    overflow-x: auto;
+    padding-bottom: 4px; }
+  .alumni-gantt > .gantt-legend,
+  .alumni-gantt > .gantt-axis,
+  .alumni-gantt > .gantt-row {
+    min-width: 760px; } }
