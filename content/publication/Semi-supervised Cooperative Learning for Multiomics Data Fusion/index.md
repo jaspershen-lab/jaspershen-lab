@@ -11,7 +11,7 @@ authors:
 - Michael Snyder
 - Robert Tibshirani
 doi: ""
-featured: true
+featured: false
 image:
   caption: ''
   focal_point: ""

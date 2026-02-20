@@ -24,12 +24,123 @@
               {{ $.Scratch.Set "pubtype" 0 }}
             {{ end }}
 
-            <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}">
+            <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}" data-title="{{ $item.Title | lower | htmlEscape }}">
               {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
             </div>
           {{ end }}
         {{ end }}
       </div>
+      <script>
+        (function () {
+          var url = new URL(window.location.href);
+          var keyword = (url.searchParams.get("keyword") || url.searchParams.get("q") || "").trim().toLowerCase();
+          if (!keyword) return;
+
+          var container = document.getElementById("container-publications");
+          if (!container) return;
+          var rows = Array.prototype.slice.call(container.querySelectorAll(".grid-sizer"));
+          rows.forEach(function (row) {
+            var t = (row.getAttribute("data-title") || "").toLowerCase();
+            row.style.display = t.indexOf(keyword) >= 0 ? "" : "none";
+          });
+
+          var heads = Array.prototype.slice.call(container.querySelectorAll(".pub-year-heading"));
+          heads.forEach(function (h) {
+            var n = h.nextElementSibling;
+            var anyVisible = false;
+            while (n && !n.classList.contains("pub-year-heading")) {
+              if (n.classList.contains("grid-sizer") && n.style.display !== "none") anyVisible = true;
+              n = n.nextElementSibling;
+            }
+            h.style.display = anyVisible ? "" : "none";
+          });
+
+          var note = document.createElement("div");
+          note.className = "pub-filter-note";
+          note.textContent = "Filtered by keyword: " + keyword;
+          container.parentNode.insertBefore(note, container);
+        })();
+      </script>
+
+      <div class="publication-summary-section">
+        <h2 class="pub-year-heading">Publication Summary</h2>
+        <div class="pub-summary-grid">
+          <div class="pub-summary-card">
+            <h3 class="pub-summary-title">Publications Per Year</h3>
+            <div id="pub-count-chart" class="pub-bars-chart"></div>
+          </div>
+          <div class="pub-summary-card">
+            <h3 class="pub-summary-title">Citations Per Year</h3>
+            <div id="pub-cite-chart" class="pub-bars-chart"></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var tooltip = document.createElement("div");
+          tooltip.className = "pub-floating-tooltip";
+          tooltip.style.display = "none";
+          document.body.appendChild(tooltip);
+
+          function showTooltip(e, text) {
+            tooltip.textContent = text;
+            tooltip.style.display = "block";
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          }
+
+          function moveTooltip(e) {
+            if (tooltip.style.display !== "block") return;
+            tooltip.style.left = (e.clientX + 12) + "px";
+            tooltip.style.top = (e.clientY + 12) + "px";
+          }
+
+          function hideTooltip() {
+            tooltip.style.display = "none";
+          }
+
+          function renderBars(targetId, rows, suffix) {
+            var root = document.getElementById(targetId);
+            if (!root || !Array.isArray(rows) || rows.length === 0) return;
+            var maxVal = Math.max.apply(null, rows.map(function (r) { return r.count || 0; }));
+            if (!maxVal || maxVal < 1) maxVal = 1;
+            root.innerHTML = "";
+            rows.forEach(function (r) {
+              var col = document.createElement("div");
+              col.className = "pub-bar-col";
+
+              var bar = document.createElement("div");
+              bar.className = "pub-bar";
+              bar.style.height = (12 + ((r.count || 0) / maxVal) * 88) + "%";
+              bar.setAttribute("data-value", (r.count || 0) + " " + suffix);
+              bar.addEventListener("mouseenter", function (e) {
+                showTooltip(e, (r.year + ": " + (r.count || 0) + " " + suffix));
+              });
+              bar.addEventListener("mousemove", moveTooltip);
+              bar.addEventListener("mouseleave", hideTooltip);
+
+              var year = document.createElement("div");
+              year.className = "pub-bar-year";
+              year.textContent = r.year;
+
+              col.appendChild(bar);
+              col.appendChild(year);
+              root.appendChild(col);
+            });
+          }
+
+          fetch("/data/publication_summary.json", { cache: "no-store" })
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("no-json")); })
+            .then(function (d) {
+              renderBars("pub-count-chart", d.publication_per_year || [], "papers");
+              renderBars("pub-cite-chart", d.citation_per_year || [], "citations");
+            })
+            .catch(function () {
+              renderBars("pub-count-chart", [], "papers");
+              renderBars("pub-cite-chart", [], "citations");
+            });
+        })();
+      </script>
 
     </div>
   </div>

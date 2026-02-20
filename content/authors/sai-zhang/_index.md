@@ -1,6 +1,6 @@
 ---
 organizations:
-- name: University of Florida
+- name: Yale University
 role: Assistant Professor
 social:
 - display:

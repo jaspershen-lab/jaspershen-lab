@@ -1,0 +1,18 @@
+{{ $keywords := site.Data.publication_keywords.keywords }}
+{{ if and $keywords (gt (len $keywords) 0) }}
+  {{ $sorted := sort $keywords "word" "asc" }}
+  {{ $max := index (sort $keywords "count" "desc") 0 }}
+  {{ $maxc := $max.count | default 1 }}
+  {{ $min := index (sort $keywords "count" "asc") 0 }}
+  {{ $minc := $min.count | default 1 }}
+  {{ $delta := sub $maxc $minc }}
+  {{ if eq $delta 0 }}{{ $delta = 1 }}{{ end }}
+
+  <div class="pub-keyword-cloud">
+    {{ range $k := $sorted }}
+      {{ $weight := div (sub $k.count $minc) $delta }}
+      {{ $fontSize := add 0.9 (mul 1.4 $weight) }}
+      <a href="/publication/?keyword={{ $k.word | urlquery }}" style="font-size:{{ $fontSize }}rem">{{ $k.word }}</a>
+    {{ end }}
+  </div>
+{{ end }}

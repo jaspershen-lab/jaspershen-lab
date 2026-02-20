@@ -492,9 +492,11 @@ sections:
   #   columns: '1'
 
 
-- block: tag_cloud
+- block: markdown
   content:
     title: ""
+    text: |-
+      {{< publication_wordcloud >}}
   design:
     columns: '1'
     background:

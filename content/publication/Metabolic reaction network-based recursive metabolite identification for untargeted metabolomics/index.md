@@ -13,7 +13,7 @@ authors:
 - Nan Liu
 - Zheng-Jiang Zhu
 
-featured: true
+featured: false
 publication: Nature communications
 publication_types:
 - 2

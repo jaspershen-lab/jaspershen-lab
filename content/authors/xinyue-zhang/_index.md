@@ -19,7 +19,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Master Student (2025-2026)
+role: Master Student (2025-)
 social:
 # - icon: house
 #   icon_pack: fas

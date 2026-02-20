@@ -217,3 +217,137 @@ section#news .view-list-item > a {
     min-width: 760px;
   }
 }
+
+/* Publication summary charts */
+.publication-summary-section {
+  margin-top: 2rem;
+}
+
+.pub-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.pub-summary-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.pub-summary-title {
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.pub-bars-chart {
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 40px 4px 0 4px;
+}
+
+.pub-bar-col {
+  min-width: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.pub-bar {
+  width: 18px;
+  border-radius: 5px 5px 0 0;
+  background: rgba(178, 31, 47, 0.8);
+  transform-origin: bottom center;
+  transition: transform 0.18s ease, filter 0.18s ease;
+  position: relative;
+}
+
+.pub-bar:hover {
+  transform: scale(1.25);
+  filter: brightness(1.08);
+  z-index: 3;
+}
+
+.pub-bar-year {
+  font-size: 10px;
+  margin-top: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.pub-floating-tooltip {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.86);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 5px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.dark .publication-summary-section .pub-year-heading,
+.dark .publication-summary-section .pub-summary-title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dark .pub-summary-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dark .pub-bar-year {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 991.98px) {
+  .pub-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Homepage publication keyword cloud */
+.pub-keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  padding: 1rem 0.4rem;
+}
+
+.pub-keyword-cloud a {
+  display: inline-block;
+  line-height: 1.1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: transform 0.16s ease, color 0.16s ease;
+}
+
+.pub-keyword-cloud a:hover {
+  transform: scale(1.12);
+}
+
+.pub-filter-note {
+  margin: 0.4rem 0 1rem 0;
+  padding: 0.45rem 0.7rem;
+  border-left: 3px solid #b21f2f;
+  background: rgba(178, 31, 47, 0.08);
+  font-size: 0.95rem;
+}
+
+.dark .pub-filter-note {
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: #ff6b7a;
+  color: rgba(255, 255, 255, 0.9);
+}

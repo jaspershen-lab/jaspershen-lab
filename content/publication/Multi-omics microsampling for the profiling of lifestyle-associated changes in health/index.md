@@ -37,7 +37,7 @@ publication: 'Nature Biomedical Engineering'
 publication_types:
 - "2"
 publishDate: "2023-01-19T00:00:00Z"
-summary: Multi-omics microsampling for the profiling of lifestyle-associated changes in health
+summary: Current healthcare practices are reactive and use limited physiological and clinical information, often collected months or years apart. Moreover, the discovery and profiling of blood biomarkers in clinical and research settings are constrained by geographical barriers, the cost and inconvenience of in-clinic venepuncture, low sampling frequency and the low depth of molecular measurements. Here we describe a strategy for the frequent capture and analysis of thousands of metabolites, lipids, cytokines and proteins in 10 μl of blood alongside physiological information from wearable sensors. We show the advantages of such frequent and dense multi-omics microsampling in two applications the assessment of the reactions to a complex mixture of dietary interventions, to discover individualized inflammatory and metabolic responses; and deep individualized profiling, to reveal large-scale molecular fluctuations as well as thousands of molecular relationships associated with intra-day physiological variations (in heart rate, for example) and with the levels of clinical biomarkers (specifically, glucose and cortisol) and of physical activity. Combining wearables and multi-omics microsampling for frequent and scalable omics may facilitate dynamic health profiling and biomarker discovery.
 links:
 - icon: link
   icon_pack: fas
