@@ -1,3 +1,4 @@
+library(tidyverse)
 googlescholar2shenlab <- function(
     scholar_url = "3TK9yz8AAAAJ",
     publication_dir = "content/publication",

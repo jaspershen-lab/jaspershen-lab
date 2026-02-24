@@ -52,6 +52,417 @@ section#news .view-list-item > a {
   flex: 1;
 }
 
+/* Homepage research cards */
+.research-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.research-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 252, 0.96));
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.16);
+}
+
+.research-card__image-link {
+  display: block;
+  background: #0b1220;
+}
+
+.research-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.research-card__body {
+  padding: 16px 16px 18px;
+}
+
+.research-card__title {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.research-card__text {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.research-card__more {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dark .research-card {
+  background: linear-gradient(180deg, rgba(28, 34, 49, 0.97), rgba(23, 28, 41, 0.97));
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30);
+}
+
+.dark .research-card__title,
+.dark .research-card__title a {
+  color: #eef2f7 !important;
+}
+
+.dark .research-card__text {
+  color: rgba(226, 232, 240, 0.88);
+}
+
+/* Force homepage publication collection block to lay out cards in 3 columns regardless of item count. */
+section#publication .col-12:has(> .view-pub-card) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+section#publication .col-12:has(> .view-pub-card) > :not(.view-pub-card) {
+  grid-column: 1 / -1;
+}
+
+section#publication .col-12:has(> .view-pub-card) > .view-pub-card {
+  width: auto;
+  margin: 0;
+  float: none;
+}
+
+/* Homepage publication cards */
+.home-pub-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Homepage collection block renders items sequentially without a dedicated grid wrapper.
+   Use inline-block cards so featured publications wrap as 3 columns (6 => 3x2, 7 => 3x2+1). */
+.view-pub-card {
+  display: block;
+  vertical-align: top;
+  width: calc((100% - 36px) / 3);
+  margin: 0 18px 18px 0;
+}
+
+.view-pub-card:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.home-pub-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.home-pub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+}
+
+.home-pub-card__image-link {
+  position: relative;
+  display: block;
+  background: #0b1220;
+}
+
+.home-pub-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  background: #0b1220;
+}
+
+.home-pub-card__image--placeholder {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.home-pub-card__image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.08), rgba(2, 6, 23, 0.52));
+  pointer-events: none;
+}
+
+.home-pub-card__overlay {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 2;
+}
+
+.home-pub-card__overlay .btn {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.95);
+  color: #8b1023;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.home-pub-card__overlay .btn:hover {
+  background: #fff;
+}
+
+.home-pub-card__body {
+  padding: 14px 14px 16px;
+  min-height: 132px;
+  height: 132px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.home-pub-card__title {
+  font-size: 1.02rem;
+  line-height: 1.35;
+  width: 100%;
+}
+
+.home-pub-card__title a {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dark .home-pub-card {
+  background: linear-gradient(180deg, rgba(28, 34, 49, 0.97), rgba(23, 28, 41, 0.97));
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30);
+}
+
+.dark .home-pub-card__title,
+.dark .home-pub-card__title a {
+  color: #eef2f7 !important;
+}
+
+.dark .home-pub-card__overlay .btn {
+  background: rgba(15, 23, 42, 0.78);
+  border-color: rgba(148, 163, 184, 0.35);
+  color: #e2e8f0;
+}
+
+/* Homepage team stats (under Join US) */
+.team-stats-widget {
+  position: relative;
+  margin: 8px auto 0;
+  max-width: 1180px;
+}
+
+.team-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.team-stats-card {
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  padding: 16px;
+  height: 100%;
+}
+
+.team-stats-card__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.team-donut-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.team-donut-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+}
+
+.team-donut-total {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.team-donut-total__num {
+  font-weight: 800;
+}
+
+.team-donut-legend {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.team-donut-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-donut-legend__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: var(--team-cat-color, #64748b);
+}
+
+.team-donut-legend__text {
+  font-size: 0.92rem;
+}
+
+.team-donut-arc {
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.team-bars-chart {
+  display: grid;
+  gap: 8px;
+  max-height: none;
+  overflow: visible;
+  padding-right: 4px;
+}
+
+.team-bar-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: 10px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.team-bar-row.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-bar-row__name {
+  color: var(--team-cat-color, inherit);
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.team-bar-row__name:hover {
+  text-decoration: underline;
+}
+
+.team-bar-row__track {
+  position: relative;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.22);
+  overflow: visible;
+}
+
+.team-bar-row__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-radius: 999px;
+  background: var(--team-cat-color, #64748b);
+  transition: width 1.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.18s ease, filter 0.18s ease;
+  transform-origin: left center;
+}
+
+.team-bar-row__value {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  color: #0f172a;
+  pointer-events: none;
+}
+
+.team-bar-row.is-hover .team-bar-row__bar {
+  transform: scaleY(1.18);
+  filter: brightness(1.05);
+}
+
+.team-stats-tooltip {
+  position: fixed;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  padding: 6px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+.dark .team-stats-card {
+  background: rgba(23, 28, 41, 0.97);
+  border-color: rgba(148, 163, 184, 0.16);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.dark .team-stats-card__title,
+.dark .team-donut-center__value,
+.dark .team-donut-total,
+.dark .team-donut-legend__text,
+.dark .team-bar-row__name {
+  color: #e5e7eb;
+}
+
+.dark .team-donut-center__label {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.dark .team-donut-svg {
+  --team-donut-hole: rgba(23, 28, 41, 0.98);
+}
+
+.dark .team-bar-row__track {
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.dark .team-bar-row__value {
+  color: #f8fafc;
+}
+
 @media (max-width: 991.98px) {
   .custom-footer-grid {
     flex-direction: column !important;
@@ -85,6 +496,53 @@ section#news .view-list-item > a {
   .custom-footer-globe > * {
     transform: scale(0.33);
     transform-origin: top center;
+  }
+
+  .research-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .view-pub-card {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .view-pub-card:nth-of-type(3n) {
+    margin-right: 0;
+  }
+
+  section#publication .col-12:has(> .view-pub-card) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .home-pub-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .home-pub-card__image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .home-pub-card__body {
+    height: auto;
+    min-height: 112px;
+  }
+
+  .team-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-bar-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .team-bar-row__track {
+    height: 22px;
   }
 }
 
@@ -223,6 +681,10 @@ section#news .view-list-item > a {
   margin-top: 2rem;
 }
 
+section#publication .publication-summary-section {
+  margin-top: 0.5rem;
+}
+
 .pub-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -245,14 +707,16 @@ section#news .view-list-item > a {
   height: 280px;
   display: flex;
   align-items: flex-end;
-  gap: 4px;
+  justify-content: space-between;
+  gap: 8px;
   overflow-x: auto;
   overflow-y: visible;
   padding: 40px 4px 0 4px;
 }
 
 .pub-bar-col {
-  min-width: 28px;
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,7 +725,9 @@ section#news .view-list-item > a {
 }
 
 .pub-bar {
-  width: 18px;
+  width: 70%;
+  max-width: 22px;
+  min-width: 12px;
   border-radius: 5px 5px 0 0;
   background: rgba(178, 31, 47, 0.8);
   transform-origin: bottom center;

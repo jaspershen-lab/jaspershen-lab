@@ -1,0 +1,130 @@
+{{- $authorsSection := site.GetPage "Section" "authors" -}}
+{{- $authors := slice -}}
+{{- if $authorsSection -}}
+  {{- $authors = $authorsSection.Pages -}}
+{{- else -}}
+  {{- $authors = where site.RegularPages "Section" "authors" -}}
+{{- end -}}
+{{- $pubs := where site.RegularPages "Section" "publication" -}}
+
+{{- $rowsScratch := newScratch -}}
+{{- $rowsScratch.Set "rows" (slice) -}}
+{{- $catScratch := newScratch -}}
+{{- $catScratch.Set "PI" 0 -}}
+{{- $catScratch.Set "Researchers" 0 -}}
+{{- $catScratch.Set "Students" 0 -}}
+{{- $catScratch.Set "Co-supervised Students" 0 -}}
+{{- $catScratch.Set "Intern" 0 -}}
+
+{{- range $authors -}}
+  {{- $groups := .Params.user_groups -}}
+  {{- if and $groups (gt (len $groups) 0) -}}
+    {{- $g0 := index $groups 0 -}}
+    {{- if in (slice "Principal Investigator" "Researchers" "Students" "Co-supervised Students" "Intern") $g0 -}}
+      {{- $cat := "Researchers" -}}
+      {{- if or (eq $g0 "Principal Investigator") (eq $g0 "PI") -}}
+        {{- $cat = "PI" -}}
+      {{- else if eq $g0 "Co-supervised Students" -}}
+        {{- $cat = "Co-supervised Students" -}}
+      {{- else if eq $g0 "Intern" -}}
+        {{- $cat = "Intern" -}}
+      {{- else if eq $g0 "Students" -}}
+        {{- $cat = "Students" -}}
+      {{- else if eq $g0 "Researchers" -}}
+        {{- $cat = "Researchers" -}}
+      {{- end -}}
+
+      {{- $display := .Title | plainify -}}
+      {{- $slug := (replaceRE "/$" "" .RelPermalink | path.Base | lower) -}}
+      {{- $fullName := printf "%s %s" (.Params.first_name | default "") (.Params.last_name | default "") | lower | replaceRE "\\s+" " " | replaceRE "^\\s+|\\s+$" "" -}}
+      {{- $displayNorm := $display | lower | replaceRE "\\s+" " " | replaceRE "^\\s+|\\s+$" "" -}}
+      {{- $aliases := slice $slug $displayNorm -}}
+      {{- if ne $fullName "" -}}
+        {{- $aliases = $aliases | append $fullName -}}
+      {{- end -}}
+      {{- if or (.Params.superuser | default false) (eq $slug "xiaotao-shen") -}}
+        {{- $aliases = $aliases | append "admin" | append "xiaotao shen" | append "xiaotao shen " -}}
+      {{- end -}}
+      {{- $pubCountScratch := newScratch -}}
+      {{- $pubCountScratch.Set "n" 0 -}}
+
+      {{- range $pubs -}}
+        {{- $matchScratch := newScratch -}}
+        {{- $matchScratch.Set "hit" false -}}
+        {{- range (.Params.authors | default (slice)) -}}
+          {{- $a := printf "%v" . | lower | replaceRE "\\s+" " " | replaceRE "^\\s+|\\s+$" "" -}}
+          {{- if in $aliases $a -}}
+            {{- $matchScratch.Set "hit" true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $matchScratch.Get "hit" -}}
+          {{- $pubCountScratch.Add "n" 1 -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $row := dict
+        "name" $display
+        "url" .RelPermalink
+        "category" $cat
+        "count" ($pubCountScratch.Get "n")
+      -}}
+      {{- $rowsScratch.Set "rows" (($rowsScratch.Get "rows") | append $row) -}}
+      {{- $catScratch.Add $cat 1 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $rows := sort ($rowsScratch.Get "rows") "count" "desc" -}}
+{{- $totalMembers := len $rows -}}
+{{- $donut := slice
+  (dict "label" "PI" "count" ($catScratch.Get "PI"))
+  (dict "label" "Researchers" "count" ($catScratch.Get "Researchers"))
+  (dict "label" "Students" "count" ($catScratch.Get "Students"))
+  (dict "label" "Co-supervised Students" "count" ($catScratch.Get "Co-supervised Students"))
+  (dict "label" "Intern" "count" ($catScratch.Get "Intern"))
+-}}
+{{- $widgetID := "team-membership-stats" -}}
+
+<div id="{{ $widgetID }}" class="team-stats-widget">
+  <script type="application/json" class="team-stats-donut-data">{{ $donut | jsonify }}</script>
+  <script type="application/json" class="team-stats-bar-data">{{ $rows | jsonify }}</script>
+
+  <div class="team-stats-grid">
+    <section class="team-stats-card team-stats-card--donut">
+      <div class="team-stats-card__title">Current Lab Member Distribution</div>
+      <div class="team-donut-wrap">
+        <svg class="team-donut-svg" viewBox="0 0 320 320" aria-label="Team category distribution"></svg>
+      </div>
+      <div class="team-donut-total">Total members: <span class="team-donut-total__num" data-total-target="{{ $totalMembers }}">0</span></div>
+      <div class="team-donut-legend">
+        {{ range $donut }}
+          {{ if gt .count 0 }}
+          <div class="team-donut-legend__item" data-cat="{{ .label }}">
+            <span class="team-donut-legend__dot"></span>
+            <span class="team-donut-legend__text">{{ .label }} ({{ .count }})</span>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="team-stats-card team-stats-card--bars">
+      <div class="team-stats-card__title">Publications by Current Members</div>
+      <div class="team-bars-chart" role="img" aria-label="Publication counts by member">
+        {{ range $rows }}
+          <div class="team-bar-row" data-count="{{ .count }}" data-category="{{ .category }}">
+            <a class="team-bar-row__name" href="{{ .url }}">{{ .name }}</a>
+            <div class="team-bar-row__track">
+              <div class="team-bar-row__bar"></div>
+              <div class="team-bar-row__value">{{ .count }}</div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <div class="team-stats-tooltip" hidden></div>
+</div>
+
+<script src="/js/team_membership_stats.js"></script>

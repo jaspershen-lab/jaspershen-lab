@@ -1,0 +1,69 @@
+{{ $item := .item }}
+
+{{/* Resolve image */}}
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+{{ $imageURL := "" }}
+{{ $imageW := 0 }}
+{{ $imageH := 0 }}
+{{ with $resource }}
+  {{ $img := .Resize "900x webp" }}
+  {{ $imageURL = $img.RelPermalink }}
+  {{ $imageW = $img.Width }}
+  {{ $imageH = $img.Height }}
+{{ end }}
+
+{{/* Resolve Link button from frontmatter links */}}
+{{ $linkURL := "" }}
+{{ range $item.Params.links }}
+  {{ $nm := lower (default "" .name) }}
+  {{ if and (eq $linkURL "") (eq $nm "link") }}
+    {{ $linkURL = .url }}
+  {{ end }}
+{{ end }}
+
+{{/* Resolve PDF button (same logic as page_links partial subset) */}}
+{{ $pdfURL := "" }}
+{{ $pdfRes := $item.Resources.GetMatch (printf "%s.pdf" $item.File.ContentBaseName) }}
+{{ with $pdfRes }}
+  {{ $pdfURL = .RelPermalink }}
+{{ else }}
+  {{ with $item.Params.url_pdf }}
+    {{ $pdfURL = . | relURL }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $pdfURL "") $item.Params.links }}
+  {{ range $item.Params.links }}
+    {{ $nm := lower (default "" .name) }}
+    {{ if and (eq $pdfURL "") (eq $nm "pdf") }}
+      {{ $pdfURL = .url }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="view-pub-card">
+  <article class="home-pub-card">
+    <a class="home-pub-card__image-link" href="{{ $item.RelPermalink }}">
+      {{ with $imageURL }}
+        <img class="home-pub-card__image" src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
+      {{ else }}
+        <div class="home-pub-card__image home-pub-card__image--placeholder"></div>
+      {{ end }}
+      <div class="home-pub-card__image-shade"></div>
+    </a>
+
+    <div class="home-pub-card__overlay">
+      {{ with $linkURL }}
+        <a class="btn btn-outline-primary btn-page-header btn-sm" href="{{ . | safeURL }}" target="_blank" rel="noopener">Link</a>
+      {{ end }}
+      {{ with $pdfURL }}
+        <a class="btn btn-outline-primary btn-page-header btn-sm" href="{{ . | safeURL }}" target="_blank" rel="noopener">PDF</a>
+      {{ end }}
+    </div>
+
+    <div class="home-pub-card__body">
+      <div class="section-subheading article-title mb-0 mt-0 home-pub-card__title">
+        <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+      </div>
+    </div>
+  </article>
+</div>

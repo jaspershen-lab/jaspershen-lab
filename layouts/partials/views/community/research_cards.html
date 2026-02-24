@@ -1,0 +1,49 @@
+{{ $item := .item }}
+
+{{ $summary := "" }}
+{{ if $item.Params.summary }}
+  {{ $summary = $item.Params.summary | plainify }}
+{{ else if $item.Params.abstract }}
+  {{ $summary = $item.Params.abstract | plainify }}
+{{ else if $item.Summary }}
+  {{ $summary = $item.Summary | plainify }}
+{{ end }}
+{{ $summary = $summary | truncate 190 }}
+
+{{ $slug := $item.File.ContentBaseName }}
+{{ $title := $item.Title | plainify }}
+{{ $image := "/image/research-multiomics.svg" }}
+
+{{ if eq $slug "aging" }}
+  {{ $image = "/image/research-aging.svg" }}
+  {{ $title = "Aging and Aging-Related Diseases" }}
+{{ else if eq $slug "pregnancy" }}
+  {{ $image = "/image/research-pregnancy.svg" }}
+  {{ $title = "Maternal and Child Health" }}
+{{ else if eq $slug "multi-omics" }}
+  {{ $image = "/image/research-multiomics.svg" }}
+  {{ $title = "Multi-Omics Data Integration" }}
+{{ end }}
+
+{{ if eq .index 0 }}
+<div class="research-cards-grid">
+{{ end }}
+
+  <article class="research-card">
+    <a class="research-card__image-link" href="{{ $item.RelPermalink }}">
+      <img class="research-card__image" src="{{ $image | relURL }}" alt="{{ $title }}" loading="lazy">
+    </a>
+    <div class="research-card__body">
+      <div class="section-subheading article-title mb-0 mt-0 research-card__title">
+        <a href="{{ $item.RelPermalink }}">{{ $title }}</a>
+      </div>
+      <p class="research-card__text">
+        {{ $summary }}...
+        <a class="research-card__more" href="{{ $item.RelPermalink }}">Read more</a>
+      </p>
+    </div>
+  </article>
+
+{{ if eq .index 2 }}
+</div>
+{{ end }}

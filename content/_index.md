@@ -214,7 +214,7 @@ sections:
     title: 🔬 RESEARCH
     subtitle: ":point_right: [Detailed Research](./research/)"
     text: "Our research is focused on the development of computational methods for the analysis of <u>multi-omics data</u>, with a particular emphasis on <u>metabolomics and microbiome data</u>. We are also interested in the application of these methods to <u>precision medicine, aging, pregnancy, and other health-related areas</u>."
-    count: 100
+    count: 3
     filters:
       author: ""
       category: ""
@@ -228,7 +228,7 @@ sections:
         - research_brief
   design:
     columns: "1"
-    view: community/showcase2
+    view: community/research_cards
     
 - block: portfolio
   id: software
@@ -275,7 +275,7 @@ sections:
 - block: collection
   id: publication
   content:
-    count: 5
+    count: 6
     title: 📃 PUBLICATION
     subtitle: ":point_right: [All Publications](./publication/)"
     text: 
@@ -285,8 +285,8 @@ sections:
       featured_only: true
   design:
     columns: '1'
-    view: showcase
-    
+    view: community/publication_cards
+
 - block: collection
   id: news
   content:
@@ -339,6 +339,16 @@ sections:
     show_interests: false
     show_role: true
     show_social: true
+
+- block: markdown
+  id: team_snapshot
+  content:
+    title: ""
+    subtitle: ""
+    text: |-
+      {{< team_membership_stats >}}
+  design:
+    columns: "1"
     
 # - block: collection
 #   id: event
