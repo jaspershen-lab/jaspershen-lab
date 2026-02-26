@@ -13,10 +13,20 @@
 </div>
 <script>
   (function () {
-    var tooltip = document.createElement("div");
-    tooltip.className = "pub-floating-tooltip";
-    tooltip.style.display = "none";
-    document.body.appendChild(tooltip);
+    var section = document.currentScript && document.currentScript.previousElementSibling;
+    if (!section || !section.classList || !section.classList.contains("publication-summary-section")) {
+      section = document.querySelector(".publication-summary-section");
+    }
+    if (!section || section.dataset.pubSummaryInit === "1") return;
+    section.dataset.pubSummaryInit = "1";
+
+    var tooltip = document.querySelector(".pub-floating-tooltip");
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.className = "pub-floating-tooltip";
+      tooltip.style.display = "none";
+      document.body.appendChild(tooltip);
+    }
 
     function showTooltip(e, text) {
       tooltip.textContent = text;
@@ -35,19 +45,28 @@
       tooltip.style.display = "none";
     }
 
-    function renderBars(targetId, rows, suffix) {
-      var root = document.getElementById(targetId);
-      if (!root || !Array.isArray(rows) || rows.length === 0) return;
+    function sortRows(rows) {
+      return (rows || []).slice().sort(function (a, b) {
+        return (parseInt(a.year, 10) || 0) - (parseInt(b.year, 10) || 0);
+      });
+    }
+
+    function buildBars(root, rows, suffix) {
+      if (!root || !Array.isArray(rows) || rows.length === 0) return [];
       var maxVal = Math.max.apply(null, rows.map(function (r) { return r.count || 0; }));
       if (!maxVal || maxVal < 1) maxVal = 1;
       root.innerHTML = "";
+      var bars = [];
       rows.forEach(function (r) {
         var col = document.createElement("div");
         col.className = "pub-bar-col";
 
         var bar = document.createElement("div");
         bar.className = "pub-bar";
-        bar.style.height = (12 + ((r.count || 0) / maxVal) * 88) + "%";
+        var targetHeight = (12 + ((r.count || 0) / maxVal) * 88) + "%";
+        bar.dataset.targetHeight = targetHeight;
+        bar.style.height = "0%";
+        bar.style.opacity = "0";
         bar.setAttribute("data-value", (r.count || 0) + " " + suffix);
         bar.addEventListener("mouseenter", function (e) {
           showTooltip(e, (r.year + ": " + (r.count || 0) + " " + suffix));
@@ -62,18 +81,79 @@
         col.appendChild(bar);
         col.appendChild(year);
         root.appendChild(col);
+        bars.push(bar);
+      });
+      return bars;
+    }
+
+    function resetBars(barList) {
+      (barList || []).forEach(function (bar) {
+        bar.style.transitionDelay = "0ms";
+        bar.style.height = "0%";
+        bar.style.opacity = "0";
       });
     }
+
+    function animateBars(barList) {
+      (barList || []).forEach(function (bar, idx) {
+        bar.style.transitionDelay = (idx * 110) + "ms";
+        requestAnimationFrame(function () {
+          bar.style.opacity = "1";
+          bar.style.height = bar.dataset.targetHeight || "0%";
+        });
+      });
+    }
+
+    var countRoot = section.querySelector("#pub-count-chart");
+    var citeRoot = section.querySelector("#pub-cite-chart");
+    var state = { countBars: [], citeBars: [], ready: false };
 
     fetch("/data/publication_summary.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("no-json")); })
       .then(function (d) {
-        renderBars("pub-count-chart", d.publication_per_year || [], "papers");
-        renderBars("pub-cite-chart", d.citation_per_year || [], "citations");
+        state.countBars = buildBars(countRoot, sortRows(d.publication_per_year || []), "papers");
+        state.citeBars = buildBars(citeRoot, sortRows(d.citation_per_year || []), "citations");
+        state.ready = true;
+        setupObserver();
       })
       .catch(function () {
-        renderBars("pub-count-chart", [], "papers");
-        renderBars("pub-cite-chart", [], "citations");
+        state.ready = true;
+        setupObserver();
       });
+
+    function runAnimation() {
+      resetBars(state.countBars);
+      resetBars(state.citeBars);
+      setTimeout(function () {
+        animateBars(state.countBars);
+        animateBars(state.citeBars);
+      }, 80);
+    }
+
+    function setupObserver() {
+      if (!state.ready) return;
+      if (!("IntersectionObserver" in window)) {
+        runAnimation();
+        return;
+      }
+      var hasEntered = false;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.target !== section) return;
+          if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+            if (!hasEntered) {
+              hasEntered = true;
+              runAnimation();
+            }
+          } else {
+            hasEntered = false;
+            resetBars(state.countBars);
+            resetBars(state.citeBars);
+            hideTooltip();
+          }
+        });
+      }, { threshold: [0, 0.25, 0.45] });
+      observer.observe(section);
+    }
   })();
 </script>

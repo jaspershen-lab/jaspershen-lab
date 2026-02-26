@@ -42,22 +42,28 @@
 
 <div class="view-pub-card">
   <article class="home-pub-card">
-    <a class="home-pub-card__image-link" href="{{ $item.RelPermalink }}">
-      {{ with $imageURL }}
-        <img class="home-pub-card__image" src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
-      {{ else }}
-        <div class="home-pub-card__image home-pub-card__image--placeholder"></div>
-      {{ end }}
-      <div class="home-pub-card__image-shade"></div>
-    </a>
+    <div class="home-pub-card__media">
+      <a class="home-pub-card__image-link" href="{{ $item.RelPermalink }}">
+        {{ with $imageURL }}
+          <img class="home-pub-card__image" src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
+        {{ else }}
+          <div class="home-pub-card__image home-pub-card__image--placeholder"></div>
+        {{ end }}
+        <div class="home-pub-card__image-shade"></div>
+      </a>
 
-    <div class="home-pub-card__overlay">
-      {{ with $linkURL }}
-        <a class="btn btn-outline-primary btn-page-header btn-sm" href="{{ . | safeURL }}" target="_blank" rel="noopener">Link</a>
-      {{ end }}
-      {{ with $pdfURL }}
-        <a class="btn btn-outline-primary btn-page-header btn-sm" href="{{ . | safeURL }}" target="_blank" rel="noopener">PDF</a>
-      {{ end }}
+      <div class="home-pub-card__overlay">
+        {{ with $linkURL }}
+          <a class="home-pub-card__iconbtn" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="External link" title="External link">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+        {{ with $pdfURL }}
+          <a class="home-pub-card__iconbtn" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="PDF" title="PDF">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+      </div>
     </div>
 
     <div class="home-pub-card__body">
