@@ -41,8 +41,9 @@ status:
 superuser: false
 title: Chunlei ZHANG
 user_groups:
-- Students
-- Visiting PhD Students
+- Students2
+- Visiting PhD Students2
+- Alumni
 ---
 
 My primary research interests focus on the pathogenic mechanisms underlying social behavior disorders and diabetes. I employ multi-omics and molecular biology approaches to dissect the molecular basis of these diseases.
