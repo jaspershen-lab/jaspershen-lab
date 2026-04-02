@@ -27,7 +27,7 @@ authors:
 - Daniel Hornburg
 - Michael Snyder
 doi: ""
-featured: true
+featured: false
 image:
   caption: ''
   focal_point: ""

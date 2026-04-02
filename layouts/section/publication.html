@@ -15,50 +15,83 @@
 
       <div id="container-publications">
         {{ range $year_group := $year_groups }}
-          <h2 class="pub-year-heading">{{ $year_group.Key }}</h2>
-
-          {{ range $index, $item := $year_group.Pages }}
-            {{ if $item.Params.publication_types }}
-              {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
-            {{ else }}
-              {{ $.Scratch.Set "pubtype" 0 }}
-            {{ end }}
-
-            <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}" data-title="{{ $item.Title | lower | htmlEscape }}">
-              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
-            </div>
+          {{ if eq $year_group.Key "2024" }}
+            <div class="pub-era-heading">Before NTU</div>
           {{ end }}
+
+          {{ $group_id := printf "pub-year-%s" $year_group.Key }}
+          {{ $collapsed := le (int $year_group.Key) 2024 }}
+          <button class="pub-year-toggle" type="button" aria-expanded="{{ if $collapsed }}false{{ else }}true{{ end }}" aria-controls="{{ $group_id }}">
+            <span class="pub-year-toggle__label">{{ $year_group.Key }}</span>
+            <span class="pub-year-toggle__icon"></span>
+          </button>
+
+          <div id="{{ $group_id }}" class="pub-year-group"{{ if $collapsed }} hidden{{ end }}>
+            {{ range $index, $item := $year_group.Pages }}
+              {{ if $item.Params.publication_types }}
+                {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
+              {{ else }}
+                {{ $.Scratch.Set "pubtype" 0 }}
+              {{ end }}
+
+              <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}" data-title="{{ $item.Title | lower | htmlEscape }}">
+                {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+              </div>
+            {{ end }}
+          </div>
         {{ end }}
       </div>
       <script>
         (function () {
           var url = new URL(window.location.href);
           var keyword = (url.searchParams.get("keyword") || url.searchParams.get("q") || "").trim().toLowerCase();
-          if (!keyword) return;
-
           var container = document.getElementById("container-publications");
           if (!container) return;
-          var rows = Array.prototype.slice.call(container.querySelectorAll(".grid-sizer"));
-          rows.forEach(function (row) {
-            var t = (row.getAttribute("data-title") || "").toLowerCase();
-            row.style.display = t.indexOf(keyword) >= 0 ? "" : "none";
+
+          var toggles = Array.prototype.slice.call(container.querySelectorAll('.pub-year-toggle'));
+
+          function setExpanded(toggle, expanded) {
+            var targetId = toggle.getAttribute('aria-controls');
+            var group = targetId ? document.getElementById(targetId) : null;
+            toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            if (group) group.hidden = !expanded;
+          }
+
+          toggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+              var expanded = toggle.getAttribute('aria-expanded') === 'true';
+              setExpanded(toggle, !expanded);
+            });
           });
 
-          var heads = Array.prototype.slice.call(container.querySelectorAll(".pub-year-heading"));
-          heads.forEach(function (h) {
-            var n = h.nextElementSibling;
-            var anyVisible = false;
-            while (n && !n.classList.contains("pub-year-heading")) {
-              if (n.classList.contains("grid-sizer") && n.style.display !== "none") anyVisible = true;
-              n = n.nextElementSibling;
-            }
-            h.style.display = anyVisible ? "" : "none";
-          });
+          var rows = Array.prototype.slice.call(container.querySelectorAll('.grid-sizer'));
+          if (keyword) {
+            rows.forEach(function (row) {
+              var t = (row.getAttribute('data-title') || '').toLowerCase();
+              row.style.display = t.indexOf(keyword) >= 0 ? '' : 'none';
+            });
 
-          var note = document.createElement("div");
-          note.className = "pub-filter-note";
-          note.textContent = "Filtered by keyword: " + keyword;
-          container.parentNode.insertBefore(note, container);
+            toggles.forEach(function (toggle) {
+              var group = document.getElementById(toggle.getAttribute('aria-controls'));
+              var visibleRows = group ? Array.prototype.slice.call(group.querySelectorAll('.grid-sizer')).filter(function (row) {
+                return row.style.display !== 'none';
+              }) : [];
+              var visible = visibleRows.length > 0;
+              toggle.style.display = visible ? '' : 'none';
+              setExpanded(toggle, visible);
+
+              var prev = toggle.previousElementSibling;
+              if (prev && prev.classList.contains('pub-era-heading')) {
+                var nextToggle = toggle.nextElementSibling;
+                prev.style.display = visible ? '' : (nextToggle && nextToggle.style.display !== 'none' ? '' : 'none');
+              }
+            });
+
+            var note = document.createElement('div');
+            note.className = 'pub-filter-note';
+            note.textContent = 'Filtered by keyword: ' + keyword;
+            container.parentNode.insertBefore(note, container);
+          }
         })();
       </script>
 

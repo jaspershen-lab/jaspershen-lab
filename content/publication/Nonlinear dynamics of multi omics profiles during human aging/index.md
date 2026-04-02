@@ -16,7 +16,7 @@ authors:
 - Si Wu
 - Michael Snyder
 
-featured: true
+featured: false
 publication: Nature Aging
 publication_types:
 - 2
