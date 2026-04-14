@@ -18,7 +18,7 @@ authors:
 - Larry Rand
 - Michael Snyder
 
-featured: true
+featured: false
 publication: Briefing In Bioinformatics
 publication_types:
 - 1

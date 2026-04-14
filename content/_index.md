@@ -10,6 +10,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: microbiome-2026.png
+          filters:
+            brightness: 0.6
+        position: right
+      content: 
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/cross-body-site-microbial-interactions-influence-the-human-plasma-metabolome/
+      title: "New publication: Cross-body site microbial interactions influence the human plasma metabolome"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: nc-2026-tidymass2.png
           filters:
             brightness: 0.6
@@ -36,51 +51,6 @@ sections:
         text: Link
         url: ../publication/metabolomics-and-proteomics-revealblocking-argininosuccinate-synthetase-1alleviates-colitis-in-mice/
       title: "New publication: Metabolomics and proteomics reveal blocking argininosuccinate synthetase 1 alleviates colitis in mice"
-    - align: center
-      background:
-        color: '#666'
-        image:
-          filename: h&m-2025-2.png
-          filters:
-            brightness: 0.6
-        position: right
-      content: 
-      link:
-        icon: link
-        icon_pack: fas
-        text: Link
-        url: ../publication/application-of-llms-transformer-based-models-for-metabolite-annotation-in-metabolomics/
-      title: "New publication: Application of LLMs/Transformer-Based Models for Metabolite Annotation in Metabolomics"
-    - align: center
-      background:
-        color: '#666'
-        image:
-          filename: h&m-2025.png
-          filters:
-            brightness: 0.6
-        position: right
-      content: 
-      link:
-        icon: link
-        icon_pack: fas
-        text: Link
-        url: ../publication/application-of-wearable-devices-in-diabetes-management/
-      title: "New publication: Application of Wearable Devices in Diabetes Management"
-    - align: center
-      background:
-        color: '#666'
-        image:
-          filename: bib-2025-pregnancy.png
-          filters:
-            brightness: 0.6
-        position: right
-      content: 
-      link:
-        icon: link
-        icon_pack: fas
-        text: Link
-        url: ../publication/longitudinal-urine-metabolic-profiling-and-gestational-age-prediction-in-pregnancy/
-      title: "New publication: Longitudinal Urine Metabolic Profiling and Gestational Age Prediction in Pregnancy"
     - align: center
       background:
         color: '#666'
