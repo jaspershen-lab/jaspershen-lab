@@ -1,7 +1,7 @@
 ---
 organizations:
 - name: Zhejiang University
-role: Assistant Professor
+role: Professor
 social:
 - display:
     header: true
