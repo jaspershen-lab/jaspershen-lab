@@ -20,7 +20,7 @@ sections:
         icon_pack: fas
         text: Link
         url: ../publication/cross-body-site-microbial-interactions-influence-the-human-plasma-metabolome/
-      title: "New publication: Cross-body site microbial interactions influence the human plasma metabolome"
+      title: "New publication📢"
     - align: center
       background:
         color: '#666'
@@ -35,7 +35,7 @@ sections:
         icon_pack: fas
         text: Link
         url: ../publication/tidymass2-advancing-lc-ms-untargeted-metabolomics-through-metabolite-origin-inference-and-metabolic-feature-based-functional-module-analysis/
-      title: "New publication: TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis"
+      title: "New publication📢"
     - align: center
       background:
         color: '#666'
