@@ -1,0 +1,11 @@
+# Font style metadata
+name = "NTU Modern"
+
+# Optional Google font URL
+google_fonts = "family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700"
+
+# Font families
+heading_font = "Space Grotesk"
+body_font = "Manrope"
+nav_font = "Space Grotesk"
+mono_font = "JetBrains Mono"

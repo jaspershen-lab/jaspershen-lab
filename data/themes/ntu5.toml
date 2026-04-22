@@ -1,0 +1,28 @@
+# Theme metadata
+name = "ntu5"
+
+[light]
+  primary = "#0f766e"
+  link = "#0f766e"
+  link_hover = "#0b5f59"
+
+  menu_primary = "#fbfcfe"
+  menu_text = "#0f172a"
+  menu_text_active = "#0f766e"
+  menu_title = "#0f172a"
+
+  home_section_odd = "#ffffff"
+  home_section_even = "#f4f7fb"
+
+[dark]
+  primary = "#67e8f9"
+  link = "#99f6e4"
+  link_hover = "#ccfbf1"
+
+  menu_primary = "#0f172a"
+  menu_text = "#dbeafe"
+  menu_text_active = "#67e8f9"
+  menu_title = "#f8fafc"
+
+  home_section_odd = "#111827"
+  home_section_even = "#0b1220"
