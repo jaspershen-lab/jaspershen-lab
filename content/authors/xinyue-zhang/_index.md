@@ -10,7 +10,7 @@ education:
     year: 2021-2025
 email: "XINYUE011@e.ntu.edu.sg"
 commentable: true
-first_name: Xinyue
+first_name: Xin-Yue
 last_name: ZHANG
 highlight_name: true
 interests:
@@ -38,7 +38,7 @@ social:
 status:
   icon: ☺️
 superuser: false
-title: Xinyue ZHANG
+title: Xin-Yue ZHANG
 user_groups:
 - Students
 - Master Students

@@ -65,6 +65,15 @@ sections:
   design:
     columns: '1'
 
+
+- block: markdown
+  content:
+    title: Collaboration Network in The Lab
+    text: |-
+      {{< team_collaboration_network >}}
+  design:
+    columns: '1'
+
 - block: markdown
   content:
     title: Alumni Summary

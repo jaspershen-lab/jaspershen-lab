@@ -50,7 +50,7 @@ sections:
         icon_pack: fas
         text: Link
         url: ../publication/metabolomics-and-proteomics-revealblocking-argininosuccinate-synthetase-1alleviates-colitis-in-mice/
-      title: "New publication: Metabolomics and proteomics reveal blocking argininosuccinate synthetase 1 alleviates colitis in mice"
+      title: "New publication📢"
     - align: center
       background:
         color: '#666'

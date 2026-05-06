@@ -1,0 +1,53 @@
+{{ $members := slice }}
+{{ range site.Pages }}
+  {{ if and .File (hasPrefix .File.Path "authors/") (ne .File.Path "authors/_index.md") }}
+    {{ $slug := path.Base .File.Dir }}
+    {{ $groups := .Params.user_groups | default (slice) }}
+    {{ $role := "" }}
+    {{ if gt (len $groups) 0 }}
+      {{ $role = index $groups 0 }}
+    {{ end }}
+    {{ $members = $members | append (dict
+      "slug" $slug
+      "title" .Title
+      "first_name" (.Params.first_name | default "")
+      "last_name" (.Params.last_name | default "")
+      "superuser" (.Params.superuser | default false)
+      "user_groups" $groups
+      "role" $role
+      "permalink" .RelPermalink
+    ) }}
+  {{ end }}
+{{ end }}
+
+{{ $publications := slice }}
+{{ range where site.RegularPages "Section" "publication" }}
+  {{ $publications = $publications | append (dict
+    "title" .Title
+    "permalink" .RelPermalink
+    "authors" (.Params.authors | default (slice))
+  ) }}
+{{ end }}
+
+<div class="team-collab-network" id="team-collab-network-root">
+  <div class="team-collab-network__card">
+    <div class="team-collab-network__intro">
+      <p class="team-collab-network__lede">
+        Each node is a Shen Lab member. Bigger nodes mean more publications, colors reflect member category,
+        and thicker lines indicate more shared papers.
+      </p>
+      <div class="team-collab-network__legend">
+        <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--pi"></span>PI</span>
+        <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--researchers"></span>Researchers</span>
+        <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--students"></span>Students</span>
+        <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--cosup"></span>Co-supervised Students</span>
+        <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--intern"></span>Intern</span>
+      </div>
+    </div>
+    <div class="team-collab-network__canvas" id="team-collab-network-canvas"></div>
+    <div class="team-collab-network__hint">Hover nodes or edges for details. Click a node to open the profile, or click an edge to see their shared publications.</div>
+  </div>
+
+  <script type="application/json" id="team-collab-members-data">{{ $members | jsonify }}</script>
+  <script type="application/json" id="team-collab-publications-data">{{ $publications | jsonify }}</script>
+</div>

@@ -20,6 +20,6 @@ links:
 - icon: link
   icon_pack: fas
   name: Link
-  url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:M05iB0D1s5AC
+  url: https://link.springer.com/article/10.1186/s40168-026-02405-w
 ---
 
