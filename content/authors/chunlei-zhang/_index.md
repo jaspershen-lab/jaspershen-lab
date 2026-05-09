@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Nanjing Agricultural University
   url: ""
-role: Visiting PhD Student (2025-)
+role: Visiting PhD Student (2025-2026)
 social:
 # - icon: house
 #   icon_pack: fas

@@ -20,15 +20,16 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Master Student (2025-)
+role: Master Student (2025)
 
 status:
   icon: ☕️
 superuser: false
 title: Yuxu PAN
 user_groups:
-- Students
-- Master Students
+- Students1
+- Master Students1
+- Alumni
 ---
 
 I am deeply passionate about AI large language models and their innovative applications in biomedicine, eager to explore the boundless potential of integrating technology with medicine.

@@ -20,7 +20,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: "https://www.ntu.edu.sg"
-role: Master Student (2025-)
+role: Master Student (2025)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -44,8 +44,9 @@ status:
 superuser: false
 title: Meilun LI
 user_groups:
-- Students
-- Master Students
+- Students1
+- Master Students1
+- Alumni
 ---
 
 The rapid growth of microbiome and multi-omics data driven by advances in sequencing technologies poses significant challenges in data integration, analysis, and visualization. I am particularly interested in method-oriented projects like tidymicrobiome, which aim to build flexible and extensible analysis pipelines based on tidyverse principles, improving the accessibility, reproducibility, and interpretability of microbiome research.

@@ -19,7 +19,7 @@ interests:
 organizations:
 - name: Nanyang Technological University
   url: ""
-role: Master Student (2025-)
+role: Master Student (2025)
 social:
 # - icon: house
 #   icon_pack: fas
@@ -40,8 +40,9 @@ status:
 superuser: false
 title: Xin-Yue ZHANG
 user_groups:
-- Students
-- Master Students
+- Students1
+- Master Students1
+- Alumni
 ---
 
 The exponential growth of multi-omics data, driven by advances in genome sequencing and metabolomics, poses significant challenges in systematically linking bacterial genotypes to metabolic phenotypes. I am particularly interested in data-integrative modeling projects like Predicting Bacterial Nutrient Metabolism, which aim to apply Machine Learning and LLM-based embeddings to map genomic features to nutrient utilization, improving the scalability of functional inference and the precision of personalized dietary interventions.
