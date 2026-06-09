@@ -2,6 +2,9 @@
 bio: Artificial Intelligence, Machine learning , Bioinformatics.
 education:
   courses:
+  - course: PhD Degree (Biomedical Data Science)
+    institution: Nanyang Technological University
+    year: 2025-2026
   - course: Master Degree (Biomedical Data Science)
     institution: Nanyang Technological University
     year: 2025-2026
