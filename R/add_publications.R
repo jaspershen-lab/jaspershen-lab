@@ -68,7 +68,10 @@ googlescholar2shenlab <- function(
   if (nrow(to_add) == 0) {
     if (verbose) message("No new publications to add.")
     return(invisible(data.frame(
-      added = FALSE, title = character(0), path = character(0), stringsAsFactors = FALSE
+      added = logical(0),
+      title = character(0),
+      path = character(0),
+      stringsAsFactors = FALSE
     )))
   }
   

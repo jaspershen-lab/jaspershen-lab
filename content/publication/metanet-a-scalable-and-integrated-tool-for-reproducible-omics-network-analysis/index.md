@@ -3,9 +3,9 @@ title: "MetaNet: a scalable and integrated tool for reproducible omics network a
 
 authors:
 - Chen PENG
+- Liuyiqi JIANG
 - Zinuo HUANG
 - Xin WEI
-- Liuyiqi JIANG
 - Xiaoping ZHU
 - Zhen LIU
 - Qiong CHEN
@@ -14,10 +14,10 @@ authors:
 - Chao JIANG
 
 featured: false
-publication: "bioRxiv"
+publication: "Bioinformatics"
 publication_types:
 - "2"
-publishDate: 2025-01-01
+publishDate: 2026-01-01
 summary: "MetaNet: a scalable and integrated tool for reproducible omics network analysis"
 links:
 - icon: link
