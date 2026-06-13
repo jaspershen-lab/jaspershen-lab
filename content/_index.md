@@ -342,7 +342,7 @@ sections:
   id: contact
   content:
     title: 📨 CONTACT
-    # subtitle: ":point_right: [More social media](./contact/)"
+    subtitle: ":point_right: [More](./contact/)"
     text: 
     # Contact (add or remove contact options as necessary)
     email: xiaotao.shen@outlook.com
