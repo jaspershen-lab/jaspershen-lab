@@ -9,6 +9,8 @@ sections:
     title: ""
     text: |-
       <section class="lab-hero" aria-label="Shen Lab at NTU">
+        <img class="lab-hero__photo" src="/media/group_photo3.png" alt="" aria-hidden="true">
+        <div class="lab-hero__shade" aria-hidden="true"></div>
         <div class="lab-hero__network" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>

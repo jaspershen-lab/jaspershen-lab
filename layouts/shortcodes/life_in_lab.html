@@ -1,0 +1,147 @@
+{{- $tiles := slice
+  (dict
+    "label" "Lab photo" "class" "life-lab-photo--wide" "effect" "left" "delay" "0" "interval" "5200"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-8-5-lab-photo.jpg" "href" "/photo-2025/" "label" "Lab photo")
+      (dict "src" "/photo-2025/lab/2025-1-14-lab.jpeg" "href" "/photo-2025/" "label" "Lab gathering")
+      (dict "src" "/photo-2024/lab/lab-2024-12-19.jpg" "href" "/photo-2024/" "label" "Team moment")
+    )
+  )
+  (dict
+    "label" "Lab dinner" "class" "" "effect" "right" "delay" "900" "interval" "6100"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-8-15-lab-dinner.jpg" "href" "/photo-2025/" "label" "Lab dinner")
+      (dict "src" "/photo-2025/lab/2025-9-19-lab-dinner.jpg" "href" "/photo-2025/" "label" "Team dinner")
+      (dict "src" "/photo-2024/lab/2024-9-17-lab-dinner.jpg" "href" "/photo-2024/" "label" "Dinner")
+    )
+  )
+  (dict
+    "label" "ASMS" "class" "" "effect" "up" "delay" "1600" "interval" "5700"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-6-5-ASMS1.jpeg" "href" "/photo-2025/" "label" "ASMS")
+      (dict "src" "/photo-2025/lab/2025-6-5-ASMS2.jpeg" "href" "/photo-2025/" "label" "ASMS poster")
+      (dict "src" "/photo-2026/lab/2026-6-1-xiaotao-present-asms.jpeg" "href" "/photo-2026/" "label" "ASMS talk")
+    )
+  )
+  (dict
+    "label" "Conference" "class" "" "effect" "down" "delay" "2300" "interval" "6400"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-12-8-conference-yijiang-yifei-jingxiang.jpg" "href" "/photo-2025/" "label" "Conference")
+      (dict "src" "/photo-2025/lab/2025-12-8-conference-yifei.jpg" "href" "/photo-2025/" "label" "Conference poster")
+      (dict "src" "/photo-2024/lab/2024-11-2-aging-conference.jpeg" "href" "/photo-2024/" "label" "Aging conference")
+    )
+  )
+  (dict
+    "label" "Aging conference" "class" "" "effect" "fade" "delay" "3100" "interval" "5900"
+    "slides" (slice
+      (dict "src" "/photo-2024/lab/2024-11-2-aging-conference.jpeg" "href" "/photo-2024/" "label" "Aging conference")
+      (dict "src" "/photo-2025/lab/2025-7-2-yijiang-presentation.jpg" "href" "/photo-2025/" "label" "Presentation")
+      (dict "src" "/photo-2025/lab/2025-5-8-Yifei-presentation.jpg" "href" "/photo-2025/" "label" "Research talk")
+    )
+  )
+  (dict
+    "label" "Lab lunch" "class" "" "effect" "left" "delay" "4200" "interval" "6800"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-5-10-lab-lunch.jpeg" "href" "/photo-2025/" "label" "Lab lunch")
+      (dict "src" "/photo-2025/lab/2025-1-24-lab-lunch.jpg" "href" "/photo-2025/" "label" "Lab lunch")
+      (dict "src" "/photo-2025/lab/2025-12-20-lab dinner.jpg" "href" "/photo-2025/" "label" "Lab dinner")
+    )
+  )
+  (dict
+    "label" "Research visit" "class" "" "effect" "right" "delay" "1200" "interval" "5500"
+    "slides" (slice
+      (dict "src" "/photo-2026/lab/2026-3-23-Ireland.jpeg" "href" "/photo-2026/" "label" "Research visit")
+      (dict "src" "/photo-2026/lab/2026-2-1-visit HK.jpeg" "href" "/photo-2026/" "label" "HK visit")
+      (dict "src" "/photo-2025/lab/2025-4-24-xiaotao-visit-sjtu-fudan-1.jpeg" "href" "/photo-2025/" "label" "Research visit")
+    )
+  )
+  (dict
+    "label" "First lab meeting" "class" "" "effect" "up" "delay" "2800" "interval" "6200"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-1-14-first-lab-meeting.jpeg" "href" "/photo-2025/" "label" "First lab meeting")
+      (dict "src" "/photo-2024/lab/2024-5-21-first-day-in-office.jpg" "href" "/photo-2024/" "label" "First office day")
+      (dict "src" "/photo-2026/lab/2026-3-17-chunlei.jpg" "href" "/photo-2026/" "label" "Lab discussion")
+    )
+  )
+  (dict
+    "label" "Team dinner" "class" "life-lab-photo--wide" "effect" "down" "delay" "3600" "interval" "6600"
+    "slides" (slice
+      (dict "src" "/photo-2025/lab/2025-9-19-lab-dinner.jpg" "href" "/photo-2025/" "label" "Team dinner")
+      (dict "src" "/photo-2025/lab/2025-8-zijing-farewell.jpg" "href" "/photo-2025/" "label" "Farewell")
+      (dict "src" "/photo-2025/lab/2025-8-shenyu-farewell2.jpg" "href" "/photo-2025/" "label" "Team moment")
+    )
+  )
+-}}
+
+<div class="life-lab-wall">
+  {{- range $tiles -}}
+    {{- $first := index .slides 0 -}}
+    <a
+      class="life-lab-photo {{ .class }} life-lab-photo--{{ .effect }}"
+      href="{{ $first.href }}"
+      aria-label="Open {{ $first.label }} photo album"
+      data-current="0"
+      data-delay="{{ .delay }}"
+      data-interval="{{ .interval }}"
+    >
+      {{- range $index, $slide := .slides -}}
+        <img
+          class="life-lab-slide{{ if eq $index 0 }} is-active{{ end }}"
+          src="{{ $slide.src }}"
+          alt="{{ $slide.label }}"
+          loading="lazy"
+          data-href="{{ $slide.href }}"
+          data-label="{{ $slide.label }}"
+        >
+      {{- end -}}
+      <span>{{ $first.label }}</span>
+    </a>
+  {{- end -}}
+</div>
+
+<script>
+(function () {
+  var tiles = document.querySelectorAll('.life-lab-photo');
+  if (!tiles.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  tiles.forEach(function (tile, tileIndex) {
+    if (tile.dataset.carouselReady === '1') return;
+    tile.dataset.carouselReady = '1';
+    var slides = tile.querySelectorAll('.life-lab-slide');
+    var label = tile.querySelector('span');
+    if (slides.length < 2) return;
+
+    var interval = parseInt(tile.dataset.interval || '6000', 10);
+    var delay = parseInt(tile.dataset.delay || '0', 10) + tileIndex * 220;
+
+    function nextSlide() {
+      var current = parseInt(tile.dataset.current || '0', 10);
+      var next = (current + 1) % slides.length;
+      var currentSlide = slides[current];
+      var nextSlideEl = slides[next];
+
+      currentSlide.classList.remove('is-active');
+      currentSlide.classList.add('is-leaving');
+      nextSlideEl.classList.add('is-entering');
+      void nextSlideEl.offsetWidth;
+      tile.classList.add('is-switching');
+
+      window.setTimeout(function () {
+        currentSlide.classList.remove('is-leaving');
+        nextSlideEl.classList.remove('is-entering');
+        nextSlideEl.classList.add('is-active');
+        tile.dataset.current = String(next);
+        tile.href = nextSlideEl.dataset.href || tile.href;
+        tile.setAttribute('aria-label', 'Open ' + (nextSlideEl.dataset.label || 'photo') + ' photo album');
+        if (label) label.textContent = nextSlideEl.dataset.label || label.textContent;
+        tile.classList.remove('is-switching');
+      }, 1120);
+    }
+
+    window.setTimeout(function () {
+      nextSlide();
+      window.setInterval(nextSlide, interval);
+    }, delay);
+  });
+})();
+</script>

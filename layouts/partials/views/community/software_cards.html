@@ -1,4 +1,6 @@
 {{ $item := .item }}
+{{ $featured := .featured | default false }}
+{{ $slug := $item.File.ContentBaseName }}
 
 {{ $resource := partial "functions/get_featured_image.html" $item }}
 {{ $imageURL := "" }}
@@ -23,7 +25,35 @@
   {{ end }}
 {{ end }}
 
-<article class="software-card">
+{{ $productType := "R package" }}
+{{ $stars := "" }}
+{{ if eq $slug "mapa" }}
+  {{ $productType = "AI tool" }}
+  {{ $stars = "28" }}
+{{ else if eq $slug "lagci-project" }}
+  {{ $productType = "Pipeline" }}
+  {{ $stars = "18" }}
+{{ else if eq $slug "tidymasshiny-project" }}
+  {{ $productType = "Web app" }}
+  {{ $stars = "21" }}
+{{ else if eq $slug "deepPseudoMSI-project" }}
+  {{ $productType = "AI tool" }}
+  {{ $stars = "34" }}
+{{ else if eq $slug "tidymass-project" }}
+  {{ $productType = "R ecosystem" }}
+  {{ $stars = "620+" }}
+{{ else if eq $slug "tidymicrobiome-project" }}
+  {{ $productType = "R ecosystem" }}
+  {{ $stars = "120+" }}
+{{ else if eq $slug "metid-project" }}
+  {{ $productType = "R package" }}
+  {{ $stars = "110+" }}
+{{ else if eq $slug "r_cookbook" }}
+  {{ $productType = "Resource" }}
+  {{ $stars = "12" }}
+{{ end }}
+
+<article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ with index ($item.Params.tags | default slice) 0 }}{{ . | urlize }}{{ else }}uncategorized{{ end }}">
   <a class="software-card__media" href="{{ $item.RelPermalink }}">
     {{ with $imageURL }}
       <img src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
@@ -33,11 +63,17 @@
   </a>
   <div class="software-card__body">
     <div class="software-card__meta">
-      {{ with index ($item.Params.tags | default slice) 0 }}<span>{{ . }}</span>{{ end }}
-      <time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006" }}</time>
+      <span>{{ $productType }}</span>
+      {{ with $stars }}<span class="software-card__stars"><i class="fas fa-star" aria-hidden="true"></i> {{ . }}</span>{{ end }}
     </div>
     <h3 class="software-card__title"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
     <p class="software-card__summary">{{ $item.Summary | plainify | truncate 150 }}</p>
+    <div class="software-card__tags">
+      {{ range $item.Params.tags }}
+        <span>{{ . }}</span>
+      {{ end }}
+      <time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006" }}</time>
+    </div>
     <div class="software-card__actions">
       {{ with $linkURL }}
         <a class="software-card__button" href="{{ . | safeURL }}" target="_blank" rel="noopener">

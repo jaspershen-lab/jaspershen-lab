@@ -1,49 +1,84 @@
-{{ $item := .item }}
-
-{{ $summary := "" }}
-{{ if $item.Params.summary }}
-  {{ $summary = $item.Params.summary | plainify }}
-{{ else if $item.Params.abstract }}
-  {{ $summary = $item.Params.abstract | plainify }}
-{{ else if $item.Summary }}
-  {{ $summary = $item.Summary | plainify }}
-{{ end }}
-{{ $summary = $summary | truncate 190 }}
-
-{{ $slug := $item.File.ContentBaseName }}
-{{ $title := $item.Title | plainify }}
-{{ $image := "/image/research-multiomics-modern.png" }}
-
-{{ if eq $slug "aging" }}
-  {{ $image = "/image/research-aging-modern.png" }}
-  {{ $title = "Aging and Aging-Related Diseases" }}
-{{ else if eq $slug "pregnancy" }}
-  {{ $image = "/image/research-pregnancy-modern.png" }}
-  {{ $title = "Maternal and Child Health" }}
-{{ else if eq $slug "multi-omics" }}
-  {{ $image = "/image/research-multiomics-modern.png" }}
-  {{ $title = "Multi-Omics Data Integration" }}
-{{ end }}
-
 {{ if eq .index 0 }}
-<div class="research-cards-grid">
-{{ end }}
+{{ $multiomics := site.GetPage "research_brief/multi-omics" }}
+{{ $aging := site.GetPage "research_brief/aging" }}
+{{ $pregnancy := site.GetPage "research_brief/pregnancy" }}
+{{ $multiomicsURL := "/research/" }}
+{{ $agingURL := "/research/" }}
+{{ $pregnancyURL := "/research/" }}
+{{ with $multiomics }}{{ $multiomicsURL = .RelPermalink }}{{ end }}
+{{ with $aging }}{{ $agingURL = .RelPermalink }}{{ end }}
+{{ with $pregnancy }}{{ $pregnancyURL = .RelPermalink }}{{ end }}
 
-  <article class="research-card">
-    <a class="research-card__image-link" href="{{ $item.RelPermalink }}">
-      <img class="research-card__image" src="{{ $image | relURL }}" alt="{{ $title }}" loading="lazy">
+<div class="research-universe" aria-label="Research universe">
+  <div class="research-universe__stage">
+    <svg class="research-universe__links" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="researchUniverseLine" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#5eead4" stop-opacity="0.92" />
+          <stop offset="52%" stop-color="#38bdf8" stop-opacity="0.72" />
+          <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.76" />
+        </linearGradient>
+        <filter id="researchUniverseGlow">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <path class="research-universe__orbit" d="M190 365 C310 210, 515 125, 820 250" />
+      <path class="research-universe__orbit" d="M220 200 C390 420, 575 475, 795 390" />
+      <path class="research-universe__orbit" d="M320 480 C430 325, 565 250, 710 145" />
+      <path class="research-universe__orbit" d="M500 115 C545 230, 540 355, 500 505" />
+      <path class="research-universe__link" d="M500 310 L190 365" />
+      <path class="research-universe__link" d="M500 310 L220 200" />
+      <path class="research-universe__link" d="M500 310 L320 480" />
+      <path class="research-universe__link" d="M500 310 L500 115" />
+      <path class="research-universe__link" d="M500 310 L710 145" />
+      <path class="research-universe__link" d="M500 310 L820 250" />
+    </svg>
+
+    <a class="research-universe__node research-universe__node--core" style="--x: 50%; --y: 50%;" href="{{ $multiomicsURL }}">
+      <span class="research-universe__icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Precision Medicine</span>
+      <span class="research-universe__tooltip">Integrating omics, wearable, clinical, and microbiome data to support individualized prediction and intervention.</span>
     </a>
-    <div class="research-card__body">
-      <div class="section-subheading article-title mb-0 mt-0 research-card__title">
-        <a href="{{ $item.RelPermalink }}">{{ $title }}</a>
-      </div>
-      <p class="research-card__text">
-        {{ $summary }}...
-        <a class="research-card__more" href="{{ $item.RelPermalink }}">Read more</a>
-      </p>
-    </div>
-  </article>
 
-{{ if eq .index 2 }}
+    <a class="research-universe__node" style="--x: 19%; --y: 59%;" href="{{ $multiomicsURL }}">
+      <span class="research-universe__icon"><i class="fas fa-vial" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Metabolomics</span>
+      <span class="research-universe__tooltip">LC-MS workflows, metabolite annotation, pathway interpretation, and metabolic signatures of health and disease.</span>
+    </a>
+
+    <a class="research-universe__node" style="--x: 22%; --y: 32%;" href="{{ $multiomicsURL }}">
+      <span class="research-universe__icon"><i class="fas fa-microscope" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Microbiome</span>
+      <span class="research-universe__tooltip">Microbial community dynamics across body sites and their interactions with host metabolism.</span>
+    </a>
+
+    <a class="research-universe__node" style="--x: 32%; --y: 77%;" href="{{ $multiomicsURL }}">
+      <span class="research-universe__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Wearable</span>
+      <span class="research-universe__tooltip">Longitudinal physiology, lifestyle signals, and digital biomarkers for dense personal health monitoring.</span>
+    </a>
+
+    <a class="research-universe__node" style="--x: 50%; --y: 19%;" href="{{ $agingURL }}">
+      <span class="research-universe__icon"><i class="fas fa-dna" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Aging</span>
+      <span class="research-universe__tooltip">Multi-omics and wearable models for biological aging, aging-related diseases, and predictive biomarkers.</span>
+    </a>
+
+    <a class="research-universe__node" style="--x: 71%; --y: 24%;" href="{{ $pregnancyURL }}">
+      <span class="research-universe__icon"><i class="fas fa-baby" aria-hidden="true"></i></span>
+      <span class="research-universe__label">Pregnancy</span>
+      <span class="research-universe__tooltip">Maternal and child health, pregnancy omics, preterm birth risk, and real-time physiological monitoring.</span>
+    </a>
+
+    <a class="research-universe__node" style="--x: 82%; --y: 41%;" href="{{ $multiomicsURL }}">
+      <span class="research-universe__icon"><i class="fas fa-brain" aria-hidden="true"></i></span>
+      <span class="research-universe__label">AI</span>
+      <span class="research-universe__tooltip">Machine learning and interpretable AI for multi-layer biological data integration and prediction.</span>
+    </a>
+  </div>
 </div>
 {{ end }}

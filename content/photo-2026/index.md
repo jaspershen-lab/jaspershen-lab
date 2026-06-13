@@ -151,10 +151,14 @@ sections:
         </style>
 
 
-        <!-- 3月 -->
+
+        <!-- 3-6月 -->
         <div class="month-block">
-          <div class="month-title">March 2026</div>
+          <div class="month-title">March-June 2026</div>
           <div class="gallery">
+            <div class="image-container"><img src="lab/2026-6-1-xiaotao-present-asms.jpeg" alt="2026/6/1 Xiaotao Presented at ASMS2026"><div class="caption">2026/6/1 Xiaotao Presented at ASMS2026</div></div>
+            <div class="image-container"><img src="lab/2026-5-30-visit-westlake-fengwen-zhanglab.jpeg" alt="2026/5/30 Xiaotao visited Prof. Wenfeng Zeng's lab@Westlake University"><div class="caption">2026/5/30 Xiaotao visited Prof. Wenfeng Zeng's lab@Westlake University</div></div>
+            <div class="image-container"><img src="lab/2026-5-5-yijiang-QE.jpeg" alt="2026/5/5 Yijiang passed the QE!"><div class="caption">2026/5/5 Yijiang passed the QE!</div></div>
             <div class="image-container"><img src="lab/2026-3-23-Ireland.jpeg" alt="2026/3/23 Ireland trip"><div class="caption">2026/3/23 Ireland trip</div></div>
             <div class="image-container"><img src="lab/2026-3-17-chunlei.jpg" alt="2026/3/17 Chunlei last group meeting"><div class="caption">2026/3/17 Chunlei last group meeting</div></div>
           </div>

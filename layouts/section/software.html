@@ -10,11 +10,44 @@
   "Others" "tools"
 }}
 
-<main class="software-directory">
+{{ $featuredSlugs := slice "tidymass-project" "mapa" "lagci-project" }}
+
+<main class="software-directory software-directory--products">
+  <section class="software-product-hero" aria-label="Software product wall">
+    <div>
+      <p class="software-product-hero__eyebrow">Shen Lab Products</p>
+      <h1>Software for multi-omics discovery</h1>
+    </div>
+    <div class="software-product-filter" aria-label="Software category filter">
+      <button class="software-product-filter__button is-active" type="button" data-filter="all">All</button>
+      {{ range $category := $categoryOrder }}
+        {{ $items := where $pages "Params.tags" "intersect" (slice $category) }}
+        {{ if gt (len $items) 0 }}
+          <button class="software-product-filter__button" type="button" data-filter="{{ $category | urlize }}">{{ $category }}</button>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="software-featured" aria-labelledby="software-featured-title">
+    <div class="software-featured__header">
+      <h2 id="software-featured-title">Featured Software</h2>
+      <span>Product highlights</span>
+    </div>
+    <div class="software-featured__grid">
+      {{ range $featuredSlugs }}
+        {{ $featuredPage := $.Site.GetPage (printf "software/%s" .) }}
+        {{ with $featuredPage }}
+          {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards" "featured" true) }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
   {{ range $category := $categoryOrder }}
     {{ $items := where $pages "Params.tags" "intersect" (slice $category) }}
     {{ if gt (len $items) 0 }}
-      <section class="software-category" aria-labelledby="software-category-{{ $category | urlize }}">
+      <section class="software-category" data-software-section="{{ $category | urlize }}" aria-labelledby="software-category-{{ $category | urlize }}">
         <div class="software-category__header">
           <h2 id="software-category-{{ $category | urlize }}">
             <i class="fas fa-{{ index $categoryIcons $category | default "cube" }}" aria-hidden="true"></i>
@@ -37,7 +70,7 @@
   {{ end }}
   {{ $otherItems := $pages | complement $known }}
   {{ if gt (len $otherItems) 0 }}
-    <section class="software-category" aria-labelledby="software-category-uncategorized">
+    <section class="software-category" data-software-section="uncategorized" aria-labelledby="software-category-uncategorized">
       <div class="software-category__header">
         <h2 id="software-category-uncategorized">
           <i class="fas fa-cube" aria-hidden="true"></i>
@@ -53,5 +86,25 @@
     </section>
   {{ end }}
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.software-product-filter__button');
+    var sections = document.querySelectorAll('.software-category[data-software-section]');
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var filter = button.getAttribute('data-filter');
+        buttons.forEach(function (item) { item.classList.remove('is-active'); });
+        button.classList.add('is-active');
+
+        sections.forEach(function (section) {
+          var category = section.getAttribute('data-software-section');
+          section.hidden = filter !== 'all' && category !== filter;
+        });
+      });
+    });
+  });
+</script>
 
 {{- end -}}

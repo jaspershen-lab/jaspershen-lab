@@ -49,6 +49,7 @@
         {{ $link = .RelPermalink }}
       {{ end }}
       <div class="col-12 col-sm-auto people-person">
+        <div class="people-person__card">
         {{ $src := "" }}
         {{ if site.Params.features.avatar.gravatar }}
           {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 .Params.email) }}
@@ -66,7 +67,13 @@
           {{ if and $show_organizations .Params.organizations }}{{ range .Params.organizations }}<h3>{{ .name }}</h3>{{ end }}{{ end }}
           {{ if and $show_role .Params.role }}<h3>{{ .Params.role | markdownify | emojify }}</h3>{{ end }}
           {{ if $show_social }}{{ partial "social_links" . }}{{ end }}
-          {{ if and $show_interests .Params.interests }}<p class="people-interests">{{ delimit .Params.interests ", " | markdownify | emojify }}</p>{{ end }}
+          {{ if and $show_interests .Params.interests }}
+            <div class="people-interests">
+              <span>Research interests</span>
+              <p>{{ delimit .Params.interests ", " | markdownify | emojify }}</p>
+            </div>
+          {{ end }}
+        </div>
         </div>
       </div>
     {{ end }}

@@ -33,8 +33,7 @@
   <div class="team-collab-network__card">
     <div class="team-collab-network__intro">
       <p class="team-collab-network__lede">
-        Each node is a Shen Lab member. Bigger nodes mean more publications, colors reflect member category,
-        and thicker lines indicate more shared papers.
+        A live map of shared papers and mentoring connections across Shen Lab.
       </p>
       <div class="team-collab-network__legend">
         <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--pi"></span>PI</span>
@@ -45,7 +44,7 @@
       </div>
     </div>
     <div class="team-collab-network__canvas" id="team-collab-network-canvas"></div>
-    <div class="team-collab-network__hint">Hover nodes or edges for details. Click a node to open the profile, or click an edge to see their shared publications.</div>
+    <div class="team-collab-network__hint">Member profiles and shared publications are connected in this map.</div>
   </div>
 
   <script type="application/json" id="team-collab-members-data">{{ $members | jsonify }}</script>

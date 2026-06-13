@@ -56,7 +56,7 @@ sections:
     show_role: true
     show_social: true
     show_organizations: true
-    
+
 - block: markdown
   content:
     title: Alumni Timeline
@@ -71,6 +71,14 @@ sections:
     title: Collaboration Network in The Lab
     text: |-
       {{< team_collaboration_network >}}
+  design:
+    columns: '1'
+
+- block: markdown
+  content:
+    title: Life in Shen Lab
+    text: |-
+      {{< life_in_lab >}}
   design:
     columns: '1'
 
