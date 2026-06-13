@@ -1,0 +1,56 @@
+{{ $item := .item }}
+
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+{{ $imageURL := "" }}
+{{ $imageW := 0 }}
+{{ $imageH := 0 }}
+{{ with $resource }}
+  {{ $img := .Resize "760x webp" }}
+  {{ $imageURL = $img.RelPermalink }}
+  {{ $imageW = $img.Width }}
+  {{ $imageH = $img.Height }}
+{{ end }}
+
+{{ $linkURL := $item.Params.external_link | default "" }}
+{{ $codeURL := "" }}
+{{ range $item.Params.links }}
+  {{ $name := lower (default "" .name) }}
+  {{ if and (eq $linkURL "") (or (eq $name "link") (eq $name "website") (eq $name "home")) }}
+    {{ $linkURL = .url }}
+  {{ end }}
+  {{ if and (eq $codeURL "") (or (eq $name "code") (eq $name "github")) }}
+    {{ $codeURL = .url }}
+  {{ end }}
+{{ end }}
+
+<article class="software-card">
+  <a class="software-card__media" href="{{ $item.RelPermalink }}">
+    {{ with $imageURL }}
+      <img src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
+    {{ else }}
+      <span class="software-card__placeholder">{{ substr $item.Title 0 1 }}</span>
+    {{ end }}
+  </a>
+  <div class="software-card__body">
+    <div class="software-card__meta">
+      {{ with index ($item.Params.tags | default slice) 0 }}<span>{{ . }}</span>{{ end }}
+      <time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006" }}</time>
+    </div>
+    <h3 class="software-card__title"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
+    <p class="software-card__summary">{{ $item.Summary | plainify | truncate 150 }}</p>
+    <div class="software-card__actions">
+      {{ with $linkURL }}
+        <a class="software-card__button" href="{{ . | safeURL }}" target="_blank" rel="noopener">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          <span>Link</span>
+        </a>
+      {{ end }}
+      {{ with $codeURL }}
+        <a class="software-card__button software-card__button--ghost" href="{{ . | safeURL }}" target="_blank" rel="noopener">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span>Code</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</article>

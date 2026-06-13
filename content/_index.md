@@ -3,7 +3,42 @@ date: "2023-11-01"
 title: null
 type: landing
 sections:
+- block: markdown
+  id: lab_hero
+  content:
+    title: ""
+    text: |-
+      <section class="lab-hero" aria-label="Shen Lab at NTU">
+        <div class="lab-hero__network" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="lab-hero__content">
+          <p class="lab-hero__eyebrow">Computational multi-omics lab in Singapore</p>
+          <h1>Shen Lab @ NTU</h1>
+          <p class="lab-hero__subtitle">Multi-omics, microbiome, metabolomics, and AI for precision health</p>
+          <div class="lab-hero__actions">
+            <a class="lab-hero__button lab-hero__button--primary" href="./research/">
+              <i class="fas fa-flask" aria-hidden="true"></i>
+              <span>Research</span>
+            </a>
+            <a class="lab-hero__button" href="./software/">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <span>Software</span>
+            </a>
+            <a class="lab-hero__button" href="./publication/">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+              <span>Publication</span>
+            </a>
+          </div>
+        </div>
+      </section>
+  design:
+    columns: "1"
+    spacing:
+      padding: ["0", "0", "0", "0"]
+
 - block: slider
+  id: latest_highlights
   content:
     slides:
     - align: center
@@ -12,96 +47,52 @@ sections:
         image:
           filename: microbiome-2026.png
           filters:
-            brightness: 0.6
+            brightness: 0.62
         position: right
-      content: 
+      content:
       link:
         icon: link
         icon_pack: fas
         text: Link
         url: ../publication/cross-body-site-microbial-interactions-influence-the-human-plasma-metabolome/
-      title: "New publication📢"
+      title: "New publication"
     - align: center
       background:
         color: '#666'
         image:
           filename: nc-2026-tidymass2.png
           filters:
-            brightness: 0.6
+            brightness: 0.62
         position: right
-      content: 
+      content:
       link:
         icon: link
         icon_pack: fas
         text: Link
         url: ../publication/tidymass2-advancing-lc-ms-untargeted-metabolomics-through-metabolite-origin-inference-and-metabolic-feature-based-functional-module-analysis/
-      title: "New publication📢"
+      title: "New publication"
     - align: center
       background:
         color: '#666'
         image:
           filename: nc-2025-uc.png
           filters:
-            brightness: 0.6
+            brightness: 0.62
         position: right
-      content: 
+      content:
       link:
         icon: link
         icon_pack: fas
         text: Link
         url: ../publication/metabolomics-and-proteomics-revealblocking-argininosuccinate-synthetase-1alleviates-colitis-in-mice/
-      title: "New publication📢"
-    - align: center
-      background:
-        color: '#666'
-        image:
-          filename: multi-omics4.jpg
-          filters:
-            brightness: 0.7
-        position: right
-      content: 
-      link:
-        icon: flask
-        icon_pack: fas
-        text: Research
-        url: ../research/
-      title: "👋 Welcome to Shen Lab@NTU, Singapore 👋"
-    - align: center
-      background:
-        color: '#333'
-        image:
-          filename: group_photo3.png
-          filters:
-            brightness: 0.8
-        position: center
-      content: 
-      link:
-        icon: graduation-cap
-        icon_pack: fas
-        text: Team
-        url: ../team/
-      title: 🌍 Meet Our Team Members 🌍
-    - align: center
-      background:
-        color: '#555'
-        image:
-          filename: contact2.jpg
-          filters:
-            brightness: 0.8
-        position: center
-      content: 
-      link:
-        # icon: graduation-cap
-        # icon_pack: fas
-        text: 📨 Contact
-        url: ../contact/
-      title: ☕️ Talking and Collaboration ☕️
-      
+      title: "New publication"
   design:
-    interval: 5000
+    interval: 4500
     is_fullscreen: true
     loop: true
     slide_height: ""
+    spacing:
+      padding: ["0", "0", "0", "0"]
 
 - block: hero
   content:
@@ -200,29 +191,26 @@ sections:
     columns: "1"
     view: community/research_cards
     
-- block: portfolio
+- block: collection
   id: software
   content:
     title: 🖥️ SOFTWARE
-    # subtitle: ":point_right: [All Software](./all_software/)"
+    subtitle: ":point_right: [All Software](./software/)"
     text: ""
-    buttons:
-    - name: All
-      tag: '*'
-    - name: Metabolomics
-      tag: Metabolomics
-    - name: Multi-omics
-      tag: Multi-omics
-    - name: Others
-      tag: Others
-    default_button_index: 0
+    count: 5
+    offset: 0
+    order: desc
     filters:
       folders:
         - software
+    archive:
+      enable: true
+      text: SEE ALL
+      link: ./software/
   design:
-    columns: "2"
+    columns: "1"
     flip_alt_rows: false
-    view: community/compact4
+    view: community/software_cards
     background:
       video:
       # Name of video in `assets/media/`.

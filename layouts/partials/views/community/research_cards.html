@@ -12,16 +12,16 @@
 
 {{ $slug := $item.File.ContentBaseName }}
 {{ $title := $item.Title | plainify }}
-{{ $image := "/image/research-multiomics.svg" }}
+{{ $image := "/image/research-multiomics-modern.png" }}
 
 {{ if eq $slug "aging" }}
-  {{ $image = "/image/research-aging.svg" }}
+  {{ $image = "/image/research-aging-modern.png" }}
   {{ $title = "Aging and Aging-Related Diseases" }}
 {{ else if eq $slug "pregnancy" }}
-  {{ $image = "/image/research-pregnancy.svg" }}
+  {{ $image = "/image/research-pregnancy-modern.png" }}
   {{ $title = "Maternal and Child Health" }}
 {{ else if eq $slug "multi-omics" }}
-  {{ $image = "/image/research-multiomics.svg" }}
+  {{ $image = "/image/research-multiomics-modern.png" }}
   {{ $title = "Multi-Omics Data Integration" }}
 {{ end }}
 

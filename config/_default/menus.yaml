@@ -4,10 +4,16 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
+  - name: HOME
+    url: '#lab_hero'
+    weight: 1
+  - name: HIGHLIGHT
+    url: '#latest_highlights'
+    weight: 2
   - name: RESEARCH
     url: '#research'
     weight: 10
-  - name:  SOFTWARE
+  - name: SOFTWARE
     url: '#software'
     weight: 11
   - name: PUBLICATION

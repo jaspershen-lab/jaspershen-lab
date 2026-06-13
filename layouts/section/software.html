@@ -1,0 +1,57 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $categoryOrder := slice "Metabolomics" "Multi-omics" "Others" }}
+{{ $categoryIcons := dict
+  "Metabolomics" "flask"
+  "Multi-omics" "project-diagram"
+  "Others" "tools"
+}}
+
+<main class="software-directory">
+  {{ range $category := $categoryOrder }}
+    {{ $items := where $pages "Params.tags" "intersect" (slice $category) }}
+    {{ if gt (len $items) 0 }}
+      <section class="software-category" aria-labelledby="software-category-{{ $category | urlize }}">
+        <div class="software-category__header">
+          <h2 id="software-category-{{ $category | urlize }}">
+            <i class="fas fa-{{ index $categoryIcons $category | default "cube" }}" aria-hidden="true"></i>
+            <span>{{ $category }}</span>
+          </h2>
+          <span>{{ len $items }} {{ cond (eq (len $items) 1) "tool" "tools" }}</span>
+        </div>
+        <div class="software-directory__grid">
+          {{ range $items }}
+            {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards") }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{ $known := slice }}
+  {{ range $categoryOrder }}
+    {{ $known = $known | append (where $pages "Params.tags" "intersect" (slice .)) }}
+  {{ end }}
+  {{ $otherItems := $pages | complement $known }}
+  {{ if gt (len $otherItems) 0 }}
+    <section class="software-category" aria-labelledby="software-category-uncategorized">
+      <div class="software-category__header">
+        <h2 id="software-category-uncategorized">
+          <i class="fas fa-cube" aria-hidden="true"></i>
+          <span>Uncategorized</span>
+        </h2>
+        <span>{{ len $otherItems }} {{ cond (eq (len $otherItems) 1) "tool" "tools" }}</span>
+      </div>
+      <div class="software-directory__grid">
+        {{ range $otherItems }}
+          {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards") }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</main>
+
+{{- end -}}
