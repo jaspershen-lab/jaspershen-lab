@@ -1,16 +1,407 @@
 <div class="collab-map-wrap">
+  <div class="collab-map-heading">
+    <div>
+      <p>Global collaboration network</p>
+      <h3>Collaborator Map</h3>
+    </div>
+    <span>Drag, zoom, and hover city nodes</span>
+  </div>
   <div id="collaborator-map" class="collab-map"></div>
+  <div id="collaborator-map-detail" class="collab-map-detail" aria-live="polite">
+    <div class="collab-map-detail__empty">
+      <i class="fas fa-location-dot" aria-hidden="true"></i>
+      <p>Click a city node to view collaborators in that region.</p>
+    </div>
+  </div>
 </div>
 <style>
-  .collab-map-wrap { max-width: 1200px; margin: 0 auto; }
-  .collab-map { width: 100%; height: 560px; border-radius: 10px; border: 1px solid rgba(0,0,0,.12); }
-  .collab-tooltip { max-width: 360px; }
-  .collab-tooltip ul { margin: 6px 0 0; padding-left: 16px; }
-  .collab-tooltip li { margin: 2px 0; }
-  @media (max-width: 768px) { .collab-map { height: 420px; } }
+  .collab-map-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.11), transparent 30%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(15, 23, 42, 0.035));
+    box-shadow: 0 20px 54px rgba(15, 23, 42, 0.10);
+  }
+
+  .collab-map-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.25rem 0.25rem 1rem;
+  }
+
+  .collab-map-heading p {
+    margin: 0 0 0.25rem;
+    color: #14b8a6;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .collab-map-heading h3 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 0.98;
+  }
+
+  .collab-map-heading span {
+    color: rgba(148, 163, 184, 0.95);
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .collab-map {
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 22px;
+    background: #0b1220;
+  }
+
+  .collab-map .leaflet-tile-pane {
+    filter: saturate(0.88) contrast(1.03);
+  }
+
+  .collab-marker {
+    filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.34));
+  }
+
+  .collab-tooltip {
+    max-width: 390px;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: rgba(15, 23, 42, 0.94) !important;
+    color: #f8fafc !important;
+    box-shadow: 0 20px 44px rgba(2, 6, 23, 0.28) !important;
+    padding: 0.8rem 0.95rem !important;
+  }
+
+  .collab-popup__title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.45rem;
+    color: #fff;
+    font-weight: 900;
+  }
+
+  .collab-popup__title span {
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.16);
+    padding: 0.18rem 0.45rem;
+    color: #99f6e4;
+    font-size: 0.78rem;
+  }
+
+  .collab-tooltip ul {
+    display: grid;
+    gap: 0.35rem;
+    max-height: 220px;
+    overflow: auto;
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .collab-tooltip li {
+    margin: 0;
+    color: rgba(226, 232, 240, 0.9);
+    line-height: 1.35;
+  }
+
+  .collab-tooltip strong {
+    color: #f8fafc;
+  }
+
+  .collab-map .leaflet-control-zoom a {
+    border-color: rgba(148, 163, 184, 0.2);
+    background: rgba(15, 23, 42, 0.86);
+    color: #e5eefc;
+  }
+
+  .collab-map .leaflet-control-attribution {
+    border-radius: 999px 0 0 0;
+    background: rgba(15, 23, 42, 0.72);
+    color: rgba(226, 232, 240, 0.78);
+  }
+
+  .collab-map .leaflet-control-attribution a {
+    color: #99f6e4;
+  }
+
+  .collab-map-detail {
+    margin-top: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.54);
+    padding: 1rem;
+  }
+
+  .collab-map-detail__empty {
+    display: grid;
+    min-height: 96px;
+    place-items: center;
+    align-content: center;
+    gap: 0.55rem;
+    color: rgba(100, 116, 139, 0.78);
+    text-align: center;
+  }
+
+  .collab-map-detail__empty i {
+    color: #14b8a6;
+    font-size: 1.5rem;
+  }
+
+  .collab-map-detail__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .collab-map-detail__header p {
+    margin: 0 0 0.25rem;
+    color: #14b8a6;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .collab-map-detail__header h4 {
+    margin: 0;
+    font-size: clamp(1.45rem, 2.8vw, 2.3rem);
+    font-weight: 900;
+    line-height: 1.05;
+  }
+
+  .collab-map-detail__count {
+    flex: 0 0 auto;
+    border: 1px solid rgba(20, 184, 166, 0.22);
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.09);
+    padding: 0.45rem 0.72rem;
+    color: #0f766e;
+    font-size: 0.86rem;
+    font-weight: 900;
+  }
+
+  .collab-map-detail__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .collab-map-detail__person {
+    display: grid;
+    gap: 0.25rem;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.58);
+    padding: 0.8rem 0.9rem;
+  }
+
+  .collab-map-detail__person a,
+  .collab-map-detail__person button {
+    width: fit-content;
+    border: 0;
+    background: transparent;
+    color: #0f766e;
+    padding: 0;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .collab-map-detail__person a:hover,
+  .collab-map-detail__person button:hover {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .collab-map-detail__person span {
+    color: rgba(71, 85, 105, 0.82);
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .collab-map-detail__papers {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 0.45rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.14);
+  }
+
+  .collab-map-detail__papers strong {
+    color: rgba(15, 23, 42, 0.92);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .collab-map-detail__papers ol {
+    display: grid;
+    gap: 0.38rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .collab-map-detail__papers li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    align-items: start;
+  }
+
+  .collab-map-detail__paper {
+    width: auto !important;
+    color: #334155 !important;
+    font-size: 0.86rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+
+  .collab-map-detail__paper-year {
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.10);
+    padding: 0.12rem 0.38rem;
+    color: #0f766e !important;
+    font-size: 0.72rem !important;
+    font-weight: 900;
+  }
+
+  .collab-map-detail__more {
+    width: fit-content !important;
+    border-radius: 999px !important;
+    background: rgba(37, 99, 235, 0.10) !important;
+    padding: 0.26rem 0.58rem !important;
+    color: #2563eb !important;
+    font-size: 0.78rem !important;
+    font-weight: 900 !important;
+    text-decoration: none !important;
+  }
+
+  .collab-map-detail__more:hover {
+    background: rgba(37, 99, 235, 0.16) !important;
+    text-decoration: none !important;
+  }
+
+  .collab-map-detail__no-papers {
+    margin: 0;
+    color: rgba(100, 116, 139, 0.78);
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .dark .collab-map-wrap {
+    border-color: rgba(148, 163, 184, 0.14);
+    background:
+      radial-gradient(circle at 8% 0%, rgba(45, 212, 191, 0.10), transparent 30%),
+      linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(11, 18, 32, 0.96));
+    box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
+  }
+
+  .dark .collab-map-detail {
+    border-color: rgba(148, 163, 184, 0.14);
+    background: rgba(15, 23, 42, 0.58);
+  }
+
+  .dark .collab-map-detail__person {
+    border-color: rgba(148, 163, 184, 0.13);
+    background: rgba(15, 23, 42, 0.62);
+  }
+
+  .dark .collab-map-detail__person a,
+  .dark .collab-map-detail__person button {
+    color: #99f6e4;
+  }
+
+  .dark .collab-map-detail__person span,
+  .dark .collab-map-detail__empty {
+    color: rgba(226, 232, 240, 0.72);
+  }
+
+  .dark .collab-map-detail__papers {
+    border-top-color: rgba(148, 163, 184, 0.16);
+  }
+
+  .dark .collab-map-detail__papers strong {
+    color: rgba(226, 232, 240, 0.92);
+  }
+
+  .dark .collab-map-detail__paper {
+    color: rgba(226, 232, 240, 0.9) !important;
+  }
+
+  .dark .collab-map-detail__no-papers {
+    color: rgba(226, 232, 240, 0.62);
+  }
+
+  @media (max-width: 768px) {
+    .collab-map-wrap { padding: 0.75rem; border-radius: 22px; }
+    .collab-map-heading { align-items: flex-start; flex-direction: column; }
+    .collab-map { height: 460px; border-radius: 18px; }
+    .collab-map-detail__header { align-items: flex-start; flex-direction: column; }
+    .collab-map-detail__list { grid-template-columns: 1fr; }
+  }
 </style>
 <script>
   (function () {
+    var profilePages = [
+      {{- $authors := site.GetPage "section" "authors" -}}
+      {{- if $authors -}}
+        {{- range $index, $author := $authors.Pages -}}
+          {{- if $index -}},{{- end -}}
+          { name: {{ $author.Title | jsonify | safeJS }}, url: {{ $author.RelPermalink | jsonify | safeJS }} }
+        {{- end -}}
+      {{- end -}}
+    ];
+
+    var publicationPages = [
+      {{- $publications := site.GetPage "section" "publication" -}}
+      {{- if $publications -}}
+        {{- range $index, $publication := $publications.Pages.ByDate.Reverse -}}
+          {{- if $index -}},{{- end -}}
+          {
+            title: {{ $publication.Title | jsonify | safeJS }},
+            url: {{ $publication.RelPermalink | jsonify | safeJS }},
+            year: {{ $publication.Date.Format "2006" | jsonify | safeJS }},
+            authors: [
+              {{- range $author_index, $author := ($publication.Params.authors | default (slice)) -}}
+                {{- if $author_index -}},{{- end -}}
+                {{- $author_name := $author -}}
+                {{- if eq (lower $author) "admin" -}}
+                  {{- $author_name = "Xiaotao Shen" -}}
+                {{- end -}}
+                {{ $author_name | jsonify | safeJS }}
+              {{- end -}}
+            ]
+          }
+        {{- end -}}
+      {{- end -}}
+    ];
+
     var fallbackData = [
       { city: "Palo Alto", country: "USA", lat: 37.4419, lng: -122.1430, count: 3, collaborators: [
         { name: "Prof. Michael SNYDER", institution: "Stanford University" },
@@ -76,6 +467,141 @@
       }
     }
 
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>"']/g, function (m) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[m];
+      });
+    }
+
+    function normalizeName(value) {
+      return String(value || "")
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/\b(professor|prof|dr|mr|mrs|ms|phd|md)\b\.?/g, "")
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim()
+        .replace(/\s+/g, " ");
+    }
+
+    function nameKeys(value) {
+      var normalized = normalizeName(value);
+      if (!normalized) return [];
+      var parts = normalized.split(" ");
+      var keys = [normalized];
+      if (parts.length >= 2) {
+        keys.push(parts[0].charAt(0) + " " + parts[parts.length - 1]);
+        keys.push(parts[0].charAt(0) + parts[parts.length - 1]);
+      }
+      return keys;
+    }
+
+    function namesMatch(a, b) {
+      var aKeys = nameKeys(a);
+      var bKeys = nameKeys(b);
+      return aKeys.some(function (aKey) {
+        return bKeys.some(function (bKey) {
+          return aKey === bKey || aKey.indexOf(bKey) >= 0 || bKey.indexOf(aKey) >= 0;
+        });
+      });
+    }
+
+    var profileIndex = {};
+    profilePages.forEach(function (profile) {
+      nameKeys(profile.name).forEach(function (key) {
+        if (!profileIndex[key]) profileIndex[key] = profile.url;
+      });
+    });
+
+    function findProfile(name) {
+      var keys = nameKeys(name);
+      for (var i = 0; i < keys.length; i += 1) {
+        if (profileIndex[keys[i]]) return profileIndex[keys[i]];
+      }
+      return "";
+    }
+
+    function uniqueCollaborators(items) {
+      var seen = {};
+      return (items || []).filter(function (item) {
+        var key = normalizeName(item.name) + "|" + normalizeName(item.institution);
+        if (seen[key]) return false;
+        seen[key] = true;
+        return true;
+      });
+    }
+
+    var publicationCache = {};
+    function collaboratorPublications(name) {
+      var key = normalizeName(name);
+      if (publicationCache[key]) return publicationCache[key];
+      var matches = publicationPages.filter(function (publication) {
+        return (publication.authors || []).some(function (author) {
+          return namesMatch(name, author);
+        });
+      });
+      publicationCache[key] = matches;
+      return matches;
+    }
+
+    function publicationAuthorForFilter(name, papers) {
+      for (var i = 0; i < papers.length; i += 1) {
+        var authors = papers[i].authors || [];
+        for (var j = 0; j < authors.length; j += 1) {
+          if (namesMatch(name, authors[j])) return authors[j];
+        }
+      }
+      return name;
+    }
+
+    function filteredPublicationUrl(name, papers) {
+      return "/publication/?author=" + encodeURIComponent(publicationAuthorForFilter(name, papers || []));
+    }
+
+    function renderPapers(name) {
+      var papers = collaboratorPublications(name);
+      if (!papers.length) {
+        return "<div class='collab-map-detail__papers'>"
+          + "<strong>Recent collaborative papers</strong>"
+          + "<p class='collab-map-detail__no-papers'>No matched publication data yet.</p>"
+          + "</div>";
+      }
+      var paperRows = papers.slice(0, 5).map(function (paper) {
+        return "<li>"
+          + "<a class='collab-map-detail__paper' href='" + escapeHtml(paper.url) + "'>" + escapeHtml(paper.title) + "</a>"
+          + "<span class='collab-map-detail__paper-year'>" + escapeHtml(paper.year) + "</span>"
+          + "</li>";
+      }).join("");
+      var more = papers.length > 5
+        ? "<a class='collab-map-detail__more' href='" + filteredPublicationUrl(name, papers) + "'>More papers (" + papers.length + ")</a>"
+        : "";
+      return "<div class='collab-map-detail__papers'>"
+        + "<strong>Recent collaborative papers</strong>"
+        + "<ol>" + paperRows + "</ol>"
+        + more
+        + "</div>";
+    }
+
+    function renderDetail(region) {
+      var panel = document.getElementById("collaborator-map-detail");
+      if (!panel) return;
+      var people = uniqueCollaborators(region.collaborators);
+      var rows = people.map(function (person) {
+        var profile = findProfile(person.name);
+        var name = escapeHtml(person.name);
+        var institution = escapeHtml(person.institution || "Institution not listed");
+        var action = profile
+          ? "<a href='" + profile + "'>" + name + "</a>"
+          : "<button type='button' class='collab-profile-missing' data-name='" + name + "'>" + name + "</button>";
+        return "<li class='collab-map-detail__person'>" + action + "<span>" + institution + "</span>" + renderPapers(person.name) + "</li>";
+      }).join("");
+      panel.innerHTML = ""
+        + "<div class='collab-map-detail__header'>"
+        + "<div><p>Selected region</p><h4>" + escapeHtml(region.city) + ", " + escapeHtml(region.country) + "</h4></div>"
+        + "<span class='collab-map-detail__count'>" + people.length + " collaborator" + (people.length === 1 ? "" : "s") + "</span>"
+        + "</div>"
+        + "<ul class='collab-map-detail__list'>" + rows + "</ul>";
+    }
+
     function drawMarkers(map, data) {
       var maxCount = data.reduce(function (m, d) { return Math.max(m, d.count || 1); }, 1);
       data.forEach(function (d) {
@@ -86,21 +612,27 @@
         }).join("");
         var popup = ""
           + "<div class='collab-popup'>"
-          + "<div><strong>" + d.city + ", " + d.country + "</strong> (" + d.count + ")</div>"
+          + "<div class='collab-popup__title'><strong>" + d.city + ", " + d.country + "</strong><span>" + d.count + "</span></div>"
           + "<ul>" + popupRows + "</ul>"
           + "</div>";
 
         L.circleMarker([d.lat, d.lng], {
           radius: radius,
-          color: "rgba(178,31,47,0.95)",
-          fillColor: "rgba(178,31,47,0.45)",
-          weight: 1.5,
-          fillOpacity: 0.5
+          color: "rgba(255,255,255,0.92)",
+          fillColor: "rgba(20,184,166,0.72)",
+          weight: 2,
+          fillOpacity: 0.78,
+          className: "collab-marker"
         }).bindTooltip(popup, {
           direction: "top",
           sticky: true,
           opacity: 0.98,
           className: "collab-tooltip"
+        }).on("click", function () {
+          renderDetail(d);
+          map.flyTo([d.lat, d.lng], Math.max(map.getZoom(), 3), { duration: 0.65 });
+          var panel = document.getElementById("collaborator-map-detail");
+          if (panel) panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }).addTo(map);
       });
     }
@@ -111,12 +643,21 @@
       if (!el || el.dataset.ready === "1") return true;
       el.dataset.ready = "1";
 
+      var worldBounds = L.latLngBounds([[-85, -180], [85, 180]]);
+      var minZoom = window.matchMedia("(max-width: 768px)").matches ? 1 : 2;
       var map = L.map(el, {
         zoomControl: true,
-        worldCopyJump: true
-      }).setView([20, 10], 2);
+        worldCopyJump: false,
+        maxBounds: worldBounds,
+        maxBoundsViscosity: 1.0,
+        minZoom: minZoom,
+        maxZoom: 8
+      }).setView([20, 10], minZoom);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        noWrap: true,
+        bounds: worldBounds,
+        minZoom: minZoom,
         maxZoom: 8,
         attribution: "&copy; OpenStreetMap contributors"
       }).addTo(map);
@@ -135,6 +676,12 @@
     }
 
     ensureLeaflet();
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".collab-profile-missing");
+      if (!button) return;
+      event.preventDefault();
+      window.alert("No profile found for " + (button.dataset.name || "this collaborator") + ".");
+    });
     if (!initMap()) {
       var tries = 0;
       var timer = setInterval(function () {
