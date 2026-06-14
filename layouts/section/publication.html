@@ -12,6 +12,82 @@
 
       {{ $pub_pages := .Pages.ByDate.Reverse }}
       {{ $year_groups := $pub_pages.GroupByDate "2006" }}
+      {{ $authors_scratch := newScratch }}
+      {{ $authors_scratch.Set "authors" (slice) }}
+      {{ range $pub_pages }}
+        {{ range (.Params.authors | default (slice)) }}
+          {{ $author_name := . }}
+          {{ if eq (lower .) "admin" }}
+            {{ $author_name = "Xiaotao Shen" }}
+          {{ end }}
+          {{ $authors_scratch.Add "authors" $author_name }}
+        {{ end }}
+      {{ end }}
+      {{ $all_authors := sort (uniq ($authors_scratch.Get "authors")) }}
+
+      <div class="publication-filter-panel" id="publication-filter-panel">
+        <div class="publication-filter-panel__header">
+          <div>
+            <p class="publication-filter-panel__eyebrow">Explore publications</p>
+            <h2>Filter & Search</h2>
+          </div>
+          <button class="publication-filter-panel__reset" type="button" id="publication-filter-reset">
+            <i class="fas fa-rotate-left" aria-hidden="true"></i>
+            Reset
+          </button>
+        </div>
+
+        <div class="publication-filter-grid">
+          <label class="publication-filter-field publication-filter-field--search">
+            <span>Search</span>
+            <div class="publication-filter-input">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <input id="publication-search" type="search" placeholder="Search title, author, journal, abstract..." autocomplete="off">
+            </div>
+          </label>
+
+          <label class="publication-filter-field">
+            <span>Author</span>
+            <div class="publication-filter-input">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <input id="publication-author" type="search" list="publication-author-list" placeholder="Any author" autocomplete="off">
+              <datalist id="publication-author-list">
+                {{ range $all_authors }}
+                  <option value="{{ . }}">
+                {{ end }}
+              </datalist>
+            </div>
+          </label>
+
+          <label class="publication-filter-field">
+            <span>Year</span>
+            <div class="publication-filter-input">
+              <i class="fas fa-calendar" aria-hidden="true"></i>
+              <select id="publication-year">
+                <option value="">All years</option>
+                {{ range $year_groups }}
+                  <option value="{{ .Key }}">{{ .Key }}</option>
+                {{ end }}
+              </select>
+            </div>
+          </label>
+
+          <label class="publication-filter-field">
+            <span>Type</span>
+            <div class="publication-filter-input">
+              <i class="fas fa-layer-group" aria-hidden="true"></i>
+              <select id="publication-type">
+                <option value="">All types</option>
+                <option value="journal">Journal</option>
+                <option value="preprint">Preprint</option>
+                <option value="conference">Conference</option>
+              </select>
+            </div>
+          </label>
+        </div>
+
+        <div class="publication-filter-status" id="publication-filter-status" aria-live="polite"></div>
+      </div>
 
       <div id="container-publications">
         {{ range $year_group := $year_groups }}
@@ -33,8 +109,47 @@
               {{ else }}
                 {{ $.Scratch.Set "pubtype" 0 }}
               {{ end }}
+              {{ $pubtype_raw := printf "%v" ($.Scratch.Get "pubtype") }}
+              {{ $pubtype_label := "other" }}
+              {{ if eq $pubtype_raw "1" }}
+                {{ $pubtype_label = "conference" }}
+              {{ else if eq $pubtype_raw "2" }}
+                {{ $pubtype_label = "journal" }}
+              {{ else if eq $pubtype_raw "3" }}
+                {{ $pubtype_label = "preprint" }}
+              {{ end }}
+              {{ $item_authors_scratch := newScratch }}
+              {{ $item_authors_scratch.Set "authors" (slice) }}
+              {{ range ($item.Params.authors | default (slice)) }}
+                {{ $author_name := . }}
+                {{ if eq (lower .) "admin" }}
+                  {{ $author_name = "Xiaotao Shen" }}
+                {{ end }}
+                {{ $item_authors_scratch.Add "authors" $author_name }}
+              {{ end }}
+              {{ $item_authors := $item_authors_scratch.Get "authors" }}
+              {{ $authors := delimit $item_authors " " }}
+              {{ $authors_display := delimit $item_authors ", " }}
+              {{ $search_blob := delimit (slice
+                $item.Title
+                $authors
+                ($item.Params.publication | default "")
+                ($item.Params.abstract | default "")
+                ($item.Params.summary | default "")
+                ($item.Plain | default "")
+                $pubtype_label
+                ($item.Date.Format "2006")
+              ) " " }}
 
-              <div class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}" data-title="{{ $item.Title | lower | htmlEscape }}">
+              <div
+                class="grid-sizer col-lg-12 pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}"
+                data-title="{{ $item.Title | lower | htmlEscape }}"
+                data-year="{{ $item.Date.Format "2006" }}"
+                data-pub-type="{{ $pubtype_label }}"
+                data-authors="{{ $authors | lower | htmlEscape }}"
+                data-authors-display="{{ $authors_display | htmlEscape }}"
+                data-search="{{ $search_blob | plainify | lower | htmlEscape }}"
+              >
                 {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
               </div>
             {{ end }}
@@ -43,12 +158,18 @@
       </div>
       <script>
         (function () {
-          var url = new URL(window.location.href);
-          var keyword = (url.searchParams.get("keyword") || url.searchParams.get("q") || "").trim().toLowerCase();
           var container = document.getElementById("container-publications");
           if (!container) return;
 
           var toggles = Array.prototype.slice.call(container.querySelectorAll('.pub-year-toggle'));
+          var rows = Array.prototype.slice.call(container.querySelectorAll('.grid-sizer'));
+          var searchInput = document.getElementById('publication-search');
+          var authorInput = document.getElementById('publication-author');
+          var yearSelect = document.getElementById('publication-year');
+          var typeSelect = document.getElementById('publication-type');
+          var resetButton = document.getElementById('publication-filter-reset');
+          var status = document.getElementById('publication-filter-status');
+          var url = new URL(window.location.href);
 
           function setExpanded(toggle, expanded) {
             var targetId = toggle.getAttribute('aria-controls');
@@ -64,13 +185,29 @@
             });
           });
 
-          var rows = Array.prototype.slice.call(container.querySelectorAll('.grid-sizer'));
-          if (keyword) {
-            rows.forEach(function (row) {
-              var t = (row.getAttribute('data-title') || '').toLowerCase();
-              row.style.display = t.indexOf(keyword) >= 0 ? '' : 'none';
-            });
+          function normalize(value) {
+            return (value || '').trim().toLowerCase();
+          }
 
+          function hasActiveFilters(filters) {
+            return !!(filters.search || filters.author || filters.year || filters.type);
+          }
+
+          function updateUrl(filters) {
+            var next = new URL(window.location.href);
+            [
+              ['q', filters.search],
+              ['author', filters.author],
+              ['year', filters.year],
+              ['type', filters.type]
+            ].forEach(function (pair) {
+              if (pair[1]) next.searchParams.set(pair[0], pair[1]);
+              else next.searchParams.delete(pair[0]);
+            });
+            window.history.replaceState({}, '', next);
+          }
+
+          function updateGroups(active) {
             toggles.forEach(function (toggle) {
               var group = document.getElementById(toggle.getAttribute('aria-controls'));
               var visibleRows = group ? Array.prototype.slice.call(group.querySelectorAll('.grid-sizer')).filter(function (row) {
@@ -78,20 +215,72 @@
               }) : [];
               var visible = visibleRows.length > 0;
               toggle.style.display = visible ? '' : 'none';
-              setExpanded(toggle, visible);
+              if (active) {
+                setExpanded(toggle, visible);
+              } else {
+                toggle.style.display = '';
+                var year = parseInt((toggle.querySelector('.pub-year-toggle__label') || {}).textContent || '0', 10);
+                setExpanded(toggle, !(year <= 2024));
+              }
 
               var prev = toggle.previousElementSibling;
               if (prev && prev.classList.contains('pub-era-heading')) {
-                var nextToggle = toggle.nextElementSibling;
-                prev.style.display = visible ? '' : (nextToggle && nextToggle.style.display !== 'none' ? '' : 'none');
+                prev.style.display = active ? (visible ? '' : 'none') : '';
               }
             });
-
-            var note = document.createElement('div');
-            note.className = 'pub-filter-note';
-            note.textContent = 'Filtered by keyword: ' + keyword;
-            container.parentNode.insertBefore(note, container);
           }
+
+          function applyFilters(options) {
+            var filters = {
+              search: normalize(searchInput && searchInput.value),
+              author: normalize(authorInput && authorInput.value),
+              year: normalize(yearSelect && yearSelect.value),
+              type: normalize(typeSelect && typeSelect.value)
+            };
+            var active = hasActiveFilters(filters);
+            var count = 0;
+
+            rows.forEach(function (row) {
+              var haystack = row.getAttribute('data-search') || '';
+              var authors = row.getAttribute('data-authors') || '';
+              var year = row.getAttribute('data-year') || '';
+              var type = row.getAttribute('data-pub-type') || '';
+              var match = true;
+              if (filters.search && haystack.indexOf(filters.search) < 0) match = false;
+              if (filters.author && authors.indexOf(filters.author) < 0) match = false;
+              if (filters.year && year !== filters.year) match = false;
+              if (filters.type && type !== filters.type) match = false;
+              row.style.display = match ? '' : 'none';
+              if (match) count += 1;
+            });
+
+            updateGroups(active);
+            if (status) {
+              status.textContent = active ? (count + ' publication' + (count === 1 ? '' : 's') + ' matched') : (rows.length + ' publications');
+            }
+            if (!options || options.updateUrl !== false) updateUrl(filters);
+          }
+
+          function resetFilters() {
+            if (searchInput) searchInput.value = '';
+            if (authorInput) authorInput.value = '';
+            if (yearSelect) yearSelect.value = '';
+            if (typeSelect) typeSelect.value = '';
+            applyFilters();
+          }
+
+          if (searchInput) searchInput.value = url.searchParams.get('q') || url.searchParams.get('keyword') || '';
+          if (authorInput) authorInput.value = url.searchParams.get('author') || '';
+          if (yearSelect) yearSelect.value = url.searchParams.get('year') || '';
+          if (typeSelect) typeSelect.value = url.searchParams.get('type') || '';
+
+          [searchInput, authorInput, yearSelect, typeSelect].forEach(function (el) {
+            if (!el) return;
+            el.addEventListener('input', applyFilters);
+            el.addEventListener('change', applyFilters);
+          });
+          if (resetButton) resetButton.addEventListener('click', resetFilters);
+          applyFilters({ updateUrl: false });
         })();
       </script>
 

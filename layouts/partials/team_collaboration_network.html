@@ -7,6 +7,11 @@
     {{ if gt (len $groups) 0 }}
       {{ $role = index $groups 0 }}
     {{ end }}
+    {{ $avatarURL := "" }}
+    {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+    {{ with $avatar }}
+      {{ $avatarURL = (.Fill "160x160 Center").RelPermalink }}
+    {{ end }}
     {{ $members = $members | append (dict
       "slug" $slug
       "title" .Title
@@ -15,6 +20,8 @@
       "superuser" (.Params.superuser | default false)
       "user_groups" $groups
       "role" $role
+      "interests" (.Params.interests | default (slice))
+      "avatar" $avatarURL
       "permalink" .RelPermalink
     ) }}
   {{ end }}
@@ -26,6 +33,8 @@
     "title" .Title
     "permalink" .RelPermalink
     "authors" (.Params.authors | default (slice))
+    "year" (.Date.Format "2006")
+    "publication" (.Params.publication | default "")
   ) }}
 {{ end }}
 
@@ -35,7 +44,43 @@
       <p class="team-collab-network__lede">
         A live map of shared papers and mentoring connections across Shen Lab.
       </p>
-      <div class="team-collab-network__legend">
+      <div class="team-collab-network__stats" id="team-collab-network-stats"></div>
+      <div class="team-collab-network__toolbar">
+        <label class="team-collab-network__search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input id="team-collab-search" type="search" placeholder="Search member..." autocomplete="off">
+        </label>
+        <label>
+          <span>Group</span>
+          <select id="team-collab-category">
+            <option value="">All members</option>
+            <option value="PI">PI</option>
+            <option value="Researchers">Researchers</option>
+            <option value="Students">Students</option>
+            <option value="Co-supervised Students">Co-supervised Students</option>
+            <option value="Intern">Intern</option>
+          </select>
+        </label>
+        <label>
+          <span>Year</span>
+          <select id="team-collab-year">
+            <option value="">All years</option>
+          </select>
+        </label>
+        <label>
+          <span>Min links</span>
+          <select id="team-collab-weight">
+            <option value="1">>= 1 paper</option>
+            <option value="2">>= 2 papers</option>
+            <option value="3">>= 3 papers</option>
+          </select>
+        </label>
+        <button type="button" id="team-collab-reset">
+          <i class="fas fa-rotate-left" aria-hidden="true"></i>
+          Reset
+        </button>
+      </div>
+      <div class="team-collab-network__legend" id="team-collab-network-legend">
         <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--pi"></span>PI</span>
         <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--researchers"></span>Researchers</span>
         <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--students"></span>Students</span>
@@ -43,7 +88,15 @@
         <span class="team-collab-network__legend-item"><span class="team-collab-network__dot team-collab-network__dot--intern"></span>Intern</span>
       </div>
     </div>
-    <div class="team-collab-network__canvas" id="team-collab-network-canvas"></div>
+    <div class="team-collab-network__workspace">
+      <div class="team-collab-network__canvas" id="team-collab-network-canvas"></div>
+      <aside class="team-collab-network__panel" id="team-collab-network-panel">
+        <div class="team-collab-network__panel-empty">
+          <i class="fas fa-circle-nodes" aria-hidden="true"></i>
+          <p>Select a member or collaboration link to explore details.</p>
+        </div>
+      </aside>
+    </div>
     <div class="team-collab-network__hint">Member profiles and shared publications are connected in this map.</div>
   </div>
 
