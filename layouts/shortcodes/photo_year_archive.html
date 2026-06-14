@@ -1,0 +1,38 @@
+{{- $years := slice "2026" "2025" "2024" -}}
+<section class="photo-archive">
+  <div class="photo-archive__hero">
+    <p class="photo-archive__eyebrow">Shen Lab Albums</p>
+    <h2>Photos by Year</h2>
+    <p>Conference moments, lab dinners, visits, presentations, and everyday memories from Shen Lab.</p>
+  </div>
+
+  <div class="photo-archive__years">
+    {{- range $index, $year := $years -}}
+      {{- $dir := printf "content/photo-%s/lab" $year -}}
+      {{- $files := slice -}}
+      {{- range readDir $dir -}}
+        {{- if findRE `(?i)\.(jpe?g|png|webp|gif)$` .Name -}}
+          {{- $files = $files | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $files = sort $files "Name" "desc" -}}
+      <details class="photo-year" {{ if eq $index 0 }}open{{ end }}>
+        <summary>
+          <span class="photo-year__number">{{ $year }}</span>
+          <span class="photo-year__meta">{{ len $files }} photos</span>
+          <span class="photo-year__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="photo-year__grid">
+          {{- range $files -}}
+            {{- $src := printf "/photo-%s/lab/%s" $year .Name -}}
+            {{- $caption := .Name | replaceRE `\.[^.]+$` "" | replaceRE `[-_]+` " " | replaceRE `\s+` " " | humanize -}}
+            <a class="photo-year__item" href="/photo-{{ $year }}/">
+              <img src="{{ $src }}" alt="{{ $caption }}" loading="lazy">
+              <span>{{ $caption }}</span>
+            </a>
+          {{- end -}}
+        </div>
+      </details>
+    {{- end -}}
+  </div>
+</section>

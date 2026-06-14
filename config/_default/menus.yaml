@@ -30,27 +30,15 @@ main:
   #   weight: 40
   - name: CONTACT
     url: '#contact'
-    weight: 40
+    weight: 50
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   url: '#github'
   #   weight: 65
   
   - name: PHOTOS
     identifier: photos
-    url: 'photo'
-    weight: 50
-  - name: 2026
-    parent: photos
-    url: 'photo-2026'
-    weight: 51
-  - name: 2025
-    parent: photos
-    url: 'photo-2025'
-    weight: 52
-  - name: 2024
-    parent: photos
-    url: 'photo-2024'
-    weight: 53
+    url: '#photo'
+    weight: 40
   - name: MORE
     identifier: more
     weight: 70

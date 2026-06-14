@@ -338,6 +338,16 @@ sections:
 #       # Text color (true=light, false=dark, or remove for the dynamic theme color).
 #       text_color_light: true
 
+- block: markdown
+  id: photo
+  content:
+    title: Life in Shen Lab
+    subtitle: ":point_right: [All Photos](./photo/)"
+    text: |-
+      {{< life_in_lab >}}
+  design:
+    columns: "1"
+
 - block: contact
   id: contact
   content:

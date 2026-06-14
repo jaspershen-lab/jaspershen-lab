@@ -76,14 +76,6 @@ sections:
 
 - block: markdown
   content:
-    title: Life in Shen Lab
-    text: |-
-      {{< life_in_lab >}}
-  design:
-    columns: '1'
-
-- block: markdown
-  content:
     title: Alumni Summary
     text: |-
       <iframe width='100%' height='700' src="https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing"></iframe>

@@ -75,27 +75,35 @@
 
 <div class="life-lab-wall">
   {{- range $tiles -}}
-    {{- $first := index .slides 0 -}}
-    <a
-      class="life-lab-photo {{ .class }} life-lab-photo--{{ .effect }}"
-      href="{{ $first.href }}"
-      aria-label="Open {{ $first.label }} photo album"
-      data-current="0"
-      data-delay="{{ .delay }}"
-      data-interval="{{ .interval }}"
-    >
-      {{- range $index, $slide := .slides -}}
-        <img
-          class="life-lab-slide{{ if eq $index 0 }} is-active{{ end }}"
-          src="{{ $slide.src }}"
-          alt="{{ $slide.label }}"
-          loading="lazy"
-          data-href="{{ $slide.href }}"
-          data-label="{{ $slide.label }}"
-        >
+    {{- $validSlides := slice -}}
+    {{- range .slides -}}
+      {{- if fileExists (printf "content%s" .src) -}}
+        {{- $validSlides = $validSlides | append . -}}
       {{- end -}}
-      <span>{{ $first.label }}</span>
-    </a>
+    {{- end -}}
+    {{- if gt (len $validSlides) 0 -}}
+      {{- $first := index $validSlides 0 -}}
+      <a
+        class="life-lab-photo {{ .class }} life-lab-photo--{{ .effect }}"
+        href="{{ $first.href }}"
+        aria-label="Open {{ $first.label }} photo album"
+        data-current="0"
+        data-delay="{{ .delay }}"
+        data-interval="{{ .interval }}"
+      >
+        {{- range $index, $slide := $validSlides -}}
+          <img
+            class="life-lab-slide{{ if eq $index 0 }} is-active{{ end }}"
+            src="{{ $slide.src }}"
+            alt="{{ $slide.label }}"
+            loading="lazy"
+            data-href="{{ $slide.href }}"
+            data-label="{{ $slide.label }}"
+          >
+        {{- end -}}
+        <span>{{ $first.label }}</span>
+      </a>
+    {{- end -}}
   {{- end -}}
 </div>
 
