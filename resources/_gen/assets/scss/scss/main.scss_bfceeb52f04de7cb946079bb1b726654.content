@@ -13518,19 +13518,17 @@ section#publication .publication-summary-section {
     width: 320px;
     max-width: 100%; }
   .people-person__card {
-    min-height: 0;
+    min-height: 276px;
     perspective: none; }
   .people-person__face {
-    position: relative;
-    min-height: 0;
+    min-height: 276px;
     transform: none !important;
     backface-visibility: visible; }
   .people-person__face--front {
+    position: relative;
     min-height: 276px; }
   .people-person__face--back {
-    margin-top: 0.75rem; }
-  .people-interests {
-    min-height: 0; }
+    display: none; }
   .life-lab-wall {
     grid-template-columns: 1fr; }
   .life-lab-photo img,
