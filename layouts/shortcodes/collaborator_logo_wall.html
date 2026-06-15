@@ -1,0 +1,38 @@
+{{- $logos := slice
+  (dict "name" "Stanford University" "image" "/image/collaborators/stanford-university.png" "url" "https://www.stanford.edu/" "count" "85")
+  (dict "name" "Nanyang Technological University" "image" "/image/collaborators/nanyang-technological-university.png" "url" "https://www.ntu.edu.sg/" "count" "21")
+  (dict "name" "Zhejiang University" "image" "/image/collaborators/zhejiang-university.svg" "url" "https://www.zju.edu.cn/english/" "count" "9")
+  (dict "name" "Chinese University of Hong Kong" "image" "/image/collaborators/chinese-university-of-hong-kong.svg" "url" "https://www.cuhk.edu.hk/" "count" "7")
+  (dict "name" "University of Florida" "image" "/image/collaborators/university-of-florida.svg" "url" "https://www.ufl.edu/" "count" "7")
+  (dict "name" "University of Pennsylvania" "image" "/image/collaborators/university-of-pennsylvania.svg" "url" "https://www.upenn.edu/" "count" "7")
+  (dict "name" "Harvard University" "image" "/image/collaborators/harvard-university.png" "url" "https://www.harvard.edu/" "count" "6")
+  (dict "name" "Vanderbilt University" "image" "/image/collaborators/vanderbilt-university.svg" "url" "https://www.vanderbilt.edu/" "count" "5")
+  (dict "name" "Fudan University" "image" "/image/collaborators/fudan-university.png" "url" "https://www.fudan.edu.cn/en/" "count" "4")
+  (dict "name" "Massachusetts Institute of Technology" "image" "/image/collaborators/massachusetts-institute-of-technology.png" "url" "https://www.mit.edu/" "count" "2")
+  (dict "name" "National University of Singapore" "image" "/image/collaborators/national-university-of-singapore.png" "url" "https://nus.edu.sg/" "count" "1")
+  (dict "name" "Yale University" "image" "/image/collaborators/yale-university.png" "url" "https://www.yale.edu/" "count" "1")
+-}}
+
+<section class="collaborator-logo-wall" aria-label="Collaborator institution logos">
+  <div class="collaborator-logo-wall__head">
+    <div>
+      <p>Collaborator institutions</p>
+      <h3>Our global collaboration network</h3>
+    </div>
+    <span>Selected institutions from shared publications</span>
+  </div>
+
+  <div class="collaborator-logo-wall__grid">
+    {{ range $logos }}
+      <a class="collaborator-logo-wall__item" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+        <span class="collaborator-logo-wall__logo">
+          <img src="{{ .image }}" alt="{{ .name }} logo" loading="lazy">
+        </span>
+        <span class="collaborator-logo-wall__meta">
+          <strong>{{ .name }}</strong>
+          <em>{{ .count }} collaborator{{ if ne .count "1" }}s{{ end }}</em>
+        </span>
+      </a>
+    {{ end }}
+  </div>
+</section>

@@ -456,6 +456,131 @@ section#latest_highlights .btn {
   font-weight: 900;
 }
 
+/* Collaborator institution logo wall */
+.collaborator-logo-wall {
+  width: calc(100% - 32px);
+  max-width: 1240px;
+  margin: 32px auto 0;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.10), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.55));
+  box-shadow: 0 22px 54px rgba(2, 6, 23, 0.08);
+}
+
+.collaborator-logo-wall__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.collaborator-logo-wall__head p {
+  margin: 0 0 6px;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.collaborator-logo-wall__head h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.collaborator-logo-wall__head span {
+  color: rgba(71, 85, 105, 0.78);
+  font-size: 0.92rem;
+  font-weight: 850;
+}
+
+.collaborator-logo-wall__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.collaborator-logo-wall__item {
+  display: grid;
+  grid-template-rows: 112px auto;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.collaborator-logo-wall__item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(20, 184, 166, 0.36);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
+  text-decoration: none;
+}
+
+.collaborator-logo-wall__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 16px;
+}
+
+.collaborator-logo-wall__logo img {
+  max-width: 100%;
+  max-height: 76px;
+  object-fit: contain;
+}
+
+.collaborator-logo-wall__meta {
+  display: grid;
+  gap: 4px;
+  padding: 13px 14px 15px;
+}
+
+.collaborator-logo-wall__meta strong {
+  color: #0f172a;
+  font-size: 0.94rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.collaborator-logo-wall__meta em {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.dark .collaborator-logo-wall {
+  border-color: rgba(148, 163, 184, 0.14);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.10), transparent 30%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.50));
+}
+
+.dark .collaborator-logo-wall__head h3,
+.dark .collaborator-logo-wall__meta strong {
+  color: #f8fafc;
+}
+
+.dark .collaborator-logo-wall__head span {
+  color: rgba(203, 213, 225, 0.74);
+}
+
+.dark .collaborator-logo-wall__item {
+  border-color: rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.48);
+}
+
 .site-footer .powered-by,
 .site-footer .powered-by a {
   color: rgba(226, 232, 240, 0.72);
@@ -2477,6 +2602,15 @@ section#publication .col-12:has(> .view-pub-card) > .view-pub-card {
   .custom-footer-globe > canvas {
     transform: scale(0.86);
     transform-origin: center center;
+  }
+
+  .collaborator-logo-wall__head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .collaborator-logo-wall__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .author-profile__hero,
@@ -4718,6 +4852,24 @@ section#publication .publication-summary-section {
   .custom-footer-globe > canvas {
     transform: scale(0.72);
     transform-origin: center center;
+  }
+
+  .collaborator-logo-wall {
+    width: calc(100% - 24px);
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .collaborator-logo-wall__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .collaborator-logo-wall__item {
+    grid-template-rows: 88px auto;
+  }
+
+  .collaborator-logo-wall__logo img {
+    max-height: 56px;
   }
 
   .author-profile {

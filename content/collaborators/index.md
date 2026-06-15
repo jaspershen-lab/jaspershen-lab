@@ -29,6 +29,14 @@ sections:
       {{< collaborator_map >}}
   design:
     columns: '1'
+
+- block: markdown
+  content:
+    title:
+    text: |-
+      {{< collaborator_logo_wall >}}
+  design:
+    columns: '1'
     
 # - block: markdown
 #   content:
