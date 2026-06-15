@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:hC7cP41nSMkC"
+citation_source: "Google Scholar"
+citations: 0
 title: Advances and prospects for the Human BioMolecular Atlas Program (HuBMAP)
 abstract: MThe Human BioMolecular Atlas Program (HuBMAP) aims to create a multi-scale spatial atlas of the healthy human body at single-cell resolution by applying advanced technologies and disseminating resources to the community. As the HuBMAP moves past its first phase, creating ontologies, protocols and pipelines, this Perspective introduces the production phase, the generation of reference spatial maps of functional tissue units across many organs from diverse populations and the creation of mapping tools and infrastructure to advance biomedical research.
 
@@ -46,4 +49,3 @@ links:
 # url_source: ""
 # url_video: ""
 ---
-

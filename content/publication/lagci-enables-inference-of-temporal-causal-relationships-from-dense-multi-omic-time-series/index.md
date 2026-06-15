@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:pqnbT2bcN3wC"
+citation_source: "Google Scholar"
+citations: 0
 title: "LagCI Enables Inference of Temporal Causal Relationships from Dense Multi-Omic Time Series"
 
 
@@ -27,4 +30,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:pqnbT2bcN3wC
 ---
-

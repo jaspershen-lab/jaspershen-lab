@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:HoB7MX3m0LUC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Artificial intelligence-driven donor-recipient gut microbiome matching for optimized fecal microbiota transplantation"
 
 authors:
@@ -31,4 +34,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:HoB7MX3m0LUC
 ---
-

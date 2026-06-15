@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:isC4tDSrTZIC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Kun-peng: an ultra-memory-efficient, fast, and accurate pan-domain taxonomic classifier for all"
 
 authors:
@@ -21,4 +24,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:isC4tDSrTZIC
 ---
-

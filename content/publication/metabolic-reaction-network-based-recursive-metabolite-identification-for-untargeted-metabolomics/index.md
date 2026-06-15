@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:qjMakFHDy7sC"
+citation_source: "Google Scholar"
+citations: 2
 title: "Metabolic reaction network-based recursive metabolite identification for untargeted metabolomics"
 
 authors:
@@ -23,4 +26,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:qjMakFHDy7sC
 ---
-

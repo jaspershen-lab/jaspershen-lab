@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:vV6vV6tmYwMC"
+citation_source: "Google Scholar"
+citations: 2
 title: "Kun-peng enables scalable and accurate pan-domain metagenomic classification"
 
 authors:
@@ -22,4 +25,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:vV6vV6tmYwMC
 ---
-

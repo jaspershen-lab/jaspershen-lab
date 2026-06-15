@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:35N4QoGY0k4C"
+citation_source: "Google Scholar"
+citations: 0
 title: "eBiota: Designing microbial communities from large seed pools with desired function using rapid optimization and deep learning"
 
 authors:
@@ -32,4 +35,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:35N4QoGY0k4C
 ---
-

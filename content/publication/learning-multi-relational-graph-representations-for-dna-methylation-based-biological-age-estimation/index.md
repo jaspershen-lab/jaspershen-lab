@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:3s1wT3WcHBgC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Learning Multi-Relational Graph Representations for DNA Methylation-Based Biological Age Estimation"
 
 authors:
@@ -25,4 +28,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:3s1wT3WcHBgC
 ---
-

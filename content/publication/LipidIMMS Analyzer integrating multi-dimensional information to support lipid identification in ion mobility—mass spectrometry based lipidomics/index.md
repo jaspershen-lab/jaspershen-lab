@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:W7OEmFMy1HYC"
+citation_source: "Google Scholar"
+citations: 82
 title: LipidIMMS Analyzer integrating multi-dimensional information to support lipid identification in ion mobility—mass spectrometry based lipidomics
 
 abstract: Ion mobility—mass spectrometry (IM-MS) has showed great application potential for lipidomics. However, IM-MS based lipidomics is significantly restricted by the available software for lipid structural identification. Here, we developed a software tool, namely, LipidIMMS Analyzer, to support the accurate identification of lipids in IM-MS. For the first time, the software incorporates a large-scale database covering over 260 000 lipids and four-dimensional structural information for each lipid [i.e. m/z, retention time (RT), collision cross-section (CCS) and MS/MS spectra]. Therefore, multi-dimensional information can be readily integrated to support lipid identifications, and significantly improve the coverage and confidence of identification. Currently, the software supports different IM-MS instruments and data acquisition approaches.

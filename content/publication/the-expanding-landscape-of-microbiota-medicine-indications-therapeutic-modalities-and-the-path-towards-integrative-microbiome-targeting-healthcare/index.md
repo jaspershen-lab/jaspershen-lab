@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:g5m5HwL7SMYC"
+citation_source: "Google Scholar"
+citations: 1
 title: "The Expanding Landscape of Microbiota Medicine: Indications, Therapeutic Modalities, and the Path Towards Integrative Microbiome‐Targeting Healthcare"
 
 authors:
@@ -22,4 +25,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:g5m5HwL7SMYC
 ---
-

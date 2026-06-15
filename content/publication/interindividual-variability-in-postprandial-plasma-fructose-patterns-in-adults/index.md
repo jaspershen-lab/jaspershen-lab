@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:bEWYMUwI8FkC"
+citation_source: "Google Scholar"
+citations: 6
 title: "Interindividual variability in postprandial plasma fructose patterns in adults"
 
 authors:
@@ -20,4 +23,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:bEWYMUwI8FkC
 ---
-

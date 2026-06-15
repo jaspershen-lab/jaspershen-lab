@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:mVmsd5A6BfQC"
+citation_source: "Google Scholar"
+citations: 21
 title: Deep learning-based pseudo-mass spectrometry imaging analysis for precision medicine
 
 abstract: Liquid chromatography–mass spectrometry (LC–MS)-based untargeted metabolomics provides systematic profiling of metabolic. Yet, its applications in precision medicine (disease diagnosis) have been limited by several challenges, including metabolite identification, information loss and low reproducibility. Here, we present the deep-learning-based Pseudo-Mass Spectrometry Imaging (deepPseudoMSI) project (https://www.deeppseudomsi.org/), which converts LC–MS raw data to pseudo-MS images and then processes them by deep learning for precision medicine, such as disease diagnosis. Extensive tests based on real data demonstrated the superiority of deepPseudoMSI over traditional approaches and the capacity of our method to achieve an accurate individualized diagnosis. Our framework lays the foundation for future metabolic-based precision medicine. 
@@ -51,4 +54,3 @@ links:
 # url_source: ""
 # url_video: ""
 ---
-

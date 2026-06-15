@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:HDshCWvjkbEC"
+citation_source: "Google Scholar"
+citations: 1
 title: "Systems and Methods for Evaluating Gestational Progress and Applications Thereof"
 
 authors:
@@ -17,4 +20,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:HDshCWvjkbEC
 ---
-

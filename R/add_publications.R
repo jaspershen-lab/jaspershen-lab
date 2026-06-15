@@ -4,6 +4,7 @@ googlescholar2shenlab <- function(
     publication_dir = "content/publication",
     default_pub_type = "2",
     default_author = "admin",
+    update_citations = TRUE,
     dry_run = FALSE,
     verbose = TRUE
 ) {
@@ -43,7 +44,8 @@ googlescholar2shenlab <- function(
     stop("publication_dir does not exist: ", publication_dir)
   }
   
-  existing_norm <- read_existing_titles(publication_dir)
+  existing_publications <- read_existing_publications(publication_dir)
+  existing_norm <- names(existing_publications)
   pubs$title_norm <- vapply(pubs$title, normalize_title, character(1))
   
   pubs <-
@@ -63,15 +65,36 @@ googlescholar2shenlab <- function(
   pubs <-
     pubs %>% 
     dplyr::filter(!stringr::str_detect(title, "Author Correction"))
+
+  if (update_citations) {
+    citation_result <- update_existing_publication_citations(
+      pubs = pubs,
+      existing_publications = existing_publications,
+      scholar_id = scholar_id,
+      dry_run = dry_run,
+      verbose = verbose
+    )
+  } else {
+    citation_result <- data.frame(
+      updated = logical(0),
+      title = character(0),
+      path = character(0),
+      citations = integer(0),
+      stringsAsFactors = FALSE
+    )
+  }
   
   to_add <- pubs[!(pubs$title_norm %in% existing_norm), , drop = FALSE]
   if (nrow(to_add) == 0) {
     if (verbose) message("No new publications to add.")
-    return(invisible(data.frame(
-      added = logical(0),
-      title = character(0),
-      path = character(0),
-      stringsAsFactors = FALSE
+    return(invisible(list(
+      added = data.frame(
+        added = logical(0),
+        title = character(0),
+        path = character(0),
+        stringsAsFactors = FALSE
+      ),
+      citation_updated = citation_result
     )))
   }
   
@@ -100,16 +123,29 @@ googlescholar2shenlab <- function(
     
     # if pubid exists, try to build citation link
     scholar_link <- profile_url
+    citation_url <- ""
     if ("pubid" %in% names(row) && !is.na(row$pubid[[1]]) && nzchar(as.character(row$pubid[[1]]))) {
       scholar_link <- sprintf(
         "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=%s&citation_for_view=%s:%s",
         scholar_id, scholar_id, as.character(row$pubid[[1]])
       )
+      citation_url <- scholar_link
     }
+    citations <- scholar_cites(row)
     
     if (!dry_run) {
       dir.create(dir_new, recursive = TRUE, showWarnings = FALSE)
-      write_pub_index(index_path, title, authors, journal, year, scholar_link)
+      write_pub_index(
+        index_path,
+        title,
+        authors,
+        journal,
+        year,
+        scholar_link,
+        default_pub_type = default_pub_type,
+        citations = citations,
+        citation_url = citation_url
+      )
     }
     
     results[[i]] <- data.frame(
@@ -121,7 +157,10 @@ googlescholar2shenlab <- function(
     if (verbose) message(sprintf("[ADD] %s -> %s", title, index_path))
   }
   
-  do.call(rbind, results)
+  list(
+    added = do.call(rbind, results),
+    citation_updated = citation_result
+  )
 }
 
 
@@ -223,6 +262,25 @@ read_existing_titles <- function(dir_path) {
   unique(vapply(titles, normalize_title, character(1)))
 }
 
+read_existing_publications <- function(dir_path) {
+  files <- list.files(dir_path, pattern = "^index\\.md$", recursive = TRUE, full.names = TRUE)
+  if (length(files) == 0) return(setNames(character(0), character(0)))
+
+  titles <- vapply(files, function(f) {
+    lines <- readLines(f, warn = FALSE, encoding = "UTF-8")
+    i <- grep("^title\\s*:", lines)[1]
+    if (is.na(i)) return(NA_character_)
+    t <- sub("^title\\s*:\\s*", "", lines[i])
+    unquote_str(trim_ws(t))
+  }, character(1))
+
+  keep <- !is.na(titles) & nzchar(titles)
+  files <- files[keep]
+  titles <- titles[keep]
+  normalized <- vapply(titles, normalize_title, character(1))
+  stats::setNames(files, normalized)
+}
+
 unique_dir <- function(base_dir, slug) {
   candidate <- file.path(base_dir, slug)
   if (!dir.exists(candidate)) return(candidate)
@@ -234,7 +292,17 @@ unique_dir <- function(base_dir, slug) {
   }
 }
 
-write_pub_index <- function(path, title, authors, journal, year, scholar_link) {
+write_pub_index <- function(
+    path,
+    title,
+    authors,
+    journal,
+    year,
+    scholar_link,
+    default_pub_type = "2",
+    citations = NA_integer_,
+    citation_url = ""
+) {
   pub_date <- if (!is.na(year) && nzchar(as.character(year))) {
     sprintf("%s-01-01", as.integer(year))
   } else {
@@ -244,6 +312,9 @@ write_pub_index <- function(path, title, authors, journal, year, scholar_link) {
   lines <- c(
     "---",
     sprintf("title: \"%s\"", yaml_safe(title)),
+    sprintf("citation_source: \"Google Scholar\""),
+    sprintf("citations: %s", ifelse(is.na(citations), 0L, as.integer(citations))),
+    if (nzchar(citation_url)) sprintf("citation_url: \"%s\"", yaml_safe(citation_url)) else NULL,
     "",
     "authors:"
   )
@@ -266,6 +337,109 @@ write_pub_index <- function(path, title, authors, journal, year, scholar_link) {
     ""
   )
   writeLines(lines, con = path, useBytes = TRUE)
+}
+
+scholar_cites <- function(row) {
+  if ("cites" %in% names(row) && !is.na(row$cites[[1]])) {
+    return(suppressWarnings(as.integer(row$cites[[1]])))
+  }
+  if ("cited_by" %in% names(row) && !is.na(row$cited_by[[1]])) {
+    return(suppressWarnings(as.integer(row$cited_by[[1]])))
+  }
+  0L
+}
+
+scholar_citation_url <- function(scholar_id, pubid) {
+  if (is.null(pubid) || is.na(pubid) || !nzchar(as.character(pubid))) return("")
+  sprintf(
+    "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=%s&citation_for_view=%s:%s",
+    scholar_id, scholar_id, as.character(pubid)
+  )
+}
+
+update_existing_publication_citations <- function(pubs, existing_publications, scholar_id, dry_run = FALSE, verbose = TRUE) {
+  if (length(existing_publications) == 0 || nrow(pubs) == 0) {
+    return(data.frame(
+      updated = logical(0),
+      title = character(0),
+      path = character(0),
+      citations = integer(0),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  results <- list()
+  for (i in seq_len(nrow(pubs))) {
+    row <- pubs[i, , drop = FALSE]
+    title_norm <- as.character(row$title_norm[[1]])
+    if (!nzchar(title_norm) || !(title_norm %in% names(existing_publications))) next
+
+    path <- unname(existing_publications[[title_norm]])
+    citations <- scholar_cites(row)
+    citation_url <- scholar_citation_url(
+      scholar_id,
+      if ("pubid" %in% names(row)) row$pubid[[1]] else ""
+    )
+
+    if (!dry_run) {
+      update_publication_frontmatter(
+        path,
+        citations = citations,
+        citation_url = citation_url,
+        citation_source = "Google Scholar"
+      )
+    }
+
+    results[[length(results) + 1L]] <- data.frame(
+      updated = !dry_run,
+      title = as.character(row$title[[1]]),
+      path = path,
+      citations = citations,
+      stringsAsFactors = FALSE
+    )
+    if (verbose) message(sprintf("[CITE] %s citations -> %s", citations, path))
+  }
+
+  if (length(results) == 0) {
+    return(data.frame(
+      updated = logical(0),
+      title = character(0),
+      path = character(0),
+      citations = integer(0),
+      stringsAsFactors = FALSE
+    ))
+  }
+  do.call(rbind, results)
+}
+
+update_publication_frontmatter <- function(path, citations, citation_url = "", citation_source = "Google Scholar") {
+  text <- readLines(path, warn = FALSE, encoding = "UTF-8")
+  if (length(text) < 2 || text[1] != "---") return(invisible(FALSE))
+  end_idx <- which(text[-1] == "---")[1] + 1L
+  if (is.na(end_idx)) return(invisible(FALSE))
+
+  frontmatter <- text[seq_len(end_idx)]
+  body <- if (end_idx < length(text)) text[(end_idx + 1L):length(text)] else character(0)
+  frontmatter <- upsert_yaml_scalar(frontmatter, "citation_source", sprintf("\"%s\"", yaml_safe(citation_source)))
+  frontmatter <- upsert_yaml_scalar(frontmatter, "citations", as.character(ifelse(is.na(citations), 0L, as.integer(citations))))
+  if (nzchar(citation_url)) {
+    frontmatter <- upsert_yaml_scalar(frontmatter, "citation_url", sprintf("\"%s\"", yaml_safe(citation_url)))
+  }
+
+  writeLines(c(frontmatter, body), con = path, useBytes = TRUE)
+  invisible(TRUE)
+}
+
+upsert_yaml_scalar <- function(frontmatter, key, value) {
+  pattern <- sprintf("^%s\\s*:", key)
+  line <- sprintf("%s: %s", key, value)
+  idx <- grep(pattern, frontmatter)
+  if (length(idx)) {
+    frontmatter[idx[1]] <- line
+  } else {
+    frontmatter <- append(frontmatter, line, after = 1L)
+  }
+  frontmatter
 }
 
 # ---- filter: keep only journal articles + preprints ----

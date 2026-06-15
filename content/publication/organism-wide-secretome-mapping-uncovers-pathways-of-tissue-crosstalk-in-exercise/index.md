@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:qUcmZB5y_30C"
+citation_source: "Google Scholar"
+citations: 1
 title: "Organism-wide secretome mapping uncovers pathways of tissue crosstalk in exercise"
 
 authors:
@@ -30,4 +33,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:qUcmZB5y_30C
 ---
-

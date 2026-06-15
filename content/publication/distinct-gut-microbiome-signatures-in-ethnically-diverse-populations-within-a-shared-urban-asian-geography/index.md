@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RYcK_YlVTxYC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Distinct Gut Microbiome Signatures in Ethnically Diverse Populations within a Shared Urban Asian Geography"
 
 author_notes:
@@ -36,4 +39,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RYcK_YlVTxYC
 ---
-

@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:ZHo1McVdvXMC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Bridging Sequence and Graph Structure for Epigenetic Age Prediction"
 
 authors:
@@ -22,4 +25,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:ZHo1McVdvXMC
 ---
-

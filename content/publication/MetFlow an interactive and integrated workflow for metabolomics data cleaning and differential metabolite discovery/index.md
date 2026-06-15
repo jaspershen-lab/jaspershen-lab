@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:Y0pCki6q_DkC"
+citation_source: "Google Scholar"
+citations: 44
 title: "MetFlow: an interactive and integrated workflow for metabolomics data cleaning and differential metabolite discovery"
 
 abstract: "Mass spectrometry-based metabolomics aims to profile the metabolic changes in biological systems and identify differential metabolites related to physiological phenotypes and aberrant activities. However, many confounding factors during data acquisition complicate metabolomics data, which is characterized by high dimensionality, uncertain degrees of missing and zero values, nonlinearity, unwanted variations and non-normality. Therefore, prior to differential metabolite discovery analysis, various types of data cleaning such as batch alignment, missing value imputation, data normalization and scaling are essentially required for data post-processing. Here, we developed an interactive web server, namely, MetFlow, to provide an integrated and comprehensive workflow for metabolomics data cleaning and differential metabolite discovery."

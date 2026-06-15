@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:L8Ckcad2t8MC"
+citation_source: "Google Scholar"
+citations: 127
 title: Multi-omics microsampling for the profiling of lifestyle-associated changes in health
 
 abstract: Current healthcare practices are reactive and use limited physiological and clinical information, often collected months or years apart. Moreover, the discovery and profiling of blood biomarkers in clinical and research settings are constrained by geographical barriers, the cost and inconvenience of in-clinic venepuncture, low sampling frequency and the low depth of molecular measurements. 
@@ -61,4 +64,3 @@ links:
 # url_source: ""
 # url_video: ""
 ---
-

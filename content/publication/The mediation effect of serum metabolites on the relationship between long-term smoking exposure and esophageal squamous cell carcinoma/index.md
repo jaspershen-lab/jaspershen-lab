@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:UebtZRa9Y70C"
+citation_source: "Google Scholar"
+citations: 18
 title: "The mediation effect of serum metabolites on the relationship between long-term smoking exposure and esophageal squamous cell carcinoma"
 
 abstract: "Background Long-term smoking exposure will increase the risk of esophageal squamous cell carcinoma (ESCC), whereas the mechanism is still unclear. We conducted a cross-sectional study to explore whether serum metabolites mediate the occurrence of ESCC caused by cigarette smoking. Methods Serum metabolic profiles and lifestyle information of 464 participants were analyzed. Multiple logistic regression was used to estimate adjusted odds ratios (ORs) and 95% confidence intervals (CIs) of smoking exposure to ESCC risk. High-dimensional mediation analysis and univariate mediation analysis were performed to screen potential intermediate metabolites of smoking exposure for ESCC. Results Ever smoking was associated with a 3.11-fold increase of ESCC risk (OR = 3.11, 95% CI 1.63–6.05), and for each …"

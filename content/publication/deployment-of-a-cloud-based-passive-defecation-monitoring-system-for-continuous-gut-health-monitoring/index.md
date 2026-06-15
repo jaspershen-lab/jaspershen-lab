@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:NaGl4SEjCO4C"
+citation_source: "Google Scholar"
+citations: 0
 title: "Deployment of a cloud-based passive defecation monitoring system for continuous gut health monitoring"
 
 authors:
@@ -44,4 +47,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:NaGl4SEjCO4C
 ---
-

@@ -1,4 +1,7 @@
 ---
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RGFaLdJalmkC"
+citation_source: "Google Scholar"
+citations: 0
 title: "Identification of Early and Mid-Pregnancy Maternal Lipidomics and Metabolomics Signatures of Preterm and Small-for-Gestational Age Infants from Low-and Middle-income Countries …"
 
 authors:
@@ -33,4 +36,3 @@ links:
   name: Link
   url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RGFaLdJalmkC
 ---
-

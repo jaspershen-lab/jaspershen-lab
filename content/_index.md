@@ -96,17 +96,17 @@ sections:
     spacing:
       padding: ["0", "0", "0", "0"]
 
-- block: hero
-  content:
-    title: Opportunities
-    image:
-      filename: join_us2.jpg
-    text: |
-      <br>
-
-      We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of **multi-omics research**, focusing on innovative algorithm and method development for the **integration of multi-omics data**, particularly in the areas of **microbiome and metabolome**, and their impact on human health. 
-      Positions Available are **PhD Students, Postdoctoral Researchers, Research Assistants, and Lab Manager**.
-      {{% cta cta_link="./news/2023-11-23-recruitment/" cta_text="More information →" %}}
+# - block: hero
+#   content:
+#     title: Opportunities
+#     image:
+#       filename: join_us2.jpg
+#     text: |
+#       <br>
+# 
+#       We are excited to announce multiple openings at Shen Lab, Nanyang Technological University, for passionate and dedicated researchers. Our team is at the forefront of **multi-omics research**, focusing on innovative algorithm and method development for the **integration of multi-omics data**, particularly in the areas of **microbiome and metabolome**, and their impact on human health. 
+#       Positions Available are **PhD Students, Postdoctoral Researchers, Research Assistants, and Lab Manager**.
+#       {{% cta cta_link="./news/2023-11-23-recruitment/" cta_text="More information →" %}}
 
 # - block: about.avatar
 #   id: about
@@ -197,7 +197,7 @@ sections:
   id: software
   content:
     title: 🖥️ SOFTWARE
-    subtitle: ":point_right: [All Software](./software/)"
+    # subtitle: ":point_right: [All Software](./software/)"
     text: ""
     count: 5
     offset: 0
@@ -257,7 +257,7 @@ sections:
       exclude_featured: false
     offset: 0
     order: desc
-    subtitle: ":point_right: [All News](./news/)"
+    # subtitle: ":point_right: [All News](./news/)"
     title: 📰 NEWS
     text: 
   design:
@@ -342,9 +342,15 @@ sections:
   id: photo
   content:
     title: Life in Shen Lab
-    subtitle: ":point_right: [All Photos](./photo/)"
+    # subtitle: ":point_right: [All Photos](./photo/)"
     text: |-
       {{< life_in_lab >}}
+      <div class="see-all">
+        <a href="./photo/">
+          SEE ALL
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </div>
   design:
     columns: "1"
 
@@ -352,19 +358,23 @@ sections:
   id: contact
   content:
     title: 📨 CONTACT
-    subtitle: ":point_right: [More](./contact/)"
+    # subtitle: ":point_right: [More](./contact/)"
     text: 
+    archive:
+      enable: true
+      text: SEE ALL
+      link: ./contact/
     # Contact (add or remove contact options as necessary)
     email: xiaotao.shen@outlook.com
     phone: +65 83042333
     # appointment_url: 'https://calendly.com'
-    address:
-      street: 59 Nanyang Dr
-      city: Singapore
-      region: Singapore
-      postcode: '636921'
-      country: Singapore
-      country_code: SG
+    # address:
+    #   street: 59 Nanyang Dr
+    #   city: Singapore
+    #   region: Singapore
+    #   postcode: '636921'
+    #   country: Singapore
+    #   country_code: SG
     # office_hours:
     #   - 'Weekdays 9:00 to 18:00'
     contact_links:
@@ -372,19 +382,19 @@ sections:
       #   icon_pack: fas
       #   name: Zoom Me
       #   link: 'https://zoom.com'
-      - icon: weixin
-        icon_pack: fab
-        name: Follow us on WeChat
-        link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
-      - icon: twitter
-        icon_pack: fab
-        name: Follow us on X
-        link: https://twitter.com/xiaotaoshen1990
-      - icon: github
-        icon_pack: fab
-        name: Follow us on Github
-        link: https://github.com/jaspershen-lab
-    # Automatically link email and phone or display as text?
+      # - icon: weixin
+      #   icon_pack: fab
+      #   name: Follow us on WeChat
+      #   link: 'https://jaspershen.github.io/image/wechat_QR.jpg'
+    #   - icon: twitter
+    #     icon_pack: fab
+    #     name: Follow us on X
+    #     link: https://twitter.com/xiaotaoshen1990
+    #   - icon: github
+    #     icon_pack: fab
+    #     name: Follow us on Github
+    #     link: https://github.com/jaspershen-lab
+    # # Automatically link email and phone or display as text?
     autolink: true
     # Email form provider
     form:
