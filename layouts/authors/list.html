@@ -2,37 +2,140 @@
 
 {{/* Author profile page. */}}
 
-{{/* If an account has not been created for this user, just display their name as the title. */}}
 {{ if not .File }}
 <div class="universal-wrapper pt-3">
   <h1>{{ .Title }}</h1>
 </div>
 {{ end }}
 
-<section id="profile-page" class="pt-5">
-  <div class="container">
-    {{/* Show the About block if an account exists for this user. */}}
-    {{ if .File }}
-      {{ $widget := "blocks/v1/about.html" }}
-      {{ $username := (path.Base .File.Dir) }}
-      {{ $params := dict "wcPage" $ "wcBlock" . "author" $username }}
-      {{ partial $widget $params }}
+{{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
+{{ $publications := where (where .Pages ".IsNode" false) "Type" "publication" }}
+{{ $latest_publications := first 5 $publications.ByDate.Reverse }}
+{{ $all_publications_url := printf "/publication/?author=%s" (.Title | urlquery) }}
+
+<section id="profile-page" class="author-profile">
+  <div class="author-profile__shell">
+    <div class="author-profile__hero">
+      <aside class="author-profile__identity">
+        <div class="author-profile__avatar-wrap">
+          {{ if and site.Params.features.avatar.gravatar .Params.email }}
+            <img class="author-profile__avatar {{ if eq $avatar_shape "square" }}author-profile__avatar--square{{ end }}" src="https://s.gravatar.com/avatar/{{ md5 .Params.email }}?s=260" alt="{{ .Title }}">
+          {{ else if $avatar }}
+            {{ $avatar_image := $avatar.Fill "320x320 Center" }}
+            <img class="author-profile__avatar {{ if eq $avatar_shape "square" }}author-profile__avatar--square{{ end }}" src="{{ $avatar_image.RelPermalink }}" alt="{{ .Title }}">
+          {{ end }}
+        </div>
+
+        <div class="author-profile__name-block">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.role }}<p class="author-profile__role">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ with .Params.organizations }}
+            <p class="author-profile__org">
+              {{ range $index, $org := . }}
+                {{ if $index }}<span aria-hidden="true"> · </span>{{ end }}
+                {{ if $org.url }}<a href="{{ $org.url }}" target="_blank" rel="noopener">{{ $org.name }}</a>{{ else }}{{ $org.name }}{{ end }}
+              {{ end }}
+            </p>
+          {{ end }}
+        </div>
+
+        {{ with .Params.social }}
+          <div class="author-profile__social">
+            {{ partial "social_links" $ }}
+          </div>
+        {{ end }}
+      </aside>
+
+      <div class="author-profile__main">
+        {{ with .Content }}
+          <div class="author-profile__bio article-style">
+            {{ . }}
+          </div>
+        {{ else }}
+          {{ with .Params.bio }}
+            <div class="author-profile__bio article-style">
+              <p>{{ . | markdownify | emojify }}</p>
+            </div>
+          {{ end }}
+        {{ end }}
+
+        <div class="author-profile__info-grid">
+          {{ with .Params.interests }}
+            <section class="author-profile__panel">
+              <div class="author-profile__panel-heading">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+                <h2>Research interests</h2>
+              </div>
+              <div class="author-profile__tags">
+                {{ range . }}
+                  <span>{{ . | markdownify | emojify }}</span>
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+
+          {{ with .Params.education.courses }}
+            <section class="author-profile__panel">
+              <div class="author-profile__panel-heading">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <h2>Education&Experience</h2>
+              </div>
+              <div class="author-profile__timeline">
+                {{ range . }}
+                  <article class="author-profile__timeline-item">
+                    {{ with .year }}<span>{{ . }}</span>{{ end }}
+                    <h3>{{ .course | markdownify | emojify }}</h3>
+                    {{ with .institution }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+                  </article>
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ if $latest_publications }}
+      <section class="author-profile__latest">
+        <div class="author-profile__section-head">
+          <div>
+            <p class="author-profile__eyebrow">Latest</p>
+            <h2>Recent publications</h2>
+          </div>
+          <a href="{{ $all_publications_url }}">View all</a>
+        </div>
+        <div class="author-profile__publication-list">
+          {{ range $latest_publications }}
+            <article class="author-profile__publication">
+              <span class="author-profile__publication-year">{{ .Date.Format "2006" }}</span>
+              <div>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with .Params.publication }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+              </div>
+              <a class="author-profile__publication-link" href="{{ .RelPermalink }}" aria-label="Open publication">
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      </section>
     {{ end }}
 
-    {{ $query := where (where .Pages ".IsNode" false) "Type" "publication" }}
-    {{ $count := len $query }}
-    {{ if $count }}
-    <div class="article-widget content-widget-hr">
-      <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
-      <ul>
-        {{ range $query }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-      </ul>
+    <div class="author-profile__actions">
+      <a href="/team/">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <span>Back to Team</span>
+      </a>
+      <a href="/publication/">
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <span>All Publications</span>
+      </a>
+      <a href="/contact/">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span>Contact Shen Lab</span>
+      </a>
     </div>
-    {{ end }}
   </div>
 </section>
 

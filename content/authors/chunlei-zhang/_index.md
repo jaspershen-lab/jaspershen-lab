@@ -31,8 +31,8 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/Ginny-77
-- display:
-    header: false
+# - display:
+#     header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: 

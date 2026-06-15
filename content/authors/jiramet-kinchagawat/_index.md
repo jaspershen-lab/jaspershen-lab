@@ -28,8 +28,6 @@ social:
   icon: github
   icon_pack: fab
   link: https://github.com/Jiram-Kin
-- display:
-    header: false
 status:
   icon: ☕️
 superuser: false

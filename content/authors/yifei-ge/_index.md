@@ -31,8 +31,8 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/GriffyGe
-- display:
-    header: false
+# - display:
+#     header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

@@ -3,13 +3,13 @@ organizations:
 - name: Stanford University
 role: Postdoc
 social:
-- display:
-    header: true
+# - display:
+#     header: true
 - icon: link
   icon_pack: fas
   link: https://www.linkedin.com/in/daniel-panyard-ph-d-6322b442/
 superuser: false
-title:  Dr. Daniel Panyard
+title: Daniel Panyard
 user_groups:
 - Academia
 ---

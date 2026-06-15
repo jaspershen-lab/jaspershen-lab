@@ -33,8 +33,8 @@ social:
   icon: github
   icon_pack: fab
   link: https://github.com/ejoliu
-- display:
-    header: false
+# - display:
+#     header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf

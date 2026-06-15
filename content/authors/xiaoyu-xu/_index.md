@@ -21,6 +21,14 @@ organizations:
   url: ""
 role: PhD Candidate (Co-supervised with Prof. Kun Qian)
 
+social:
+# - icon: house
+#   icon_pack: fas
+#   link: https://github.com/cgxjdzz
+- icon: envelope
+  icon_pack: fas
+  link: XIAOYU021@e.ntu.edu.sg
+
 superuser: false
 title: Xiaoyu XU
 user_groups:

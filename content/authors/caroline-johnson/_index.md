@@ -3,13 +3,13 @@ organizations:
 - name: Yale University
 role: Associate Professor
 social:
-- display:
-    header: true
+# - display:
+#     header: true
 - icon: link
   icon_pack: fas
   link: https://ysph.yale.edu/profile/caroline-johnson/
 superuser: false
-title: Prof. Caroline JOHNSON
+title: Caroline JOHNSON
 user_groups:
 - Academia
 ---

@@ -25,14 +25,12 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 2310534@stu.neu.edu.cn
-- display:
-    header: false
-  icon: github
+- icon: github
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/zhangshuli-stu
-- display:
-    header: false
+# - display:
+#     header: false
 # - icon: cv
 #   icon_pack: ai
 #   link: 
