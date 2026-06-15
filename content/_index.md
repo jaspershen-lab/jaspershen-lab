@@ -237,12 +237,16 @@ sections:
   content:
     count: 6
     title: 📃 PUBLICATION
-    subtitle: ":point_right: [All Publications](./publication/)"
+    # subtitle: ":point_right: [All Publications](./publication/)"
     text: 
     filters:
       folders:
         - publication
       featured_only: true
+    archive:
+      enable: true
+      text: SEE ALL
+      link: ./publication/
   design:
     columns: '1'
     view: community/publication_cards
