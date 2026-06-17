@@ -1,4 +1,5 @@
 {{- $years := slice "2026" "2025" "2024" -}}
+<script>document.documentElement.classList.add("has-photo-archive-motion");</script>
 <section class="photo-archive">
   <div class="photo-archive__hero">
     <p class="photo-archive__eyebrow">Shen Lab Albums</p>
@@ -36,3 +37,83 @@
     {{- end -}}
   </div>
 </section>
+
+<script>
+(function () {
+  var archive = document.querySelector('.photo-archive');
+  if (!archive) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var years = Array.prototype.slice.call(archive.querySelectorAll('.photo-year'));
+  var items = Array.prototype.slice.call(archive.querySelectorAll('.photo-year__item'));
+
+  items.forEach(function (item, index) {
+    item.style.setProperty('--photo-reveal-delay', Math.min(index * 45, 420) + 'ms');
+  });
+
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach(function (item) {
+      observer.observe(item);
+    });
+  } else {
+    items.forEach(function (item) {
+      item.classList.add('is-revealed');
+    });
+  }
+
+  function setupYear(year) {
+    var summary = year.querySelector('summary');
+    var grid = year.querySelector('.photo-year__grid');
+    if (!summary || !grid) return;
+
+    grid.style.height = year.open ? 'auto' : '0px';
+
+    summary.addEventListener('click', function (event) {
+      if (reduceMotion) return;
+
+      event.preventDefault();
+      if (year.classList.contains('is-animating')) return;
+
+      year.classList.add('is-animating');
+
+      if (year.open) {
+        grid.style.height = grid.scrollHeight + 'px';
+        grid.offsetHeight;
+        grid.style.height = '0px';
+        year.classList.add('is-closing');
+
+        grid.addEventListener('transitionend', function onClose(evt) {
+          if (evt.target !== grid || evt.propertyName !== 'height') return;
+          grid.removeEventListener('transitionend', onClose);
+          year.open = false;
+          year.classList.remove('is-animating', 'is-closing');
+          grid.style.height = '';
+        });
+        return;
+      }
+
+      year.open = true;
+      grid.style.height = '0px';
+      grid.offsetHeight;
+      grid.style.height = grid.scrollHeight + 'px';
+
+      grid.addEventListener('transitionend', function onOpen(evt) {
+        if (evt.target !== grid || evt.propertyName !== 'height') return;
+        grid.removeEventListener('transitionend', onOpen);
+        year.classList.remove('is-animating');
+        grid.style.height = 'auto';
+      });
+    });
+  }
+
+  years.forEach(setupYear);
+})();
+</script>

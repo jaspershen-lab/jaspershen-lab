@@ -2,7 +2,7 @@
 
 {{ partial "page_header.html" . }}
 
-<div class="universal-wrapper">
+<div class="universal-wrapper publication-directory">
   <div class="row">
     <div class="col-lg-12">
 
@@ -198,22 +198,67 @@
           function updateGroups(active) {
             yearBlocks.forEach(function (block, index) {
               var visibleRows = Array.prototype.slice.call(block.querySelectorAll('.grid-sizer')).filter(function (row) {
-                return row.style.display !== 'none';
+                return row.getAttribute('data-filter-match') !== 'false';
               });
               var visible = visibleRows.length > 0;
-              block.style.display = visible ? '' : 'none';
+              var prev = block.previousElementSibling;
+
+              if (active && !visible) {
+                block.classList.add('is-filter-empty');
+                window.setTimeout(function () {
+                  if (block.classList.contains('is-filter-empty')) {
+                    block.style.display = 'none';
+                  }
+                }, 220);
+              } else {
+                block.style.display = '';
+                block.classList.remove('is-filter-empty');
+              }
+
               if (active) {
                 block.open = visible;
               } else {
                 block.style.display = '';
+                block.classList.remove('is-filter-empty');
                 block.open = index === 0;
               }
 
-              var prev = block.previousElementSibling;
               if (prev && prev.classList.contains('pub-era-heading')) {
-                prev.style.display = active ? (visible ? '' : 'none') : '';
+                if (active && !visible) {
+                  prev.classList.add('is-filter-empty');
+                  window.setTimeout(function () {
+                    if (prev.classList.contains('is-filter-empty')) {
+                      prev.style.display = 'none';
+                    }
+                  }, 220);
+                } else {
+                  prev.style.display = '';
+                  prev.classList.remove('is-filter-empty');
+                }
               }
             });
+          }
+
+          function setRowVisibility(row, match) {
+            row.setAttribute('data-filter-match', match ? 'true' : 'false');
+
+            if (match) {
+              row.style.display = '';
+              window.requestAnimationFrame(function () {
+                row.classList.remove('is-filtered-out');
+                row.classList.add('is-filtered-in');
+              });
+              return;
+            }
+
+            row.classList.remove('is-filtered-in');
+            row.classList.add('is-filtered-out');
+
+            window.setTimeout(function () {
+              if (row.getAttribute('data-filter-match') === 'false') {
+                row.style.display = 'none';
+              }
+            }, 220);
           }
 
           function applyFilters(options) {
@@ -226,6 +271,7 @@
             var active = hasActiveFilters(filters);
             var count = 0;
 
+            container.classList.add('is-filtering');
             rows.forEach(function (row) {
               var haystack = row.getAttribute('data-search') || '';
               var authors = row.getAttribute('data-authors') || '';
@@ -236,11 +282,14 @@
               if (filters.author && authors.indexOf(filters.author) < 0) match = false;
               if (filters.year && year !== filters.year) match = false;
               if (filters.type && type !== filters.type) match = false;
-              row.style.display = match ? '' : 'none';
+              setRowVisibility(row, match);
               if (match) count += 1;
             });
 
             updateGroups(active);
+            window.setTimeout(function () {
+              container.classList.remove('is-filtering');
+            }, 260);
             if (status) {
               status.textContent = active ? (count + ' publication' + (count === 1 ? '' : 's') + ' matched') : (rows.length + ' publications');
             }
@@ -259,6 +308,53 @@
           if (authorInput) authorInput.value = url.searchParams.get('author') || '';
           if (yearSelect) yearSelect.value = url.searchParams.get('year') || '';
           if (typeSelect) typeSelect.value = url.searchParams.get('type') || '';
+
+          function setupYearBlockAnimation(block) {
+            var summary = block.querySelector('summary');
+            var content = block.querySelector('.publication-year-block__list');
+            if (!summary || !content) return;
+
+            var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            summary.addEventListener('click', function (event) {
+              if (reduceMotion) return;
+
+              event.preventDefault();
+              if (block.classList.contains('is-animating')) return;
+
+              block.classList.add('is-animating');
+
+              if (block.open) {
+                content.style.height = content.scrollHeight + 'px';
+                content.offsetHeight;
+                content.style.height = '0px';
+                block.classList.add('is-closing');
+
+                content.addEventListener('transitionend', function onClose(event) {
+                  if (event.target !== content || event.propertyName !== 'height') return;
+                  content.removeEventListener('transitionend', onClose);
+                  block.open = false;
+                  block.classList.remove('is-animating', 'is-closing');
+                  content.style.height = '';
+                });
+                return;
+              }
+
+              block.open = true;
+              content.style.height = '0px';
+              content.offsetHeight;
+              content.style.height = content.scrollHeight + 'px';
+
+              content.addEventListener('transitionend', function onOpen(event) {
+                if (event.target !== content || event.propertyName !== 'height') return;
+                content.removeEventListener('transitionend', onOpen);
+                block.classList.remove('is-animating');
+                content.style.height = '';
+              });
+            });
+          }
+
+          yearBlocks.forEach(setupYearBlockAnimation);
 
           [searchInput, authorInput, yearSelect, typeSelect].forEach(function (el) {
             if (!el) return;

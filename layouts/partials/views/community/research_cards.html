@@ -9,7 +9,8 @@
 {{ with $aging }}{{ $agingURL = .RelPermalink }}{{ end }}
 {{ with $pregnancy }}{{ $pregnancyURL = .RelPermalink }}{{ end }}
 
-<div class="research-universe" aria-label="Research universe">
+<script>document.documentElement.classList.add("has-research-universe-js");</script>
+<div class="research-universe research-universe--pending" aria-label="Research universe">
   <div class="research-universe__stage">
     <svg class="research-universe__links" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
       <defs>
@@ -30,55 +31,56 @@
       <path class="research-universe__orbit" d="M220 200 C390 420, 575 475, 795 390" />
       <path class="research-universe__orbit" d="M320 480 C430 325, 565 250, 710 145" />
       <path class="research-universe__orbit" d="M500 115 C545 230, 540 355, 500 505" />
-      <path class="research-universe__link" d="M500 310 L190 365" />
-      <path class="research-universe__link" d="M500 310 L220 200" />
-      <path class="research-universe__link" d="M500 310 L320 480" />
-      <path class="research-universe__link" d="M500 310 L500 115" />
-      <path class="research-universe__link" d="M500 310 L710 145" />
-      <path class="research-universe__link" d="M500 310 L820 250" />
+      <path class="research-universe__link" data-source="precision" data-target="metabolomics" d="M500 310 L190 365" />
+      <path class="research-universe__link" data-source="precision" data-target="microbiome" d="M500 310 L220 200" />
+      <path class="research-universe__link" data-source="precision" data-target="wearable" d="M500 310 L320 480" />
+      <path class="research-universe__link" data-source="precision" data-target="aging" d="M500 310 L500 115" />
+      <path class="research-universe__link" data-source="precision" data-target="pregnancy" d="M500 310 L710 145" />
+      <path class="research-universe__link" data-source="precision" data-target="ai" d="M500 310 L820 250" />
     </svg>
 
-    <a class="research-universe__node research-universe__node--core" style="--x: 50%; --y: 50%;" href="{{ $multiomicsURL }}">
+    <a class="research-universe__node research-universe__node--core" data-node="precision" style="--x: 50%; --y: 50%;" href="{{ $multiomicsURL }}">
       <span class="research-universe__icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span>
       <span class="research-universe__label">Precision Medicine</span>
       <span class="research-universe__tooltip">Integrating omics, wearable, clinical, and microbiome data to support individualized prediction and intervention.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 19%; --y: 59%;" href="{{ $multiomicsURL }}">
+    <a class="research-universe__node" data-node="metabolomics" style="--x: 19%; --y: 59%;" href="{{ $multiomicsURL }}">
       <span class="research-universe__icon"><i class="fas fa-vial" aria-hidden="true"></i></span>
       <span class="research-universe__label">Metabolomics</span>
       <span class="research-universe__tooltip">LC-MS workflows, metabolite annotation, pathway interpretation, and metabolic signatures of health and disease.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 22%; --y: 32%;" href="{{ $multiomicsURL }}">
+    <a class="research-universe__node" data-node="microbiome" style="--x: 22%; --y: 32%;" href="{{ $multiomicsURL }}">
       <span class="research-universe__icon"><i class="fas fa-microscope" aria-hidden="true"></i></span>
       <span class="research-universe__label">Microbiome</span>
       <span class="research-universe__tooltip">Microbial community dynamics across body sites and their interactions with host metabolism.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 32%; --y: 77%;" href="{{ $multiomicsURL }}">
+    <a class="research-universe__node" data-node="wearable" style="--x: 32%; --y: 77%;" href="{{ $multiomicsURL }}">
       <span class="research-universe__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></span>
       <span class="research-universe__label">Wearable</span>
       <span class="research-universe__tooltip">Longitudinal physiology, lifestyle signals, and digital biomarkers for dense personal health monitoring.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 50%; --y: 19%;" href="{{ $agingURL }}">
+    <a class="research-universe__node" data-node="aging" style="--x: 50%; --y: 19%;" href="{{ $agingURL }}">
       <span class="research-universe__icon"><i class="fas fa-dna" aria-hidden="true"></i></span>
       <span class="research-universe__label">Aging</span>
       <span class="research-universe__tooltip">Multi-omics and wearable models for biological aging, aging-related diseases, and predictive biomarkers.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 71%; --y: 24%;" href="{{ $pregnancyURL }}">
+    <a class="research-universe__node" data-node="pregnancy" style="--x: 71%; --y: 24%;" href="{{ $pregnancyURL }}">
       <span class="research-universe__icon"><i class="fas fa-baby" aria-hidden="true"></i></span>
       <span class="research-universe__label">Pregnancy</span>
       <span class="research-universe__tooltip">Maternal and child health, pregnancy omics, preterm birth risk, and real-time physiological monitoring.</span>
     </a>
 
-    <a class="research-universe__node" style="--x: 82%; --y: 41%;" href="{{ $multiomicsURL }}">
+    <a class="research-universe__node" data-node="ai" style="--x: 82%; --y: 41%;" href="{{ $multiomicsURL }}">
       <span class="research-universe__icon"><i class="fas fa-brain" aria-hidden="true"></i></span>
       <span class="research-universe__label">AI</span>
       <span class="research-universe__tooltip">Machine learning and interpretable AI for multi-layer biological data integration and prediction.</span>
     </a>
   </div>
 </div>
+<script src="/js/research_universe.js" defer></script>
 {{ end }}

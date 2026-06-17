@@ -14,6 +14,8 @@ sections:
         <div class="lab-hero__shade" aria-hidden="true"></div>
         <div class="lab-hero__network" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span>
         </div>
         <div class="lab-hero__content">
           <p class="lab-hero__eyebrow">

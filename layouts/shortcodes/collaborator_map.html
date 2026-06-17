@@ -72,6 +72,48 @@
 
   .collab-marker {
     filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.34));
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: collabMarkerIn 620ms cubic-bezier(0.16, 1, 0.3, 1) var(--collab-marker-delay, 0ms) forwards,
+      collabMarkerPulse 2.8s ease-in-out calc(var(--collab-marker-delay, 0ms) + 620ms) 2;
+    transition:
+      filter 0.22s ease,
+      opacity 0.22s ease,
+      transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .collab-marker.is-hovered {
+    filter:
+      drop-shadow(0 0 10px rgba(153, 246, 228, 0.72))
+      drop-shadow(0 12px 22px rgba(2, 6, 23, 0.40));
+    transform: scale(1.18);
+  }
+
+  @keyframes collabMarkerIn {
+    from {
+      opacity: 0;
+      transform: scale(0.38);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes collabMarkerPulse {
+    0%, 100% {
+      stroke-width: 2;
+      filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.34));
+    }
+
+    50% {
+      stroke-width: 4;
+      filter:
+        drop-shadow(0 0 14px rgba(153, 246, 228, 0.66))
+        drop-shadow(0 12px 24px rgba(2, 6, 23, 0.36));
+    }
   }
 
   .collab-tooltip {
@@ -82,6 +124,19 @@
     color: #f8fafc !important;
     box-shadow: 0 20px 44px rgba(2, 6, 23, 0.28) !important;
     padding: 0.8rem 0.95rem !important;
+    transform: translateY(-4px);
+  }
+
+  .collab-tooltip::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+    width: 1px;
+    height: 18px;
+    background: linear-gradient(180deg, rgba(153, 246, 228, 0.72), transparent);
+    transform: translateX(-50%);
+    pointer-events: none;
   }
 
   .collab-popup__title {
@@ -144,6 +199,20 @@
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.54);
     padding: 1rem;
+    overflow: hidden;
+  }
+
+  .collab-map-detail > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.26s ease,
+      transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .collab-map-detail.is-updating > * {
+    opacity: 0;
+    transform: translateY(14px);
   }
 
   .collab-map-detail__empty {
@@ -365,6 +434,16 @@
     .collab-map-detail__header { align-items: flex-start; flex-direction: column; }
     .collab-map-detail__list { grid-template-columns: 1fr; }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collab-marker,
+    .collab-map-detail > * {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 </style>
 <script>
   (function () {
@@ -584,6 +663,7 @@
     function renderDetail(region) {
       var panel = document.getElementById("collaborator-map-detail");
       if (!panel) return;
+      panel.classList.add("is-updating");
       var people = uniqueCollaborators(region.collaborators);
       var rows = people.map(function (person) {
         var profile = findProfile(person.name);
@@ -594,19 +674,27 @@
           : "<button type='button' class='collab-profile-missing' data-name='" + name + "'>" + name + "</button>";
         return "<li class='collab-map-detail__person'>" + action + "<span>" + institution + "</span>" + renderPapers(person.name) + "</li>";
       }).join("");
-      panel.innerHTML = ""
+      var html = ""
         + "<div class='collab-map-detail__header'>"
         + "<div><p>Selected region</p><h4>" + escapeHtml(region.city) + ", " + escapeHtml(region.country) + "</h4></div>"
         + "<span class='collab-map-detail__count'>" + people.length + " collaborator" + (people.length === 1 ? "" : "s") + "</span>"
         + "</div>"
         + "<ul class='collab-map-detail__list'>" + rows + "</ul>";
+
+      window.setTimeout(function () {
+        panel.innerHTML = html;
+        window.requestAnimationFrame(function () {
+          panel.classList.remove("is-updating");
+        });
+      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 120);
     }
 
     function drawMarkers(map, data) {
       var maxCount = data.reduce(function (m, d) { return Math.max(m, d.count || 1); }, 1);
-      data.forEach(function (d) {
+      data.forEach(function (d, index) {
         var ratio = (d.count || 1) / maxCount;
         var radius = 8 + ratio * 22;
+        var hoverRadius = radius * 1.25;
         var popupRows = (d.collaborators || []).map(function (c) {
           return "<li><strong>" + c.name + "</strong> (" + c.institution + ")</li>";
         }).join("");
@@ -616,7 +704,7 @@
           + "<ul>" + popupRows + "</ul>"
           + "</div>";
 
-        L.circleMarker([d.lat, d.lng], {
+        var marker = L.circleMarker([d.lat, d.lng], {
           radius: radius,
           color: "rgba(255,255,255,0.92)",
           fillColor: "rgba(20,184,166,0.72)",
@@ -628,6 +716,17 @@
           sticky: true,
           opacity: 0.98,
           className: "collab-tooltip"
+        }).on("add", function () {
+          if (marker._path) {
+            marker._path.style.setProperty("--collab-marker-delay", Math.min(index * 60, 900) + "ms");
+          }
+        }).on("mouseover", function () {
+          marker.setRadius(hoverRadius);
+          if (marker._path) marker._path.classList.add("is-hovered");
+          marker.openTooltip();
+        }).on("mouseout", function () {
+          marker.setRadius(radius);
+          if (marker._path) marker._path.classList.remove("is-hovered");
         }).on("click", function () {
           renderDetail(d);
           map.flyTo([d.lat, d.lng], Math.max(map.getZoom(), 3), { duration: 0.65 });
