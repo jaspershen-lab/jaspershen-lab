@@ -9785,6 +9785,17 @@ section#lab_hero .col-12 {
   text-align: left;
   text-shadow: 0 18px 46px rgba(0, 0, 0, 0.42); }
 
+.lab-hero__split {
+  font-kerning: none;
+  text-rendering: optimizeSpeed; }
+
+.lab-hero__split .lab-hero__word,
+.lab-hero__split .lab-hero__char {
+  will-change: transform, opacity; }
+
+.lab-hero__line {
+  overflow: hidden; }
+
 .lab-hero__subtitle {
   max-width: 760px;
   margin: 26px 0 0;

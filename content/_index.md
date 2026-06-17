@@ -16,8 +16,8 @@ sections:
         </div>
         <div class="lab-hero__content">
           <p class="lab-hero__eyebrow">Computational multi-omics lab in Singapore</p>
-          <h1>Shen Lab @ NTU</h1>
-          <p class="lab-hero__subtitle">Multi-omics, microbiome, metabolomics, and AI for precision health</p>
+          <h1 class="lab-hero__split lab-hero__split--title">Shen Lab @ NTU</h1>
+          <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Multi-omics, microbiome, metabolomics, and AI for precision health</p>
           <div class="lab-hero__actions">
             <a class="lab-hero__button lab-hero__button--primary" href="./research/">
               <i class="fas fa-flask" aria-hidden="true"></i>
@@ -34,6 +34,9 @@ sections:
           </div>
         </div>
       </section>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+      <script src="/js/lab_hero_splittext.js" defer></script>
   design:
     columns: "1"
     spacing:
