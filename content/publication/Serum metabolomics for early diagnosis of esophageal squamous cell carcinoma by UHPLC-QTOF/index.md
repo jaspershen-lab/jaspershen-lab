@@ -1,7 +1,7 @@
 ---
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:u5HHmVD_uO8C"
 citation_source: "Google Scholar"
-citations: 367
+citations: 366
 title: Serum metabolomics for early diagnosis of esophageal squamous cell carcinoma by UHPLC-QTOF/MS
 
 abstract: "Introduction Previous metabolomics studies have revealed perturbed metabolic signatures in esophageal squamous cell carcinoma (ESCC) patients, however, most of these studies included mainly late-staged ESCC patients due to the difficulties of collecting the early-staged samples from asymptotic ESCC subjects.

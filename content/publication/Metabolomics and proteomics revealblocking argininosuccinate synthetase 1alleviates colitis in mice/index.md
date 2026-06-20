@@ -1,7 +1,7 @@
 ---
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:GnPB-g6toBAC"
 citation_source: "Google Scholar"
-citations: 20
+citations: 21
 title: Metabolomics and proteomics reveal blocking argininosuccinate synthetase 1 alleviates colitis in mice
 
 abstract: "Metabolomics and proteomics reveal blocking argininosuccinate synthetase 1 alleviates colitis in mice"
