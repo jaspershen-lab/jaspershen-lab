@@ -40,8 +40,9 @@ status:
 superuser: false
 title: Hua ZHAO
 user_groups:
-- Researchers
-- Visiting Scholar
+- Alumni
+- Researchers1
+- Visiting Scholar1
 ---
 
 Hua Zhao P h . female born in June. 1983 , The  Chief Physician in Reproductive Medical Center, People's Hospital of Zhengzhou University 
