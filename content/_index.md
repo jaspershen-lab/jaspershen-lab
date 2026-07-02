@@ -12,18 +12,13 @@ sections:
       <section class="lab-hero" aria-label="Shen Lab at NTU">
         <img class="lab-hero__photo" src="/media/group_photo3.png" alt="" aria-hidden="true">
         <div class="lab-hero__shade" aria-hidden="true"></div>
-        <div class="lab-hero__network" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span>
-        </div>
         <div class="lab-hero__content">
           <p class="lab-hero__eyebrow">
             <span class="lab-hero__eyebrow-line" aria-hidden="true"></span>
             <span class="lab-hero__split lab-hero__split--eyebrow">Computational multi-omics lab in Singapore</span>
           </p>
           <h1 class="lab-hero__split lab-hero__split--title">Shen Lab @ NTU</h1>
-          <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Multi-omics, microbiome, metabolomics, and AI for precision health</p>
+          <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Computational multi-omics for human health</p>
           <div class="lab-hero__actions">
             <a class="lab-hero__button lab-hero__button--primary" href="./research/">
               <i class="fas fa-flask" aria-hidden="true"></i>
@@ -42,7 +37,7 @@ sections:
       </section>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
-      <script src="/js/lab_hero_splittext.js" defer></script>
+      <script src="/js/lab_hero_splittext.js?v=20260702-hero-refine" defer></script>
   design:
     columns: "1"
     spacing:
