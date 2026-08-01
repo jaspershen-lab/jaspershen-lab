@@ -72,48 +72,16 @@
 
   .collab-marker {
     filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.34));
-    opacity: 0;
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: collabMarkerIn 620ms cubic-bezier(0.16, 1, 0.3, 1) var(--collab-marker-delay, 0ms) forwards,
-      collabMarkerPulse 2.8s ease-in-out calc(var(--collab-marker-delay, 0ms) + 620ms) 2;
+    opacity: 1;
     transition:
       filter 0.22s ease,
-      opacity 0.22s ease,
-      transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.22s ease;
   }
 
   .collab-marker.is-hovered {
     filter:
       drop-shadow(0 0 10px rgba(153, 246, 228, 0.72))
       drop-shadow(0 12px 22px rgba(2, 6, 23, 0.40));
-    transform: scale(1.18);
-  }
-
-  @keyframes collabMarkerIn {
-    from {
-      opacity: 0;
-      transform: scale(0.38);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes collabMarkerPulse {
-    0%, 100% {
-      stroke-width: 2;
-      filter: drop-shadow(0 8px 18px rgba(2, 6, 23, 0.34));
-    }
-
-    50% {
-      stroke-width: 4;
-      filter:
-        drop-shadow(0 0 14px rgba(153, 246, 228, 0.66))
-        drop-shadow(0 12px 24px rgba(2, 6, 23, 0.36));
-    }
   }
 
   .collab-tooltip {
@@ -447,6 +415,8 @@
 </style>
 <script>
   (function () {
+    var collaboratorCityData = {{ readFile "static/data/collaborator_city_map.json" | safeJS }};
+
     var profilePages = [
       {{- $authors := site.GetPage "section" "authors" -}}
       {{- if $authors -}}
@@ -691,9 +661,14 @@
 
     function drawMarkers(map, data) {
       var maxCount = data.reduce(function (m, d) { return Math.max(m, d.count || 1); }, 1);
+      var markerBounds = [];
       data.forEach(function (d, index) {
+        var lat = Number(d.lat);
+        var lng = Number(d.lng);
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+        markerBounds.push([lat, lng]);
         var ratio = (d.count || 1) / maxCount;
-        var radius = 8 + ratio * 22;
+        var radius = 7 + Math.sqrt(ratio) * 15;
         var hoverRadius = radius * 1.25;
         var popupRows = (d.collaborators || []).map(function (c) {
           return "<li><strong>" + c.name + "</strong> (" + c.institution + ")</li>";
@@ -704,12 +679,12 @@
           + "<ul>" + popupRows + "</ul>"
           + "</div>";
 
-        var marker = L.circleMarker([d.lat, d.lng], {
+        var marker = L.circleMarker([lat, lng], {
           radius: radius,
           color: "rgba(255,255,255,0.92)",
-          fillColor: "rgba(20,184,166,0.72)",
+          fillColor: "rgba(20,184,166,0.82)",
           weight: 2,
-          fillOpacity: 0.78,
+          fillOpacity: 0.86,
           className: "collab-marker"
         }).bindTooltip(popup, {
           direction: "top",
@@ -729,11 +704,18 @@
           if (marker._path) marker._path.classList.remove("is-hovered");
         }).on("click", function () {
           renderDetail(d);
-          map.flyTo([d.lat, d.lng], Math.max(map.getZoom(), 3), { duration: 0.65 });
+          map.flyTo([lat, lng], Math.max(map.getZoom(), 3), { duration: 0.65 });
           var panel = document.getElementById("collaborator-map-detail");
           if (panel) panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }).addTo(map);
       });
+
+      if (markerBounds.length > 1) {
+        map.fitBounds(markerBounds, {
+          padding: [36, 36],
+          maxZoom: window.matchMedia("(max-width: 768px)").matches ? 1 : 2
+        });
+      }
     }
 
     function initMap() {
@@ -761,15 +743,11 @@
         attribution: "&copy; OpenStreetMap contributors"
       }).addTo(map);
 
-      fetch("/data/collaborator_city_map.json", { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("no-json")); })
-        .then(function (data) {
-          if (!Array.isArray(data) || data.length === 0) throw new Error("empty-json");
-          drawMarkers(map, data);
-        })
-        .catch(function () {
-          drawMarkers(map, fallbackData);
-        });
+      if (Array.isArray(collaboratorCityData) && collaboratorCityData.length) {
+        drawMarkers(map, collaboratorCityData);
+      } else {
+        drawMarkers(map, fallbackData);
+      }
 
       return true;
     }

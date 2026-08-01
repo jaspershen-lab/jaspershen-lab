@@ -97,7 +97,7 @@
 
           {{ $group_id := printf "pub-year-%s" $year_group.Key }}
           {{ $open := eq $year_group.Key (index $year_groups 0).Key }}
-          <details class="photo-year publication-year-block" data-year="{{ $year_group.Key }}" {{ if $open }}open{{ end }}>
+          <details class="photo-year publication-year-block{{ if not $open }} is-collapsed{{ end }}" data-year="{{ $year_group.Key }}" open>
             <summary>
               <span class="photo-year__number">{{ $year_group.Key }}</span>
               <span class="photo-year__meta">{{ len $year_group.Pages }} article{{ if ne (len $year_group.Pages) 1 }}s{{ end }}</span>
@@ -197,6 +197,7 @@
 
           function updateGroups(active) {
             yearBlocks.forEach(function (block, index) {
+              var content = block.querySelector('.publication-year-block__list');
               var visibleRows = Array.prototype.slice.call(block.querySelectorAll('.grid-sizer')).filter(function (row) {
                 return row.getAttribute('data-filter-match') !== 'false';
               });
@@ -216,11 +217,17 @@
               }
 
               if (active) {
-                block.open = visible;
+                block.open = true;
+                block.classList.toggle('is-collapsed', !visible);
               } else {
                 block.style.display = '';
                 block.classList.remove('is-filter-empty');
-                block.open = index === 0;
+                block.open = true;
+                block.classList.toggle('is-collapsed', index !== 0);
+              }
+
+              if (content) {
+                content.style.height = block.classList.contains('is-collapsed') ? '0px' : content.scrollHeight + 'px';
               }
 
               if (prev && prev.classList.contains('pub-era-heading')) {
@@ -315,46 +322,67 @@
             if (!summary || !content) return;
 
             var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            block.open = true;
+            content.style.height = block.classList.contains('is-collapsed') ? '0px' : content.scrollHeight + 'px';
+
+            function clearTransition() {
+              if (!content._publicationTransitionHandler) return;
+              content.removeEventListener('transitionend', content._publicationTransitionHandler);
+              content._publicationTransitionHandler = null;
+            }
 
             summary.addEventListener('click', function (event) {
               if (reduceMotion) return;
 
               event.preventDefault();
               if (block.classList.contains('is-animating')) return;
+              clearTransition();
 
               block.classList.add('is-animating');
 
-              if (block.open) {
+              if (!block.classList.contains('is-collapsed')) {
                 content.style.height = content.scrollHeight + 'px';
                 content.offsetHeight;
                 content.style.height = '0px';
-                block.classList.add('is-closing');
+                block.classList.add('is-collapsed', 'is-closing');
 
-                content.addEventListener('transitionend', function onClose(event) {
+                content._publicationTransitionHandler = function onClose(event) {
                   if (event.target !== content || event.propertyName !== 'height') return;
                   content.removeEventListener('transitionend', onClose);
-                  block.open = false;
+                  content._publicationTransitionHandler = null;
                   block.classList.remove('is-animating', 'is-closing');
-                  content.style.height = '';
-                });
+                  content.style.height = '0px';
+                };
+                content.addEventListener('transitionend', content._publicationTransitionHandler);
                 return;
               }
 
               block.open = true;
+              block.classList.remove('is-collapsed');
               content.style.height = '0px';
               content.offsetHeight;
               content.style.height = content.scrollHeight + 'px';
 
-              content.addEventListener('transitionend', function onOpen(event) {
+              content._publicationTransitionHandler = function onOpen(event) {
                 if (event.target !== content || event.propertyName !== 'height') return;
                 content.removeEventListener('transitionend', onOpen);
+                content._publicationTransitionHandler = null;
                 block.classList.remove('is-animating');
-                content.style.height = '';
-              });
+                content.style.height = content.scrollHeight + 'px';
+              };
+              content.addEventListener('transitionend', content._publicationTransitionHandler);
             });
           }
 
           yearBlocks.forEach(setupYearBlockAnimation);
+
+          window.addEventListener('resize', function () {
+            yearBlocks.forEach(function (block) {
+              if (!block.open) return;
+              var content = block.querySelector('.publication-year-block__list');
+              if (content) content.style.height = content.scrollHeight + 'px';
+            });
+          });
 
           [searchInput, authorInput, yearSelect, typeSelect].forEach(function (el) {
             if (!el) return;

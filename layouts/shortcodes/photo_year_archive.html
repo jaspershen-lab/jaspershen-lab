@@ -17,7 +17,7 @@
         {{- end -}}
       {{- end -}}
       {{- $files = sort $files "Name" "desc" -}}
-      <details class="photo-year" {{ if eq $index 0 }}open{{ end }}>
+      <details class="photo-year{{ if ne $index 0 }} is-collapsed{{ end }}" open>
         <summary>
           <span class="photo-year__number">{{ $year }}</span>
           <span class="photo-year__meta">{{ len $files }} photos</span>
@@ -74,46 +74,66 @@
     var grid = year.querySelector('.photo-year__grid');
     if (!summary || !grid) return;
 
-    grid.style.height = year.open ? 'auto' : '0px';
+    year.open = true;
+    grid.style.height = year.classList.contains('is-collapsed') ? '0px' : grid.scrollHeight + 'px';
+
+    function clearTransition() {
+      if (!grid._photoTransitionHandler) return;
+      grid.removeEventListener('transitionend', grid._photoTransitionHandler);
+      grid._photoTransitionHandler = null;
+    }
 
     summary.addEventListener('click', function (event) {
       if (reduceMotion) return;
 
       event.preventDefault();
       if (year.classList.contains('is-animating')) return;
+      clearTransition();
 
       year.classList.add('is-animating');
 
-      if (year.open) {
+      if (!year.classList.contains('is-collapsed')) {
         grid.style.height = grid.scrollHeight + 'px';
         grid.offsetHeight;
         grid.style.height = '0px';
-        year.classList.add('is-closing');
+        year.classList.add('is-collapsed', 'is-closing');
 
-        grid.addEventListener('transitionend', function onClose(evt) {
+        grid._photoTransitionHandler = function onClose(evt) {
           if (evt.target !== grid || evt.propertyName !== 'height') return;
           grid.removeEventListener('transitionend', onClose);
-          year.open = false;
+          grid._photoTransitionHandler = null;
           year.classList.remove('is-animating', 'is-closing');
-          grid.style.height = '';
-        });
+          grid.style.height = '0px';
+        };
+        grid.addEventListener('transitionend', grid._photoTransitionHandler);
         return;
       }
 
       year.open = true;
+      year.classList.remove('is-collapsed');
       grid.style.height = '0px';
       grid.offsetHeight;
       grid.style.height = grid.scrollHeight + 'px';
 
-      grid.addEventListener('transitionend', function onOpen(evt) {
+      grid._photoTransitionHandler = function onOpen(evt) {
         if (evt.target !== grid || evt.propertyName !== 'height') return;
         grid.removeEventListener('transitionend', onOpen);
+        grid._photoTransitionHandler = null;
         year.classList.remove('is-animating');
-        grid.style.height = 'auto';
-      });
+        grid.style.height = grid.scrollHeight + 'px';
+      };
+      grid.addEventListener('transitionend', grid._photoTransitionHandler);
     });
   }
 
   years.forEach(setupYear);
+
+  window.addEventListener('resize', function () {
+    years.forEach(function (year) {
+      if (year.classList.contains('is-collapsed')) return;
+      var grid = year.querySelector('.photo-year__grid');
+      if (grid) grid.style.height = grid.scrollHeight + 'px';
+    });
+  });
 })();
 </script>
