@@ -37,7 +37,7 @@ sections:
       </section>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
-      <script src="/js/lab_hero_splittext.js?v=20260702-hero-refine" defer></script>
+      <script src="/js/lab_hero_splittext.js?v=20260702-hero-button-static" defer></script>
   design:
     columns: "1"
     spacing:
