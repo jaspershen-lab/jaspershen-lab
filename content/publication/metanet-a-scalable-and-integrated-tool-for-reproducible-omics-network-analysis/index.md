@@ -1,7 +1,7 @@
 ---
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:BqipwSGYUEgC"
 citation_source: "Google Scholar"
-citations: 3
+citations: 4
 title: "MetaNet: a scalable and integrated tool for reproducible omics network analysis"
 
 authors:

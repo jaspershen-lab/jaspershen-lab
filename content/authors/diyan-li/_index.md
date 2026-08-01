@@ -40,8 +40,9 @@ status:
 superuser: false
 title: Diyan LI
 user_groups:
-- Researchers
-- Visiting Scholar
+- Alumni
+- Researchers1
+- Visiting Scholar1
 ---
 
 Professor, doctoral advisor. Published more than 60 papers in Nature Communications, Molecular Biology And Evolution, and Science Advances etc. My work is mainly involved in the research of animal and human genomics. Including genome assemble, annotation, 3D genome analysis, and multi-omics techniques such as metabolome, metagenome and transcriptome to investigate the phenotypic character related genes and regulated elements.
