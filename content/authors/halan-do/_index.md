@@ -33,7 +33,8 @@ status:
 superuser: false
 title: Ha Lan DO
 user_groups:
-- Intern
+- Alumni
+- Intern2
 ---
 
 My research focuses on integrating multi-omics approaches with bioinformatics to elucidate the intricate mechanisms of the gut-brain axis and the gut microbiome. Leveraging rich multi-dimensional biological data, I aim to discover novel biomarkers to advance clinical diagnosis and personalized medicine.

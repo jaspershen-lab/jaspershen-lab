@@ -1,7 +1,7 @@
 ---
 title: 'LOESS and DE-SWAN can induce artifactual "waves" of molecular aging'
 citation_source: "Google Scholar"
-citations: 0
+citations: 1
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:u_35RYKgDlwC"
 
 authors:

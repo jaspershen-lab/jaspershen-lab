@@ -1,7 +1,7 @@
 ---
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:M3NEmzRMIkIC"
 citation_source: "Google Scholar"
-citations: 2
+citations: 3
 title: "A multistage, multitask transformer-based framework for multi-disease diagnosis and prediction using personal proteomes"
 
 authors:

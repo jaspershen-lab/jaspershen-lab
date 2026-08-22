@@ -32,7 +32,8 @@ status:
 superuser: false
 title: Zhichen HUA
 user_groups:
-- Intern
+- Alumni
+- Intern2
 ---
 
 My research focus on integrating artificial intelligence with wearabel devices to build cohesive intelligent biomedical sensing systems. Leveraing rich multi-dimensional physiolofical data, I aim to develop personalized prognostic models and tailored clinical strategies.
