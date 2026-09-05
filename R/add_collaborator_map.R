@@ -6,6 +6,7 @@ googlescholar2collabmap <- function(
     authors_dir = "content/authors",
     max_pubs = 200,
     sleep_sec = 0.2,
+    use_openalex_fallback = TRUE,
     verbose = TRUE
 ) {
   pkgs <- c("scholar", "rcrossref", "dplyr", "stringr", "purrr", "jsonlite", "tidyr", "tidygeocoder")
@@ -30,17 +31,58 @@ googlescholar2collabmap <- function(
     }
     NA_character_
   }
+  first_nonempty_chr <- function(x) {
+    x <- as.character(x)
+    x <- x[!is.na(x) & nzchar(trimws(x))]
+    if (length(x) == 0) NA_character_ else trimws(x[[1]])
+  }
   extract_affiliation <- function(a) {
-    aff <- NA_character_
-    if (is.list(a) && !is.null(a$affiliation) && length(a$affiliation) > 0) {
-      first_aff <- a$affiliation[[1]]
-      if (is.list(first_aff) && !is.null(first_aff$name)) aff <- as.character(first_aff$name[[1]])
-      if (is.atomic(first_aff) && !is.null(names(first_aff)) && "name" %in% names(first_aff)) aff <- as.character(first_aff[["name"]])
-    } else if (!is.null(names(a)) && "affiliation" %in% names(a)) {
-      af <- a[["affiliation"]]
-      if (is.character(af) && length(af) > 0) aff <- af[[1]]
+    if (is.null(a)) return(NA_character_)
+
+    # rcrossref versions may return either a nested `affiliation` object or
+    # flattened columns such as `affiliation.name`.
+    for (key in c("affiliation.name", "affiliation_name")) {
+      if (!is.null(names(a)) && key %in% names(a)) {
+        aff <- first_nonempty_chr(a[[key]])
+        if (!is.na(aff)) return(aff)
+      }
     }
-    aff
+
+    if (is.null(names(a)) || !("affiliation" %in% names(a))) return(NA_character_)
+    af <- a[["affiliation"]]
+    if (is.character(af)) return(first_nonempty_chr(af))
+    if (is.data.frame(af)) {
+      for (key in c("name", "affiliation.name")) {
+        if (key %in% names(af)) {
+          aff <- first_nonempty_chr(af[[key]])
+          if (!is.na(aff)) return(aff)
+        }
+      }
+    }
+    if (is.list(af)) {
+      for (item in af) {
+        if (is.character(item)) {
+          aff <- first_nonempty_chr(item)
+        } else if (is.list(item) && !is.null(item$name)) {
+          aff <- first_nonempty_chr(item$name)
+        } else {
+          aff <- NA_character_
+        }
+        if (!is.na(aff)) return(aff)
+      }
+    }
+    NA_character_
+  }
+  author_records <- function(x) {
+    if (is.null(x) || length(x) == 0) return(list())
+    if (is.data.frame(x)) {
+      return(lapply(seq_len(nrow(x)), function(i) as.list(x[i, , drop = FALSE])))
+    }
+    if (is.list(x) && !is.null(names(x)) && any(c("given", "family") %in% names(x))) {
+      return(list(x))
+    }
+    if (is.list(x)) return(x)
+    list()
   }
   norm_name <- function(x) {
     x <- tolower(x %||% "")
@@ -62,6 +104,22 @@ googlescholar2collabmap <- function(
   pubs <- pubs[seq_len(min(nrow(pubs), max_pubs)), , drop = FALSE]
 
   self_norm <- unique(vapply(self_names, norm_name, character(1)))
+  fallback_to_openalex <- function(reason) {
+    if (!isTRUE(use_openalex_fallback)) stop(reason)
+    if (verbose) {
+      message(reason)
+      message("Falling back to OpenAlex for author affiliations and coordinates ...")
+    }
+    googlescholar2collabmap_openalex(
+      scholar_url = scholar_url,
+      output_json = output_json,
+      output_csv = output_csv,
+      self_names = self_names,
+      max_pubs = max_pubs,
+      sleep_sec = sleep_sec,
+      verbose = verbose
+    )
+  }
 
   all_rows <- list()
   for (i in seq_len(nrow(pubs))) {
@@ -72,9 +130,10 @@ googlescholar2collabmap <- function(
     w <- try(rcrossref::cr_works(query = title, limit = 1), silent = TRUE)
     if (inherits(w, "try-error") || is.null(w$data) || nrow(w$data) == 0) next
     au <- w$data$author[[1]]
-    if (is.null(au) || !length(au)) next
+    author_list <- author_records(au)
+    if (length(author_list) == 0) next
 
-    rows_i <- purrr::map_dfr(au, function(a) {
+    rows_i <- purrr::map_dfr(author_list, function(a) {
       given <- field_chr(a, "given") %||% ""
       family <- field_chr(a, "family") %||% ""
       full_name <- trimws(paste(given, family))
@@ -92,7 +151,14 @@ googlescholar2collabmap <- function(
     all_rows[[length(all_rows) + 1]] <- rows_i
   }
 
-  if (length(all_rows) == 0) stop("No collaborators with affiliation found from Crossref.")
+  if (length(all_rows) == 0) {
+    return(invisible(fallback_to_openalex(
+      paste0(
+        "Crossref returned no usable author records. ",
+        "This can be caused by rate limiting or missing author metadata."
+      )
+    )))
+  }
   collab_raw <- dplyr::bind_rows(all_rows)
 
   collab_raw <- collab_raw %>%
@@ -106,7 +172,11 @@ googlescholar2collabmap <- function(
     ) %>%
     dplyr::filter(!is.na(institution), institution != "")
 
-  if (nrow(collab_raw) == 0) stop("No collaborator records left after filtering self + empty affiliation.")
+  if (nrow(collab_raw) == 0) {
+    return(invisible(fallback_to_openalex(
+      "Crossref author records contained no usable collaborator affiliations."
+    )))
+  }
 
   aff_tbl <- collab_raw %>%
     dplyr::distinct(institution) %>%
@@ -123,24 +193,41 @@ googlescholar2collabmap <- function(
     limit = 1
   )
 
-  # harmonize city field across different OSM responses
-  pick_first <- function(...) {
-    xs <- list(...)
-    for (x in xs) if (!is.null(x) && length(x) && !is.na(x) && nzchar(as.character(x))) return(as.character(x))
-    NA_character_
+  # Harmonize coordinates and location fields across tidygeocoder/OSM
+  # response variants. Depending on package/API versions, longitude may be
+  # returned as lng, long, lon, or longitude, and city may be town/village/etc.
+  coalesce_num_col <- function(df, keys) {
+    vals <- rep(NA_real_, nrow(df))
+    for (key in keys) {
+      if (!key %in% names(df)) next
+      x <- suppressWarnings(as.numeric(df[[key]]))
+      use <- is.na(vals) & !is.na(x)
+      vals[use] <- x[use]
+    }
+    vals
   }
-  geo$city <- vapply(
-    seq_len(nrow(geo)),
-    function(i) pick_first(
-      geo$city[i] %||% NA_character_,
-      geo$town[i] %||% NA_character_,
-      geo$village[i] %||% NA_character_,
-      geo$municipality[i] %||% NA_character_,
-      geo$county[i] %||% NA_character_
-    ),
-    character(1)
+  coalesce_chr_col <- function(df, keys) {
+    vals <- rep(NA_character_, nrow(df))
+    for (key in keys) {
+      if (!key %in% names(df)) next
+      x <- trimws(as.character(df[[key]]))
+      x[is.na(x)] <- ""
+      use <- is.na(vals) & nzchar(x)
+      vals[use] <- x[use]
+    }
+    vals
+  }
+  geo$lat <- coalesce_num_col(geo, c("lat", "latitude"))
+  geo$lng <- coalesce_num_col(geo, c("lng", "long", "lon", "longitude"))
+  geo$city <- coalesce_chr_col(
+    geo,
+    c("city", "town", "village", "municipality", "county", "state", "name")
   )
-  geo$country <- if ("country" %in% names(geo)) as.character(geo$country) else NA_character_
+  display_name <- coalesce_chr_col(geo, c("display_name"))
+  missing_city <- is.na(geo$city) | geo$city == ""
+  geo$city[missing_city & !is.na(display_name) & display_name != ""] <-
+    sub(",.*$", "", display_name[missing_city & !is.na(display_name) & display_name != ""])
+  geo$country <- coalesce_chr_col(geo, c("country", "country_code"))
 
   collab_geo <- collab_raw %>%
     dplyr::left_join(
@@ -149,7 +236,14 @@ googlescholar2collabmap <- function(
     ) %>%
     dplyr::filter(!is.na(lat), !is.na(lng), !is.na(city), city != "")
 
-  if (nrow(collab_geo) == 0) stop("No geocoded collaborator records. Try reducing max_pubs or checking network.")
+  if (nrow(collab_geo) == 0) {
+    return(invisible(fallback_to_openalex(
+      paste0(
+        "Nominatim returned no usable geocoded collaborator records. ",
+        "This can be caused by OSM rate limiting, network issues, or changed tidygeocoder response fields."
+      )
+    )))
+  }
 
   city_summary <- collab_geo %>%
     dplyr::group_by(city, country) %>%
