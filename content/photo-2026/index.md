@@ -269,6 +269,14 @@ sections:
         </section>
 
 
+        <!-- 9月 -->
+        <div class="month-block">
+          <div class="month-title">September 2026</div>
+          <div class="gallery">
+            <div class="image-container"><img src="lab/2026-9-3-Prof. Nick Tellay visited lab.jpg" alt="2026/9/3 Prof. Nick Tellay visited Shen Lab"><div class="caption">2026/9/3 Prof. Nick Tellay visited Shen Lab</div></div>
+          </div>
+        </div>
+
         <!-- 7-8月 -->
         <div class="month-block">
           <div class="month-title">July-August 2026</div>
@@ -276,6 +284,7 @@ sections:
             <div class="image-container"><img src="lab/2026-8-21-lab group photo.jpg" alt="2026/8/21 Lab group photo"><div class="caption">2026/8/21 Lab group photo</div></div>
             <div class="image-container"><img src="lab/2026-8-21 Ha Lan last day in the lab.jpg" alt="2026/8/21 Ha Lan last day in the lab"><div class="caption">2026/8/21 Ha Lan last day in the lab</div></div>
             <div class="image-container"><img src="lab/2026-8-21-lab dinner.jpg" alt="2026/8/21 Lab dinner"><div class="caption">2026/8/21 Lab dinner</div></div>
+            <div class="image-container"><img src="lab/2026-8-18-NTU BOT members and LKC leadership visit SPC.jpg" alt="2026/8/18 NTU BOT members and LKC leadership visit SPC"><div class="caption">2026/8/18 NTU BOT members and LKC leadership visit SPC</div></div>
             <div class="image-container"><img src="lab/2026-8-14-HK medteckX.jpg" alt="2026/8/14 HK MedTechX"><div class="caption">2026/8/14 HK MedTechX</div></div>
             <div class="image-container"><img src="lab/2026-8-8-微生物工程会议.jpg" alt="2026/8/8 Microbial Engineering Conference"><div class="caption">2026/8/8 Microbial Engineering Conference</div></div>
             <div class="image-container"><img src="lab/2026-8-3-HIT-visiting Shen lab.jpg" alt="2026/8/3 HIT visiting Shen Lab"><div class="caption">2026/8/3 HIT visiting Shen Lab</div></div>
