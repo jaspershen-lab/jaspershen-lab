@@ -6,7 +6,7 @@ image:
   placement: 2
 math: true
 commentable: true
-title: 🔬 Research
+title: Research
 ---
 
 Our overarching research interests are bioinformatics algorithms development for multi-omics and wearable data, and their application to precision medicine and biological questions.

@@ -12,7 +12,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 🤝 Collaborators
+    title: Collaborators
     user_groups:
     - Academia
     - Industry
@@ -24,7 +24,7 @@ sections:
 
 - block: markdown
   content:
-    title: 🌍 Collaborator Map
+    title: Collaborator Map
     text: |-
       {{< collaborator_map >}}
   design:

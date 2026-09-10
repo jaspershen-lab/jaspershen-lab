@@ -13,10 +13,10 @@ sections:
           min-height: 440px;
           margin: 0 auto 42px;
           overflow: hidden;
-          border-radius: 28px;
+          border-radius: 12px;
           border: 1px solid rgba(148, 163, 184, 0.18);
           background: #0b1220;
-          box-shadow: 0 26px 70px rgba(2, 6, 23, 0.22);
+          box-shadow: 0 10px 28px rgba(2, 6, 23, 0.12);
           isolation: isolate;
         }
 
@@ -49,7 +49,7 @@ sections:
 
         .photo-spotlight__eyebrow {
           margin: 0 0 12px;
-          color: #8ef3df;
+          color: #f3c6cc;
           font-size: 0.85rem;
           font-weight: 900;
           letter-spacing: 0.08em;
@@ -91,7 +91,7 @@ sections:
           width: 42px;
           height: 3px;
           border-radius: 999px;
-          background: linear-gradient(90deg, #14b8a6, #3b82f6);
+          background: #b21f2f;
           content: "";
         }
 
@@ -111,9 +111,9 @@ sections:
           -webkit-column-break-inside: avoid;
           page-break-inside: avoid;
           border: 1px solid rgba(148, 163, 184, 0.18);
-          border-radius: 20px;
+          border-radius: 12px;
           background: rgba(15, 23, 42, 0.08);
-          box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+          box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
         }
 
         .image-container img {

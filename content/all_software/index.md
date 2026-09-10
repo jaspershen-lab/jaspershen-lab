@@ -7,7 +7,7 @@ sections:
 - block: portfolio
   id: software
   content:
-    title: 🖥️ Software
+    title: Software
     text: ""
     filters:
       folders:

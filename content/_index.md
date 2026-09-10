@@ -10,15 +10,15 @@ sections:
     text: |-
       <script>document.documentElement.classList.add('has-lab-hero-animation');</script>
       <section class="lab-hero" aria-label="Shen Lab at NTU">
-        <img class="lab-hero__photo" src="/media/group_photo3.png" alt="" aria-hidden="true">
+        <img class="lab-hero__photo" src="/media/group_photo4.jpg" alt="" aria-hidden="true">
         <div class="lab-hero__shade" aria-hidden="true"></div>
         <div class="lab-hero__content">
           <p class="lab-hero__eyebrow">
             <span class="lab-hero__eyebrow-line" aria-hidden="true"></span>
-            <span class="lab-hero__split lab-hero__split--eyebrow">Computational multi-omics lab in Singapore</span>
+            <span class="lab-hero__split lab-hero__split--eyebrow">Computational Omics Lab</span>
           </p>
           <h1 class="lab-hero__split lab-hero__split--title">Shen Lab @ NTU</h1>
-          <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Computational multi-omics for human health</p>
+          <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Multi-omics for human health</p>
           <div class="lab-hero__actions">
             <a class="lab-hero__button lab-hero__button--primary" href="./research/">
               <i class="fas fa-flask" aria-hidden="true"></i>
@@ -51,6 +51,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: bib-2026-lagci.png
+          filters:
+            brightness: 0.62
+        position: right
+      content:
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/lagci-enables-inference-of-temporal-causal-relationships-from-dense-multi-omic-time-series/
+      title: "New publication"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: microbiome-2026.png
           filters:
             brightness: 0.62
@@ -76,21 +91,6 @@ sections:
         icon_pack: fas
         text: Link
         url: ../publication/tidymass2-advancing-lc-ms-untargeted-metabolomics-through-metabolite-origin-inference-and-metabolic-feature-based-functional-module-analysis/
-      title: "New publication"
-    - align: center
-      background:
-        color: '#666'
-        image:
-          filename: nc-2025-uc.png
-          filters:
-            brightness: 0.62
-        position: right
-      content:
-      link:
-        icon: link
-        icon_pack: fas
-        text: Link
-        url: ../publication/metabolomics-and-proteomics-revealblocking-argininosuccinate-synthetase-1alleviates-colitis-in-mice/
       title: "New publication"
   design:
     interval: 4500
@@ -178,7 +178,7 @@ sections:
 - block: collection
   id: research
   content:
-    title: 🔬 RESEARCH
+    title: RESEARCH
     subtitle: ":point_right: [Detailed Research](./research/)"
     text: "Our research is focused on the development of computational methods for the analysis of <u>multi-omics data</u>, with a particular emphasis on <u>metabolomics and microbiome data</u>. We are also interested in the application of these methods to <u>precision medicine, aging, pregnancy, and other health-related areas</u>."
     count: 3
@@ -200,7 +200,7 @@ sections:
 - block: collection
   id: software
   content:
-    title: 🖥️ SOFTWARE
+    title: SOFTWARE
     # subtitle: ":point_right: [All Software](./software/)"
     text: ""
     count: 5
@@ -240,7 +240,7 @@ sections:
   id: publication
   content:
     count: 6
-    title: 📃 PUBLICATION
+    title: PUBLICATION
     # subtitle: ":point_right: [All Publications](./publication/)"
     text: 
     filters:
@@ -266,7 +266,7 @@ sections:
     offset: 0
     order: desc
     # subtitle: ":point_right: [All News](./news/)"
-    title: 📰 NEWS
+    title: NEWS
     text: 
   design:
     columns: "2"
@@ -290,7 +290,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 👥 TEAM
+    title: TEAM
     subtitle: ":point_right: [All Team Members](./team/)"
     # text: |-
     #   {{% callout note %}}
@@ -365,7 +365,7 @@ sections:
 - block: contact
   id: contact
   content:
-    title: 📨 CONTACT
+    title: CONTACT
     # subtitle: ":point_right: [More](./contact/)"
     text: 
     archive:
@@ -466,7 +466,7 @@ sections:
 # - block: markdown
 #   id: photo
 #   content:
-#     title: 📸 Photo
+#     title: Photo
 #     subtitle: ':point_right: [More Photos](./photo/)'
     # text: |-
     #   <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>

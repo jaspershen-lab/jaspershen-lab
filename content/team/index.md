@@ -10,8 +10,8 @@ image:
 sections:
 # - block: markdown
 #   content:
-#     title: 👥 Meet Our Team
-#     subtitle: 🤝 [Our collaborators can be found here](/collaborators/)
+#     title: Meet Our Team
+#     subtitle: [Our collaborators can be found here](/collaborators/)
 #     text: ""
 #   design:
 #     columns: '1'
@@ -31,14 +31,14 @@ sections:
 
 - block: about.biography
   content:
-    title: Principal Investigator `:man_teacher:`
+    title: Principal Investigator
     username: admin
 
 - block: people
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: 👥 Other Members
+    title: Other Members
     user_groups:
     - Postdocs
     - Research Scientist
