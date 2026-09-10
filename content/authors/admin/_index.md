@@ -39,12 +39,6 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/jaspershen
-- display:
-    header: false
-  icon: twitter
-  icon_pack: fab
-  # label: Follow us on X
-  link: https://twitter.com/xiaotaoshen1990
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.co.uk/citations?hl=en&user=3TK9yz8AAAAJ

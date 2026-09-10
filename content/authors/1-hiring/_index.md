@@ -21,12 +21,6 @@ social:
   icon_pack: fab
   label: Follow us on GitHub
   link: https://github.com/jaspershen-lab
-- display:
-    header: true
-  icon: twitter
-  icon_pack: fab
-  label: Follow us on X
-  link: https://twitter.com/xiaotaoshen1990
 status:
   icon: ☕️
 superuser: true
@@ -43,4 +37,4 @@ integrate multi-omics data. We particularly emphasize research in microbiome
 and metabolome and their implications for human health, 
 including aging and pregnancy-related diseases.
 
-More information can be found [here](https://www.shen-lab.org/news/2023-11-23-recruitment/)
+More information can be found [here](/join-us/).

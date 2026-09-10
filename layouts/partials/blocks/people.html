@@ -48,8 +48,12 @@
       {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
         {{ $link = .RelPermalink }}
       {{ end }}
+      {{ $isHiring := in .Params.user_groups "Join US" }}
+      {{ if $isHiring }}
+        {{ $link = "/join-us/" }}
+      {{ end }}
       <div class="col-12 col-sm-auto people-person">
-        <div class="people-person__card" tabindex="0">
+        {{ if $isHiring }}<a class="people-person__card people-person__card--join" href="{{ $link }}">{{ else }}<div class="people-person__card" tabindex="0">{{ end }}
           <div class="people-person__face people-person__face--front">
         {{ $src := "" }}
         {{ if site.Params.features.avatar.gravatar }}
@@ -60,15 +64,17 @@
         {{ end }}
         {{ if $src }}
           {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
-          {{with $link}}<a href="{{.}}">{{end}}<img width="270" height="270" loading="lazy" class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar">{{if $link}}</a>{{end}}
+          {{ if and $link (not $isHiring) }}<a href="{{ $link }}">{{ end }}<img width="270" height="270" loading="lazy" class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar">{{ if and $link (not $isHiring) }}</a>{{ end }}
         {{ end }}
 
         <div class="portrait-title">
-          <h2>{{with $link}}<a href="{{.}}">{{end}}{{ .Title }}{{if $link}}</a>{{end}}</h2>
+          <h2>{{ if and $link (not $isHiring) }}<a href="{{ $link }}">{{ end }}{{ .Title }}{{ if and $link (not $isHiring) }}</a>{{ end }}</h2>
           {{ if and $show_organizations .Params.organizations }}{{ range .Params.organizations }}<h3>{{ .name }}</h3>{{ end }}{{ end }}
           {{ if and $show_role .Params.role }}<h3>{{ .Params.role | markdownify | emojify }}</h3>{{ end }}
+          {{ if $isHiring }}<span class="people-person__join-cta">Open opportunities</span>{{ end }}
         </div>
           </div>
+          {{ if not $isHiring }}
           <div class="people-person__face people-person__face--back">
             <div class="people-interests">
               <span>Research interests</span>
@@ -89,7 +95,8 @@
               {{ end }}
             </div>
           </div>
-        </div>
+          {{ end }}
+        {{ if $isHiring }}</a>{{ else }}</div>{{ end }}
       </div>
     {{ end }}
 

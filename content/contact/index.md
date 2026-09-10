@@ -96,9 +96,6 @@ sections:
                 <a href="https://github.com/jaspershen-lab" target="_blank" rel="noopener" aria-label="GitHub">
                   <i class="fa-brands fa-github"></i><span>GitHub</span>
                 </a>
-                <a href="https://twitter.com/xiaotaoshen1990" target="_blank" rel="noopener" aria-label="X">
-                  <i class="fa-brands fa-twitter"></i><span>X</span>
-                </a>
                 <a href="https://scholar.google.com/citations?user=3TK9yz8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
                   <i class="ai ai-google-scholar"></i><span>Scholar</span>
                 </a>
