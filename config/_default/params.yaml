@@ -39,7 +39,7 @@ header:
     enable: true
     align: r
     show_logo: true
-    show_language: false
+    show_language: true
     show_translations: true
     show_day_night: true
     show_search: true
@@ -133,4 +133,3 @@ params:
     - icon: github
       icon_pack: fab
       link: https://github.com/jaspershen-lab
-

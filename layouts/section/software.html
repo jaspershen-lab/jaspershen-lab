@@ -3,6 +3,12 @@
 {{ partial "page_header.html" . }}
 
 {{ $pages := .Pages.ByDate.Reverse }}
+{{ if and (ne .Lang "en") (eq (len $pages) 0) }}
+  {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
+  {{ with $default_site.GetPage "section" "software" }}
+    {{ $pages = .Pages.ByDate.Reverse }}
+  {{ end }}
+{{ end }}
 {{ $categoryOrder := slice "Metabolomics" "Multi-omics" "Others" }}
 {{ $categoryIcons := dict
   "Metabolomics" "flask"

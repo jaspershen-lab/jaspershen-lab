@@ -8,15 +8,57 @@ en:
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
   #contentDir: content/en
 
-# Uncomment the lines below to configure your website in a second language.
-#zh:
-#  languageCode: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+zh:
+  languageCode: zh-Hans
+  title: Shen Lab @ NTU
+  params:
+    description: 新加坡南洋理工大学 Shen Lab，专注于计算多组学、代谢组学、微生物组和精准健康。
+  menu:
+    main:
+      - name: 首页
+        url: '#lab_hero'
+        weight: 1
+      - name: 亮点
+        url: '#latest_highlights'
+        weight: 2
+      - name: 研究
+        url: '#research'
+        weight: 10
+      - name: 软件
+        url: '#software'
+        weight: 11
+      - name: 论文
+        url: '#publication'
+        weight: 12
+      - name: 新闻
+        url: '#news'
+        weight: 20
+      - name: 团队
+        url: '#team'
+        weight: 30
+      - name: 相册
+        identifier: photos
+        url: '#photo'
+        weight: 40
+      - name: 联系
+        url: '#contact'
+        weight: 50
+      - name: 更多
+        identifier: more
+        weight: 70
+      - name: Singapore Phenome Center
+        parent: more
+        url: 'https://www.ntu.edu.sg/spc'
+        weight: 80
+      - name: 合作者
+        parent: more
+        url: 'collaborators'
+        weight: 90
+      - name: 实验室手册
+        parent: more
+        url: 'https://www.shen-lab.org/shen-lab-handbook/'
+        weight: 91
+      - name: 组会表
+        parent: more
+        url: 'https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing'
+        weight: 100

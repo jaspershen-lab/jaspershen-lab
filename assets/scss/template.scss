@@ -8,6 +8,53 @@
   justify-content: center;
 }
 
+/* Compact language switcher */
+.i18n-dropdown .lab-language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+}
+
+.i18n-dropdown .lab-language-toggle::after {
+  margin-left: 0.18rem;
+}
+
+.lab-language-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+}
+
+.lab-language-menu {
+  min-width: 0;
+  padding: 0.45rem;
+}
+
+.lab-language-menu .lab-language-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.lab-language-menu .lab-language-item:hover,
+.lab-language-menu .lab-language-item:focus {
+  background: rgba(185, 28, 45, 0.08);
+}
+
 // Team avatar hover zoom effect
 .people-widget .avatar {
   transition: transform 0.28s ease, box-shadow 0.28s ease;

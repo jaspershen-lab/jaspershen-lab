@@ -11,6 +11,12 @@
       {{ end }}
 
       {{ $pub_pages := .Pages.ByDate.Reverse }}
+      {{ if and (ne .Lang "en") (eq (len $pub_pages) 0) }}
+        {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
+        {{ with $default_site.GetPage "section" "publication" }}
+          {{ $pub_pages = .Pages.ByDate.Reverse }}
+        {{ end }}
+      {{ end }}
       {{ $year_groups := $pub_pages.GroupByDate "2006" }}
       {{ $authors_scratch := newScratch }}
       {{ $authors_scratch.Set "authors" (slice) }}

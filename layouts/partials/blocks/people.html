@@ -22,6 +22,10 @@
 
   {{ range $group := $block.content.user_groups }}
     {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice $group) }}
+    {{ if and (ne site.Language.Lang "en") (eq (len $query) 0) }}
+      {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
+      {{ $query = where (where $default_site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice $group) }}
+    {{ end }}
 
     {{ $sort_by := $block.content.sort_by | default "Params.last_name" }}
     {{ $sort_by = partial "functions/get_sort_by_parameter" $sort_by }}
@@ -44,13 +48,10 @@
 
     {{ range $query }}
       {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
-      {{ $link := "" }}
-      {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
-        {{ $link = .RelPermalink }}
-      {{ end }}
+      {{ $link := .RelPermalink }}
       {{ $isHiring := in .Params.user_groups "Join US" }}
       {{ if $isHiring }}
-        {{ $link = "/join-us/" }}
+        {{ $link = "/join-us/" | relLangURL }}
       {{ end }}
       <div class="col-12 col-sm-auto people-person">
         {{ if $isHiring }}<a class="people-person__card people-person__card--join" href="{{ $link }}">{{ else }}<div class="people-person__card" tabindex="0">{{ end }}

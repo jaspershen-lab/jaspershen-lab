@@ -1,0 +1,34 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+    <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  {{ $pages := .Pages }}
+  {{ if and (ne .Lang "en") (eq (len $pages) 0) }}
+    {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
+    {{ with $default_site.GetPage "section" "news" }}
+      {{ $pages = .Pages }}
+    {{ end }}
+  {{ end }}
+
+  {{ if templates.Exists (printf "partials/views/%s-start.html" (lower $.Params.view | default "compact")) }}
+    {{ partial "functions/render_view" (dict "page" $ "item" . "view" (printf "%s-start" $.Params.view) "index" 0) }}
+  {{ end }}
+
+  {{ $paginator := .Paginate $pages }}
+  {{ range $index, $post := $paginator.Pages }}
+    {{ partial "functions/render_view" (dict "page" $ "item" . "view" ($.Params.view | default "compact") "index" $index) }}
+  {{ end }}
+
+  {{ if templates.Exists (printf "partials/views/%s-end.html" (lower $.Params.view | default "compact")) }}
+    {{ partial "functions/render_view" (dict "page" $ "item" . "view" (printf "%s-end" $.Params.view) "index" 0) }}
+  {{ end }}
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}

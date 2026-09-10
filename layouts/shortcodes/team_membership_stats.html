@@ -6,6 +6,15 @@
   {{- $authors = where site.RegularPages "Section" "authors" -}}
 {{- end -}}
 {{- $pubs := where site.RegularPages "Section" "publication" -}}
+{{- if ne site.Language.Lang "en" -}}
+  {{- $defaultSite := index (where site.Sites "Language.Lang" "en") 0 -}}
+  {{- with $defaultSite.GetPage "Section" "authors" -}}
+    {{- $authors = .Pages -}}
+  {{- else -}}
+    {{- $authors = where $defaultSite.RegularPages "Section" "authors" -}}
+  {{- end -}}
+  {{- $pubs = where $defaultSite.RegularPages "Section" "publication" -}}
+{{- end -}}
 
 {{- $rowsScratch := newScratch -}}
 {{- $rowsScratch.Set "rows" (slice) -}}

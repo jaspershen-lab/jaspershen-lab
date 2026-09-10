@@ -59,6 +59,52 @@
   {{ $query = where $query "Date" "<" now }}
 {{ end }}
 
+{{ if and (ne site.Language.Lang "en") (eq (len $query) 0) }}
+  {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
+  {{ with $default_site }}
+    {{ $query = .RegularPages }}
+    {{ if $block.content.page_type }}
+      {{ $query = where $query "Type" $block.content.page_type }}
+    {{ end }}
+    {{ if $block.content.filters.folders }}
+      {{ $folders := $block.content.filters.folders }}
+      {{ $query = where $query "Section" "in" $folders }}
+    {{ end }}
+    {{ if $block.content.filters.tag }}
+      {{ with .GetPage (printf "tags/%s" (urlize $block.content.filters.tag)) }}
+        {{ $query = $query | intersect .Pages }}
+      {{ end }}
+    {{ end }}
+    {{ if $block.content.filters.category }}
+      {{ with .GetPage (printf "categories/%s" (urlize $block.content.filters.category)) }}
+        {{ $query = $query | intersect .Pages }}
+      {{ end }}
+    {{ end }}
+    {{ if $block.content.filters.publication_type }}
+      {{ with .GetPage (printf "publication_types/%s" $block.content.filters.publication_type) }}
+        {{ $query = $query | intersect .Pages }}
+      {{ end }}
+    {{ end }}
+    {{ if $block.content.filters.author }}
+      {{ with .GetPage (printf "authors/%s" (urlize $block.content.filters.author)) }}
+        {{ $query = $query | intersect .Pages }}
+      {{ end }}
+    {{ end }}
+    {{ if $block.content.filters.featured_only }}
+      {{ $query = where $query "Params.featured" "==" true }}
+    {{ end }}
+    {{ if $block.content.filters.exclude_featured }}
+      {{ $query = where $query "Params.featured" "!=" true }}
+    {{ end }}
+    {{ if $block.content.filters.exclude_past }}
+      {{ $query = where $query "Date" ">=" now }}
+    {{ end }}
+    {{ if $block.content.filters.exclude_future }}
+      {{ $query = where $query "Date" "<" now }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{ $count := len $query }}
 
 {{/* Sort */}}
