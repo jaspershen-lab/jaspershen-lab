@@ -51,6 +51,21 @@ sections:
       background:
         color: '#666'
         image:
+          filename: mapa-advanced-science-2026.png
+          filters:
+            brightness: 0.62
+        position: right
+      content:
+      link:
+        icon: link
+        icon_pack: fas
+        text: Link
+        url: ../publication/mapa-a-semantic-network-framework-for-functional-module-discovery-and-interpretation-in-multi-omics-data/
+      title: "New publication"
+    - align: center
+      background:
+        color: '#666'
+        image:
           filename: bib-2026-lagci.png
           filters:
             brightness: 0.62

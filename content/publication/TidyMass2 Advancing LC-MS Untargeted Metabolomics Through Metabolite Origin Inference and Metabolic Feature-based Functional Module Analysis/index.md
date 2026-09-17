@@ -38,7 +38,7 @@ authors:
 - Xuebin Zhang
 - admin
 
-featured: true
+featured: false
 publication: Nature Communications
 publication_types:
 - 2
