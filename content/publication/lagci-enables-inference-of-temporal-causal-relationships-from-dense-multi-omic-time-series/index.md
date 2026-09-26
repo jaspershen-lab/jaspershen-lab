@@ -1,7 +1,7 @@
 ---
 doi: "10.1093/bib/bbag464"
-citation_url: "https://doi.org/10.1093/bib/bbag464"
-citation_source: "Crossref"
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:cFHS6HbyZ2cC"
+citation_source: "Google Scholar"
 citations: 0
 title: "LagCI Enables Inference of Temporal Causal Relationships from Dense Multi-Omic Time Series"
 
