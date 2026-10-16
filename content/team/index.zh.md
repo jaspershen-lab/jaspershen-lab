@@ -1,6 +1,5 @@
 ---
-section_header: true
-section_intro: "认识参与实验室研究的团队成员。"
+section_header: false
 date: "2022-10-24"
 image:
   placement: 1
@@ -51,14 +50,6 @@ sections:
     title: Lab Collaboration Network
     text: |-
       {{< team_collaboration_network >}}
-  design:
-    columns: '1'
-
-- block: markdown
-  content:
-    title: Alumni Summary
-    text: |-
-      <iframe width='100%' height='700' src="https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing"></iframe>
   design:
     columns: '1'
 

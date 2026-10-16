@@ -19,17 +19,14 @@ sections:
           <h1 class="lab-hero__split lab-hero__split--title">Shen Lab @ NTU</h1>
           <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">Multi-omics for human health</p>
           <div class="lab-hero__actions">
-            <a class="lab-hero__button lab-hero__button--primary" href="./research/">
+            <a class="lab-hero__button" href="./research/" title="Research" aria-label="Research">
               <i class="fas fa-flask" aria-hidden="true"></i>
-              <span>Research</span>
             </a>
-            <a class="lab-hero__button" href="./software/">
+            <a class="lab-hero__button" href="./software/" title="Software" aria-label="Software">
               <i class="fas fa-code" aria-hidden="true"></i>
-              <span>Software</span>
             </a>
-            <a class="lab-hero__button" href="./publication/">
+            <a class="lab-hero__button" href="./publication/" title="Publication" aria-label="Publication">
               <i class="fas fa-file-alt" aria-hidden="true"></i>
-              <span>Publication</span>
             </a>
           </div>
         </div>

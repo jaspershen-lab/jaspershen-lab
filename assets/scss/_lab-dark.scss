@@ -27,9 +27,14 @@
     border-color: var(--lab-border);
   }
 
-  .software-card__media, .author-profile__panel, .author-profile__publication,
+  .software-card__media, .author-profile__publication,
   .team-collab-profile__block, .team-collab-profile__metrics div {
     background: var(--lab-surface-raised);
+    border-color: var(--lab-border);
+  }
+
+  .author-profile__panel {
+    background: transparent;
     border-color: var(--lab-border);
   }
 
@@ -84,7 +89,7 @@
   }
 
   .software-card__tags span, .software-card__tags time,
-  .author-profile__tags span, .author-profile__publication-year {
+  .author-profile__publication-year {
     background: var(--lab-surface-raised);
     color: var(--lab-text);
   }

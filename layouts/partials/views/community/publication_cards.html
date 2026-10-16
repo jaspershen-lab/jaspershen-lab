@@ -52,18 +52,7 @@
         <div class="home-pub-card__image-shade"></div>
       </a>
 
-      <div class="home-pub-card__overlay">
-        {{ with $linkURL }}
-          <a class="home-pub-card__iconbtn" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="External link" title="External link">
-            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-          </a>
-        {{ end }}
-        {{ with $pdfURL }}
-          <a class="home-pub-card__iconbtn" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="PDF" title="PDF">
-            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          </a>
-        {{ end }}
-      </div>
+
     </div>
 
     <div class="home-pub-card__body">
@@ -73,6 +62,18 @@
       {{ with $item.Params.publication }}
         <div class="home-pub-card__journal">{{ . }}</div>
       {{ end }}
+      <div class="software-card__actions home-pub-card__actions">
+        {{ with $linkURL }}
+          <a class="software-card__button software-card__button--ghost resource-icon-link" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="External link" title="External link">
+            <i class="fas fa-link" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+        {{ with $pdfURL }}
+          <a class="software-card__button software-card__button--ghost resource-icon-link" href="{{ . | safeURL }}" target="_blank" rel="noopener" aria-label="PDF" title="PDF">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+      </div>
     </div>
   </article>
 </div>

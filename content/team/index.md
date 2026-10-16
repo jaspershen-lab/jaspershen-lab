@@ -1,6 +1,5 @@
 ---
-section_header: true
-section_intro: "Meet the people behind our research."
+section_header: false
 date: "2022-10-24"
 image:
   placement: 1
@@ -76,34 +75,6 @@ sections:
   design:
     columns: '1'
 
-- block: markdown
-  content:
-    title: Alumni Summary
-    text: |-
-      <iframe width='100%' height='700' src="https://docs.google.com/spreadsheets/d/1yHT4RLa-TOh6a4TbNtEu2wCJvrUo51L28XbHHk9nvVs/edit?usp=sharing"></iframe>
-  design:
-    columns: '1'
-
-- block: markdown
-  content:
-    title:
-    subtitle: ''
-    text:
-  design:
-    columns: '1'
-    background:
-      image:
-        filename: team.jpg
-        filters:
-          brightness: 1
-        parallax: false
-        position: center
-        size: cover
-        text_color_light: true
-    spacing:
-      padding: ['20px', '0', '20px', '0']
-    css_class: fullscreen
-    
 title: People
 type: landing
 ---

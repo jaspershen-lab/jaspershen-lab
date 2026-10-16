@@ -1,4 +1,4 @@
-<ul class="network-icon" aria-hidden="true">
+<ul class="network-icon">
   {{ range .Params.social }}
     {{ if and .icon (strings.TrimSpace (.link | default "")) (ne .link "#") }}
     {{ $pack := or .icon_pack "fas" }}
@@ -18,8 +18,10 @@
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}
     <li>
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
-        <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}"></i>
+      {{ $labels := dict "envelope" "Email" "home" "Website" "house" "Website" "github" "GitHub" "google-scholar" "Google Scholar" "linkedin" "LinkedIn" "cv" "CV" "orcid" "ORCID" "weixin" "WeChat" }}
+      {{ $label := .label | default (index $labels .icon) | default (.icon | humanize) }}
+      <a class="resource-icon-link" title="{{ $label }}" aria-label="{{ $label }}" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+        <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" aria-hidden="true"></i>
       </a>
     </li>
   {{ end }}

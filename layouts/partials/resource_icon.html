@@ -1,0 +1,18 @@
+{{- $name := lower (trim . " ") -}}
+{{- $icon := "" -}}
+{{- if in (slice "code" "github" "source code") $name -}}
+  {{- $icon = "fab fa-github" -}}
+{{- else if in (slice "documentation" "docs" "document" "文档") $name -}}
+  {{- $icon = "fas fa-book" -}}
+{{- else if in (slice "website" "home" "网站") $name -}}
+  {{- $icon = "fas fa-globe" -}}
+{{- else if eq $name "link" -}}
+  {{- $icon = "fas fa-link" -}}
+{{- else if eq $name "pdf" -}}
+  {{- $icon = "fas fa-file-pdf" -}}
+{{- else if eq $name "doi" -}}
+  {{- $icon = "fas fa-fingerprint" -}}
+{{- else if eq $name "launch app" -}}
+  {{- $icon = "fas fa-play" -}}
+{{- end -}}
+{{- return $icon -}}

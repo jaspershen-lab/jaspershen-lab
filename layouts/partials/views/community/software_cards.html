@@ -50,7 +50,7 @@
   {{ $productType = "Resource" }}
 {{ end }}
 
-<article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ with index ($item.Params.tags | default slice) 0 }}{{ . | urlize }}{{ else }}uncategorized{{ end }}">
+<article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ range $item.Params.tags }}{{ . | urlize }} {{ else }}uncategorized{{ end }}">
   <a class="software-card__media" href="{{ $item.RelPermalink }}">
     {{ with $imageURL }}
       <img src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
@@ -63,9 +63,6 @@
       <span>{{ $productType }}</span>
     </div>
     <h3 class="software-card__title"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
-    {{ if not (and .page.IsSection (eq .page.Section "software")) }}
-      <p class="software-card__summary">{{ $item.Summary | plainify | truncate 150 }}</p>
-    {{ end }}
     <div class="software-card__tags">
       {{ range $item.Params.tags }}
         <span>{{ . }}</span>
@@ -74,15 +71,14 @@
     </div>
     <div class="software-card__actions">
       {{ with $linkURL }}
-        <a class="software-card__button" href="{{ . | safeURL }}" target="_blank" rel="noopener">
-          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-          <span>{{ $linkLabel }}</span>
+        <a class="software-card__button software-card__button--ghost resource-icon-link" title="{{ $linkLabel }}" aria-label="{{ $linkLabel }}" href="{{ . | safeURL }}" target="_blank" rel="noopener">
+          <i class="{{ partial "resource_icon.html" $linkLabel }}" aria-hidden="true"></i>
         </a>
       {{ end }}
       {{ with $codeURL }}
-        <a class="software-card__button software-card__button--ghost" href="{{ . | safeURL }}" target="_blank" rel="noopener">
-          <i class="fab fa-github" aria-hidden="true"></i>
-          <span>Code</span>
+        <a class="software-card__button software-card__button--ghost resource-icon-link" title="Code" aria-label="Code" href="{{ . | safeURL }}" target="_blank" rel="noopener">
+          <i class="{{ partial "resource_icon.html" "Code" }}" aria-hidden="true"></i>
+          
         </a>
       {{ end }}
     </div>

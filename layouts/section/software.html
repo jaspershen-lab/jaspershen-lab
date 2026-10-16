@@ -1,7 +1,5 @@
 {{- define "main" -}}
 
-{{ partial "page_header.html" . }}
-
 {{ $pages := .Pages.ByDate.Reverse }}
 {{ if and (ne .Lang "en") (eq (len $pages) 0) }}
   {{ $default_site := index (where site.Sites "Language.Lang" "en") 0 }}
@@ -10,151 +8,46 @@
   {{ end }}
 {{ end }}
 {{ $categoryOrder := slice "Metabolomics" "Multi-omics" "Others" }}
-{{ $categoryIcons := dict
-  "Metabolomics" "flask"
-  "Multi-omics" "project-diagram"
-  "Others" "tools"
-}}
-
 <main class="software-directory software-directory--products">
   <section class="software-product-hero" aria-label="Software product wall">
     <div class="software-product-filter" aria-label="Software category filter">
-      <button class="software-product-filter__button is-active" type="button" data-filter="all">All</button>
+      <button class="software-product-filter__button is-active" type="button" aria-pressed="true" aria-controls="software-results" data-filter="all">All</button>
       {{ range $category := $categoryOrder }}
         {{ $items := where $pages "Params.tags" "intersect" (slice $category) }}
         {{ if gt (len $items) 0 }}
-          <button class="software-product-filter__button" type="button" data-filter="{{ $category | urlize }}">{{ $category }}</button>
+          <button class="software-product-filter__button" type="button" aria-pressed="false" aria-controls="software-results" data-filter="{{ $category | urlize }}">{{ $category }}</button>
         {{ end }}
       {{ end }}
     </div>
   </section>
 
-  {{ range $category := $categoryOrder }}
-    {{ $items := where $pages "Params.tags" "intersect" (slice $category) }}
-    {{ if gt (len $items) 0 }}
-      <section class="software-category" data-software-section="{{ $category | urlize }}" aria-labelledby="software-category-{{ $category | urlize }}">
-        <div class="software-category__header">
-          <h2 id="software-category-{{ $category | urlize }}">
-            <i class="fas fa-{{ index $categoryIcons $category | default "cube" }}" aria-hidden="true"></i>
-            <span>{{ $category }}</span>
-          </h2>
-          <span>{{ len $items }} {{ cond (eq (len $items) 1) "tool" "tools" }}</span>
-        </div>
-        <div class="software-directory__grid">
-          {{ range $items }}
-            {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards") }}
-          {{ end }}
-        </div>
-      </section>
+  <div class="software-directory__grid" id="software-results">
+    {{ range $pages }}
+      {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards") }}
     {{ end }}
-  {{ end }}
-
-  {{ $known := slice }}
-  {{ range $categoryOrder }}
-    {{ $known = $known | append (where $pages "Params.tags" "intersect" (slice .)) }}
-  {{ end }}
-  {{ $otherItems := $pages | complement $known }}
-  {{ if gt (len $otherItems) 0 }}
-    <section class="software-category" data-software-section="uncategorized" aria-labelledby="software-category-uncategorized">
-      <div class="software-category__header">
-        <h2 id="software-category-uncategorized">
-          <i class="fas fa-cube" aria-hidden="true"></i>
-          <span>Uncategorized</span>
-        </h2>
-        <span>{{ len $otherItems }} {{ cond (eq (len $otherItems) 1) "tool" "tools" }}</span>
-      </div>
-      <div class="software-directory__grid">
-        {{ range $otherItems }}
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" "community/software_cards") }}
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
+  </div>
 </main>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var buttons = document.querySelectorAll('.software-product-filter__button');
-    var sections = document.querySelectorAll('.software-category[data-software-section]');
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var filterToken = 0;
-
-    function clearSectionAnimation(section) {
-      section.classList.remove('is-filtering-in', 'is-filtering-out');
-      section.querySelectorAll('.software-card.is-filter-entering').forEach(function (card) {
-        card.classList.remove('is-filter-entering');
-        card.style.removeProperty('--software-card-delay');
+document.addEventListener('DOMContentLoaded', function () {
+  var directory = document.querySelector('.software-directory');
+  var buttons = directory.querySelectorAll('.software-product-filter__button');
+  var cards = directory.querySelectorAll('.software-card');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var filter = button.getAttribute('data-filter');
+      buttons.forEach(function (item) {
+        var active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
       });
-    }
-
-    function revealSection(section, order) {
-      clearSectionAnimation(section);
-      section.hidden = false;
-
-      if (reduceMotion) {
-        return;
-      }
-
-      section.style.animationDelay = Math.min(order * 70, 280) + 'ms';
-      section.classList.add('is-filtering-in');
-
-      var cards = section.querySelectorAll('.software-card');
-      cards.forEach(function (card, index) {
-        card.style.setProperty('--software-card-delay', Math.min(order * 70 + index * 48, 520) + 'ms');
-        card.classList.add('is-filter-entering');
-      });
-
-      window.setTimeout(function () {
-        section.classList.remove('is-filtering-in');
-        section.style.removeProperty('animation-delay');
-        cards.forEach(function (card) {
-          card.classList.remove('is-filter-entering');
-          card.style.removeProperty('--software-card-delay');
-        });
-      }, 980);
-    }
-
-    function hideSection(section, token) {
-      clearSectionAnimation(section);
-
-      if (section.hidden || reduceMotion) {
-        section.hidden = true;
-        return;
-      }
-
-      section.classList.add('is-filtering-out');
-      window.setTimeout(function () {
-        if (token !== filterToken) {
-          return;
-        }
-        section.hidden = true;
-        section.classList.remove('is-filtering-out');
-      }, 190);
-    }
-
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        var filter = button.getAttribute('data-filter');
-        var token = ++filterToken;
-        var revealOrder = 0;
-
-        buttons.forEach(function (item) { item.classList.remove('is-active'); });
-        button.classList.add('is-active');
-
-        sections.forEach(function (section) {
-          var category = section.getAttribute('data-software-section');
-          var shouldShow = filter === 'all' || category === filter;
-
-          if (shouldShow) {
-            revealSection(section, revealOrder);
-            revealOrder += 1;
-          } else {
-            hideSection(section, token);
-          }
-        });
+      cards.forEach(function (card) {
+        var categories = card.getAttribute('data-software-category').split(' ');
+        card.hidden = filter !== 'all' && categories.indexOf(filter) === -1;
       });
     });
   });
+});
 </script>
 
 {{- end -}}

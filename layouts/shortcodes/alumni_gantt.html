@@ -45,7 +45,7 @@
     "end" $end
     "role" $role
     "roleKey" $roleKey
-    "sortKey" (printf "%04d-%04d-%s" $start $end .Title)
+    "sortKey" (printf "%04d-%04d-%s" (sub 9999 $end) (sub 9999 $start) .Title)
   ) -}}
   {{- if not (in $roles $role) -}}
     {{- $roles = $roles | append $role -}}
@@ -58,6 +58,7 @@
 
 {{- $rows = sort $rows "sortKey" "asc" -}}
 
+<div class="alumni-timeline">
 <div class="alumni-gantt" style="--min-year: {{ $minYear }}; --max-year: {{ $maxYear }};">
   <div class="gantt-legend">
     {{ range $roles }}
@@ -90,3 +91,38 @@
     </div>
   {{ end }}
 </div>
+
+{{ if gt (len $rows) 5 }}
+  <div class="alumni-timeline__controls" hidden>
+    <button type="button" class="alumni-timeline__toggle" aria-expanded="false"
+      data-expand="{{ if eq site.Language.Lang "zh" }}显示全部（{{ len $rows }} 人）{{ else }}Show all ({{ len $rows }}){{ end }}"
+      data-collapse="{{ if eq site.Language.Lang "zh" }}收起{{ else }}Show less{{ end }}"></button>
+  </div>
+{{ end }}
+</div>
+<script>
+(function () {
+  const root = document.currentScript.previousElementSibling;
+  const rows = Array.from(root.querySelectorAll('.gantt-row'));
+  const controls = root.querySelector('.alumni-timeline__controls');
+  if (!controls) return;
+  const button = controls.querySelector('button');
+  const mobile = window.matchMedia('(max-width: 767.98px)');
+  let expanded = false;
+  function update() {
+    const limit = mobile.matches ? 5 : 10;
+    rows.forEach((row, index) => { row.hidden = !expanded && index >= limit; });
+    controls.hidden = rows.length <= limit;
+    button.setAttribute('aria-expanded', String(expanded));
+    button.textContent = expanded ? button.dataset.collapse : button.dataset.expand;
+  }
+  button.addEventListener('click', () => {
+    const top = button.getBoundingClientRect().top;
+    expanded = !expanded;
+    update();
+    if (!expanded) window.scrollBy(0, button.getBoundingClientRect().top - top);
+  });
+  mobile.addEventListener('change', update);
+  update();
+})();
+</script>

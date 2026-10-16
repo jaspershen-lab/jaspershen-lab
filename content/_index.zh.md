@@ -19,17 +19,14 @@ sections:
           <h1 class="lab-hero__split lab-hero__split--title">Shen Lab @ NTU</h1>
           <p class="lab-hero__subtitle lab-hero__split lab-hero__split--subtitle">面向人类健康的多组学研究</p>
           <div class="lab-hero__actions">
-            <a class="lab-hero__button lab-hero__button--primary" href="./research/">
+            <a class="lab-hero__button" href="./research/" title="研究方向" aria-label="研究方向">
               <i class="fas fa-flask" aria-hidden="true"></i>
-              <span>研究方向</span>
             </a>
-            <a class="lab-hero__button" href="./software/">
+            <a class="lab-hero__button" href="./software/" title="软件工具" aria-label="软件工具">
               <i class="fas fa-code" aria-hidden="true"></i>
-              <span>软件工具</span>
             </a>
-            <a class="lab-hero__button" href="./publication/">
+            <a class="lab-hero__button" href="./publication/" title="论文发表" aria-label="论文发表">
               <i class="fas fa-file-alt" aria-hidden="true"></i>
-              <span>论文发表</span>
             </a>
           </div>
         </div>

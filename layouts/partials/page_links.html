@@ -25,8 +25,8 @@
 {{ end }}
 
 {{ with $pdf }}
-<a class="btn btn-outline-primary btn-page-header{{ if $is_list }} btn-sm{{end}}" href="{{ . }}" target="_blank" rel="noopener">
-  {{ i18n "btn_pdf" }}
+<a class="btn btn-outline-primary btn-page-header resource-icon-link{{ if $is_list }} btn-sm{{end}}" href="{{ . }}" target="_blank" rel="noopener" title="PDF" aria-label="PDF">
+  <i class="fas fa-file-pdf" aria-hidden="true"></i>
 </a>
 {{ end }}
 {{ $resource := $page.Resources.GetMatch "cite.bib" }}
@@ -43,8 +43,8 @@
   {{ else }}
     {{ $link = . | relURL }}
   {{ end }}
-<a class="btn btn-outline-primary btn-page-header{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
-  {{ i18n "btn_code" }}
+<a class="btn btn-outline-primary btn-page-header resource-icon-link{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener" title="Code" aria-label="Code">
+  <i class="{{ partial "resource_icon.html" "Code" }}" aria-hidden="true"></i>
 </a>
 {{ end }}
 {{ with $page.Params.url_dataset }}
@@ -128,8 +128,8 @@
 </a>
 {{ end }}
 {{ with $page.Params.doi }}
-<a class="btn btn-outline-primary btn-page-header{{ if $is_list }} btn-sm{{end}}" href="https://doi.org/{{ . }}" target="_blank" rel="noopener">
-  DOI
+<a class="btn btn-outline-primary btn-page-header resource-icon-link{{ if $is_list }} btn-sm{{end}}" href="https://doi.org/{{ . }}" target="_blank" rel="noopener" title="DOI: {{ . }}" aria-label="DOI: {{ . }}">
+  <i class="{{ partial "resource_icon.html" "DOI" }}" aria-hidden="true"></i>
 </a>
 {{ end }}
 {{ range $page.Params.links }}
@@ -151,9 +151,14 @@
   {{ else if in (slice "http" "https") $scheme }}
     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
   {{ end }}
-  <a class="btn btn-outline-primary btn-page-header{{ if $is_list }} btn-sm{{end}}" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
-    {{ if .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} {{if .name}}mr-1{{end}}"></i>{{end}}
-    {{- with .name }}{{ . | safeHTML }}{{ end -}}
+  {{ $resourceIcon := partial "resource_icon.html" (.name | default "") }}
+  <a class="btn btn-outline-primary btn-page-header{{ if $resourceIcon }} resource-icon-link{{ end }}{{ if $is_list }} btn-sm{{end}}" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}{{ if $resourceIcon }} title="{{ .name }}" aria-label="{{ .name }}"{{ end }}>
+    {{ if $resourceIcon }}
+      <i class="{{ $resourceIcon }}" aria-hidden="true"></i>
+    {{ else }}
+      {{ if .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} {{if .name}}mr-1{{end}}" aria-hidden="true"></i>{{end}}
+      {{- with .name }}{{ . | safeHTML }}{{ end -}}
+    {{ end }}
   </a>
 {{ end }}
 
@@ -162,14 +167,12 @@
   {{ $citation_url := $page.Params.citation_url | default $page.Params.google_scholar_url | default "" }}
   {{ $citation_title := printf "%v citations from Google Scholar" $citations }}
   {{ if $citation_url }}
-    <a class="btn btn-outline-primary btn-page-header publication-citation-badge{{ if $is_list }} btn-sm{{end}}" href="{{ $citation_url | safeURL }}" target="_blank" rel="noopener" title="{{ $citation_title }}">
-      <i class="ai ai-google-scholar mr-1" aria-hidden="true"></i>
-      {{ $citations }}
+    <a class="btn btn-outline-primary btn-page-header resource-icon-link publication-citation-badge{{ if $is_list }} btn-sm{{end}}" href="{{ $citation_url | safeURL }}" target="_blank" rel="noopener" title="{{ $citation_title }}" aria-label="{{ $citation_title }}">
+      <span class="publication-citation-count">{{ $citations }}</span>
     </a>
   {{ else }}
-    <span class="btn btn-outline-primary btn-page-header publication-citation-badge publication-citation-badge--static{{ if $is_list }} btn-sm{{end}}" title="{{ $citation_title }}">
-      <i class="ai ai-google-scholar mr-1" aria-hidden="true"></i>
-      {{ $citations }}
+    <span class="btn btn-outline-primary btn-page-header resource-icon-link publication-citation-badge publication-citation-badge--static{{ if $is_list }} btn-sm{{end}}" title="{{ $citation_title }}" aria-label="{{ $citation_title }}">
+      <span class="publication-citation-count">{{ $citations }}</span>
     </span>
   {{ end }}
 {{ end }}

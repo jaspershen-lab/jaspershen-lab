@@ -15,20 +15,27 @@
     {{ end }}
   {{ end }}
 
-  {{ if templates.Exists (printf "partials/views/%s-start.html" (lower $.Params.view | default "compact")) }}
-    {{ partial "functions/render_view" (dict "page" $ "item" . "view" (printf "%s-start" $.Params.view) "index" 0) }}
+  {{ range $pages.GroupByDate "2006" "desc" }}
+    <details class="photo-year publication-year-block news-year-block" open>
+      <summary>
+        <span class="photo-year__number">{{ .Key }}</span>
+        <span class="photo-year__meta">{{ len .Pages }} {{ if eq $.Lang "zh" }}条新闻{{ else }}updates{{ end }}</span>
+        <span class="photo-year__toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="publication-year-block__list">
+        {{ range .Pages.ByDate.Reverse }}
+          <article class="news-year-item">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ if partial "functions/has_attachments" . }}
+              <div class="news-year-item__links">
+                {{ partial "page_links" (dict "page" . "is_list" true) }}
+              </div>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
+    </details>
   {{ end }}
-
-  {{ $paginator := .Paginate $pages }}
-  {{ range $index, $post := $paginator.Pages }}
-    {{ partial "functions/render_view" (dict "page" $ "item" . "view" ($.Params.view | default "compact") "index" $index) }}
-  {{ end }}
-
-  {{ if templates.Exists (printf "partials/views/%s-end.html" (lower $.Params.view | default "compact")) }}
-    {{ partial "functions/render_view" (dict "page" $ "item" . "view" (printf "%s-end" $.Params.view) "index" 0) }}
-  {{ end }}
-
-  {{ partial "pagination" . }}
 </div>
 
 {{- end -}}
