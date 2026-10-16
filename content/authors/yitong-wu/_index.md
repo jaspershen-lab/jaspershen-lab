@@ -23,12 +23,6 @@ social:
 - icon: envelope
   icon_pack: fas
   link: yy5samantha@gmail.com
-- display:
-    header: false
-  # icon: github
-  # icon_pack: fab
-  # # label: Follow us on GitHub
-  # link: https://github.com/jaspershen-lab
 status:
   icon: ☕️
 superuser: false

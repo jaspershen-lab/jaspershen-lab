@@ -31,11 +31,6 @@ social:
   icon_pack: fab
   label: Follow us on GitHub
   link: https://github.com/jaspershen-lab
-- display:
-    header: true
-# - icon: cv
-#   icon_pack: ai
-#   link: https://github.com/qqqq414/File/blob/main/Resume_Qi%20Qi.pdf
 status:
   icon: ☕️
 superuser: false

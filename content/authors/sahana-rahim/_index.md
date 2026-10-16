@@ -31,11 +31,6 @@ social:
   icon_pack: fab
   label: Follow us on GitHub
   link: https://github.com/sahanarahim
-- display:
-    header: true
-# - icon: cv
-#   icon_pack: ai
-#   link: 
 status:
   icon: ☕️
 superuser: false

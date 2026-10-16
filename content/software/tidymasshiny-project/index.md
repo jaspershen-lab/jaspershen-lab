@@ -7,7 +7,7 @@ image:
 links:
 - icon: house
   icon_pack: fas
-  name: Link
+  name: Documentation
   url: https://www.tidymass.org/tidymassshiny-tutorial/
 - icon: github
   icon_pack: fab

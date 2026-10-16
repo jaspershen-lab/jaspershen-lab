@@ -1,0 +1,14 @@
+{{ $zh := eq .Page.Lang "zh" }}
+<section class="join-apply" aria-labelledby="join-apply-title">
+  <h2 id="join-apply-title">{{ if $zh }}如何联系我们{{ else }}How to enquire{{ end }}</h2>
+  <p>{{ if $zh }}欢迎博士生、博士后、本科生、访问学者、访问博士生及暑期实习生咨询。具体背景与资助要求见下方各类别说明。{{ else }}We welcome enquiries from prospective PhD students, research fellows, undergraduates, visiting scholars, visiting PhD students and summer interns. See the role descriptions below for backgrounds and funding requirements.{{ end }}</p>
+  <h3>{{ if $zh }}首次联系建议准备{{ else }}For your first email, please include{{ end }}</h3>
+  <ul>
+    <li>{{ if $zh }}CV，以及希望申请的类别和预计开始时间。{{ else }}Your CV, the role you are interested in and your preferred start date.{{ end }}</li>
+    <li>{{ if $zh }}简短说明研究兴趣、相关经验，以及为何希望加入 Shen Lab。{{ else }}A short introduction to your research interests, relevant experience and why you would like to join Shen Lab.{{ end }}</li>
+    <li>{{ if $zh }}如有，可附代表论文、GitHub 或项目链接；学生可附成绩单。{{ else }}Relevant publications, GitHub or project links, if available; students may also include a transcript.{{ end }}</li>
+    <li>{{ if $zh }}访问申请请说明访问时间与资助计划，并附研究计划；访问博士生请提供导师信息及一页研究提案。{{ else }}For visits, include your proposed dates, funding plan and research plan. Visiting PhD students should also include supervisor details and a one-page proposal.{{ end }}</li>
+  </ul>
+  <p><strong>{{ if $zh }}招聘联系邮箱{{ else }}Recruitment enquiries{{ end }}</strong><br><a href="mailto:xiaotao.shen@ntu.edu.sg?subject=Shen%20Lab%20application%20enquiry">xiaotao.shen@ntu.edu.sg</a></p>
+  <p class="join-apply__note">{{ if $zh }}邮件主题建议：申请类别 — 姓名 — 预计开始时间。正式录取与聘用以学校流程为准。{{ else }}Suggested subject: Role — Your name — Preferred start date. Formal admission and employment follow university procedures.{{ end }}</p>
+</section>

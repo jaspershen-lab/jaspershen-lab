@@ -2,18 +2,27 @@
 title: Join Us
 date: "2026-09-10"
 type: page
+section_header: true
+profile: false
+share: false
+commentable: false
 summary: Recruitment information for prospective PhD students, research fellows, undergraduate students, visiting scholars, visiting PhD students, and interns.
 ---
 
 {{< rawhtml >}}
-<section class="join-page">
+<div class="join-page">
   <div class="join-page__hero">
     <p class="join-page__eyebrow">Open Opportunities</p>
-    <h1>Join Shen Lab</h1>
+    <h2>Join Shen Lab</h2>
     <p>We welcome motivated people who want to develop computational methods and data-driven biological insights for multi-omics, microbiome, metabolomics, ageing, pregnancy, and precision health.</p>
     <a class="join-page__contact" href="mailto:xiaotao.shen@ntu.edu.sg">Contact us with your CV</a>
   </div>
 
+{{< /rawhtml >}}
+
+{{< join_apply >}}
+
+{{< rawhtml >}}
   <div class="join-page__note">
     Funding schemes, deadlines, and eligibility rules change regularly. Please check the official NTU and LKCMedicine pages before applying.
   </div>
@@ -101,5 +110,5 @@ summary: Recruitment information for prospective PhD students, research fellows,
       </ul>
     </article>
   </div>
-</section>
+</div>
 {{< /rawhtml >}}

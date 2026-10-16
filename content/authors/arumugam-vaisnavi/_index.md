@@ -31,11 +31,6 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/jaspershen-lab
-- display:
-    header: false
-# - icon: cv
-#   icon_pack: ai
-#   link: https://github.com/vaisnavi27/resume/blob/main/CV%20(Arumugam%20Vaisnavi).pdf
 status:
   icon: ☕️
 superuser: false

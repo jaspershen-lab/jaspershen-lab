@@ -149,34 +149,60 @@
     var interval = parseInt(tile.dataset.interval || '6000', 10);
     var delay = parseInt(tile.dataset.delay || '0', 10) + tileIndex * 220;
 
-    function nextSlide() {
+    var busy = false;
+    var inView = false;
+    var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if ('IntersectionObserver' in window) {
+      var visibilityObserver = new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+      }, { threshold: 0.1 });
+      visibilityObserver.observe(tile);
+    } else {
+      inView = true;
+    }
+
+    async function nextSlide() {
+      if (busy || !inView || document.hidden || motionPreference.matches ||
+          tile.matches(':hover, :focus-within')) return;
+      busy = true;
       var current = parseInt(tile.dataset.current || '0', 10);
       var next = (current + 1) % slides.length;
       var currentSlide = slides[current];
       var nextSlideEl = slides[next];
-
-      currentSlide.classList.remove('is-active');
-      currentSlide.classList.add('is-leaving');
-      nextSlideEl.classList.add('is-entering');
-      void nextSlideEl.offsetWidth;
-      tile.classList.add('is-switching');
-
-      window.setTimeout(function () {
-        currentSlide.classList.remove('is-leaving');
-        nextSlideEl.classList.remove('is-entering');
+      try {
+        // Decode before fading so slow image loads never expose the background.
+        await nextSlideEl.decode();
+        if (!inView || document.hidden || motionPreference.matches) return;
+        nextSlideEl.classList.add('is-entering');
+        var fade = nextSlideEl.animate(
+          [{ opacity: 0 }, { opacity: 1 }],
+          { duration: 1600, easing: 'cubic-bezier(0.45, 0, 0.55, 1)', fill: 'forwards' }
+        );
+        await fade.finished;
+        // Keep the old image opaque beneath the incoming image until completion.
         nextSlideEl.classList.add('is-active');
+        currentSlide.classList.remove('is-active');
+        fade.cancel();
+        nextSlideEl.classList.remove('is-entering');
         tile.dataset.current = String(next);
         tile.href = nextSlideEl.dataset.href || tile.href;
         tile.setAttribute('aria-label', 'Open ' + (nextSlideEl.dataset.label || 'photo') + ' photo album');
         if (label) label.textContent = nextSlideEl.dataset.label || label.textContent;
-        tile.classList.remove('is-switching');
-      }, 960);
+      } catch (error) {
+        // Leave the current photograph visible if an image cannot load.
+        nextSlideEl.classList.remove('is-entering');
+      } finally {
+        busy = false;
+      }
     }
 
-    window.setTimeout(function () {
-      nextSlide();
-      window.setInterval(nextSlide, interval);
-    }, delay);
+    function scheduleNext(wait) {
+      window.setTimeout(async function () {
+        await nextSlide();
+        scheduleNext(interval);
+      }, wait);
+    }
+    scheduleNext(interval + delay);
   });
 })();
 </script>

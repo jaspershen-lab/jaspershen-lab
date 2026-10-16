@@ -14,11 +14,11 @@
 {{ end }}
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <nav class="navbar navbar-expand-xl navbar-light compensate-for-scrollbar" id="navbar-main">
     <div class="container-xl">
 
       {{if $show_logo}}
-      <div class="d-none d-lg-inline-flex">
+      <div class="d-none d-xl-inline-flex">
         <a class="navbar-brand" href="{{ site.Home.RelPermalink }}">
           {{- if $has_logo -}}
             <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}"
@@ -39,7 +39,7 @@
       {{ end }}
 
       {{if $show_logo}}
-      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-xl-none">
         <a class="navbar-brand" href="{{ site.Home.RelPermalink }}">
         {{- if $has_logo -}}
           <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}"
@@ -149,7 +149,7 @@
         {{ range where (where (where site.Pages "Section" "authors") ".Params.superuser" true) ".Params.social" "!=" nil }}
           {{ range where .Params.social ".display.header" true }}
             {{ $social_link := partial "functions/get_social_link" . }}
-            <li class="nav-item d-none d-lg-inline-flex">
+            <li class="nav-item d-none d-xl-inline-flex">
               <a class="nav-link" href="{{ $social_link.link | safeURL }}"{{ with $social_link.tooltip }} data-toggle="tooltip" data-placement="bottom" title="{{.}}"{{ end }} {{ $social_link.target | safeHTMLAttr }} aria-label="{{ $social_link.aria_label }}">
                 <i class="{{ $social_link.icon_pack }} {{ $social_link.pack_prefix }}-{{ $social_link.icon }}" aria-hidden="true"></i>
               </a>

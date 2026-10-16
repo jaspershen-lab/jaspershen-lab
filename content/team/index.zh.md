@@ -1,4 +1,6 @@
 ---
+section_header: true
+section_intro: "认识参与实验室研究的团队成员。"
 date: "2022-10-24"
 image:
   placement: 1

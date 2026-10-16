@@ -9,78 +9,36 @@
 {{ with $aging }}{{ $agingURL = .RelPermalink }}{{ end }}
 {{ with $pregnancy }}{{ $pregnancyURL = .RelPermalink }}{{ end }}
 
-<script>document.documentElement.classList.add("has-research-universe-js");</script>
-<div class="research-universe research-universe--pending" aria-label="Research universe">
-  <div class="research-universe__stage">
-    <svg class="research-universe__links" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="researchUniverseLine" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#5eead4" stop-opacity="0.92" />
-          <stop offset="52%" stop-color="#38bdf8" stop-opacity="0.72" />
-          <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.76" />
-        </linearGradient>
-        <filter id="researchUniverseGlow">
-          <feGaussianBlur stdDeviation="5" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-      <path class="research-universe__orbit" d="M190 365 C310 210, 515 125, 820 250" />
-      <path class="research-universe__orbit" d="M220 200 C390 420, 575 475, 795 390" />
-      <path class="research-universe__orbit" d="M320 480 C430 325, 565 250, 710 145" />
-      <path class="research-universe__orbit" d="M500 115 C545 230, 540 355, 500 505" />
-      <path class="research-universe__link" data-source="precision" data-target="metabolomics" d="M500 310 L190 365" />
-      <path class="research-universe__link" data-source="precision" data-target="microbiome" d="M500 310 L220 200" />
-      <path class="research-universe__link" data-source="precision" data-target="wearable" d="M500 310 L320 480" />
-      <path class="research-universe__link" data-source="precision" data-target="aging" d="M500 310 L500 115" />
-      <path class="research-universe__link" data-source="precision" data-target="pregnancy" d="M500 310 L710 145" />
-      <path class="research-universe__link" data-source="precision" data-target="ai" d="M500 310 L820 250" />
+{{ $zh := eq site.Language.Lang "zh" }}
+<div class="research-flow" aria-label="{{ if $zh }}研究方向{{ else }}Research approach{{ end }}">
+  <div class="research-flow__headings" aria-hidden="true"><span>{{ if $zh }}分子与生理数据{{ else }}Molecular & physiological data{{ end }}</span><span>{{ if $zh }}计算方法{{ else }}Computational methods{{ end }}</span><span>{{ if $zh }}人类健康{{ else }}Human health{{ end }}</span></div>
+  <div class="research-flow__diagram">
+    <svg class="research-flow__wires" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+      {{ range slice "M270 60 C380 60 370 180 460 180" "M270 180 H460" "M270 300 C380 300 370 180 460 180" "M540 180 C630 180 620 60 730 60" "M540 180 H730" "M540 180 C630 180 620 300 730 300" }}
+      <path class="research-flow__wire" d="{{ . }}" />
+      <path class="research-flow__signal" d="{{ . }}" pathLength="100" />
+      {{ end }}
     </svg>
-
-    <a class="research-universe__node research-universe__node--core" data-node="precision" style="--x: 50%; --y: 50%;" href="{{ $multiomicsURL }}">
-      <span class="research-universe__icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Precision Medicine</span>
-      <span class="research-universe__tooltip">Integrating omics, wearable, clinical, and microbiome data to support individualized prediction and intervention.</span>
+    <div class="research-flow__column">
+      <a class="research-flow__topic" href="{{ $multiomicsURL }}"><span class="research-flow__topic-name">{{ if $zh }}代谢组学{{ else }}Metabolomics{{ end }}</span><span class="research-flow__description">{{ if $zh }}代谢特征与功能解读{{ else }}Metabolic signatures & function{{ end }}</span></a>
+      <a class="research-flow__topic" href="{{ $multiomicsURL }}"><span class="research-flow__topic-name">{{ if $zh }}微生物组{{ else }}Microbiome{{ end }}</span><span class="research-flow__description">{{ if $zh }}微生物群落与宿主互作{{ else }}Microbial communities & host interactions{{ end }}</span></a>
+      <a class="research-flow__topic" href="{{ $multiomicsURL }}"><span class="research-flow__topic-name">{{ if $zh }}可穿戴设备{{ else }}Wearable sensing{{ end }}</span><span class="research-flow__description">{{ if $zh }}纵向生理信号与数字标志物{{ else }}Longitudinal physiology & digital biomarkers{{ end }}</span></a>
+    </div>
+    <a class="research-flow__core" href="{{ $multiomicsURL }}">
+      <svg viewBox="0 0 160 160" class="research-flow__molecule" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".4"><path d="M80 25L125 52L125 108L80 135L35 108L35 52Z M80 25V80L125 108 M35 52L80 80L125 52 M35 108L80 80V135"/></g>
+        <g fill="currentColor"><circle cx="80" cy="25" r="5"/><circle cx="125" cy="52" r="4"/><circle cx="125" cy="108" r="5"/><circle cx="80" cy="135" r="4"/><circle cx="35" cy="108" r="5"/><circle cx="35" cy="52" r="4"/><circle cx="80" cy="80" r="8"/></g>
+        <circle class="research-flow__pulse" cx="80" cy="80" r="20" fill="none" stroke="currentColor" opacity=".3"/>
+      </svg>
+      <span class="research-flow__core-title">{{ if $zh }}AI 与多组学{{ else }}AI & multi-omics{{ end }}</span>
+      <span class="research-flow__description">{{ if $zh }}整合 · 建模 · 解读{{ else }}Integrate · Model · Interpret{{ end }}</span>
     </a>
-
-    <a class="research-universe__node" data-node="metabolomics" style="--x: 19%; --y: 59%;" href="{{ $multiomicsURL }}">
-      <span class="research-universe__icon"><i class="fas fa-vial" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Metabolomics</span>
-      <span class="research-universe__tooltip">LC-MS workflows, metabolite annotation, pathway interpretation, and metabolic signatures of health and disease.</span>
-    </a>
-
-    <a class="research-universe__node" data-node="microbiome" style="--x: 22%; --y: 32%;" href="{{ $multiomicsURL }}">
-      <span class="research-universe__icon"><i class="fas fa-microscope" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Microbiome</span>
-      <span class="research-universe__tooltip">Microbial community dynamics across body sites and their interactions with host metabolism.</span>
-    </a>
-
-    <a class="research-universe__node" data-node="wearable" style="--x: 32%; --y: 77%;" href="{{ $multiomicsURL }}">
-      <span class="research-universe__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Wearable</span>
-      <span class="research-universe__tooltip">Longitudinal physiology, lifestyle signals, and digital biomarkers for dense personal health monitoring.</span>
-    </a>
-
-    <a class="research-universe__node" data-node="aging" style="--x: 50%; --y: 19%;" href="{{ $agingURL }}">
-      <span class="research-universe__icon"><i class="fas fa-dna" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Aging</span>
-      <span class="research-universe__tooltip">Multi-omics and wearable models for biological aging, aging-related diseases, and predictive biomarkers.</span>
-    </a>
-
-    <a class="research-universe__node" data-node="pregnancy" style="--x: 71%; --y: 24%;" href="{{ $pregnancyURL }}">
-      <span class="research-universe__icon"><i class="fas fa-baby" aria-hidden="true"></i></span>
-      <span class="research-universe__label">Pregnancy</span>
-      <span class="research-universe__tooltip">Maternal and child health, pregnancy omics, preterm birth risk, and real-time physiological monitoring.</span>
-    </a>
-
-    <a class="research-universe__node" data-node="ai" style="--x: 82%; --y: 41%;" href="{{ $multiomicsURL }}">
-      <span class="research-universe__icon"><i class="fas fa-brain" aria-hidden="true"></i></span>
-      <span class="research-universe__label">AI</span>
-      <span class="research-universe__tooltip">Machine learning and interpretable AI for multi-layer biological data integration and prediction.</span>
-    </a>
+    <div class="research-flow__column research-flow__column--health">
+      <a class="research-flow__topic" href="{{ $multiomicsURL }}"><span class="research-flow__topic-name">{{ if $zh }}精准医学{{ else }}Precision medicine{{ end }} <span aria-hidden="true">↗</span></span><span class="research-flow__description">{{ if $zh }}个体化预测与干预{{ else }}Individualized prediction & intervention{{ end }}</span></a>
+      <a class="research-flow__topic" href="{{ $agingURL }}"><span class="research-flow__topic-name">{{ if $zh }}衰老{{ else }}Aging{{ end }} <span aria-hidden="true">↗</span></span><span class="research-flow__description">{{ if $zh }}生物学年龄与健康轨迹{{ else }}Biological age & health trajectories{{ end }}</span></a>
+      <a class="research-flow__topic" href="{{ $pregnancyURL }}"><span class="research-flow__topic-name">{{ if $zh }}妊娠{{ else }}Pregnancy{{ end }} <span aria-hidden="true">↗</span></span><span class="research-flow__description">{{ if $zh }}母婴健康与早期预测{{ else }}Maternal health & early prediction{{ end }}</span></a>
+    </div>
   </div>
 </div>
-<script src="/js/research_universe.js" defer></script>
+<script src="/js/research_flow.js" defer></script>
 {{ end }}

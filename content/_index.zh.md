@@ -8,7 +8,6 @@ sections:
   content:
     title: ""
     text: |-
-      <script>document.documentElement.classList.add('has-lab-hero-animation');</script>
       <section class="lab-hero" aria-label="Shen Lab at NTU">
         <img class="lab-hero__photo" src="/media/group_photo4.jpg" alt="" aria-hidden="true">
         <div class="lab-hero__shade" aria-hidden="true"></div>
@@ -35,9 +34,6 @@ sections:
           </div>
         </div>
       </section>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
-      <script src="/js/lab_hero_splittext.js?v=20260702-hero-button-static" defer></script>
   design:
     columns: "1"
     spacing:
@@ -108,9 +104,9 @@ sections:
         url: ../publication/tidymass2-advancing-lc-ms-untargeted-metabolomics-through-metabolite-origin-inference-and-metabolic-feature-based-functional-module-analysis/
       title: "最新论文"
   design:
-    interval: 4500
+    interval: "false"
     is_fullscreen: true
-    loop: true
+    loop: false
     slide_height: ""
     spacing:
       padding: ["0", "0", "0", "0"]
@@ -236,21 +232,8 @@ sections:
   design:
     columns: "1"
 
-- block: contact
-  id: contact
-  content:
-    title: 联系我们
-    email: xiaotao.shen@outlook.com
-    phone: +65 83042333
-    autolink: true
-    form:
-      formspree:
-        id: xpzgpjby
-      provider: formspree
-  design:
-    columns: '2'
-
 - block: markdown
+  id: molecular_network
   content:
     title: ""
     text: |-
@@ -258,10 +241,7 @@ sections:
   design:
     columns: '1'
     background:
-      video:
-        filename: tags_background.mp4
-        filters:
-          brightness: 1
+      color: '#20141b'
       size: cover
       position: center
       parallax: true

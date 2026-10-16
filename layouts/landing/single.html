@@ -1,0 +1,10 @@
+{{- define "main" -}}
+  {{ if .Params.section_header }}
+    {{ partial "section_header.html" . }}
+    <div class="lab-directory-landing">
+      {{ partial "landing_page.html" . }}
+    </div>
+  {{ else }}
+    {{ partial "landing_page.html" . }}
+  {{ end }}
+{{- end -}}

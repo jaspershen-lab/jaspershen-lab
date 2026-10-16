@@ -18,9 +18,6 @@ zh:
       - name: 首页
         url: '#lab_hero'
         weight: 1
-      - name: 亮点
-        url: '#latest_highlights'
-        weight: 2
       - name: 研究
         url: '#research'
         weight: 10
@@ -41,8 +38,12 @@ zh:
         url: '#photo'
         weight: 40
       - name: 联系
-        url: '#contact'
+        url: 'contact/'
         weight: 50
+      - name: 加入我们
+        identifier: join-us
+        url: join-us/
+        weight: 60
       - name: 更多
         identifier: more
         weight: 70

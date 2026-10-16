@@ -46,7 +46,12 @@
     }
 
     function sortRows(rows) {
-      return (rows || []).slice().sort(function (a, b) {
+      var currentYear = new Date().getFullYear();
+      var firstYear = currentYear - 9;
+      return (rows || []).filter(function (row) {
+        var year = parseInt(row.year, 10);
+        return year >= firstYear && year <= currentYear;
+      }).sort(function (a, b) {
         return (parseInt(a.year, 10) || 0) - (parseInt(b.year, 10) || 0);
       });
     }

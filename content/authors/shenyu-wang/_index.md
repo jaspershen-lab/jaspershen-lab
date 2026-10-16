@@ -23,17 +23,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: wangshenyu888@gmail.com
-- display:
-    header: false
 - icon: github
   icon_pack: fab
   link: https://github.com/wangshenyuuu
-- display:
-    header: false
-  # icon: github
-  # icon_pack: fab
-  # # label: Follow us on GitHub
-  # link: https://github.com/jaspershen-lab
 status:
   icon: 💁🏻‍♀️️
 superuser: false

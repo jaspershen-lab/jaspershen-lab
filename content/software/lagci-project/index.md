@@ -7,7 +7,7 @@ image:
 links:
 - icon: house
   icon_pack: fas
-  name: Link
+  name: Documentation
   url: https://www.shen-lab.org/lagci-tutorial/
 - icon: github
   icon_pack: fab

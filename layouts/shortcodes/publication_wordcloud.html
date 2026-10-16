@@ -1,3 +1,5 @@
+<canvas class="molecular-network-canvas" aria-hidden="true"></canvas>
+<script src="/js/molecular_network.js?v=20261016-calm" defer></script>
 {{ $keywords := site.Data.publication_keywords.keywords }}
 {{ if and $keywords (gt (len $keywords) 0) }}
   {{ $sorted := sort $keywords "word" "asc" }}

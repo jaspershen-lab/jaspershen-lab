@@ -1,0 +1,36 @@
+{{ $lang := cond (eq site.Language.Lang "zh") "zh" "en" }}
+{{ $source := index (where site.Sites "Language.Lang" "en") 0 }}
+<div class="research-program">
+  <nav class="research-program__nav" aria-label="{{ if eq $lang "zh" }}研究主题{{ else }}Research themes{{ end }}">
+    {{ range site.Data.research_program }}<a href="#{{ .id }}">{{ index .title $lang }}</a>{{ end }}
+  </nav>
+  {{ range site.Data.research_program }}
+  <section class="research-program__theme" id="{{ .id }}">
+    <div class="research-program__copy">
+      <h2>{{ index .title $lang }}</h2>
+      <p class="research-program__question">{{ index .question $lang }}</p>
+      <p>{{ index .body $lang }}</p>
+      {{ $caption := index .image_caption $lang }}
+      {{ with $.Page.Resources.GetMatch (printf "illustrations/%s.png" .id) }}
+        {{ $image := .Fit "1200x800 webp" }}
+        <figure class="research-program__figure">
+          <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $caption }}" loading="lazy" decoding="async">
+          <figcaption>{{ $caption }}</figcaption>
+        </figure>
+      {{ end }}
+    </div>
+    <aside class="research-program__evidence">
+      <h3>{{ if eq $lang "zh" }}代表性论文{{ else }}Selected publications{{ end }}</h3>
+      <ul>{{ range .papers }}
+        {{ with $source.GetPage . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span>{{ .Params.publication | markdownify }}</span></li>
+        {{ else }}{{ errorf "Research reference not found: %s" . }}{{ end }}
+      {{ end }}</ul>
+    </aside>
+  </section>
+  {{ end }}
+  <footer class="research-program__resources">
+    <div><h2>{{ if eq $lang "zh" }}探索论文与工具{{ else }}Explore the work{{ end }}</h2><p>{{ if eq $lang "zh" }}这里精选了支撑各研究方向的论文；完整成果和开源工具见下方。{{ else }}The papers above illustrate our research directions. Explore the full publication collection and our open-source tools below.{{ end }}</p></div>
+    <div><a href="{{ "publication/" | relLangURL }}">{{ if eq $lang "zh" }}全部论文{{ else }}All publications{{ end }} →</a><a href="{{ "software/" | relLangURL }}">{{ if eq $lang "zh" }}软件与工具{{ else }}Software & tools{{ end }} →</a></div>
+  </footer>
+</div>

@@ -48,10 +48,14 @@
             <span>Search</span>
             <div class="publication-filter-input">
               <i class="fas fa-search" aria-hidden="true"></i>
-              <input id="publication-search" type="search" placeholder="Search title, author, journal, abstract..." autocomplete="off">
+              <input id="publication-search" type="search" placeholder="Search publications…" autocomplete="off">
             </div>
           </label>
 
+          <button class="publication-filter-toggle" id="publication-filter-toggle" type="button" aria-expanded="false" aria-controls="publication-filter-advanced">
+            <i class="fas fa-sliders-h" aria-hidden="true"></i> <span>Filters</span>
+          </button>
+          <div class="publication-filter-advanced" id="publication-filter-advanced">
           <label class="publication-filter-field">
             <span>Author</span>
             <div class="publication-filter-input">
@@ -90,8 +94,10 @@
               </select>
             </div>
           </label>
+          </div>
         </div>
 
+        <div class="publication-filter-chips" id="publication-filter-chips" aria-label="Active filters"></div>
         <div class="publication-filter-status" id="publication-filter-status" aria-live="polite"></div>
       </div>
 
@@ -178,6 +184,41 @@
           var resetButton = document.getElementById('publication-filter-reset');
           var status = document.getElementById('publication-filter-status');
           var url = new URL(window.location.href);
+          var panel = document.getElementById('publication-filter-panel');
+          var toggle = document.getElementById('publication-filter-toggle');
+          var chips = document.getElementById('publication-filter-chips');
+          panel.classList.add('has-filter-toggle');
+          toggle.addEventListener('click', function () {
+            var expanded = toggle.getAttribute('aria-expanded') !== 'true';
+            toggle.setAttribute('aria-expanded', String(expanded));
+            panel.classList.toggle('filters-expanded', expanded);
+          });
+
+          function renderChips() {
+            chips.replaceChildren();
+            var fields = [[searchInput, 'Search'], [authorInput, 'Author'], [yearSelect, 'Year'], [typeSelect, 'Type']];
+            var advancedCount = 0;
+            fields.forEach(function (pair, index) {
+              var field = pair[0];
+              if (!field || !field.value.trim()) return;
+              if (index) advancedCount += 1;
+              var value = field.tagName === 'SELECT' ? field.options[field.selectedIndex].text : field.value.trim();
+              var chip = document.createElement('button');
+              chip.type = 'button';
+              chip.className = 'publication-filter-chip';
+              chip.textContent = pair[1] + ': ' + value + ' ×';
+              chip.setAttribute('aria-label', 'Remove ' + pair[1].toLowerCase() + ' filter: ' + value);
+              chip.addEventListener('click', function () {
+                field.value = '';
+                applyFilters();
+                var target = chips.querySelector('button');
+                (target || searchInput).focus();
+              });
+              chips.appendChild(chip);
+            });
+            panel.classList.toggle('has-active-filters', chips.childElementCount > 0);
+            toggle.querySelector('span').textContent = advancedCount ? 'Filters (' + advancedCount + ')' : 'Filters';
+          }
 
           function normalize(value) {
             return (value || '').trim().toLowerCase();
@@ -299,6 +340,7 @@
               if (match) count += 1;
             });
 
+            renderChips();
             updateGroups(active);
             window.setTimeout(function () {
               container.classList.remove('is-filtering');

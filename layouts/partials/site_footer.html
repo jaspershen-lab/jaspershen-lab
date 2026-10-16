@@ -1,59 +1,39 @@
-<footer class="site-footer">
-  <div class="custom-footer-shell">
-    <div class="custom-footer-grid">
-      <section class="custom-footer-panel custom-footer-support" aria-labelledby="footer-support-title">
-        <h2 id="footer-support-title">Honored supported by</h2>
-        <div class="custom-footer-logo-grid">
-          <a class="custom-footer-logo-card" href="https://www.ntu.edu.sg/" target="_blank" rel="noopener" aria-label="Nanyang Technological University">
-            <img src="/image/ntu_logo.png" alt="Nanyang Technological University">
-          </a>
-          <a class="custom-footer-logo-card" href="https://www.ntu.edu.sg/medicine" target="_blank" rel="noopener" aria-label="Lee Kong Chian School of Medicine">
-            <img src="/image/lkcmedicine.png" alt="Lee Kong Chian School of Medicine">
-          </a>
-          <a class="custom-footer-logo-card" href="https://www.ntu.edu.sg/cceb" target="_blank" rel="noopener" aria-label="School of Chemistry, Chemical Engineering and Biotechnology">
-            <img src="/image/cceb_logo.png" alt="School of Chemistry, Chemical Engineering and Biotechnology">
-          </a>
-        </div>
+{{ $zh := eq site.Language.Lang "zh" }}
+<footer class="site-footer lab-footer">
+  <div class="lab-footer__inner">
+    <div class="lab-footer__main">
+      <section class="lab-footer__identity" aria-label="Shen Lab">
+        {{ $logo := partial "functions/get_logo" (dict "constraint" "max_height" "size" 140) }}
+        <a class="lab-footer__name" href="{{ site.Home.RelPermalink }}"><img class="lab-footer__brand-logo" src="{{ $logo.RelPermalink }}" alt="Shen Lab" width="{{ $logo.Width }}" height="{{ $logo.Height }}"><small>NTU · SINGAPORE</small></a>
+        <p>{{ if $zh }}计算组学实验室<br>通过多组学研究，理解人类健康。{{ else }}Computational Omics Lab<br>Understanding human health through multi-omics.{{ end }}</p>
       </section>
-
-      <section class="custom-footer-panel custom-footer-contact" aria-labelledby="footer-contact-title">
-        <h2 id="footer-contact-title">Connect with Shen Lab</h2>
-        <div class="custom-footer-link-list">
-          <a href="https://github.com/jaspershen-lab" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-            <span>GitHub</span>
-          </a>
-          <a href="https://jaspershen.github.io/image/wechat_QR.jpg" target="_blank" rel="noopener">
-            <i class="fa-brands fa-weixin" aria-hidden="true"></i>
-            <span>WeChat</span>
-          </a>
-          <a href="https://www.linkedin.com/in/shenxt/" target="_blank" rel="noopener">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://jaspershen.github.io/#contact" target="_blank" rel="noopener">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <span>Email</span>
-          </a>
-          <a class="custom-footer-address" href="https://maps.app.goo.gl/pcizQc8QdorHMMvB6" target="_blank" rel="noopener">
-            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span>59 Nanyang Dr, Singapore 636921</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="custom-footer-panel custom-footer-visitors" aria-labelledby="footer-visitors-title">
-        <h2 id="footer-visitors-title">Global reach</h2>
-        <div class="custom-footer-globe">
-          <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=xgKXZDRqP3B4_zVrtEfgkE6zTvADm5-NjBIt4rfdTzk&cl=ffffff&w=a"></script>
-          <noscript>
-            <a href="https://mapmyvisitors.com/" target="_blank" rel="noopener">View visitor map</a>
-          </noscript>
-        </div>
+      <section class="lab-footer__contact" aria-labelledby="lab-footer-contact">
+        <h2 id="lab-footer-contact">{{ if $zh }}联系我们{{ else }}Contact{{ end }}</h2>
+        <a class="lab-footer__email" href="mailto:xiaotao.shen@ntu.edu.sg">xiaotao.shen@ntu.edu.sg</a>
+        <address><a class="lab-footer__address" href="https://maps.app.goo.gl/pcizQc8QdorHMMvB6" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>59 Nanyang Drive<br>Singapore 636921 <span aria-hidden="true">↗</span></span></a></address>
+        <nav class="lab-footer__social" aria-label="{{ if $zh }}社交平台{{ else }}Social links{{ end }}">
+          <a href="https://github.com/jaspershen-lab" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub ↗</span></a>
+          <a href="https://www.linkedin.com/in/shenxt/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn ↗</span></a>
+          <a href="https://jaspershen.github.io/image/wechat_QR.jpg" target="_blank" rel="noopener"><i class="fab fa-weixin" aria-hidden="true"></i><span>WeChat ↗</span></a>
+        </nav>
       </section>
     </div>
+    <div class="lab-footer__affiliations">
+      <h2>{{ if $zh }}所属机构{{ else }}Affiliations{{ end }}</h2>
+      <div class="lab-footer__logos">
+        <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener"><img src="/image/ntu_logo.png" alt="Nanyang Technological University" loading="lazy"></a>
+        <a href="https://www.ntu.edu.sg/medicine" target="_blank" rel="noopener"><img src="/image/lkcmedicine.png" alt="Lee Kong Chian School of Medicine" loading="lazy"></a>
+        <a href="https://www.ntu.edu.sg/cceb" target="_blank" rel="noopener"><img src="/image/cceb_logo.png" alt="School of Chemistry, Chemical Engineering and Biotechnology" loading="lazy"></a>
+      </div>
+    </div>
+    <details class="lab-footer__visitors">
+      <summary>{{ if $zh }}访客地图{{ else }}Visitor map{{ end }}</summary>
+      <div class="lab-footer__map">
+        <script async type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=xgKXZDRqP3B4_zVrtEfgkE6zTvADm5-NjBIt4rfdTzk&cl=ffffff&w=260"></script>
+        <noscript><a href="https://mapmyvisitors.com/">View visitor map</a></noscript>
+      </div>
+    </details>
   </div>
-
       {{ partial "functions/get_hook" (dict "hook" "footer-start" "context" .) }}
   {{/* Load footer block */}}
   {{ $footer_section_name := site.Params.footer.block | default "minimal" }}
@@ -63,7 +43,7 @@
   {{ end }}
   {{ partial $footer_section_path . }}
   
-  <script src="/js/team_membership_stats.js"></script>
-  <script src="/js/team_collaboration_network.js?v=20260617-motion"></script>
+  <script src="/js/team_membership_stats.js?v=20261016-red"></script>
+  <script src="/js/team_collaboration_network.js?v=20261016-red"></script>
   
 </footer>

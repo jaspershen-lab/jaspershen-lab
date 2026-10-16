@@ -22,7 +22,7 @@
     border: 1px solid rgba(148, 163, 184, 0.16);
     border-radius: 26px;
     background:
-      radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.11), transparent 30%),
+      radial-gradient(circle at 10% 0%, rgba(198, 45, 67, 0.11), transparent 30%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(15, 23, 42, 0.035));
     box-shadow: 0 20px 54px rgba(15, 23, 42, 0.10);
   }
@@ -37,7 +37,7 @@
 
   .collab-map-heading p {
     margin: 0 0 0.25rem;
-    color: #14b8a6;
+    color: #c62d43;
     font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -80,7 +80,7 @@
 
   .collab-marker.is-hovered {
     filter:
-      drop-shadow(0 0 10px rgba(153, 246, 228, 0.72))
+      drop-shadow(0 0 10px rgba(255, 158, 172, 0.72))
       drop-shadow(0 12px 22px rgba(2, 6, 23, 0.40));
   }
 
@@ -102,7 +102,7 @@
     bottom: -14px;
     width: 1px;
     height: 18px;
-    background: linear-gradient(180deg, rgba(153, 246, 228, 0.72), transparent);
+    background: linear-gradient(180deg, rgba(255, 158, 172, 0.72), transparent);
     transform: translateX(-50%);
     pointer-events: none;
   }
@@ -120,9 +120,9 @@
   .collab-popup__title span {
     flex: 0 0 auto;
     border-radius: 999px;
-    background: rgba(20, 184, 166, 0.16);
+    background: rgba(198, 45, 67, 0.16);
     padding: 0.18rem 0.45rem;
-    color: #99f6e4;
+    color: #ff9eac;
     font-size: 0.78rem;
   }
 
@@ -158,7 +158,7 @@
   }
 
   .collab-map .leaflet-control-attribution a {
-    color: #99f6e4;
+    color: #ff9eac;
   }
 
   .collab-map-detail {
@@ -194,7 +194,7 @@
   }
 
   .collab-map-detail__empty i {
-    color: #14b8a6;
+    color: #c62d43;
     font-size: 1.5rem;
   }
 
@@ -208,7 +208,7 @@
 
   .collab-map-detail__header p {
     margin: 0 0 0.25rem;
-    color: #14b8a6;
+    color: #c62d43;
     font-size: 0.76rem;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -224,11 +224,11 @@
 
   .collab-map-detail__count {
     flex: 0 0 auto;
-    border: 1px solid rgba(20, 184, 166, 0.22);
+    border: 1px solid rgba(198, 45, 67, 0.22);
     border-radius: 999px;
-    background: rgba(20, 184, 166, 0.09);
+    background: rgba(198, 45, 67, 0.09);
     padding: 0.45rem 0.72rem;
-    color: #0f766e;
+    color: var(--lab-accent);
     font-size: 0.86rem;
     font-weight: 900;
   }
@@ -256,7 +256,7 @@
     width: fit-content;
     border: 0;
     background: transparent;
-    color: #0f766e;
+    color: var(--lab-accent);
     padding: 0;
     font: inherit;
     font-size: 1rem;
@@ -269,7 +269,7 @@
 
   .collab-map-detail__person a:hover,
   .collab-map-detail__person button:hover {
-    color: #2563eb;
+    color: #c64d64;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -321,9 +321,9 @@
 
   .collab-map-detail__paper-year {
     border-radius: 999px;
-    background: rgba(20, 184, 166, 0.10);
+    background: rgba(198, 45, 67, 0.10);
     padding: 0.12rem 0.38rem;
-    color: #0f766e !important;
+    color: var(--lab-accent) !important;
     font-size: 0.72rem !important;
     font-weight: 900;
   }
@@ -331,16 +331,16 @@
   .collab-map-detail__more {
     width: fit-content !important;
     border-radius: 999px !important;
-    background: rgba(37, 99, 235, 0.10) !important;
+    background: rgba(198, 77, 100, 0.10) !important;
     padding: 0.26rem 0.58rem !important;
-    color: #2563eb !important;
+    color: #c64d64 !important;
     font-size: 0.78rem !important;
     font-weight: 900 !important;
     text-decoration: none !important;
   }
 
   .collab-map-detail__more:hover {
-    background: rgba(37, 99, 235, 0.16) !important;
+    background: rgba(198, 77, 100, 0.16) !important;
     text-decoration: none !important;
   }
 
@@ -354,7 +354,7 @@
   .dark .collab-map-wrap {
     border-color: rgba(148, 163, 184, 0.14);
     background:
-      radial-gradient(circle at 8% 0%, rgba(45, 212, 191, 0.10), transparent 30%),
+      radial-gradient(circle at 8% 0%, rgba(238, 137, 152, 0.10), transparent 30%),
       linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(11, 18, 32, 0.96));
     box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
   }
@@ -371,7 +371,7 @@
 
   .dark .collab-map-detail__person a,
   .dark .collab-map-detail__person button {
-    color: #99f6e4;
+    color: #ff9eac;
   }
 
   .dark .collab-map-detail__person span,
@@ -681,8 +681,8 @@
 
         var marker = L.circleMarker([lat, lng], {
           radius: radius,
-          color: "rgba(255,255,255,0.92)",
-          fillColor: "rgba(20,184,166,0.82)",
+          color: "rgba(255, 255, 255,0.92)",
+          fillColor: "rgba(198, 45, 67,0.82)",
           weight: 2,
           fillOpacity: 0.86,
           className: "collab-marker"

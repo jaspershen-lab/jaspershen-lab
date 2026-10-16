@@ -25,17 +25,6 @@ social:
 - icon: envelope
   icon_pack: fas
   link:  yiyingchen@u.nus.edu
-- display:
-    header: false
-  # icon: github
-  # icon_pack: fab
-  # label: Follow us on GitHub
-  # link: https://github.com/jaspershen-lab
-- display:
-    header: false
-# - icon: cv
-#   icon_pack: ai
-#   link: 
 status:
   icon: ☕️
 superuser: false

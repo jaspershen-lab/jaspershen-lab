@@ -25,24 +25,6 @@ organizations:
   url: ""
 role: Postdocs
 social:
-- icon: house
-  icon_pack: fas
-  link: 
-- icon: linkedin
-  icon_pack: fab
-  link: 
-- icon: envelope
-  icon_pack: fas
-  link: 
-- icon: twitter
-  icon_pack: fab
-  link: 
-- icon: google-scholar
-  icon_pack: ai
-  link: 
-- icon: github
-  icon_pack: fab
-  link: 
 superuser: true
 title: We want you!
 user_groups:

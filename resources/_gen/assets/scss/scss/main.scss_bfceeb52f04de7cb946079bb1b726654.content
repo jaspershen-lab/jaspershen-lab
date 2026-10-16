@@ -13255,101 +13255,30 @@ section#publication .publication-summary-section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transform: scale(1.08);
-  clip-path: inset(0 0 0 0);
-  transition: opacity 0.9s ease, transform 1.15s cubic-bezier(0.16, 1, 0.3, 1), clip-path 1.05s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease; }
+  opacity: 0; }
 
 .life-lab-slide.is-active {
-  opacity: 1;
-  transform: scale(1.01);
-  clip-path: inset(0 0 0 0); }
+  opacity: 1; }
 
-.life-lab-photo--left .life-lab-slide.is-entering {
-  opacity: 1;
-  transform: scale(1.12);
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-
-.life-lab-photo--left.is-switching .life-lab-slide.is-entering {
-  transform: scale(1.01);
-  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%); }
-
-.life-lab-photo--left .life-lab-slide.is-leaving {
-  opacity: 0.35;
-  transform: scale(1.16);
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 92% 100%); }
-
-.life-lab-photo--right .life-lab-slide.is-entering {
-  opacity: 1;
-  transform: scale(1.12);
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-
-.life-lab-photo--right.is-switching .life-lab-slide.is-entering {
-  transform: scale(1.01);
-  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
-
-.life-lab-photo--right .life-lab-slide.is-leaving {
-  opacity: 0.35;
-  transform: scale(1.16);
-  clip-path: polygon(0 0, 8% 0, 0 100%, 0 100%); }
-
-.life-lab-photo--up .life-lab-slide.is-entering {
-  opacity: 1;
-  transform: scale(1.13);
-  clip-path: circle(0% at 50% 50%); }
-
-.life-lab-photo--up.is-switching .life-lab-slide.is-entering {
-  transform: scale(1.01);
-  clip-path: circle(78% at 50% 50%); }
-
-.life-lab-photo--up .life-lab-slide.is-leaving {
-  opacity: 0.22;
-  transform: scale(0.98);
-  clip-path: circle(52% at 50% 50%); }
-
-.life-lab-photo--down .life-lab-slide.is-entering {
-  opacity: 1;
-  transform: scale(1.12);
-  clip-path: inset(0 100% 0 0 round 22px); }
-
-.life-lab-photo--down.is-switching .life-lab-slide.is-entering {
-  transform: scale(1.01);
-  clip-path: inset(0 0 0 0 round 22px); }
-
-.life-lab-photo--down .life-lab-slide.is-leaving {
-  opacity: 0.28;
-  transform: scale(1.13);
-  clip-path: inset(0 0 0 100% round 22px); }
-
-.life-lab-photo--fade .life-lab-slide.is-entering {
-  opacity: 1;
-  transform: scale(1.14) rotate(0.35deg);
-  clip-path: inset(100% 0 0 0 round 22px); }
-
-.life-lab-photo--fade.is-switching .life-lab-slide.is-entering {
-  transform: scale(1.01) rotate(0deg);
-  clip-path: inset(0 0 0 0 round 22px); }
-
-.life-lab-photo--fade .life-lab-slide.is-leaving {
-  opacity: 0.28;
-  transform: scale(1.11) rotate(-0.25deg);
-  clip-path: inset(0 0 100% 0 round 22px); }
+.life-lab-slide.is-entering {
+  z-index: 1; }
 
 .life-lab-photo::after {
   position: absolute;
-  inset: 45% 0 0;
+  inset: 0;
+  z-index: 2;
   content: "";
-  background: linear-gradient(180deg, transparent, rgba(2, 6, 23, 0.72));
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0) 30%, rgba(2, 6, 23, 0.02) 46%, rgba(2, 6, 23, 0.09) 62%, rgba(2, 6, 23, 0.23) 77%, rgba(2, 6, 23, 0.43) 90%, rgba(2, 6, 23, 0.64) 100%);
   opacity: 0.9;
   pointer-events: none;
-  transition: opacity 0.28s ease, inset 0.34s cubic-bezier(0.16, 1, 0.3, 1); }
+  transition: opacity 0.6s ease; }
 
 .life-lab-photo span {
   position: absolute;
   right: 1rem;
   bottom: 0.85rem;
   left: 1rem;
-  z-index: 1;
+  z-index: 3;
   color: #f8fafc;
   font-size: 0.95rem;
   font-weight: 800;
@@ -13357,23 +13286,14 @@ section#publication .publication-summary-section {
   transform: translateY(8px);
   transition: transform 0.34s cubic-bezier(0.16, 1, 0.3, 1), color 0.24s ease; }
 
-.life-lab-photo:hover img,
-.life-lab-photo:focus img {
-  filter: saturate(1.08) contrast(1.04); }
-
 .life-lab-photo:hover,
 .life-lab-photo:focus {
   border-color: rgba(153, 246, 228, 0.36);
   box-shadow: 0 24px 62px rgba(15, 23, 42, 0.18);
   transform: translateY(-3px); }
 
-.life-lab-photo:hover .life-lab-slide.is-active,
-.life-lab-photo:focus .life-lab-slide.is-active {
-  transform: scale(1.07); }
-
 .life-lab-photo:hover::after,
 .life-lab-photo:focus::after {
-  inset: 32% 0 0;
   opacity: 1; }
 
 .life-lab-photo:hover span,
@@ -14658,3 +14578,236 @@ section#publication .publication-summary-section {
   .author-profile__actions a {
     justify-content: center;
     width: 100%; } }
+
+/* Intracellular interaction network behind the research keywords. */
+#molecular_network {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 300px;
+  background: #071b25; }
+
+#molecular_network .molecular-network-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0; }
+
+#molecular_network .pub-keyword-cloud {
+  position: relative;
+  z-index: 1;
+  padding: 24px 16px;
+  text-shadow: 0 2px 8px #071b25, 0 0 20px #071b25; }
+
+#molecular_network .pub-keyword-cloud a {
+  color: #effcfa; }
+
+#molecular_network .pub-keyword-cloud a:hover {
+  color: #83e4d6; }
+
+/* A quiet institutional footer, shared by English and Chinese pages. */
+.page-footer {
+  background: #f7f8f9; }
+
+.site-footer.lab-footer {
+  color: #263442;
+  background: transparent;
+  border: 0;
+  padding: 64px 0 26px; }
+
+.site-footer.lab-footer::before {
+  display: none; }
+
+.lab-footer__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 18px; }
+
+.lab-footer__main {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 72px;
+  padding-bottom: 40px; }
+
+.lab-footer a {
+  color: inherit; }
+
+.lab-footer a:hover {
+  color: #a92234;
+  text-decoration: underline;
+  text-underline-offset: 4px; }
+
+.lab-footer a:focus-visible, .lab-footer summary:focus-visible {
+  outline: 2px solid #a92234;
+  outline-offset: 5px; }
+
+.lab-footer a.lab-footer__name {
+  display: inline-block;
+  color: #17345a;
+  font-size: 38px;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none; }
+
+.lab-footer__name span {
+  color: #ae2639;
+  font-weight: 400; }
+
+.lab-footer__name small {
+  display: block;
+  margin-top: 12px;
+  color: #637181;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px; }
+
+.lab-footer__identity p {
+  text-align: left;
+  margin: 22px 0 0;
+  max-width: 390px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #576574; }
+
+.lab-footer h2 {
+  font-family: inherit;
+  margin: 0 0 16px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #637181; }
+
+.lab-footer__email {
+  font-size: 16px; }
+
+.lab-footer address {
+  margin: 14px 0 18px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.7;
+  color: #576574; }
+
+.lab-footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 13px; }
+
+.lab-footer__affiliations {
+  border-top: 1px solid #dde2e7;
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+  gap: 40px; }
+
+.lab-footer__affiliations h2 {
+  margin: 0;
+  flex: 0 0 130px; }
+
+.lab-footer__logos {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  flex-wrap: wrap; }
+
+.lab-footer__logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.lab-footer__logos img {
+  display: block;
+  width: auto;
+  height: 50px;
+  max-width: 210px;
+  object-fit: contain; }
+
+.lab-footer__visitors {
+  padding: 0 0 20px;
+  color: #637181;
+  font-size: 12px; }
+
+.lab-footer__visitors summary {
+  cursor: pointer;
+  width: fit-content; }
+
+.lab-footer__map {
+  width: 260px;
+  max-width: 100%;
+  margin-top: 16px; }
+
+.lab-footer__map img, .lab-footer__map iframe {
+  max-width: 100%; }
+
+.site-footer.lab-footer .powered-by {
+  max-width: 1104px;
+  font-size: 12px;
+  color: #637181;
+  text-align: left;
+  padding-top: 18px; }
+
+.site-footer.lab-footer .powered-by a {
+  color: inherit;
+  font-weight: 400; }
+
+.dark .page-footer {
+  background: #18212c; }
+
+.dark .site-footer.lab-footer {
+  color: #e5e9ef; }
+
+.dark .lab-footer__identity p, .dark .lab-footer address, .dark .lab-footer h2, .dark .lab-footer__visitors, .dark .lab-footer__name small {
+  color: #aebac7; }
+
+.dark .lab-footer a.lab-footer__name {
+  color: #e5e9ef; }
+
+.dark .lab-footer__name span {
+  color: #ed8e9a; }
+
+.dark .lab-footer__affiliations {
+  border-color: #384450; }
+
+.dark .lab-footer__logos {
+  background: #f7f8f9;
+  padding: 12px 18px; }
+
+@media (max-width: 640px) {
+  .site-footer.lab-footer {
+    padding-top: 38px; }
+  .lab-footer__main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 28px; }
+  .lab-footer__affiliations {
+    display: block; }
+  .lab-footer__affiliations h2 {
+    margin-bottom: 20px; }
+  .lab-footer__logos {
+    gap: 24px; }
+  .lab-footer__logos img {
+    height: 38px;
+    max-width: 155px; } }
+
+.lab-footer__brand-logo {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto; }
+
+.lab-footer__social a,
+.lab-footer__address {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px; }
+
+.lab-footer__social i,
+.lab-footer__address > i {
+  flex: 0 0 auto;
+  width: 16px;
+  text-align: center;
+  font-size: 15px; }

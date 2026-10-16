@@ -1,0 +1,124 @@
+/* Shared dark surfaces and readable text. Keep image artwork and chart series intact. */
+.dark {
+  --lab-bg: #11151d;
+  --lab-surface: #1b2230;
+  --lab-surface-raised: #252e3d;
+  --lab-text: #edf1f7;
+  --lab-muted: #b6c2d2;
+  --lab-border: #455165;
+  --lab-control-border: #7c8ba1;
+  --lab-accent: #ff9eac;
+  --lab-accent-hover: #ffd0d7;
+  color-scheme: dark;
+  color: var(--lab-text);
+
+  .home-section { background-color: var(--lab-bg); color: var(--lab-text); }
+  .home-section:nth-of-type(even) { background-color: #161c27; }
+  .navbar, .page-footer { background-color: var(--lab-bg); }
+
+  .software-card, .software-product-hero, .publication-filter-panel,
+  .home-pub-card, .publication-year-block, .publication-year-block[open],
+  .author-profile__identity, .author-profile__main, .author-profile__latest,
+  .team-stats-card, .team-collab-network__card, .alumni-gantt,
+  .people-person__face--front, .join-page__hero, .join-role,
+  .contact-purpose-card, .contact-location-card, .contact-join-card, .contact-social-card {
+    background: var(--lab-surface);
+    color: var(--lab-text);
+    border-color: var(--lab-border);
+  }
+
+  .software-card__media, .author-profile__panel, .author-profile__publication,
+  .team-collab-profile__block, .team-collab-profile__metrics div {
+    background: var(--lab-surface-raised);
+    border-color: var(--lab-border);
+  }
+
+  .software-card__meta span, .software-card__summary, .software-directory__intro,
+  .software-category__header span, .software-featured__header span,
+  .publication-filter-field > span, .publication-filter-status,
+  .home-pub-card__journal, .article-metadata, .pub-era-heading,
+  .author-profile__org, .author-profile__timeline-item p, .author-profile__publication p,
+  .author-profile__role, .research-flow__description, .research-flow__headings,
+  .team-collab-network__lede, .team-collab-network__hint,
+  .team-collab-network__panel-empty, .team-collab-profile__empty,
+  .team-collab-profile__metrics span, .team-collab-profile__papers span,
+  .join-page__hero p, .join-page__note, .join-role p, .join-role li,
+  .lab-footer__identity p, .lab-footer address, .lab-footer h2,
+  .lab-footer__visitors, .lab-footer__name small {
+    color: var(--lab-muted);
+  }
+
+  .software-card__title a, .software-category__header h2,
+  .publication-filter-panel h2, .author-profile__bio,
+  .join-page, .join-page__hero h1, .join-role h2, .join-role h3 {
+    color: var(--lab-text);
+  }
+
+  .publication-filter-input, .publication-filter-panel__reset,
+  .software-product-filter__button, .team-collab-network__search,
+  .team-collab-network__toolbar select, .team-collab-network__toolbar button,
+  .form-control {
+    background: var(--lab-bg);
+    color: var(--lab-text);
+    border-color: var(--lab-control-border);
+  }
+  .publication-filter-input input, .publication-filter-input select {
+    color: var(--lab-text);
+  }
+  .publication-filter-input i, .team-collab-network__search i {
+    color: var(--lab-muted);
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--lab-muted);
+    opacity: 1;
+  }
+  select option { background: var(--lab-surface); color: var(--lab-text); }
+  .publication-filter-input:focus-within, .team-collab-network__search:focus-within,
+  .form-control:focus {
+    border-color: var(--lab-accent);
+    box-shadow: 0 0 0 3px rgba(255, 158, 172, .2);
+  }
+  a:focus-visible, button:focus-visible, select:focus-visible {
+    outline: 2px solid var(--lab-accent);
+    outline-offset: 3px;
+  }
+
+  .software-card__tags span, .software-card__tags time,
+  .author-profile__tags span, .author-profile__publication-year {
+    background: var(--lab-surface-raised);
+    color: var(--lab-text);
+  }
+  .software-card__button--ghost, .join-role__links a {
+    background: var(--lab-surface-raised);
+    border-color: var(--lab-control-border);
+    color: var(--lab-text) !important;
+  }
+  .software-card__button:not(.software-card__button--ghost),
+  .join-page__contact, .software-product-filter__button.is-active {
+    background: #b21f2f;
+    border-color: var(--lab-accent);
+    color: #fff !important;
+  }
+  .software-card__button:hover, .software-product-filter__button:hover,
+  .publication-filter-panel__reset:hover, .join-role__links a:hover {
+    background: #382733;
+    border-color: var(--lab-accent);
+    color: var(--lab-accent-hover) !important;
+  }
+  .software-card__title a:hover, .home-pub-card__title a:hover {
+    color: var(--lab-accent-hover);
+  }
+  .software-category__header, .research-flow, .lab-footer__affiliations,
+  .publication-year-block[open] summary { border-color: var(--lab-border); }
+  .research-flow__core { background: var(--lab-bg); }
+  .team-donut-svg { --team-donut-hole: var(--lab-surface); }
+}
+
+// Match the theme's body selector and the shared photo/year disclosure specificity.
+body.dark { background: var(--lab-bg); color: var(--lab-text); }
+.dark .photo-year.publication-year-block,
+.dark .photo-year.publication-year-block[open],
+.dark .publication-year-block__list .home-pub-card {
+  background: var(--lab-surface);
+  border-color: var(--lab-border);
+}

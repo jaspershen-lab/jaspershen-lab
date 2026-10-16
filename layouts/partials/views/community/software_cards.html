@@ -14,11 +14,17 @@
 {{ end }}
 
 {{ $linkURL := $item.Params.external_link | default "" }}
+{{ $linkLabel := "Website" }}
 {{ $codeURL := "" }}
 {{ range $item.Params.links }}
   {{ $name := lower (default "" .name) }}
-  {{ if and (eq $linkURL "") (or (eq $name "link") (eq $name "website") (eq $name "home")) }}
-    {{ $linkURL = .url }}
+  {{ if in (slice "link" "website" "home" "documentation" "launch app") $name }}
+    {{ if or (eq $linkURL "") (eq $linkURL .url) }}
+      {{ $linkURL = .url }}
+      {{ if eq $name "documentation" }}{{ $linkLabel = "Documentation" }}
+      {{ else if eq $name "launch app" }}{{ $linkLabel = "Launch app" }}
+      {{ else }}{{ $linkLabel = "Website" }}{{ end }}
+    {{ end }}
   {{ end }}
   {{ if and (eq $codeURL "") (or (eq $name "code") (eq $name "github")) }}
     {{ $codeURL = .url }}
@@ -26,31 +32,22 @@
 {{ end }}
 
 {{ $productType := "R package" }}
-{{ $stars := "" }}
 {{ if eq $slug "mapa" }}
   {{ $productType = "AI tool" }}
-  {{ $stars = "28" }}
 {{ else if eq $slug "lagci-project" }}
   {{ $productType = "Pipeline" }}
-  {{ $stars = "18" }}
 {{ else if eq $slug "tidymasshiny-project" }}
   {{ $productType = "Web app" }}
-  {{ $stars = "21" }}
 {{ else if eq $slug "deepPseudoMSI-project" }}
   {{ $productType = "AI tool" }}
-  {{ $stars = "34" }}
 {{ else if eq $slug "tidymass-project" }}
   {{ $productType = "R ecosystem" }}
-  {{ $stars = "620+" }}
 {{ else if eq $slug "tidymicrobiome-project" }}
   {{ $productType = "R ecosystem" }}
-  {{ $stars = "120+" }}
 {{ else if eq $slug "metid-project" }}
   {{ $productType = "R package" }}
-  {{ $stars = "110+" }}
 {{ else if eq $slug "r_cookbook" }}
   {{ $productType = "Resource" }}
-  {{ $stars = "12" }}
 {{ end }}
 
 <article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ with index ($item.Params.tags | default slice) 0 }}{{ . | urlize }}{{ else }}uncategorized{{ end }}">
@@ -64,10 +61,11 @@
   <div class="software-card__body">
     <div class="software-card__meta">
       <span>{{ $productType }}</span>
-      {{ with $stars }}<span class="software-card__stars"><i class="fas fa-star" aria-hidden="true"></i> {{ . }}</span>{{ end }}
     </div>
     <h3 class="software-card__title"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
-    <p class="software-card__summary">{{ $item.Summary | plainify | truncate 150 }}</p>
+    {{ if not (and .page.IsSection (eq .page.Section "software")) }}
+      <p class="software-card__summary">{{ $item.Summary | plainify | truncate 150 }}</p>
+    {{ end }}
     <div class="software-card__tags">
       {{ range $item.Params.tags }}
         <span>{{ . }}</span>
@@ -78,7 +76,7 @@
       {{ with $linkURL }}
         <a class="software-card__button" href="{{ . | safeURL }}" target="_blank" rel="noopener">
           <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-          <span>Link</span>
+          <span>{{ $linkLabel }}</span>
         </a>
       {{ end }}
       {{ with $codeURL }}

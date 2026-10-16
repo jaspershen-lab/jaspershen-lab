@@ -11,7 +11,7 @@ education:
 email: "yang1131@e.ntu.edu.sg"
 commentable: true
 first_name: Xicheng
-last_name: Yang
+last_name: YANG
 highlight_name: true
 interests:
 - 🖥 Bioinformatics
@@ -40,7 +40,7 @@ social:
 status:
   icon: ☕️
 superuser: false
-title: Xicheng Yang
+title: Xicheng YANG
 user_groups:
 - Students
 - PhD Students

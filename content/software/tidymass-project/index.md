@@ -7,7 +7,7 @@ image:
 links:
 - icon: house
   icon_pack: fas
-  name: Link
+  name: Website
   url: https://www.tidymass.org/
 - icon: github
   icon_pack: fab

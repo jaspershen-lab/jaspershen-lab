@@ -7,9 +7,6 @@ main:
   - name: HOME
     url: '#lab_hero'
     weight: 1
-  - name: HIGHLIGHT
-    url: '#latest_highlights'
-    weight: 2
   - name: RESEARCH
     url: '#research'
     weight: 10
@@ -29,7 +26,7 @@ main:
   #   url: '#event'
   #   weight: 40
   - name: CONTACT
-    url: '#contact'
+    url: 'contact/'
     weight: 50
   # - name: <i class="fa-brands fa-github"></i> GitHub
   #   url: '#github'
@@ -39,6 +36,10 @@ main:
     identifier: photos
     url: '#photo'
     weight: 40
+  - name: JOIN US
+    identifier: join-us
+    url: join-us/
+    weight: 60
   - name: MORE
     identifier: more
     weight: 70

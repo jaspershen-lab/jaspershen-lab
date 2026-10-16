@@ -7,7 +7,7 @@ image:
 links:
 - icon: house
   icon_pack: fas
-  name: Link
+  name: Documentation
   url: https://jaspershen.github.io/r_cookbook
 - icon: github
   icon_pack: fab

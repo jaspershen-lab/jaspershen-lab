@@ -1,4 +1,6 @@
 ---
+section_header: true
+section_intro: "Meet the people behind our research."
 date: "2022-10-24"
 image:
   placement: 1

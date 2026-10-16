@@ -1,0 +1,32 @@
+{{ with .File }}
+{{ $album := strings.TrimSuffix "/" .Dir }}
+{{ if findRE "^photo-[0-9]{4}$" $album }}
+{{ $year := int (strings.TrimPrefix "photo-" $album) }}
+{{ $zh := eq site.Language.Lang "zh" }}
+<style>
+  .photo-year-nav { display: flex; gap: 20px; justify-content: space-between; max-width: 1140px; margin: 0 auto 64px; padding: 24px 24px 0; border-top: 1px solid rgba(148, 163, 184,.25); }
+  .photo-year-nav__button { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px; border: 1px solid currentColor; border-radius: 6px; color: var(--lab-accent); font-size: 1rem; font-weight: 600; text-decoration: none; }
+  a.photo-year-nav__button:hover { color: #fff; background: #b21f2f; border-color: var(--lab-accent); text-decoration: none; }
+  a.photo-year-nav__button:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  .photo-year-nav__button[aria-disabled="true"] { color: #888; opacity: .6; }
+  @media (max-width: 575px) { .photo-year-nav { gap: 12px; padding-inline: 15px; } .photo-year-nav__button { flex: 1; padding: 12px 8px; font-size: .85rem; } }
+</style>
+<nav class="photo-year-nav" aria-label="{{ if $zh }}按年份浏览相册{{ else }}Browse photo albums by year{{ end }}">
+  {{ range slice -1 1 }}
+    {{ $targetYear := add $year . }}
+    {{ $target := site.GetPage (printf "/photo-%d" $targetYear) }}
+    {{ $label := printf "%d Photos" $targetYear }}
+    {{ if $zh }}{{ $label = printf "%d 年相册" $targetYear }}{{ end }}
+    {{ if $target }}
+    <a class="photo-year-nav__button" href="{{ $target.RelPermalink }}" rel="{{ if eq . -1 }}prev{{ else }}next{{ end }}">
+    {{ else }}
+    <span class="photo-year-nav__button" aria-disabled="true" title="{{ if $zh }}暂无该年份相册{{ else }}Album not available yet{{ end }}">
+    {{ end }}
+      {{ if eq . -1 }}<span aria-hidden="true">←</span>{{ end }}
+      <span>{{ $label }}</span>
+      {{ if eq . 1 }}<span aria-hidden="true">→</span>{{ end }}
+    {{ if $target }}</a>{{ else }}</span>{{ end }}
+  {{ end }}
+</nav>
+{{ end }}
+{{ end }}

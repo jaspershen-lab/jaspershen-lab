@@ -1,0 +1,23 @@
+{{ $zh := eq .Page.Lang "zh" }}
+<div class="contact-directory">
+  <section aria-labelledby="contact-email-title">
+    <h2 id="contact-email-title"><i class="fas fa-envelope" aria-hidden="true"></i> {{ if $zh }}邮箱{{ else }}Email{{ end }}</h2>
+    <p>{{ if $zh }}科研合作、学术交流与一般咨询{{ else }}Collaborations, research discussions and general enquiries{{ end }}</p>
+    <a class="contact-directory__email" href="mailto:xiaotao.shen@ntu.edu.sg">xiaotao.shen@ntu.edu.sg</a>
+    <h3>{{ if $zh }}加入团队{{ else }}Join our team{{ end }}</h3>
+    <p>{{ if $zh }}查看招聘对象、申请材料和招聘联系邮箱。{{ else }}Find role descriptions, suggested application materials and the recruitment contact.{{ end }}</p>
+    <a class="contact-directory__cta" href="{{ "join-us/" | relLangURL }}">{{ if $zh }}加入我们{{ else }}Join us{{ end }} →</a>
+  </section>
+  <section aria-labelledby="contact-address-title">
+    <h2 id="contact-address-title"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ if $zh }}地址{{ else }}Address{{ end }}</h2>
+    <address>Shen Lab<br>Nanyang Technological University<br>59 Nanyang Drive<br>Singapore 636921</address>
+    <a href="https://maps.app.goo.gl/pcizQc8QdorHMMvB6" target="_blank" rel="noopener">{{ if $zh }}查看地图{{ else }}Open map{{ end }} ↗</a>
+    <h3>{{ if $zh }}其他联系入口{{ else }}Connect with us{{ end }}</h3>
+    <div class="contact-directory__links">
+      <a href="https://github.com/jaspershen-lab" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/shenxt/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      <a href="https://jaspershen.github.io/image/wechat_QR.jpg" target="_blank" rel="noopener"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+      <a href="{{ "software/" | relLangURL }}"><i class="fas fa-code" aria-hidden="true"></i> {{ if $zh }}软件与文档{{ else }}Software & documentation{{ end }}</a>
+    </div>
+  </section>
+</div>

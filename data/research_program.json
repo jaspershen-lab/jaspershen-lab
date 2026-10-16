@@ -1,0 +1,118 @@
+[
+  {
+    "id": "metabolomics",
+    "title": {
+      "en": "From mass spectra to metabolic function",
+      "zh": "从质谱信号到代谢功能"
+    },
+    "question": {
+      "en": "How can we make metabolomics reproducible and biologically interpretable?",
+      "zh": "如何让代谢组分析可复现，并产生可解释的生物学结果？"
+    },
+    "body": {
+      "en": "We develop open computational tools for LC–MS data processing, compound annotation and functional analysis. TidyMass provides a modular, traceable workflow; metID automates compound annotation; TidyMass2 extends analysis to metabolite origins and functional modules, including information carried by unannotated features.",
+      "zh": "我们开发用于 LC–MS 数据处理、化合物注释和功能分析的开源工具。TidyMass 提供模块化、可追溯的分析流程，metID 实现自动化化合物注释，TidyMass2 将分析拓展到代谢物来源与功能模块，利用尚未完成注释的代谢特征所携带的信息。"
+    },
+    "papers": [
+      "publication/TidyMass an object-oriented reproducible analysis framework for LC–MS data",
+      "publication/TidyMass2 Advancing LC-MS Untargeted Metabolomics Through Metabolite Origin Inference and Metabolic Feature-based Functional Module Analysis",
+      "publication/metID an R package for automatable compound annotation for LC− MS-based data"
+    ],
+    "image_caption": {
+      "en": "From samples and mass spectra to metabolic pathways. Conceptual illustration.",
+      "zh": "从样本、质谱信号到代谢通路。概念示意图。"
+    }
+  },
+  {
+    "id": "networks",
+    "title": {
+      "en": "AI and networks for multi-omics interpretation",
+      "zh": "AI 与网络驱动的多组学解释"
+    },
+    "question": {
+      "en": "Which molecules act together, and how do their relationships change over time?",
+      "zh": "哪些分子协同变化，它们的关系如何随时间演变？"
+    },
+    "body": {
+      "en": "We combine biological networks, statistical modelling and AI to turn multi-omics measurements into testable hypotheses. MAPA discovers functional modules and uses literature-grounded language models to interpret them, with applications to aging-related datasets. lagCI examines time-lagged relationships in dense molecular and wearable time series. These inferred relationships guide follow-up experiments rather than establishing causality on their own.",
+      "zh": "我们结合生物网络、统计建模和 AI，将多组学测量转化为可检验的假设。MAPA 发现功能模块，并利用文献支持的语言模型进行解释，已应用于衰老相关数据。lagCI 分析高频分子与可穿戴时间序列中的时滞关系。这些推断用于指导后续实验，本身并不能确立因果机制。"
+    },
+    "papers": [
+      "publication/mapa-a-semantic-network-framework-for-functional-module-discovery-and-interpretation-in-multi-omics-data",
+      "publication/lagci-enables-inference-of-temporal-causal-relationships-from-dense-multi-omic-time-series"
+    ],
+    "image_caption": {
+      "en": "Integrating molecular layers into interpretable functional modules. Conceptual illustration.",
+      "zh": "整合多层分子信息，识别可解释的功能模块。概念示意图。"
+    }
+  },
+  {
+    "id": "microbiome",
+    "title": {
+      "en": "Microbial communities and host metabolism",
+      "zh": "微生物群落与宿主代谢"
+    },
+    "question": {
+      "en": "How do microbial communities across the body relate to human physiology?",
+      "zh": "不同身体部位的微生物群落如何与人体生理状态关联？"
+    },
+    "body": {
+      "en": "Our collaborative studies connect microbial dynamics with host molecular and clinical measurements. Longitudinal profiling across four body sites reveals both stable, individual-specific communities and changes associated with health and disease. Related work examines cross-body-site microbial interactions and their links to the circulating metabolome.",
+      "zh": "我们的合作研究将微生物动态与宿主分子和临床测量相联系。覆盖四个身体部位的纵向研究揭示了稳定、具有个体特征的微生物群落，以及与健康和疾病相关的变化。相关工作进一步研究跨部位微生物互作及其与循环代谢组的联系。"
+    },
+    "papers": [
+      "publication/Longitudinal profiling of the microbiome at four body sites reveals core stability and individualized dynamics during health and disease",
+      "publication/cross-body-site-microbial-interactions-influence-the-human-plasma-metabolome"
+    ],
+    "image_caption": {
+      "en": "Connections between microbial communities and host metabolism. Conceptual illustration.",
+      "zh": "微生物群落与宿主代谢之间的联系。概念示意图。"
+    }
+  },
+  {
+    "id": "longitudinal",
+    "title": {
+      "en": "Measuring health as a trajectory",
+      "zh": "以纵向轨迹理解健康"
+    },
+    "question": {
+      "en": "What can repeated molecular measurements reveal beyond a single snapshot?",
+      "zh": "重复的分子测量能揭示哪些单次采样无法捕捉的信息？"
+    },
+    "body": {
+      "en": "We study how molecular profiles vary with daily life and environmental exposure. Multi-omics microsampling supports frequent measurements of lifestyle-associated changes, while longitudinal exposome profiling links external exposures with internal molecular responses. Together with wearable data, these approaches motivate personalized monitoring that accounts for each person’s baseline and variability.",
+      "zh": "我们研究分子谱如何随日常生活和环境暴露而变化。多组学微量采样支持高频测量与生活方式相关的变化，纵向暴露组分析则探索外界暴露与体内分子响应的联系。结合可穿戴数据，这些方法为考虑个体基线与变异的个性化监测提供研究基础。"
+    },
+    "papers": [
+      "publication/Multi-omics microsampling for the profiling of lifestyle-associated changes in health",
+      "publication/Precision environmental health monitoring by longitudinal exposome and multi-omics profiling"
+    ],
+    "image_caption": {
+      "en": "Repeated sampling and wearable sensing reveal health trajectories. Conceptual illustration.",
+      "zh": "重复采样与可穿戴测量帮助刻画健康轨迹。概念示意图。"
+    }
+  },
+  {
+    "id": "pregnancy",
+    "title": {
+      "en": "Metabolic trajectories of pregnancy",
+      "zh": "妊娠过程中的代谢轨迹"
+    },
+    "question": {
+      "en": "Can metabolic changes help characterize gestational progression?",
+      "zh": "代谢变化能否帮助刻画妊娠进程？"
+    },
+    "body": {
+      "en": "Our pregnancy studies characterize coordinated metabolic changes in longitudinal blood and urine samples. We develop and evaluate models of gestational age and time to delivery, and examine pathways that change across pregnancy. The aim is to build a molecular understanding of maternal physiology and a foundation for future biomarker validation.",
+      "zh": "我们的妊娠研究通过纵向血液和尿液样本刻画协调的代谢变化，开发并评估孕周与分娩时间预测模型，同时研究妊娠过程中变化的代谢通路。目标是从分子层面理解母体生理，并为后续生物标志物验证奠定基础。"
+    },
+    "papers": [
+      "publication/Metabolic dynamics and prediction of gestational age and time to delivery in pregnant women",
+      "publication/Longitudinal urine metabolic profiling and gestational age prediction in human pregnancy"
+    ],
+    "image_caption": {
+      "en": "Following metabolic changes throughout pregnancy. Conceptual illustration.",
+      "zh": "追踪妊娠过程中的代谢变化。概念示意图。"
+    }
+  }
+]

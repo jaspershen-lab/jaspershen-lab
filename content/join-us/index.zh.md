@@ -2,18 +2,27 @@
 title: 加入我们
 date: "2026-09-10"
 type: page
+section_header: true
+profile: false
+share: false
+commentable: false
 summary: Shen Lab 面向博士生、博士后、本科生、访问学者、访问博士生和暑期实习生的招聘信息。
 ---
 
 {{< rawhtml >}}
-<section class="join-page">
+<div class="join-page">
   <div class="join-page__hero">
     <p class="join-page__eyebrow">Open Opportunities</p>
-    <h1>加入 Shen Lab</h1>
+    <h2>加入 Shen Lab</h2>
     <p>我们欢迎希望发展计算方法、数据驱动生物学发现和多组学研究的同学与研究人员。研究方向包括代谢组学、微生物组、衰老、妊娠、精准健康和 AI for Science。</p>
     <a class="join-page__contact" href="mailto:xiaotao.shen@ntu.edu.sg">发送 CV 联系我们</a>
   </div>
 
+{{< /rawhtml >}}
+
+{{< join_apply >}}
+
+{{< rawhtml >}}
   <div class="join-page__note">
     奖学金、申请截止日期和申请条件可能会变化。申请前请以 NTU 和 LKCMedicine 官方页面为准。
   </div>
@@ -75,5 +84,5 @@ summary: Shen Lab 面向博士生、博士后、本科生、访问学者、访�
       <p>在项目明确且有足够指导时间的情况下，我们接受暑期实习和远程实习。远程项目通常要求更强的独立性、稳定沟通和清楚的代码或分析产出。</p>
     </article>
   </div>
-</section>
+</div>
 {{< /rawhtml >}}

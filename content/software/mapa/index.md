@@ -7,7 +7,7 @@ image:
 links:
 - icon: house
   icon_pack: fas
-  name: Link
+  name: Website
   url: https://www.shen-lab.org/mapa-website/
 - icon: github
   icon_pack: fab

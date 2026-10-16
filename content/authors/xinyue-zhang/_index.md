@@ -36,8 +36,6 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/zxinyue033-design
-- display:
-    header: false
 status:
   icon: ☺️
 superuser: false

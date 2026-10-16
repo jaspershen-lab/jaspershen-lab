@@ -54,7 +54,7 @@
         {{ $link = "/join-us/" | relLangURL }}
       {{ end }}
       <div class="col-12 col-sm-auto people-person">
-        {{ if $isHiring }}<a class="people-person__card people-person__card--join" href="{{ $link }}">{{ else }}<div class="people-person__card" tabindex="0">{{ end }}
+        <a class="people-person__card{{ if $isHiring }} people-person__card--join{{ end }}" href="{{ $link }}">
           <div class="people-person__face people-person__face--front">
         {{ $src := "" }}
         {{ if site.Params.features.avatar.gravatar }}
@@ -65,39 +65,17 @@
         {{ end }}
         {{ if $src }}
           {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
-          {{ if and $link (not $isHiring) }}<a href="{{ $link }}">{{ end }}<img width="270" height="270" loading="lazy" class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar">{{ if and $link (not $isHiring) }}</a>{{ end }}
+          <img width="270" height="270" loading="lazy" class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar">
         {{ end }}
 
         <div class="portrait-title">
-          <h2>{{ if and $link (not $isHiring) }}<a href="{{ $link }}">{{ end }}{{ .Title }}{{ if and $link (not $isHiring) }}</a>{{ end }}</h2>
+          <h2>{{ .Title }}</h2>
           {{ if and $show_organizations .Params.organizations }}{{ range .Params.organizations }}<h3>{{ .name }}</h3>{{ end }}{{ end }}
           {{ if and $show_role .Params.role }}<h3>{{ .Params.role | markdownify | emojify }}</h3>{{ end }}
           {{ if $isHiring }}<span class="people-person__join-cta">Open opportunities</span>{{ end }}
         </div>
           </div>
-          {{ if not $isHiring }}
-          <div class="people-person__face people-person__face--back">
-            <div class="people-interests">
-              <span>Research interests</span>
-              {{ if .Params.interests }}
-                <ul>
-                  {{ range .Params.interests }}
-                    <li>{{ . | markdownify | emojify }}</li>
-                  {{ end }}
-                </ul>
-              {{ else }}
-                <p>Multi-omics and precision health research at Shen Lab.</p>
-              {{ end }}
-              {{ with $link }}
-                <a class="people-interests__profile" href="{{ . }}">
-                  <span>View profile</span>
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              {{ end }}
-            </div>
-          </div>
-          {{ end }}
-        {{ if $isHiring }}</a>{{ else }}</div>{{ end }}
+        </a>
       </div>
     {{ end }}
 

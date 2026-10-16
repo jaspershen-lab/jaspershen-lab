@@ -1,0 +1,6 @@
+<header class="lab-section-header universal-wrapper">
+  <h1>{{ .Title }}</h1>
+  {{ with (.Params.section_intro | default .Params.subtitle) }}
+    <div class="lab-section-header__intro">{{ . | markdownify | emojify }}</div>
+  {{ end }}
+</header>

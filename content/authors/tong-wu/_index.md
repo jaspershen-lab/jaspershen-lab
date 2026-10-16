@@ -33,11 +33,6 @@ social:
   icon_pack: fab
   # label: Follow us on GitHub
   link: https://github.com/TongWu929
-- display:
-    header: false
-# - icon: cv
-#   icon_pack: ai
-#   link: 
 status:
   icon: 👩🏻‍💻
 superuser: false

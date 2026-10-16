@@ -22,7 +22,6 @@ social:
 - icon: house
   icon_pack: fas
   link: https://matchy.bio
-- icon: 
 - icon: envelope
   icon_pack: fas
   link: minghli@ethz.ch
