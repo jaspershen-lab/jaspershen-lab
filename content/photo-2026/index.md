@@ -269,10 +269,28 @@ sections:
         </section>
 
 
+        <!-- 10月 -->
+        <div class="month-block">
+          <div class="month-title">October 2026</div>
+          <div class="gallery">
+            <div class="image-container"><img src="lab/2026-10-2-Prof. Wenfeng Zeng visited Shen lab.jpeg" alt="2026/10/2 Prof. Wenfeng Zeng visited Shen Lab"><div class="caption">2026/10/2 Prof. Wenfeng Zeng visited Shen Lab</div></div>
+          </div>
+        </div>
+
         <!-- 9月 -->
         <div class="month-block">
           <div class="month-title">September 2026</div>
           <div class="gallery">
+            <div class="image-container"><img src="lab/2026-9-30-Dinner with Mike.jpeg" alt="2026/9/30 Dinner with Mike"><div class="caption">2026/9/30 Dinner with Mike</div></div>
+            <div class="image-container"><img src="lab/2026-9-30-Prof. Kun Qian visited Shen lab.jpeg" alt="2026/9/30 Prof. Kun Qian visited Shen Lab"><div class="caption">2026/9/30 Prof. Kun Qian visited Shen Lab</div></div>
+            <div class="image-container"><img src="lab/2026-9-30-Yifei presented at HUPO2026.jpeg" alt="2026/9/30 Yifei presented at HUPO 2026"><div class="caption">2026/9/30 Yifei presented at HUPO 2026</div></div>
+            <div class="image-container"><img src="lab/2026-9-30-lifespin germany visited SPC.jpeg" alt="2026/9/30 Lifespin Germany visited SPC"><div class="caption">2026/9/30 Lifespin Germany visited SPC</div></div>
+            <div class="image-container"><img src="lab/2026-9-29-Feifan presentation at HUPO 2026.jpeg" alt="2026/9/29 Feifan presented at HUPO 2026"><div class="caption">2026/9/29 Feifan presented at HUPO 2026</div></div>
+            <div class="image-container"><img src="lab/2026-9-29-Prof Ju-Sheng Zheng visited Shen lab.jpeg" alt="2026/9/29 Prof. Ju-Sheng Zheng visited Shen Lab"><div class="caption">2026/9/29 Prof. Ju-Sheng Zheng visited Shen Lab</div></div>
+            <div class="image-container"><img src="lab/2026-9-28-Shen lab at HUPO 2026.jpeg" alt="2026/9/28 Shen Lab at HUPO 2026"><div class="caption">2026/9/28 Shen Lab at HUPO 2026</div></div>
+            <div class="image-container"><img src="lab/2026-9-27-Chi Fang presentation.jpeg" alt="2026/9/27 Chi Fang presentation"><div class="caption">2026/9/27 Chi Fang presentation</div></div>
+            <div class="image-container"><img src="lab/2026-9-23-Xiaotao presented at AI4science SJTU.jpeg" alt="2026/9/23 Xiaotao presented at AI4Science, SJTU"><div class="caption">2026/9/23 Xiaotao presented at AI4Science, SJTU</div></div>
+            <div class="image-container"><img src="lab/2026-9-23-Xiaotao presented at AI4science SJTU2.jpeg" alt="2026/9/23 Xiaotao presented at AI4Science, SJTU (2)"><div class="caption">2026/9/23 Xiaotao presented at AI4Science, SJTU (2)</div></div>
             <div class="image-container"><img src="lab/2026-9-3-Prof. Nick Tellay visited lab.jpg" alt="2026/9/3 Prof. Nick Tellay visited Shen Lab"><div class="caption">2026/9/3 Prof. Nick Tellay visited Shen Lab</div></div>
           </div>
         </div>
