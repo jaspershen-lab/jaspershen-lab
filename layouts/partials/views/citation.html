@@ -2,7 +2,7 @@
 {{ $has_attachments := partial "functions/has_attachments" $item }}
 {{ $disable_title_link := false }}
 {{ with .page }}
-  {{ if and (eq .Kind "section") (in (slice "publication" "news") .Type) }}
+  {{ if and (eq .Kind "section") (eq .Type "news") }}
     {{ $disable_title_link = true }}
   {{ end }}
 {{ end }}

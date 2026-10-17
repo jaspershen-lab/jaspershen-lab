@@ -11,7 +11,7 @@ education:
 email: "ytwangzero@outlook.com"
 commentable: true
 first_name: Yuting
-last_name: Wang
+last_name: WANG
 highlight_name: true
 interests:
 - 🖥️ Bioinformatics

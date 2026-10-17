@@ -12,14 +12,14 @@ author_notes:
 - Equal contribution
 
 authors:
-- Songjie Chen
-- Guangwen Wang
+- Songjie CHEN
+- Guangwen WANG
 - admin
-- Daniel Hornburg
-- Rene Hoffman
-- Stephanie Nevins
-- Xun Cheng
-- Michael Snyder
+- Daniel HORNBURG
+- Rene HOFFMAN
+- Stephanie NEVINS
+- Xun CHENG
+- Michael SNYDER
 
 featured: false
 publication: bioRxiv

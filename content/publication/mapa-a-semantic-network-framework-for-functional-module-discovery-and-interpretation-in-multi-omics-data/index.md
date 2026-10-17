@@ -45,6 +45,8 @@ publication_types:
 date: 2026-09-16
 publishDate: 2026-09-16
 summary: "MAPA integrates molecular interactions and pathway-level functional context into a semantic-biological network to discover functional modules across multi-omics data. Combining random walk with restart and retrieval-augmented large language models, it provides structured, literature-informed module interpretation and reveals coherent biological insights in aging-related datasets."
+youtube_video_id: "eS3hR8jROdA"
+url_video: "https://youtu.be/eS3hR8jROdA?si=AksPmU4fR9oIJHoR"
 links:
 - icon: link
   icon_pack: fas

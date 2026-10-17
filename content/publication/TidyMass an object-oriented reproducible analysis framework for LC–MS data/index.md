@@ -13,11 +13,11 @@ author_notes:
 
 authors:
 - admin
-- Hong Yan
-- Chuchu Wang
-- Peng Gao
-- Caroline Johnson
-- Michael Snyder
+- Hong YAN
+- Chuchu WANG
+- Peng GAO
+- Caroline JOHNSON
+- Michael SNYDER
 
 featured: false
 publication: Nature Communications

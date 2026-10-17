@@ -12,13 +12,13 @@ author_notes:
 - Equal contribution
 authors:
 - admin
-- Wei Shao
-- Chuchu Wang
-- Liang Liang
-- Songjie Chen
-- Sai Zhang
-- Mirabela Rusu
-- Michael Snyder
+- Wei SHAO
+- Chuchu WANG
+- Liang LIANG
+- Songjie CHEN
+- Sai ZHANG
+- Mirabela RUSU
+- Michael SNYDER
 doi: ""
 featured: false
 image:

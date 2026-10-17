@@ -50,6 +50,21 @@ sections:
         position: right
       content:
       link:
+        icon: video
+        icon_pack: fas
+        label: "Watch video"
+        url: https://youtu.be/eS3hR8jROdA?si=AksPmU4fR9oIJHoR
+      title: "MAPA video"
+    - align: center
+      background:
+        color: '#666'
+        image:
+          filename: mapa-advanced-science-2026.png
+          filters:
+            brightness: 0.62
+        position: right
+      content:
+      link:
         icon: link
         icon_pack: fas
         text: Link

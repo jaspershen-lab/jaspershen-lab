@@ -10,7 +10,7 @@ author_notes:
 - Equal contribution
 authors:
 - admin
-- Michael Snyder
+- Michael SNYDER
 doi: ""
 featured: false
 image:

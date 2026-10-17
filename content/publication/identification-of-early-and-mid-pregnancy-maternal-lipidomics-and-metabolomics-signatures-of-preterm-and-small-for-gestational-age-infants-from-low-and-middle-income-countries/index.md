@@ -1,4 +1,12 @@
 ---
+image:
+  caption: "AI-generated concept illustration."
+  alt_text: "Concept illustration: Identification of Early and Mid-Pregnancy Maternal Lipidomics and Metabolomics Signatures of Preterm and Small-for-Gestational Age Infants from Low-and Middle-income Countries …"
+  focal_point: Smart
+  preview_only: false
+image_provenance:
+  type: generated
+  source: ""
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RGFaLdJalmkC"
 citation_source: "Google Scholar"
 citations: 0

@@ -13,22 +13,22 @@ author_notes:
 - Equal contribution
 authors:
 - admin
-- Ryan Kellogg
-- Daniel J Panyard
-- Nasim Bararpour
-- Kevin Erazo Castillo
-- Brittany Lee-McMullen
-- Alireza Delfarah
-- Jessalyn Ubellacker
-- Sara Ahadi
-- Yael Rosenberg-Hasson
-- Ariel Ganz
-- Kévin Contrepois
-- Basil Michael
-- Ian Simms
-- Chuchu Wang
-- Daniel Hornburg
-- Michael Snyder
+- Ryan KELLOGG
+- Daniel J PANYARD
+- Nasim BARARPOUR
+- Kevin Erazo CASTILLO
+- Brittany LEE-MCMULLEN
+- Alireza DELFARAH
+- Jessalyn UBELLACKER
+- Sara AHADI
+- Yael ROSENBERG-HASSON
+- Ariel GANZ
+- Kévin CONTREPOIS
+- Basil MICHAEL
+- Ian SIMMS
+- Chuchu WANG
+- Daniel HORNBURG
+- Michael SNYDER
 doi: ""
 featured: false
 image:

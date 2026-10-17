@@ -112,8 +112,8 @@
   {{ else }}
     {{ $link = . | relURL }}
   {{ end }}
-<a class="btn btn-outline-primary btn-page-header{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
-  {{ i18n "btn_video" }}
+<a class="btn btn-outline-primary btn-page-header resource-icon-link{{ if $is_list }} btn-sm{{end}}" aria-label="Video" title="Video" href="{{ $link }}" target="_blank" rel="noopener">
+  <i class="fas fa-video" aria-hidden="true"></i>
 </a>
 {{ end }}
 {{ with $page.Params.url_source }}

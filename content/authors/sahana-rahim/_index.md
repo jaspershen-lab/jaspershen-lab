@@ -8,7 +8,7 @@ education:
 email: "SAHANA005@e.ntu.edu.sg"
 commentable: true
 first_name: Sahana
-last_name: Abdul Rahim
+last_name: ABDUL RAHIM
 highlight_name: false
 interests:
 - 🖥 Bioinformatics

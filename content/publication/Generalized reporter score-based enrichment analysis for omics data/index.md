@@ -10,11 +10,11 @@ author_notes:
 # - Equal contribution
 # - Equal contribution
 authors:
-- Chen Peng
-- Qiong Chen
-- Shangjin Tan
+- Chen PENG
+- Qiong CHEN
+- Shangjin TAN
 - admin
-- Chao Jiang
+- Chao JIANG
 doi: ""
 featured: false
 image:

@@ -11,18 +11,18 @@ author_notes:
 - Equal contribution
 
 authors:
-- Huixun Jia
+- Huixun JIA
 - admin
-- Yun Guan
-- Meimei Xu
-- Jia Tu
-- Miao Mo
-- Li Xie
-- Jing Yuan
-- Zhen Zhang
-- Sanjun Cai
-- Ji Zhu
-- ZhengJiang Zhu
+- Yun GUAN
+- Meimei XU
+- Jia TU
+- Miao MO
+- Li XIE
+- Jing YUAN
+- Zhen ZHANG
+- Sanjun CAI
+- Ji ZHU
+- ZhengJiang ZHU
 
 featured: false
 publication: Radiotherapy and Oncology

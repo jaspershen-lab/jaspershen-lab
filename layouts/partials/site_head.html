@@ -155,6 +155,12 @@
   {{- end -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
+  {{/* Fingerprint publication layout in development too, so template and CSS update together. */}}
+  {{ if and .IsPage (eq .Section "publication") }}
+    {{ $publicationStyle := resources.Get "css/publication-layout.css" | minify | fingerprint "md5" }}
+    <link rel="stylesheet" href="{{ $publicationStyle.RelPermalink }}" />
+  {{ end }}
+
   {{/* Load WC community block styles */}}
   {{ $wc_block_styles := resources.Match "scss/blocks/**.scss" }}
   {{ with $wc_block_styles }}

@@ -8,15 +8,15 @@ abstract: "Untargeted metabolomics studies for biomarker discovery often have hu
 
 authors:
 - admin
-- Xiaoyun Gong
-- Yuping Cai
-- Yuan Guo
-- Jia Tu
-- Hao Li
-- Tao Zhang
-- Jialin Wang
-- Fuzhong Xue
-- Zheng-Jiang Zhu
+- Xiaoyun GONG
+- Yuping CAI
+- Yuan GUO
+- Jia TU
+- Hao LI
+- Tao ZHANG
+- Jialin WANG
+- Fuzhong XUE
+- Zheng-Jiang ZHU
 
 featured: false
 publication: Metabolomics

@@ -11,7 +11,7 @@ education:
 email: "drkajal25@gmail.com"
 commentable: true
 first_name: Kajal
-last_name: Agrawal
+last_name: AGRAWAL
 highlight_name: true
 interests:
 - 🧫 Oral and Gut Microbiome

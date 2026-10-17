@@ -10,44 +10,44 @@ author_notes:
 - Equal contribution
 - Equal contribution
 authors:
-- Xin Zhou
+- Xin ZHOU
 - admin
-- Jethro S Johnson
-- Daniel J Spakowicz 
-- Melissa Agnello
-- Wenyu Zhou
-- Monica Avina
-- Alexander Honkala
-- Faye Chleilat
-- Shirley Jingyi Chen
-- Kexin Cha
-- Shana Leopold
-- Chenchen Zhu
-- Lei Chen
-- Lin Lyu
-- Daniel Hornburg
-- Si Wu
-- Xinyue Zhang
-- Chao Jiang
-- Liuyiqi Jiang
-- Lihua Jiang
-- Ruiqi Jian
-- Andrew W Brooks
-- Meng Wang
-- Kévin Contrepois
-- Peng Gao
-- Sophia Miryam Schüssler-Fiorenza Rose
-- Thi Dong Binh Tran
-- Hoan Nguyen
-- Alessandra Celli
-- Bo-Young Hong
-- Eddy J Bautista
-- Yair Dorsett
-- Paula B Kavathas
-- Yanjiao Zhou
-- Erica Sodergren
-- George M Weinstock
-- Michael Snyder
+- Jethro S JOHNSON
+- Daniel J SPAKOWICZ
+- Melissa AGNELLO
+- Wenyu ZHOU
+- Monica AVINA
+- Alexander HONKALA
+- Faye CHLEILAT
+- Shirley Jingyi CHEN
+- Kexin CHA
+- Shana LEOPOLD
+- Chenchen ZHU
+- Lei CHEN
+- Lin LYU
+- Daniel HORNBURG
+- Si WU
+- Xinyue ZHANG
+- Chao JIANG
+- Liuyiqi JIANG
+- Lihua JIANG
+- Ruiqi JIAN
+- Andrew W BROOKS
+- Meng WANG
+- Kévin CONTREPOIS
+- Peng GAO
+- Sophia Miryam SCHÜSSLER-FIORENZA ROSE
+- Thi Dong Binh TRAN
+- Hoan NGUYEN
+- Alessandra CELLI
+- Bo-Young HONG
+- Eddy J BAUTISTA
+- Yair DORSETT
+- Paula B KAVATHAS
+- Yanjiao ZHOU
+- Erica SODERGREN
+- George M WEINSTOCK
+- Michael SNYDER
 doi: ""
 featured: false
 image:

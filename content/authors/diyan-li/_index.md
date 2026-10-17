@@ -8,7 +8,7 @@ education:
 email: "lidiyan860714@163.com"
 commentable: true
 first_name: Diyan
-last_name: Li
+last_name: LI
 highlight_name: true
 interests:
 - 💰 Metagenomics

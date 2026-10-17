@@ -8,13 +8,13 @@ abstract: Large-scale metabolite annotation is a challenge in liquid chromatogra
 
 authors:
 - admin
-- Ruohong Wang
-- Xin Xiong
-- Yandong Yin
-- Yuping Cai
-- Zaijun Ma
-- Nan Liu
-- Zheng-Jiang Zhu
+- Ruohong WANG
+- Xin XIONG
+- Yandong YIN
+- Yuping CAI
+- Zaijun MA
+- Nan LIU
+- Zheng-Jiang ZHU
 
 featured: false
 publication: Nature communications

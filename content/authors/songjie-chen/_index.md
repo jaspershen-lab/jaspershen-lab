@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/songjie-chen-stanford/
 superuser: false
-title: Songjie Chen
+title: Songjie CHEN
 user_groups:
 - Industry
 ---

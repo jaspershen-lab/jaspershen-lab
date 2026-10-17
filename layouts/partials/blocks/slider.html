@@ -57,9 +57,9 @@
           </h1>
           {{ if eq $hash_id "latest_highlights" }}
             {{ if $item.link.url }}
-              {{ $label := cond (eq $page.Lang "zh") "查看论文" "View publication" }}
+              {{ $label := $item.link.label | default (cond (eq $page.Lang "zh") "查看论文" "View publication") }}
               <a href="{{ $item.link.url }}" class="btn highlight-icon-link" title="{{ $label }}" aria-label="{{ $label }}">
-                <i class="fas fa-link" aria-hidden="true"></i>
+                <i class="fas fa-{{ $item.link.icon | default "link" }}" aria-hidden="true"></i>
               </a>
             {{ end }}
             </div>

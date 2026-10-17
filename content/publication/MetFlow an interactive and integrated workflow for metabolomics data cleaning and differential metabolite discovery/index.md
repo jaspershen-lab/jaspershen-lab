@@ -8,7 +8,7 @@ abstract: "Mass spectrometry-based metabolomics aims to profile the metabolic ch
 
 authors:
 - admin
-- Zheng-Jiang Zhu
+- Zheng-Jiang ZHU
 
 featured: false
 publication: Bioinformatics

@@ -13,18 +13,18 @@ author_notes:
 - Equal contribution
 
 authors:
-- Jialin Wang
-- Tao Zhang
+- Jialin WANG
+- Tao ZHANG
 - admin
-- Jia Liu
-- Deli Zhao
-- Yawen Sun
-- Lu Wang
-- Yingjun Liu
-- Xiaoyun Gong
-- Yanxun Liu
-- Zheng-Jiang Zhu
-- Fuzhong Xue
+- Jia LIU
+- Deli ZHAO
+- Yawen SUN
+- Lu WANG
+- Yingjun LIU
+- Xiaoyun GONG
+- Yanxun LIU
+- Zheng-Jiang ZHU
+- Fuzhong XUE
 
 featured: false
 publication: Metabolomics

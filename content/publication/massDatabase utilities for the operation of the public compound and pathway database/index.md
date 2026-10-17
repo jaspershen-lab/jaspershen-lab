@@ -11,8 +11,8 @@ author_notes:
 - Equal contribution
 authors:
 - admin
-- Chuchu Wang
-- Michael Snyder
+- Chuchu WANG
+- Michael SNYDER
 doi: ""
 featured: false
 image:

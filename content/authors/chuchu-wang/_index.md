@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/chuchu-wang-71331190/
 superuser: false
-title: Chuchu Wang
+title: Chuchu WANG
 user_groups:
 - Academia
 ---

@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/daniel-panyard-ph-d-6322b442/
 superuser: false
-title: Daniel Panyard
+title: Daniel PANYARD
 user_groups:
 - Academia
 ---

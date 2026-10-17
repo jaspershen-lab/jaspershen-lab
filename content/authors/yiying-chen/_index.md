@@ -8,7 +8,7 @@ education:
 email: "yiyingchen@u.nus.edu"
 commentable: true
 first_name: Yiying
-last_name: Chen
+last_name: CHEN
 highlight_name: true
 interests:
 - 🧩 Bioinformatics 

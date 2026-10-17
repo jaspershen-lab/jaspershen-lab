@@ -1,4 +1,12 @@
 ---
+image:
+  caption: "AI-generated concept illustration."
+  alt_text: "Concept illustration: Longitudinal interactions between levels of serum cytokine and the microbiome from four body sites"
+  focal_point: Smart
+  preview_only: false
+image_provenance:
+  type: generated
+  source: ""
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:aqlVkmm33-oC"
 citation_source: "Google Scholar"
 citations: 1
@@ -11,15 +19,15 @@ author_notes:
 - Equal contribution
 
 authors:
-- Xin Zhou
+- Xin ZHOU
 - admin
-- Jethro Johnson
-- Daniel J Spakowicz
-- Chenchen Zhu
-- Wenyu Zhou
-- Yanjiao Zhou
-- George Weinstock
-- Michael Snyder
+- Jethro JOHNSON
+- Daniel J SPAKOWICZ
+- Chenchen ZHU
+- Wenyu ZHOU
+- Yanjiao ZHOU
+- George WEINSTOCK
+- Michael SNYDER
 
 featured: false
 publication: The Journal of Immunology

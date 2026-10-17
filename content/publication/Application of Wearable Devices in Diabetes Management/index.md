@@ -17,13 +17,13 @@ author_notes:
 - "* Corresponding author"
 
 authors:
-- Zijing Du
-- Feifan Zhang
-- Yifei Ge
-- Yijiang Liu
-- Honghua Yu
-- Yong Wang
-- Rinkoo Dalan
+- Zijing DU
+- Feifan ZHANG
+- Yifei GE
+- Yijiang LIU
+- Honghua YU
+- Yong WANG
+- Rinkoo DALAN
 - admin
 
 featured: false

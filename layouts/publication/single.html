@@ -1,0 +1,93 @@
+{{- define "main" -}}
+{{ $pub_types := partial "functions/get_pub_types" $ }}
+{{ $pub_type_param := .Params.publication_types | default (slice 0) }}
+
+{{/* Convert string in form `"0"` to int (`0`) */}}
+{{ $pub_type := (int (index $pub_type_param 0)) | default 0 }}
+
+{{/* Validate Pub Type if defined */}}
+{{ if gt $pub_type (sub (len $pub_types) 1) }}
+  {{ warnf "Unknown publication type in %s" .File.Path }}
+  {{ $pub_type = 0 }}
+{{ end }}
+
+<div class="pub">
+
+  <header class="article-container pt-3">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-subtitle">{{ . | markdownify | emojify }}</p>{{ end }}
+    {{ partial "page_metadata" (dict "page" . "is_list" 0 "share" true) }}
+    {{ partial "page_links_div.html" . }}
+  </header>
+
+  <div class="article-container">
+
+    {{ $cover := partial "functions/get_featured_image.html" . }}
+    {{ $showCover := and $cover (not .Params.image.preview_only) }}
+    <div class="publication-overview{{ if $showCover }} publication-overview--with-cover{{ end }}">
+      {{ with .Params.abstract }}<h3 class="publication-overview__heading">{{ i18n "abstract" }}</h3>{{ end }}
+      {{ if $showCover }}
+        {{ $image := $cover.Fit "900x1400 webp" }}
+        <figure class="publication-overview__cover">
+          <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Params.image.alt_text | default .Title }}">
+          {{ with .Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
+        </figure>
+      {{ end }}
+      {{ with .Params.abstract }}
+        <section class="publication-overview__abstract">
+          <div class="pub-abstract">{{ . | markdownify }}</div>
+        </section>
+      {{ end }}
+    </div>
+
+    {{ with .Params.youtube_video_id }}
+    <div class="publication-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}"
+        title="{{ $.Title }} — Video" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    {{ end }}
+
+    {{/* If the type is Uncategorized, hide the type. */}}
+    {{ if ne $pub_type 0 }}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">{{ i18n "publication_type" }}</div>
+          <div class="col-12 col-md-9">
+            <a href="{{ (site.GetPage "section" "publication").RelPermalink }}#{{ $pub_type | anchorize }}">
+              {{ index $pub_types $pub_type }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    {{ end }}
+
+    {{ if .Params.publication }}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">{{ i18n "publication" }}</div>
+          <div class="col-12 col-md-9">{{ .Params.publication | markdownify }}</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    {{ end }}
+
+    <div class="space-below"></div>
+
+    <div class="article-style">{{ .Content }}</div>
+
+    {{ partial "page_footer" . }}
+
+  </div>
+</div>
+{{- end -}}

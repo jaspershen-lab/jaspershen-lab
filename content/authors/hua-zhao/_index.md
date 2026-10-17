@@ -8,7 +8,7 @@ education:
 email: "zhaohua2016@zzu.edu.cn"
 commentable: true
 first_name: Hua
-last_name: Zhao
+last_name: ZHAO
 highlight_name: true
 interests:
 - 💰 Proteomics

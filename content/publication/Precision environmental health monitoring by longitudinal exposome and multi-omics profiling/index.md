@@ -11,14 +11,14 @@ author_notes:
 - Equal contribution
 
 authors:
-- Peng Gao
+- Peng GAO
 - admin
-- Xinyue Zhang
-- Chao Jiang
-- Sai Zhang
-- Xin Zhou
-- Sophia Miryam Schüssler-Fiorenza Rose
-- Michael Snyder
+- Xinyue ZHANG
+- Chao JIANG
+- Sai ZHANG
+- Xin ZHOU
+- Sophia Miryam SCHÜSSLER-FIORENZA ROSE
+- Michael SNYDER
 
 featured: false
 publication: Genome Research

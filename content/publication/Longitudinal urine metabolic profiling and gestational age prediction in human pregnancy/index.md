@@ -13,13 +13,13 @@ author_notes:
 
 authors:
 - admin
-- Songjie Chen
-- Liang Liang
-- Monika Avina
-- Hanyah Zackriah
-- Laura Jelliffe-Pawlowski
-- Larry Rand
-- Michael Snyder
+- Songjie CHEN
+- Liang LIANG
+- Monika AVINA
+- Hanyah ZACKRIAH
+- Laura JELLIFFE-PAWLOWSKI
+- Larry RAND
+- Michael SNYDER
 
 featured: false
 publication: Briefing In Bioinformatics

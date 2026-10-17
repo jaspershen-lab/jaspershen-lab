@@ -7,16 +7,16 @@ title: Serum metabolomics analysis for the progression of esophageal squamous ce
 abstract: "BACKGROUND: Previous metabolomics studies have found differences in metabolic characteristics between the healthy and ESCC patients. However, few of these studies concerned the whole process of the progression of ESCC. This study aims to explore serum metabolites associated with the progression of ESCC. METHODS: Serum samples from 653 participants (305 normal, 77 esophagitis, 228 LGD, and 43 HGD/ESCC) were examined by ultra-high performance liquid chromatography quadruple time-of-flight mass spectrometry (UHPLC-QTOF/MS). Principal component analysis (PCA) was first applied to obtain an overview of the clustering trend for the multidimensional data. Fuzzy c-means (FCM) clustering was then used to screen metabolites with a changing tendency in the progression of ESCC. Univariate ordinal logistic regression analysis and multiple ordinal logistic regression analysis were applied to …"
 
 authors:
-- Xia Li
-- Lihong Zhao
-- Mengke Wei
-- Jiali Lv
-- Yawen Sun
+- Xia LI
+- Lihong ZHAO
+- Mengke WEI
+- Jiali LV
+- Yawen SUN
 - admin
-- Deli Zhao
-- Fuzhong Xue
-- Tao Zhang
-- Jialin Wang
+- Deli ZHAO
+- Fuzhong XUE
+- Tao ZHANG
+- Jialin WANG
 
 featured: false
 publication: Journal of Cancer

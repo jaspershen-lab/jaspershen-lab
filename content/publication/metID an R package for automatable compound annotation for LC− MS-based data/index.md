@@ -12,12 +12,12 @@ author_notes:
 
 authors:
 - admin
-- Si Wu
-- Liang Liang
-- Songjie Chen
-- Kévin Contrepois
-- Zheng-Jiang Zhu
-- Michael Snyder
+- Si WU
+- Liang LIANG
+- Songjie CHEN
+- Kévin CONTREPOIS
+- Zheng-Jiang ZHU
+- Michael SNYDER
 
 featured: false
 publication: Bioinformatics

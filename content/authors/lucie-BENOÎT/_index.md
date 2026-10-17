@@ -8,7 +8,7 @@ education:
 email: "lucie.benoit@efrei.net"
 commentable: true
 first_name: Lucie
-last_name: Benoit
+last_name: BENOIT
 highlight_name: true
 interests:
 - 🖥 Bioinformatics

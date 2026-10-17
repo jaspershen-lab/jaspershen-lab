@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: http://lsi.zju.edu.cn/jianglab_exposome/list.htm
 superuser: false
-title: Chao Jiang
+title: Chao JIANG
 user_groups:
 - Academia
 ---

@@ -11,16 +11,16 @@ abstract: An increase in acute myocardial infarction (AMI)-related deaths has be
 # - Equal contribution
 
 authors:
-- Enrui Xie
+- Enrui XIE
 - admin
-- Yee Hui Yeo
-- Zixuan Xing
-- Joseph E. Ebinger
-- Yixuan Duan
-- Yue Zhang
-- Susan Cheng
-- Fanpu Ji
-- Jie Deng
+- Yee Hui YEO
+- Zixuan XING
+- Joseph E. EBINGER
+- Yixuan DUAN
+- Yue ZHANG
+- Susan CHENG
+- Fanpu JI
+- Jie DENG
 
 featured: false
 publication: American Heart Journal Plus Cardiology Research and Practice

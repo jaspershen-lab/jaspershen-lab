@@ -11,7 +11,7 @@ education:
 email: "clare_chifang@outlook.com"
 commentable: true
 first_name: Chi Fang
-last_name: Hsu
+last_name: HSU
 highlight_name: true
 interests:
 - 🖥 Gut Microbiome

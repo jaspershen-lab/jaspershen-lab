@@ -9,10 +9,10 @@ abstract: Multiomics data fusion integrates diverse data modalities, ranging fro
 # - Equal contribution
 # - Equal contribution
 authors:
-- Daisy Yi Ding
+- Daisy Yi DING
 - admin
-- Michael Snyder
-- Robert Tibshirani
+- Michael SNYDER
+- Robert TIBSHIRANI
 doi: ""
 featured: false
 image:

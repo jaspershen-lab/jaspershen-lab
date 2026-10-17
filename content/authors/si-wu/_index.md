@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/si-wu-137837149/
 superuser: false
-title: Si Wu
+title: Si WU
 user_groups:
 - Industry
 ---

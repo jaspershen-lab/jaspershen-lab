@@ -12,23 +12,23 @@ author_notes:
 - Equal contribution
 
 authors:
-- Chuchu Wang
-- Wenhong Jiang
-- Jeremy Leitz
-- Kailu Yang
-- Luis Esquivies
-- Xing Wang
+- Chuchu WANG
+- Wenhong JIANG
+- Jeremy LEITZ
+- Kailu YANG
+- Luis ESQUIVIES
+- Xing WANG
 - admin
-- Richard Held
-- Daniel J. Adams
-- Tamara Basta
-- Lucas Hampton
-- Ruiqi Jian
-- Lihua Jiang
-- Michael H. B. Stowell
-- Wolfgang Baumeister
-- Qiang Guo
-- Axel T. Brunger
+- Richard HELD
+- Daniel J. ADAMS
+- Tamara BASTA
+- Lucas HAMPTON
+- Ruiqi JIAN
+- Lihua JIANG
+- Michael H. B. STOWELL
+- Wolfgang BAUMEISTER
+- Qiang GUO
+- Axel T. BRUNGER
 
 featured: false
 publication: Nature

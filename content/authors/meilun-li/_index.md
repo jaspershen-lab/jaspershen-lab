@@ -11,7 +11,7 @@ education:
 email: "MEILUN001@e.ntu.edu.sg"
 commentable: true
 first_name: Meilun
-last_name: Li
+last_name: LI
 highlight_name: true
 interests:
 - 🖥 Bioinformatics

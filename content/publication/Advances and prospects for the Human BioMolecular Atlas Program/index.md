@@ -9,11 +9,11 @@ abstract: MThe Human BioMolecular Atlas Program (HuBMAP) aims to create a multi-
 # - Equal contribution
 # - Equal contribution
 authors:
-- Sanjay Jain
-- Liming Pei
-- Jeffrey M Spraggins
-- Michael Angelo
-- Michael Snyder
+- Sanjay JAIN
+- Liming PEI
+- Jeffrey M SPRAGGINS
+- Michael ANGELO
+- Michael SNYDER
 doi: ""
 featured: false
 image:

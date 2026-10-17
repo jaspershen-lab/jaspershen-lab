@@ -9,7 +9,7 @@ social:
   icon_pack: fas
   link: https://www.linkedin.com/in/daniel-hornburg-phd/
 superuser: false
-title: Daniel Hornburg
+title: Daniel HORNBURG
 user_groups:
 - Industry
 ---
