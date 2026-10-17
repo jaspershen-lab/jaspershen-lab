@@ -6,7 +6,7 @@
 {{ $show_authors := false }}
 {{ $link := $item.RelPermalink }}
 {{ $target := "" }}
-{{ if $item.Params.external_link }}
+{{ if and $item.Params.external_link (ne $item.Section "news") }}
   {{ $link = $item.Params.external_link }}
   {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
 {{ end }}

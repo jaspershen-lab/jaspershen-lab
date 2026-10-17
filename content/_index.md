@@ -41,13 +41,9 @@ sections:
   content:
     slides:
     - align: center
+      video_id: eS3hR8jROdA
       background:
-        color: '#666'
-        image:
-          filename: mapa-advanced-science-2026.png
-          filters:
-            brightness: 0.62
-        position: right
+        color: '#000'
       content:
       link:
         icon: video
@@ -294,19 +290,6 @@ sections:
   design:
     columns: "2"
     view: list
-    background:
-      image:
-        filename: news.jpg
-        filters:
-          brightness: 0.5
-      #  Image fit. Options are `cover` (default), `contain`, or `actual` size.
-      size: cover
-      # Image focal point. Options include `left`, `center` (default), or `right`.
-      position: center
-      # Use a fun parallax-like fixed background effect on desktop? true/false
-      parallax: true
-      # Text color (true=light, false=dark, or remove for the dynamic theme color).
-      text_color_light: true
 
 - block: people
   id: team

@@ -1,12 +1,6 @@
 {{- $years := slice "2026" "2025" "2024" -}}
 <script>document.documentElement.classList.add("has-photo-archive-motion");</script>
 <section class="photo-archive">
-  <div class="photo-archive__hero">
-    <p class="photo-archive__eyebrow">Shen Lab Albums</p>
-    <h2>Photos by Year</h2>
-    <p>Conference moments, lab dinners, visits, presentations, and everyday memories from Shen Lab.</p>
-  </div>
-
   <div class="photo-archive__years">
     {{- range $index, $year := $years -}}
       {{- $dir := printf "content/photo-%s/lab" $year -}}

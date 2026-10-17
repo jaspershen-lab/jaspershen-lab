@@ -48,6 +48,14 @@
    {{ end }}
 
   <div class="carousel-item{{if eq $index 0}} active{{end}} {{with $block.design.is_fullscreen}}fullscreen{{end}}" style="{{$style_bg | safeCSS}}">
+    {{ if $item.video_id }}
+    <div class="highlight-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ $item.video_id }}?playsinline=1&rel=0"
+        data-video-src="https://www.youtube-nocookie.com/embed/{{ $item.video_id }}?playsinline=1&rel=0"
+        title="{{ $item.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    {{ else }}
     <div class="position-absolute d-flex w-100 h-100 justify-content-center align-items-center" style="{{$style_filter | safeCSS}}">
       {{/* To prevent control overlap, margins are based on $carousel-control-* in bootstrap-variables.scss */}}
       <div class="wg-hero dark container" style="margin-left: 6rem; margin-right: 6rem; text-align: {{$item.align | default "left"}};">
@@ -86,6 +94,7 @@
           {{ end }}
         </div>
     </div>
+    {{ end }}
   </div>
   {{ end }}
 </div>
@@ -95,6 +104,25 @@
   <span class="carousel-control-prev-icon"></span>
   <span class="sr-only">Previous</span>
 </a>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var carousel = document.getElementById({{ $hash_id }});
+  if (!carousel) return;
+  carousel.querySelectorAll('.highlight-video iframe').forEach(function (frame) {
+    var slide = frame.closest('.carousel-item');
+    function syncVideo() {
+      if (slide.classList.contains('active')) {
+        if (!frame.hasAttribute('src')) frame.src = frame.dataset.videoSrc;
+      } else {
+        // Unload the player when leaving this slide so hidden video cannot keep playing.
+        frame.removeAttribute('src');
+      }
+    }
+    new MutationObserver(syncVideo).observe(slide, { attributes: true, attributeFilter: ['class'] });
+    syncVideo();
+  });
+});
+</script>
 <a class="carousel-control-next" href="#{{$hash_id}}" data-slide="next">
   <span class="carousel-control-next-icon"></span>
   <span class="sr-only">Next</span>

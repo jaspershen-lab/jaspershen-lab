@@ -41,13 +41,9 @@ sections:
   content:
     slides:
     - align: center
+      video_id: eS3hR8jROdA
       background:
-        color: '#666'
-        image:
-          filename: mapa-advanced-science-2026.png
-          filters:
-            brightness: 0.62
-        position: right
+        color: '#000'
       content:
       link:
         icon: video
@@ -190,15 +186,6 @@ sections:
   design:
     columns: "2"
     view: list
-    background:
-      image:
-        filename: news.jpg
-        filters:
-          brightness: 0.5
-      size: cover
-      position: center
-      parallax: true
-      text_color_light: true
 
 - block: people
   id: team

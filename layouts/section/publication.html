@@ -32,17 +32,6 @@
       {{ $all_authors := sort (uniq ($authors_scratch.Get "authors")) }}
 
       <div class="publication-filter-panel" id="publication-filter-panel">
-        <div class="publication-filter-panel__header">
-          <div>
-            <p class="publication-filter-panel__eyebrow">Explore publications</p>
-            <h2>Filter & Search</h2>
-          </div>
-          <button class="publication-filter-panel__reset" type="button" id="publication-filter-reset">
-            <i class="fas fa-rotate-left" aria-hidden="true"></i>
-            Reset
-          </button>
-        </div>
-
         <div class="publication-filter-grid">
           <label class="publication-filter-field publication-filter-field--search">
             <span>Search</span>
@@ -95,6 +84,9 @@
             </div>
           </label>
           </div>
+          <button class="publication-filter-panel__reset" type="button" id="publication-filter-reset" aria-label="Reset filters" title="Reset filters">
+            <i class="fas fa-rotate-left" aria-hidden="true"></i>
+          </button>
         </div>
 
         <div class="publication-filter-chips" id="publication-filter-chips" aria-label="Active filters"></div>

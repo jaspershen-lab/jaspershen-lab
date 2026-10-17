@@ -82,10 +82,9 @@
       {{ with $person.interests }}
       <div class="col-md-5">
         <div class="section-subheading">{{ i18n "interests" | markdownify }}</div>
-        <ul class="ul-interests fa-ul mb-0">
+        <ul class="ul-interests list-unstyled mb-0">
           {{ range . }}
           <li>
-            <i class="fa-li fa-solid fa-book"></i>
             {{ . | markdownify | emojify }}
           </li>
           {{ end }}
@@ -95,7 +94,7 @@
 
       {{ with $person.education }}
       <div class="col-md-7">
-        <div class="section-subheading">{{ i18n "education" | markdownify }}</div>
+        <div class="section-subheading">{{ if eq $page.Lang "zh" }}教育与经历{{ else }}Education&amp;Experience{{ end }}</div>
         <ul class="ul-edu fa-ul mb-0">
           {{ range .courses }}
           <li>
