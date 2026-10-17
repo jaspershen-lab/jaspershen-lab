@@ -691,9 +691,11 @@
           sticky: true,
           opacity: 0.98,
           className: "collab-tooltip"
-        }).on("add", function () {
-          if (marker._path) {
-            marker._path.style.setProperty("--collab-marker-delay", Math.min(index * 60, 900) + "ms");
+        }).on("add", function (event) {
+          // addTo fires this event before the marker variable is assigned.
+          var path = event.target.getElement();
+          if (path) {
+            path.style.setProperty("--collab-marker-delay", Math.min(index * 60, 900) + "ms");
           }
         }).on("mouseover", function () {
           marker.setRadius(hoverRadius);
