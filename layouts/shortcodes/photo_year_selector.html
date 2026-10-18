@@ -1,0 +1,13 @@
+{{- $albums := partial "photos/albums.html" . -}}
+{{- $current := .Page.RelPermalink -}}
+{{- $selected := 0 -}}
+{{- range $i, $album := $albums -}}{{- if eq $album.url $current -}}{{- $selected = $i -}}{{- end -}}{{- end -}}
+{{- $previous := index $albums (mod (add $selected 1) (len $albums)) -}}
+{{- $next := index $albums (mod (add $selected (sub (len $albums) 1)) (len $albums)) -}}
+<nav class="photo-year-picker" aria-label="Photo album year">
+  <a class="photo-year-picker__arrow" href="{{ $previous.url }}" aria-label="View {{ $previous.year }} album"><i class="fas fa-chevron-left" aria-hidden="true"></i></a>
+  <select aria-label="Select photo album year" onchange="window.location.assign(this.value)">
+    {{ range $albums }}<option value="{{ .url }}"{{ if eq .url $current }} selected{{ end }}>{{ .year }}</option>{{ end }}
+  </select>
+  <a class="photo-year-picker__arrow" href="{{ $next.url }}" aria-label="View {{ $next.year }} album"><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+</nav>

@@ -1,0 +1,9 @@
+{{- $albums := slice -}}
+{{- range readDir "content" -}}
+  {{- if and .IsDir (findRE `^photo-[0-9]{4}$` .Name) -}}
+    {{- if fileExists (printf "content/%s/index.md" .Name) -}}
+      {{- $albums = $albums | append (dict "year" (replaceRE `^photo-` "" .Name) "url" (printf "/%s/" .Name)) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $albums "year" "desc") -}}

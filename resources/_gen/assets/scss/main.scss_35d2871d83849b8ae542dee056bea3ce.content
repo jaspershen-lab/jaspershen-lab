@@ -15952,3 +15952,116 @@ body.dark section#latest_highlights {
 
 .highlight-flow__card:not(.is-current) iframe {
   visibility: hidden; }
+
+.highlight-flow__load-video {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: #e62117;
+  color: white;
+  cursor: pointer; }
+
+.highlight-flow__card:not(.is-current) .highlight-flow__load-video {
+  pointer-events: none; }
+
+.highlight-flow__media [hidden] {
+  display: none; }
+
+/* The photo carousel shares the Highlights Cover Flow geometry. */
+.photo-flow {
+  padding: 24px 0;
+  overflow: hidden;
+  touch-action: pan-y; }
+
+.photo-flow__select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer; }
+
+.photo-flow .highlight-flow__card {
+  width: 66%; }
+
+.photo-flow .highlight-flow__stage {
+  height: auto;
+  padding-top: calc(37.125% + 110px); }
+
+.photo-flow :focus-visible {
+  outline: 2px solid #b21f2f;
+  outline-offset: 4px; }
+
+@media (max-width: 767.98px) {
+  .photo-flow .highlight-flow__card {
+    width: 80%; }
+  .photo-flow .highlight-flow__stage {
+    padding-top: calc(45% + 100px); } }
+
+.photo-year-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px; }
+
+.photo-year-picker select {
+  width: auto;
+  min-width: 100px;
+  padding: 7px 14px;
+  border: 1px solid rgba(128, 140, 155, 0.35);
+  border-radius: 20px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer; }
+
+.photo-year-picker__arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(128, 140, 155, 0.35);
+  color: inherit;
+  font-size: 14px; }
+
+body.dark .photo-year-picker select option {
+  background: #18212c;
+  color: #edf1f7; }
+
+.pub-summary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px; }
+
+.pub-summary-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  flex-shrink: 0;
+  border: 1px solid rgba(128, 140, 155, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  cursor: pointer; }
+
+.pub-summary-toggle:hover {
+  background: rgba(128, 140, 155, 0.12); }
+
+.pub-summary-grid[hidden] {
+  display: none; }
+
+.team-stats-grid[hidden] {
+  display: none; }

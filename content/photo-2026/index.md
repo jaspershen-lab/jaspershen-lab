@@ -7,6 +7,7 @@ sections:
       title: 📸 Lab Photos 2026
       subtitle: ''
       text: |
+        {{< photo_year_selector >}}
         <style>
         .photo-spotlight {
           position: relative;

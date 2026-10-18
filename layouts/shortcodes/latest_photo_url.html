@@ -1,0 +1,2 @@
+{{- $albums := partial "photos/albums.html" . -}}
+{{- with index $albums 0 -}}{{ .url }}{{- end -}}

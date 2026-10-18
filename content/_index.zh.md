@@ -223,7 +223,7 @@ sections:
     text: |-
       {{< life_in_lab >}}
       <div class="see-all">
-        <a href="./photo/">
+        <a href="{{< latest_photo_url >}}">
           查看全部
           <i class="fas fa-angle-right"></i>
         </a>

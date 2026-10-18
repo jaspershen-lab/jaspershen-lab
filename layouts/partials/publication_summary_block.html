@@ -1,6 +1,6 @@
 <div class="publication-summary-section">
-  <h2 class="pub-year-heading">Publication Summary</h2>
-  <div class="pub-summary-grid">
+  <h2 class="pub-year-heading pub-summary-heading"><span>Publication Summary</span><button type="button" class="pub-summary-toggle" aria-expanded="false" aria-controls="publication-summary-charts" aria-label="Expand Publication Summary"><i class="fas fa-plus" aria-hidden="true"></i></button></h2>
+  <div class="pub-summary-grid" id="publication-summary-charts" hidden>
     <div class="pub-summary-card">
       <h3 class="pub-summary-title">Publications Per Year</h3>
       <div id="pub-count-chart" class="pub-bars-chart"></div>
@@ -19,6 +19,18 @@
     }
     if (!section || section.dataset.pubSummaryInit === "1") return;
     section.dataset.pubSummaryInit = "1";
+
+    var toggle = section.querySelector('.pub-summary-toggle');
+    var charts = section.querySelector('.pub-summary-grid');
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', (expanded ? 'Collapse' : 'Expand') + ' Publication Summary');
+      toggle.querySelector('i').className = expanded ? 'fas fa-minus' : 'fas fa-plus';
+      charts.hidden = !expanded;
+      if (expanded && state.ready) runAnimation();
+      if (!expanded) hideTooltip();
+    });
 
     var tooltip = document.querySelector(".pub-floating-tooltip");
     if (!tooltip) {
@@ -127,6 +139,7 @@
       });
 
     function runAnimation() {
+      if (charts.hidden) return;
       resetBars(state.countBars);
       resetBars(state.citeBars);
       setTimeout(function () {

@@ -98,7 +98,11 @@
   <script type="application/json" class="team-stats-donut-data">{{ $donut | jsonify }}</script>
   <script type="application/json" class="team-stats-bar-data">{{ $rows | jsonify }}</script>
 
-  <div class="team-stats-grid">
+  <h2 class="pub-year-heading pub-summary-heading">
+    <span>Team Summary</span>
+    <button type="button" class="pub-summary-toggle team-stats-toggle" aria-expanded="false" aria-controls="{{ $widgetID }}-charts" aria-label="Expand Team Summary"><i class="fas fa-plus" aria-hidden="true"></i></button>
+  </h2>
+  <div class="team-stats-grid" id="{{ $widgetID }}-charts" hidden>
     <section class="team-stats-card team-stats-card--donut">
       <div class="team-stats-card__title">Current Lab Member Distribution</div>
       <div class="team-donut-wrap">
@@ -136,4 +140,4 @@
   <div class="team-stats-tooltip" hidden></div>
 </div>
 
-<script src="/js/team_membership_stats.js?v=20261016-red"></script>
+<script src="/js/team_membership_stats.js?v=20261018-fold"></script>
