@@ -7,6 +7,10 @@
 {{ $block := .wcBlock }}
 {{ $hash_id := .wcIdentifier }}
 
+{{ if eq $hash_id "latest_highlights" }}
+{{ partial "highlight_coverflow.html" . }}
+{{ else }}
+
 <!-- Indicators -->
 <ol class="carousel-indicators">
   {{ range $index, $item := $block.content.slides }}
@@ -127,3 +131,4 @@ document.addEventListener('DOMContentLoaded', function () {
   <span class="carousel-control-next-icon"></span>
   <span class="sr-only">Next</span>
 </a>
+{{ end }}

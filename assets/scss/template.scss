@@ -6369,3 +6369,48 @@ body .news-year-item__links .btn-page-header.resource-icon-link {
   align-self: end;
   margin-bottom: 6px;
 }
+
+/* Highlights: a restrained album-style Cover Flow. */
+section#latest_highlights { background: #f5f6f8; color: #172033; }
+body.dark section#latest_highlights { background: #18212c; color: #edf1f7; }
+.highlight-flow { padding: 48px 0 28px; overflow: hidden; touch-action: pan-y; }
+.highlight-flow__stage { position: relative; width: 100%; height: unquote("calc(min(37.125vw, 540px) + 140px)"); perspective: 1500px; }
+.highlight-flow__card {
+  position: absolute; top: 0; left: 50%; width: 66vw; max-width: 960px;
+  transform: translateX(-50%); opacity: 0; pointer-events: none;
+  transition: transform .55s cubic-bezier(.22,.68,.2,1), opacity .45s ease;
+}
+.highlight-flow__card[data-position="0"] { opacity: 1; pointer-events: auto; }
+.highlight-flow__card[data-position="1"] { opacity: .65; transform: translateX(20%) scale(.78) rotateY(-24deg); pointer-events: auto; }
+.highlight-flow__card[data-position="-1"] { opacity: .65; transform: translateX(-120%) scale(.78) rotateY(24deg); pointer-events: auto; }
+.highlight-flow__card[data-position="2"] { transform: translateX(75%) scale(.6) rotateY(-30deg); }
+.highlight-flow__card[data-position="-2"] { transform: translateX(-175%) scale(.6) rotateY(30deg); }
+.highlight-flow__media { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #10141c; box-shadow: 0 16px 32px rgba(15,23,42,.16); }
+.highlight-flow__media img, .highlight-flow__media iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: cover; margin: 0; }
+.highlight-flow__select { position: absolute; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; }
+.highlight-flow__card.is-current .highlight-flow__select { display: none; }
+.highlight-flow__caption { padding: 22px 8px 0; text-align: center; opacity: 0; transition: opacity .3s; }
+.highlight-flow__card.is-current .highlight-flow__caption { opacity: 1; }
+.highlight-flow__caption p { margin: 0 0 8px; font-size: .8rem; color: inherit; opacity: .7; }
+.highlight-flow__caption h2 { margin: 0; font-size: clamp(17px, 1.6vw, 25px); line-height: 1.35; font-weight: 600; }
+.highlight-flow__caption a { color: inherit; }
+.highlight-flow__controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 14px; }
+.highlight-flow__controls button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1px solid rgba(128,140,155,.3); background: transparent; color: inherit; font-size: 14px; cursor: pointer; }
+.highlight-flow__controls button:hover { background: rgba(128,140,155,.12); }
+.highlight-flow__count { font-size: 13px; font-variant-numeric: tabular-nums; opacity: .7; }
+.highlight-flow :focus-visible { outline: 2px solid #b21f2f; outline-offset: 4px; }
+@media (max-width: 767.98px) {
+  .highlight-flow { padding-top: 28px; }
+  .highlight-flow__card { width: 80vw; }
+  .highlight-flow__stage { height: calc(45vw + 150px); }
+  .highlight-flow__caption { padding-top: 18px; }
+  .highlight-flow__caption h2 { font-size: 17px; }
+  .highlight-flow__media { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .highlight-flow__card, .highlight-flow__caption { transition: none; }
+}
+
+.highlight-flow__media .highlight-flow__video-poster { position: absolute; inset: 0; }
+.highlight-flow__media iframe { position: relative; }
+.highlight-flow__card:not(.is-current) iframe { visibility: hidden; }

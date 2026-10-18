@@ -1,0 +1,97 @@
+{{ $page := .wcPage }}
+<div class="highlight-flow" role="region" aria-label="Highlights" aria-roledescription="carousel" tabindex="0">
+  <div class="highlight-flow__stage">
+    {{ range $i, $slide := .wcBlock.content.slides }}
+      {{ $title := $slide.title }}
+      {{ $journal := "" }}
+      {{ if $slide.video_id }}
+        {{ $title = "MAPA — Video introduction" }}
+      {{ else }}
+        {{ $path := replaceRE `^\.\./` "/" $slide.link.url }}
+        {{ with site.GetPage $path }}
+          {{ $title = .Title }}
+          {{ $journal = .Params.publication | default "" | plainify }}
+        {{ end }}
+      {{ end }}
+      <article class="highlight-flow__card{{ if eq $i 0 }} is-current{{ end }}" data-index="{{ $i }}" aria-label="{{ $title }}">
+        <div class="highlight-flow__media">
+          {{ if $slide.video_id }}
+            {{ with resources.Get "media/mapa-advanced-science-2026.png" }}<img class="highlight-flow__video-poster" src="{{ .RelPermalink }}" alt="MAPA video introduction" draggable="false">{{ end }}
+            <iframe src="https://www.youtube-nocookie.com/embed/{{ $slide.video_id }}?playsinline=1&rel=0&mute=1&enablejsapi=1"
+              data-src="https://www.youtube-nocookie.com/embed/{{ $slide.video_id }}?playsinline=1&rel=0&mute=1&enablejsapi=1"
+              title="MAPA video introduction" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          {{ else }}
+            {{ with resources.Get (printf "media/%s" $slide.background.image.filename) }}
+              <img src="{{ .RelPermalink }}" alt="{{ $title }}" draggable="false">
+            {{ end }}
+          {{ end }}
+          <button type="button" class="highlight-flow__select" aria-label="{{ $title }}"></button>
+        </div>
+        <div class="highlight-flow__caption">
+          <p>{{ if $slide.video_id }}{{ if eq $page.Lang "zh" }}研究视频{{ else }}Research video{{ end }}{{ else }}{{ $journal }}{{ end }}</p>
+          <h2>{{ if $slide.video_id }}{{ $title }}{{ else }}<a href="{{ $slide.link.url }}">{{ $title }}</a>{{ end }}</h2>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+  <div class="highlight-flow__controls">
+    <button type="button" data-step="-1" aria-label="Previous highlight"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+    <span class="highlight-flow__count" aria-live="polite" aria-atomic="true"></span>
+    <button type="button" data-step="1" aria-label="Next highlight"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
+<script>
+(function () {
+  function init() {
+    document.querySelectorAll('.highlight-flow').forEach(function (root) {
+      if (root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      var cards = Array.from(root.querySelectorAll('.highlight-flow__card'));
+      var current = 0, start = null;
+      function show(index) {
+        current = (index + cards.length) % cards.length;
+        cards.forEach(function (card, i) {
+          var offset = (i - current + cards.length) % cards.length;
+          if (offset > cards.length / 2) offset -= cards.length;
+          card.dataset.position = offset;
+          card.classList.toggle('is-current', offset === 0);
+          card.style.zIndex = 10 - Math.abs(offset);
+          card.querySelectorAll('a, iframe').forEach(function (el) { el.tabIndex = offset === 0 ? 0 : -1; });
+          var select = card.querySelector('.highlight-flow__select');
+          select.tabIndex = Math.abs(offset) === 1 ? 0 : -1;
+          var frame = card.querySelector('iframe');
+          if (frame) {
+            if (offset === 0 && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+            if (offset !== 0) frame.removeAttribute('src');
+          }
+        });
+        root.querySelector('.highlight-flow__count').textContent = (current + 1) + ' / ' + cards.length;
+      }
+      root.querySelectorAll('[data-step]').forEach(function (button) {
+        button.addEventListener('click', function () { show(current + Number(button.dataset.step)); });
+      });
+      cards.forEach(function (card, i) {
+        card.querySelector('.highlight-flow__select').addEventListener('click', function () { show(i); });
+      });
+      root.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault(); show(current + (event.key === 'ArrowRight' ? 1 : -1));
+        }
+      });
+      root.addEventListener('pointerdown', function (event) {
+        if (event.target.closest('button, a, iframe')) return;
+        start = {x: event.clientX, y: event.clientY};
+      });
+      root.addEventListener('pointerup', function (event) {
+        if (!start) return;
+        var dx = event.clientX - start.x, dy = event.clientY - start.y;
+        start = null;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1));
+      });
+      root.addEventListener('pointercancel', function () { start = null; });
+      show(0);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
