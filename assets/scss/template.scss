@@ -6411,12 +6411,8 @@ body.dark section#latest_highlights { background: #18212c; color: #edf1f7; }
   .highlight-flow__card, .highlight-flow__caption { transition: none; }
 }
 
-.highlight-flow__media .highlight-flow__video-poster { position: absolute; inset: 0; }
 .highlight-flow__media iframe { position: relative; }
-.highlight-flow__card:not(.is-current) iframe { visibility: hidden; }
 
-.highlight-flow__load-video { position: absolute; z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; border: 0; border-radius: 12px; background: #e62117; color: white; cursor: pointer; }
-.highlight-flow__card:not(.is-current) .highlight-flow__load-video { pointer-events: none; }
 .highlight-flow__media [hidden] { display: none; }
 
 /* The photo carousel shares the Highlights Cover Flow geometry. */
