@@ -11,7 +11,7 @@ abstract: "Nanopore direct RNA sequencing (DRS) has transformed transcriptomics 
 abstract_source: "https://europepmc.org/article/MED/42799506"
 title: "Nanopore direct RNA sequencing and the epitranscriptome: Advances in mapping native RNA landscapes"
 citation_source: "Google Scholar"
-citations: 6
+citations: 9
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:fPk4N6BV_jEC"
 
 authors:

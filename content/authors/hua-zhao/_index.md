@@ -16,7 +16,7 @@ interests:
 organizations: 
 - name: Reproductive Medical Center, People's Hospital of Zhengzhou University and Henan Provincial People's Hospital
   url: ""
-role: Visiting Scholar (2025-)
+role: Visiting Scholar (2025-2026)
 social:
 # - icon: house
 #   icon_pack: fas

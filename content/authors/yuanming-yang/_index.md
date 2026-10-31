@@ -16,7 +16,7 @@ interests:
 organizations:
 - name: The First Affiliated Hospital of Guangzhou University of Chinese Medicine
   url: ""
-role: Visiting Scholar (2025-)
+role: Visiting Scholar (2025-2026)
 social:
 # - icon: 
 #   icon_pack: 
@@ -35,8 +35,9 @@ status:
 superuser: false
 title: Yuanming YANG
 user_groups:
-- Researchers
-- Visiting Scholar
+- Researchers1
+- Visiting Scholar1
+- Alumni
 ---
 
 My main research field is the prevention and treatment of digestive system diseases with traditional Chinese medicine, and leverage multi-omics technologies such as single-cell and spatial transcriptomics to facilitate modern research in traditional Chinese medicine.

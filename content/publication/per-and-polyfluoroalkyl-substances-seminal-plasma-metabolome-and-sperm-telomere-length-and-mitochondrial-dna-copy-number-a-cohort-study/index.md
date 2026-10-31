@@ -11,7 +11,7 @@ abstract: "This study investigated the associations between exposure to 16 per- 
 abstract_source: "https://europepmc.org/article/MED/42809965"
 title: "Per-and polyfluoroalkyl substances, seminal plasma metabolome, and sperm telomere length and mitochondrial DNA copy number: a cohort study"
 citation_source: "Google Scholar"
-citations: 0
+citations: 1
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:a0OBvERweLwC"
 
 authors:

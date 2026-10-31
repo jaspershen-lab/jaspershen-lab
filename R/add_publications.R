@@ -476,7 +476,7 @@ is_journal_like <- function(journal) {
 
 
 # 读本地作者全名映射（content/authors/*/_index.md）
-build_local_author_map <- function(authors_dir = "/Users/xiaotaoshen/github/jaspershen-lab/content/authors") {
+build_local_author_map <- function(authors_dir = "content/authors") {
   files <- list.files(authors_dir, pattern = "_index\\.md$", recursive = TRUE, full.names = TRUE)
   out <- list()
   for (f in files) {

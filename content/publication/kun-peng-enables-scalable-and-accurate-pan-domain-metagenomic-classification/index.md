@@ -11,7 +11,7 @@ abstract: "Comprehensive pan-domain metagenomic classification is increasingly c
 abstract_source: "https://europepmc.org/article/MED/41838875"
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:vV6vV6tmYwMC"
 citation_source: "Google Scholar"
-citations: 3
+citations: 4
 title: "Kun-peng enables scalable and accurate pan-domain metagenomic classification"
 
 authors:
