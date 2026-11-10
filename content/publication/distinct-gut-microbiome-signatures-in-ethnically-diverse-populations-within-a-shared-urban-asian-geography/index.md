@@ -11,7 +11,7 @@ abstract: "The gut microbiome composition varies across human populations, but i
 abstract_source: "https://europepmc.org/article/PPR/PPR1268894"
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:RYcK_YlVTxYC"
 citation_source: "Google Scholar"
-citations: 0
+citations: 1
 title: "Distinct Gut Microbiome Signatures in Ethnically Diverse Populations within a Shared Urban Asian Geography"
 
 author_notes:

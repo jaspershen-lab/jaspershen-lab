@@ -11,7 +11,7 @@ abstract: "**Aims/hypothesis**\n\nThe aim of this study was to identify conserve
 abstract_source: "https://europepmc.org/article/MED/41817688"
 citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:2P1L_qKh6hAC"
 citation_source: "Google Scholar"
-citations: 1
+citations: 2
 title: "Integrated intraocular–plasma proteomics reveals conserved biomarkers for diabetic retinopathy progression: a multi-fluid biopsy study"
 
 authors:
