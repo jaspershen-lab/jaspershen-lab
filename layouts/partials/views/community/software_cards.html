@@ -50,6 +50,8 @@
   {{ $productType = "Resource" }}
 {{ end }}
 
+{{ $productType = $item.Params.product_type | default $productType }}
+
 <article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ range $item.Params.tags }}{{ . | urlize }} {{ else }}uncategorized{{ end }}">
   <a class="software-card__media" href="{{ $item.RelPermalink }}">
     {{ with $imageURL }}
