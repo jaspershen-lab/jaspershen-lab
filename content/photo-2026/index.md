@@ -272,6 +272,17 @@ sections:
 
         <!-- 10月 -->
         <div class="month-block">
+          <div class="month-title">November 2026</div>
+          <div class="gallery">
+            <div class="image-container"><img src="lab/2026-11-8-Yijiang got award at Metabolomics 2026 in Shanghai.jpeg" alt="2026/11/8 Yijiang LIU receiving a poster award at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Yijiang LIU receiving a poster award at Metabolomics 2026, Shanghai</div></div>
+            <div class="image-container"><img src="lab/2026-11-8-Xiaotao Presented at Metabolomics 2026 in Shanghai.jpeg" alt="2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai</div></div>
+            <div class="image-container"><img src="lab/2026-11-8-Xiaotao Presented at Metabolomics 2026 in Shanghai-2.jpeg" alt="2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai</div></div>
+            <div class="image-container"><img src="lab/2026-11-7-Yijiang Presented poster at Metabolomics 2026 in Shanghai.jpeg" alt="2026/11/7 Yijiang LIU presenting the FeatureMSEA poster at Metabolomics 2026, Shanghai"><div class="caption">2026/11/7 Yijiang LIU presenting the FeatureMSEA poster at Metabolomics 2026, Shanghai</div></div>
+            <div class="image-container"><img src="lab/2026-11-7-Yijiang Presented poster at Metabolomics 2026 in Shanghai-2.jpeg" alt="2026/11/7 Yijiang LIU presenting the FeatureMSEA poster at Metabolomics 2026, Shanghai"><div class="caption">2026/11/7 Yijiang LIU presenting the FeatureMSEA poster at Metabolomics 2026, Shanghai</div></div>
+          </div>
+        </div>
+
+        <div class="month-block">
           <div class="month-title">October 2026</div>
           <div class="gallery">
             <div class="image-container"><img src="lab/2026-10-2-Prof. Wenfeng Zeng visited Shen lab.jpeg" alt="2026/10/2 Prof. Wenfeng Zeng visited Shen Lab"><div class="caption">2026/10/2 Prof. Wenfeng Zeng visited Shen Lab</div></div>

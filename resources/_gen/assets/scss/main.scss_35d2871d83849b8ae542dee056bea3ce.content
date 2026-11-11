@@ -16043,3 +16043,40 @@ body.dark .photo-year-picker select option {
 
 .team-stats-grid[hidden] {
   display: none; }
+
+.article-style .news-photo {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 2rem; }
+
+.article-style .news-photo > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 8px; }
+
+.article-style .news-photo-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+  margin: 1.5rem auto 2rem; }
+
+.article-style .news-photo-row > .news-photo {
+  min-width: 0;
+  max-width: none;
+  margin: 0; }
+
+.article-style .news-photo-row > .news-photo > img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center; }
+
+@media (max-width: 575.98px) {
+  .article-style .news-photo-row > .news-photo > img {
+    aspect-ratio: auto; }
+  .article-style .news-photo-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px; } }
