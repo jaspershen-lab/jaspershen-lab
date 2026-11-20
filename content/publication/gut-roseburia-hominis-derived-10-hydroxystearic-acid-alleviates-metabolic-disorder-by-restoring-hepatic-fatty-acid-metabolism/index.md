@@ -7,14 +7,22 @@ citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&
 authors:
 - Jingxiang ZHANG
 - Chunlei ZHANG
-- Chi Fang HSU
-- M HU
-- L HU
-- S TAN
-- K KASAHARA
+- Clare HSU
+- Minting HU
+- Ling HU
+- Shaun TAN
+- Kazuyuki KASAHARA
 - Yifei GE
 - Shuli ZHANG
-- ...
+- Sunny WONG
+- Rinkoo DALAN
+- Nguan Soon TAN
+- Yusuf ALI
+- Ju-Sheng ZHENG
+- Chuchu WANG
+- admin
+
+authors_source: "https://doi.org/10.64898/2026.11.04.764162"
 
 featured: false
 publication: "bioRxiv"

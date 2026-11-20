@@ -107,12 +107,13 @@ googlescholar2shenlab <- function(
     pubid <- if ("pubid" %in% names(row)) as.character(row$pubid[[1]]) else ""
     author_short <- if ("author" %in% names(row)) as.character(row$author[[1]]) else ""
 
-    # Priority: Scholar article page full names > Crossref > local-map expansion > raw author string
-    authors <- fetch_authors_from_scholar(scholar_id, pubid)
-    if (is.null(authors)) authors <- fetch_authors_crossref(title)
-    if (is.null(authors) && nzchar(author_short)) authors <- expand_initial_authors(author_short, local_author_map)
-    if (is.null(authors) || length(authors) == 0) {
-      authors <- if (nzchar(author_short)) parse_authors(author_short, default_author = default_author) else default_author
+    # Never publish a truncated Scholar list or unresolved initials as complete authors.
+    authors <- fetch_authors_from_scholar(scholar_id, pubid, expected_title = title)
+    if (!authors_are_complete(authors)) authors <- fetch_authors_crossref(title)
+    if (!authors_are_complete(authors)) {
+      warning(sprintf("[SKIP] Complete author metadata unavailable: %s", title), call. = FALSE)
+      results[[i]] <- data.frame(added = FALSE, title = title, path = NA_character_, stringsAsFactors = FALSE)
+      next
     }
     authors <- normalize_authors_for_site(authors)
     
@@ -199,6 +200,16 @@ parse_scholar_id <- function(url_or_id) {
   stop("Cannot parse Google Scholar user id from URL.")
 }
 
+authors_are_complete <- function(authors) {
+  if (is.null(authors) || !length(authors) || anyNA(authors)) return(FALSE)
+  authors <- trimws(authors)
+  if (any(!nzchar(authors))) return(FALSE)
+  if (any(grepl("\\.\\.\\.|…|\\bet[[:space:]]+al\\b", authors, ignore.case = TRUE))) return(FALSE)
+  # An initials-only given name is insufficient for a new profile.
+  if (any(grepl("^([[:upper:]][.]?){1,4}[[:space:]]+", authors))) return(FALSE)
+  TRUE
+}
+
 parse_authors <- function(author_str, default_author = "admin") {
   if (is.null(author_str) || is.na(author_str) || trim_ws(author_str) == "") {
     return(default_author)
@@ -211,7 +222,7 @@ parse_authors <- function(author_str, default_author = "admin") {
 }
 
 # 从 Google Scholar 文章详情页抓作者全称（非缩写）
-fetch_authors_from_scholar <- function(user_id, pubid, hl = "en", sleep_sec = 0.5) {
+fetch_authors_from_scholar <- function(user_id, pubid, hl = "en", sleep_sec = 0.5, expected_title = NULL) {
   if (is.null(pubid) || is.na(pubid) || !nzchar(pubid)) return(NULL)
 
   url <- sprintf(
@@ -231,6 +242,11 @@ fetch_authors_from_scholar <- function(user_id, pubid, hl = "en", sleep_sec = 0.
 
   doc <- try(xml2::read_html(httr::content(resp, as = "text", encoding = "UTF-8")), silent = TRUE)
   if (inherits(doc, "try-error")) return(NULL)
+
+  if (!is.null(expected_title)) {
+    page_title <- rvest::html_text(rvest::html_elements(doc, "#gsc_oci_title"), trim = TRUE)
+    if (length(page_title) != 1L || !identical(normalize_title(page_title), normalize_title(expected_title))) return(NULL)
+  }
 
   fields <- rvest::html_text(rvest::html_elements(doc, ".gsc_oci_field"), trim = TRUE)
   values <- rvest::html_text(rvest::html_elements(doc, ".gsc_oci_value"), trim = TRUE)
@@ -506,33 +522,34 @@ fetch_authors_crossref <- function(title) {
   )
   if (inherits(res, "try-error") || is.null(res$data) || nrow(res$data) == 0) return(NULL)
   
-  a <- res$data$author[[1]]
-  if (is.null(a) || length(a) == 0) return(NULL)
-  
-  # case 1: list of author objects
-  if (is.list(a) && !is.data.frame(a)) {
-    full <- vapply(a, function(z) {
-      if (!is.list(z)) return(NA_character_)
-      g <- trimws(if (!is.null(z[["given"]])) as.character(z[["given"]]) else "")
-      f <- trimws(if (!is.null(z[["family"]])) as.character(z[["family"]]) else "")
-      nm <- trimws(paste(g, f))
-      if (nzchar(nm)) nm else NA_character_
-    }, character(1))
-    full <- full[!is.na(full)]
-    return(if (length(full)) full else NULL)
-  }
-  
-  # case 2: data.frame with given/family columns
-  if (is.data.frame(a)) {
-    if (all(c("given", "family") %in% names(a))) {
-      full <- trimws(paste(a$given, a$family))
-      full <- full[nzchar(full)]
-      return(if (length(full)) full else NULL)
+  # Reject unrelated top search hits instead of importing another paper's authors.
+  candidate_title <- gsub("<[^>]+>", "", as.character(res$data$title[[1]]))
+  if (!identical(normalize_title(candidate_title), normalize_title(title))) return(NULL)
+
+  parse_crossref_authors(res$data$author[[1]])
+}
+
+# Never silently discard an unparseable author or a collective author.
+parse_crossref_authors <- function(a) {
+  if (is.null(a) || !length(a)) return(NULL)
+  if (is.data.frame(a)) a <- lapply(seq_len(nrow(a)), function(i) as.list(a[i, , drop = FALSE]))
+  if (!is.list(a)) return(NULL)
+  full <- vapply(a, function(z) {
+    if (!is.list(z)) return(NA_character_)
+    field <- function(key) {
+      value <- z[[key]]
+      if (is.null(value) || length(value) != 1L || is.na(value)) return("")
+      trimws(as.character(value))
     }
-  }
-  
-  # case 3: atomic/character (fallback: cannot parse reliably)
-  NULL
+    collective <- field("name")
+    if (nzchar(collective)) return(collective)
+    given <- field("given")
+    family <- field("family")
+    if (!nzchar(given) || !nzchar(family)) return(NA_character_)
+    paste(given, family)
+  }, character(1))
+  if (!authors_are_complete(full)) return(NULL)
+  full
 }
 
 

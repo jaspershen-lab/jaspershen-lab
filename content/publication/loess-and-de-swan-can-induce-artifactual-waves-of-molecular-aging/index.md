@@ -17,10 +17,12 @@ citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&
 authors:
 - Madeleine CARBONNEAU
 - Katherine H SHUTTA
-- Jeffrey MILLER
+- Jeffrey W MILLER
+- Michael P SNYDER
 - admin
-- Michael SNYDER
 - John QUACKENBUSH
+
+authors_source: "https://doi.org/10.64898/2026.06.24.734079"
 
 featured: false
 publication: "bioRxiv"

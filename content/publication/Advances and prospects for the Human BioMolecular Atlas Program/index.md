@@ -13,8 +13,32 @@ authors:
 - Liming PEI
 - Jeffrey M SPRAGGINS
 - Michael ANGELO
-- Michael SNYDER
+- James P CARSON
+- Nils GEHLENBORG
+- Fiona GINTY
+- Joana P GONÇALVES
+- James S HAGOOD
+- John W HICKEY
+- Neil L KELLEHER
+- Louise C LAURENT
+- Shin LIN
+- Yiing LIN
+- Huiping LIU
+- Alexandra NABA
+- Ernesto S NAKAYASU
+- Wei-Jun QIAN
+- Andrea RADTKE
+- Paul ROBSON
+- Brent R STOCKWELL
+- Raf VAN DE PLAS
+- Ioannis S VLACHOS
+- Mowei ZHOU
+- HuBMAP Consortium
+- Katy BÖRNER
+- Michael P SNYDER
 doi: ""
+authors_source: "https://pubmed.ncbi.nlm.nih.gov/37468756/"
+
 featured: false
 image:
   caption: ''

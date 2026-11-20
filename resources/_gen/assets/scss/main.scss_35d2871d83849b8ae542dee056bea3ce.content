@@ -16080,3 +16080,31 @@ body.dark .photo-year-picker select option {
   .article-style .news-photo-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px; } }
+
+.publication-role-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px; }
+
+.publication-role-button {
+  padding: 8px 14px;
+  border: 1px solid rgba(128, 140, 155, 0.35);
+  border-radius: 22px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  text-align: left; }
+
+.publication-role-button[aria-pressed="true"] {
+  background: rgba(190, 30, 55, 0.09);
+  border-color: rgba(190, 30, 55, 0.45); }
+
+.publication-role-button[aria-pressed="false"] > span {
+  visibility: hidden; }
+
+.publication-role-button:focus-visible {
+  outline: 2px solid #be1e37;
+  outline-offset: 3px; }

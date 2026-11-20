@@ -1,0 +1,21 @@
+{{- /* Lab-defined classification: Xiaotao's first/last position and author notes. */ -}}
+{{- $roles := .Params.shen_author_roles | default (slice) -}}
+{{- if not $roles -}}
+  {{- $authors := .Params.authors | default (slice) -}}
+  {{- $notes := .Params.author_notes | default (slice) -}}
+  {{- range $i, $author := $authors -}}
+    {{- $name := lower (replaceRE `[-_ ]` "" $author) -}}
+    {{- if in (slice "admin" "xiaotaoshen") $name -}}
+      {{- $note := "" -}}
+      {{- if lt $i (len $notes) -}}{{- $note = lower (index $notes $i) -}}{{- end -}}
+      {{- if or (eq $i (sub (len $authors) 1)) (in $note "corresponding") -}}
+        {{- $roles = $roles | append "corresponding" -}}
+      {{- end -}}
+      {{- if or (eq $i 0) (in $note "equal contribution") (in $note "equal contributation") -}}
+        {{- $roles = $roles | append "first" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $roles -}}{{- $roles = slice "collaborative" -}}{{- end -}}
+{{- end -}}
+{{- return $roles -}}

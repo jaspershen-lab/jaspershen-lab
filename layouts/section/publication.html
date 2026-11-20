@@ -89,6 +89,12 @@
           </button>
         </div>
 
+        <div class="publication-role-filters" role="group" aria-label="Xiaotao Shen authorship roles">
+          <button type="button" class="publication-role-button" data-role="corresponding" aria-pressed="true"><span aria-hidden="true">✓</span> Corresponding/Co-Corresponding authors</button>
+          <button type="button" class="publication-role-button" data-role="first" aria-pressed="true"><span aria-hidden="true">✓</span> First/Co-first author</button>
+          <button type="button" class="publication-role-button" data-role="collaborative" aria-pressed="true"><span aria-hidden="true">✓</span> Collaborative publications</button>
+        </div>
+
         <div class="publication-filter-chips" id="publication-filter-chips" aria-label="Active filters"></div>
         <div class="publication-filter-status" id="publication-filter-status" aria-live="polite"></div>
       </div>
@@ -151,6 +157,7 @@
                 data-title="{{ $item.Title | lower | htmlEscape }}"
                 data-year="{{ $item.Date.Format "2006" }}"
                 data-pub-type="{{ $pubtype_label }}"
+                data-author-roles="{{ delimit (partial "publication/author_roles.html" $item) " " }}"
                 data-authors="{{ $authors | lower | htmlEscape }}"
                 data-authors-display="{{ $authors_display | htmlEscape }}"
                 data-search="{{ $search_blob | plainify | lower | htmlEscape }}"
@@ -173,6 +180,7 @@
           var authorInput = document.getElementById('publication-author');
           var yearSelect = document.getElementById('publication-year');
           var typeSelect = document.getElementById('publication-type');
+          var roleButtons = Array.prototype.slice.call(document.querySelectorAll('.publication-role-button'));
           var resetButton = document.getElementById('publication-filter-reset');
           var status = document.getElementById('publication-filter-status');
           var url = new URL(window.location.href);
@@ -217,7 +225,7 @@
           }
 
           function hasActiveFilters(filters) {
-            return !!(filters.search || filters.author || filters.year || filters.type);
+            return !!(filters.search || filters.author || filters.year || filters.type || filters.roles.length !== 3);
           }
 
           function updateUrl(filters) {
@@ -231,6 +239,8 @@
               if (pair[1]) next.searchParams.set(pair[0], pair[1]);
               else next.searchParams.delete(pair[0]);
             });
+            if (filters.roles.length === 3) next.searchParams.delete('roles');
+            else next.searchParams.set('roles', filters.roles.join(','));
             window.history.replaceState({}, '', next);
           }
 
@@ -240,6 +250,10 @@
               var visibleRows = Array.prototype.slice.call(block.querySelectorAll('.grid-sizer')).filter(function (row) {
                 return row.getAttribute('data-filter-match') !== 'false';
               });
+              var countLabel = block.querySelector('.photo-year__meta');
+              if (countLabel) {
+                countLabel.textContent = visibleRows.length + ' article' + (visibleRows.length === 1 ? '' : 's');
+              }
               var visible = visibleRows.length > 0;
               var prev = block.previousElementSibling;
 
@@ -266,7 +280,7 @@
               }
 
               if (content) {
-                content.style.height = block.classList.contains('is-collapsed') ? '0px' : content.scrollHeight + 'px';
+                content.style.height = block.classList.contains('is-collapsed') ? '0px' : 'auto';
               }
 
               if (prev && prev.classList.contains('pub-era-heading')) {
@@ -287,24 +301,10 @@
 
           function setRowVisibility(row, match) {
             row.setAttribute('data-filter-match', match ? 'true' : 'false');
-
-            if (match) {
-              row.style.display = '';
-              window.requestAnimationFrame(function () {
-                row.classList.remove('is-filtered-out');
-                row.classList.add('is-filtered-in');
-              });
-              return;
-            }
-
-            row.classList.remove('is-filtered-in');
-            row.classList.add('is-filtered-out');
-
-            window.setTimeout(function () {
-              if (row.getAttribute('data-filter-match') === 'false') {
-                row.style.display = 'none';
-              }
-            }, 220);
+            // Remove unmatched rows from layout before measuring their year group.
+            row.style.display = match ? '' : 'none';
+            row.classList.toggle('is-filtered-out', !match);
+            row.classList.toggle('is-filtered-in', match);
           }
 
           function applyFilters(options) {
@@ -312,6 +312,7 @@
               search: normalize(searchInput && searchInput.value),
               author: normalize(authorInput && authorInput.value),
               year: normalize(yearSelect && yearSelect.value),
+              roles: roleButtons.filter(function (b) { return b.getAttribute("aria-pressed") === "true"; }).map(function (b) { return b.dataset.role; }),
               type: normalize(typeSelect && typeSelect.value)
             };
             var active = hasActiveFilters(filters);
@@ -323,7 +324,8 @@
               var authors = row.getAttribute('data-authors') || '';
               var year = row.getAttribute('data-year') || '';
               var type = row.getAttribute('data-pub-type') || '';
-              var match = true;
+              var roles = (row.getAttribute('data-author-roles') || '').split(' ');
+              var match = filters.roles.length === 3 || filters.roles.some(function (role) { return roles.indexOf(role) >= 0; });
               if (filters.search && haystack.indexOf(filters.search) < 0) match = false;
               if (filters.author && authors.indexOf(filters.author) < 0) match = false;
               if (filters.year && year !== filters.year) match = false;
@@ -344,6 +346,7 @@
           }
 
           function resetFilters() {
+            roleButtons.forEach(function (b) { b.setAttribute('aria-pressed', 'true'); });
             if (searchInput) searchInput.value = '';
             if (authorInput) authorInput.value = '';
             if (yearSelect) yearSelect.value = '';
@@ -363,7 +366,7 @@
 
             var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             block.open = true;
-            content.style.height = block.classList.contains('is-collapsed') ? '0px' : content.scrollHeight + 'px';
+            content.style.height = block.classList.contains('is-collapsed') ? '0px' : 'auto';
 
             function clearTransition() {
               if (!content._publicationTransitionHandler) return;
@@ -408,19 +411,28 @@
                 content.removeEventListener('transitionend', onOpen);
                 content._publicationTransitionHandler = null;
                 block.classList.remove('is-animating');
-                content.style.height = content.scrollHeight + 'px';
+                content.style.height = 'auto';
               };
               content.addEventListener('transitionend', content._publicationTransitionHandler);
             });
           }
 
+          roleButtons.forEach(function (button) {
+            if (url.searchParams.has('roles')) {
+              button.setAttribute('aria-pressed', String(url.searchParams.get('roles').split(',').indexOf(button.dataset.role) >= 0));
+            }
+            button.addEventListener('click', function () {
+              button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
+              applyFilters();
+            });
+          });
           yearBlocks.forEach(setupYearBlockAnimation);
 
           window.addEventListener('resize', function () {
             yearBlocks.forEach(function (block) {
               if (!block.open) return;
               var content = block.querySelector('.publication-year-block__list');
-              if (content) content.style.height = content.scrollHeight + 'px';
+              if (content) content.style.height = block.classList.contains('is-collapsed') ? '0px' : 'auto';
             });
           });
 

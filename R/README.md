@@ -38,3 +38,13 @@ options(shenlab.update_all.autorun = TRUE)
 ```sh
 Rscript tests/test-update-all.R
 ```
+
+### Publication author safeguards
+
+New publications are added only when a matching Scholar detail page or an exact-title
+Crossref record supplies a complete author list. Truncated lists (`...`, `…`, `et al.`),
+initial-only names and unparseable author entries are rejected; the updater prints
+`[SKIP] Complete author metadata unavailable` instead of creating an incomplete page.
+Collective authors are retained. Existing hand-reviewed author lists are not overwritten
+by citation updates. Check skipped records against the original paper before adding them.
+Run the offline checks with `Rscript tests/test-publication-authors.R`.

@@ -6485,3 +6485,9 @@ body.dark .photo-year-picker select option { background: #18212c; color: #edf1f7
     gap: 16px;
   }
 }
+
+.publication-role-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.publication-role-button { padding: 8px 14px; border: 1px solid rgba(128,140,155,.35); border-radius: 22px; background: transparent; color: inherit; font: inherit; font-size: .85rem; cursor: pointer; text-align: left; }
+.publication-role-button[aria-pressed="true"] { background: rgba(190,30,55,.09); border-color: rgba(190,30,55,.45); }
+.publication-role-button[aria-pressed="false"] > span { visibility: hidden; }
+.publication-role-button:focus-visible { outline: 2px solid #be1e37; outline-offset: 3px; }

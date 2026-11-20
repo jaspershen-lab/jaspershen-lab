@@ -13,24 +13,26 @@ citations: 0
 title: "Identification of Early and Mid-Pregnancy Maternal Lipidomics and Metabolomics Signatures of Preterm and Small-for-Gestational Age Infants from Low-and Middle-income Countries …"
 
 authors:
-- I MARIC
-- H MUJURU
-- G CHIMHINI
-- SK SAHA
-- N OTIENO
-- S HAWKEN
-- K WILSON
-- X SHEN
-- S LANCASTER
-- RJ WONG
-- J REISS
-- JA KERNER
-- M SNYDER
-- WW HAY
-- GM SHAW
-- DK STEVENSON
-- V WARD
-- GL DARMSTADT
+- Ivana MARIC
+- Hilda Angela MUJURU
+- Gwendoline CHIMHINI
+- Samir K SAHA
+- Nancy OTIENO
+- Stephen HAWKEN
+- Kumanan WILSON
+- admin
+- Samuel LANCASTER
+- Ronald J WONG
+- Jonathan REISS
+- John A KERNER
+- Michael SNYDER
+- William W HAY
+- Gary M SHAW
+- David K STEVENSON
+- Victoria WARD
+- Gary L DARMSTADT
+
+authors_source: "https://www.medpubinc.org/2025_wrm_program/2025_WRM_Program.pdf#page=92"
 
 featured: false
 publication: "JOURNAL OF INVESTIGATIVE MEDICINE"

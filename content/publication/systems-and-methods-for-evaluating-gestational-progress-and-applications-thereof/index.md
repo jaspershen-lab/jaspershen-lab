@@ -15,8 +15,15 @@ citations: 1
 title: "Systems and Methods for Evaluating Gestational Progress and Applications Thereof"
 
 authors:
-- Jürgen HOWALDT
-- Michael SCHWARZ
+- Liang LIANG
+- Michael P SNYDER
+- Mads MELBYE
+- Songjie CHEN
+- Larry RAND
+- Laura JELLIFFE-PAWLOWSKI
+- admin
+
+authors_source: "https://patents.google.com/patent/US20230298758A1/en"
 
 featured: false
 publication: "US Patent App."

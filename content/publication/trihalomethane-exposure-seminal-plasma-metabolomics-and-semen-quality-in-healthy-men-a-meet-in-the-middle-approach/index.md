@@ -14,9 +14,25 @@ authors:
 - Tianqing MENG
 - Vicente MUSTIELES
 - Carmen MESSERLIAN
-- Jie ZHANG*
-- Xiaotao SHEN*
-- Yi-Xin WANG*
+- Jie ZHANG
+- admin
+- Yi-Xin WANG
+
+author_notes:
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- Corresponding author
+- Corresponding author
+- Corresponding author
+
+authors_source: "https://pubs.acs.org/doi/10.1021/acs.est.6c06945"
 
 featured: false
 publication: "Environmental Science & Technology"

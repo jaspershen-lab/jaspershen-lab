@@ -15,20 +15,30 @@ citations: 0
 title: "Insulin resistance modifies longitudinal multi-omics responses to habitual diet"
 
 author_notes:
-- Equal contribution
-- Equal contribution
+- "Equal contribution"
+- "Equal contribution"
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
+- ""
 
 authors:
 - Heyjun PARK
 - admin
-- Dalia PERELMA
+- Dalia PERELMAN
 - Pranav BERRY
 - Yingzhou LU
 - Rachel BATTERSBY
-- Sophia Miryam Schussler FIORENZA
+- Sophia Miryam SCHÜSSLER-FIORENZA ROSE
 - Alessandra CELLI
 - Caroline BEJIKIAN
 - Michael SNYDER
+
+authors_source: "https://doi.org/10.64898/2026.02.17.706440"
 
 featured: false
 publication: "bioRxiv"

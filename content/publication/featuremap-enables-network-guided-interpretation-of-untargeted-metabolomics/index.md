@@ -7,13 +7,19 @@ citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&
 authors:
 - Yuting WANG
 - Feifan ZHANG
-- G PENG
-- L QIU
-- L ZENG
+- Guoping PENG
+- Lifeng QIU
+- Li ZENG
 - Yijiang LIU
 - Jiramet KINCHAGAWAT
 - Xicheng YANG
-- ...
+- Chang LIU
+- Caroline JOHNSON
+- Qi SU
+- Chuchu WANG
+- admin
+
+authors_source: "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.04.764165"
 
 featured: false
 publication: "bioRxiv"
