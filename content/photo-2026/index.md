@@ -274,6 +274,7 @@ sections:
         <div class="month-block">
           <div class="month-title">November 2026</div>
           <div class="gallery">
+            <div class="image-container"><img src="lab/2026-11-17-Xinwei first day in the lab as Research fellow.jpeg" alt="2026/11/17 Welcome Xinwei to Shen Lab as a Research Fellow"><div class="caption">2026/11/17 Welcome Xinwei to Shen Lab as a Research Fellow</div></div>
             <div class="image-container"><img src="lab/2026-11-8-Yijiang got award at Metabolomics 2026 in Shanghai.jpeg" alt="2026/11/8 Yijiang LIU receiving a poster award at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Yijiang LIU receiving a poster award at Metabolomics 2026, Shanghai</div></div>
             <div class="image-container"><img src="lab/2026-11-8-Xiaotao Presented at Metabolomics 2026 in Shanghai.jpeg" alt="2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai</div></div>
             <div class="image-container"><img src="lab/2026-11-8-Xiaotao Presented at Metabolomics 2026 in Shanghai-2.jpeg" alt="2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai"><div class="caption">2026/11/8 Xiaotao SHEN presenting at Metabolomics 2026, Shanghai</div></div>
