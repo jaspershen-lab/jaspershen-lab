@@ -53,7 +53,7 @@
 {{ $productType = $item.Params.product_type | default $productType }}
 
 <article class="software-card{{ if $featured }} software-card--featured{{ end }}" data-software-category="{{ range $item.Params.tags }}{{ . | urlize }} {{ else }}uncategorized{{ end }}">
-  <a class="software-card__media" href="{{ $item.RelPermalink }}">
+  <a class="software-card__media{{ if $item.Params.image.dark_backdrop }} software-logo--dark-backdrop{{ end }}" href="{{ $item.RelPermalink }}">
     {{ with $imageURL }}
       <img src="{{ . }}" {{ if gt $imageW 0 }}width="{{ $imageW }}"{{ end }} {{ if gt $imageH 0 }}height="{{ $imageH }}"{{ end }} alt="{{ $item.Title }}" loading="lazy">
     {{ else }}

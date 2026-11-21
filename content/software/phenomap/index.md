@@ -6,6 +6,7 @@ product_type: Web app
 tags:
 - Metabolomics
 image:
+  dark_backdrop: true
   caption: "PhenoMAP official logo"
   focal_point: Center
 links:

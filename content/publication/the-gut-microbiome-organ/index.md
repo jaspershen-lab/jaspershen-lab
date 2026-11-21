@@ -43,7 +43,7 @@ featured: false
 publication: "iMeta, e"
 publication_types:
 - "2"
-publishDate: 2026-01-01
+publishDate: 2026-08-01
 summary: "The gut microbiome organ"
 links:
 - icon: link

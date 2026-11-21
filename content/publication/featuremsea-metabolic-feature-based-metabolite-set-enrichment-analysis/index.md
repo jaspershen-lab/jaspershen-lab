@@ -24,7 +24,7 @@ featured: false
 publication: "bioRxiv"
 publication_types:
 - "2"
-publishDate: 2026-01-01
+publishDate: 2026-05-01
 summary: "FeatureMSEA: Metabolic Feature-based Metabolite Set Enrichment Analysis"
 links:
 - icon: link
