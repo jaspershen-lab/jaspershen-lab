@@ -1,0 +1,31 @@
+{{/* Display author list. */}}
+
+{{- $taxonomy := "authors" }}
+{{ if .Param $taxonomy }}
+  {{ range $index, $value := (.GetTerms $taxonomy) }}
+    {{- /* Highlight the author's name? */ -}}
+    {{- $highlight_name := .Page.Params.highlight_name | default false -}}
+
+    {{- if gt $index 0 }}, {{ end -}}
+    <span {{ if $highlight_name }}class="author-highlighted"{{end}}>
+      {{/* Effectively check the page's `_build` option as `_build` is not exposed in Hugo's Page object. */}}
+      {{- if .RelPermalink -}}
+        <a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+      {{- else -}}
+        {{ .LinkTitle }}
+      {{- end -}}
+    </span>
+    {{- $notes := $.Params.author_notes | default (slice) -}}
+    {{- $note := "" -}}
+    {{- if lt $index (len $notes) -}}{{- $note = index $notes $index | default "" -}}{{- end -}}
+    {{- $authors := $.Params.authors -}}
+    {{- $lastShen := and (eq $.Type "publication") (eq $index (sub (len $authors) 1)) (in (slice "admin" "xiaotaoshen") (lower (replaceRE `[-_ ]` "" (index $authors $index)))) -}}
+    {{- $explicit := in (lower $note) "corresponding" -}}
+    {{- if and $lastShen (not $explicit) -}}
+      {{- $note = cond (eq $note "") "Corresponding author" (printf "%s · Corresponding author" $note) -}}
+    {{- end -}}
+    {{- with $note -}}
+      <i class="author-notes fas {{ if or $lastShen $explicit }}fa-envelope fa-sm{{ else }}fa-info-circle{{ end }}" data-toggle="tooltip" title="{{ . }}" role="img" aria-label="{{ . }}"></i>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
