@@ -355,7 +355,7 @@ sections:
 - block: markdown
   id: photo
   content:
-    title: Life in Shen Lab
+    title: Lab Photos
     # subtitle: ":point_right: [All Photos](./photo/)"
     text: |-
       {{< life_in_lab >}}
