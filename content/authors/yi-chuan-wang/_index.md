@@ -1,4 +1,6 @@
 ---
+aliases:
+- /author/yi-quan-wang/
 bio: T cell redox biology, oxidative stress, immunometabolism, and single-cell multi-omics.
 education:
   courses:
@@ -10,7 +12,7 @@ education:
     year: 2018/9-2020/7
 email: "bill0513a@gmail.com"
 commentable: true
-first_name: Yi-Quan
+first_name: Yi-Chuan
 last_name: Wang
 highlight_name: true
 interests:
@@ -30,7 +32,7 @@ social:
     icon_pack: fab
     link: "https://www.linkedin.com/in/yi-chuan-wang-430b27301"
 superuser: false
-title: Yi-Quan Wang
+title: Yi-Chuan WANG
 user_groups:
 - Researchers
 - Postdocs
