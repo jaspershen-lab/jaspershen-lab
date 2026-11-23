@@ -274,6 +274,7 @@ sections:
         <div class="month-block">
           <div class="month-title">November 2026</div>
           <div class="gallery">
+            <div class="image-container"><img src="lab/2026-11-23-Yi-Quan first day in the lab as Research fellow.jpeg" alt="Xiaotao Shen and Yi-Quan Wang outside the lab on her first day"><div class="caption">2026/11/23 Yi-Quan Wang’s first day as a postdoctoral fellow</div></div>
             <div class="image-container"><img src="lab/2026-11-21-Hyper Interdisciplinary Conference-Yuting Wang oral presentation1.jpeg" alt="2026/11/21 Yuting WANG presenting FeatureMAP at HIC Singapore 2026"><div class="caption">2026/11/21 Yuting WANG presenting FeatureMAP at HIC Singapore 2026</div></div>
             <div class="image-container"><img src="lab/2026-11-21-Hyper Interdisciplinary Conference-Yuting Wang oral presentation2.jpeg" alt="2026/11/21 Yuting WANG giving an oral presentation at HIC Singapore 2026"><div class="caption">2026/11/21 Yuting WANG giving an oral presentation at HIC Singapore 2026</div></div>
             <div class="image-container"><img src="lab/2026-11-21-Hyper Interdisciplinary Conference-Yuting Wang poster presentation1.jpeg" alt="2026/11/21 Yuting WANG discussing the FeatureMAP poster at HIC Singapore 2026"><div class="caption">2026/11/21 Yuting WANG discussing the FeatureMAP poster at HIC Singapore 2026</div></div>

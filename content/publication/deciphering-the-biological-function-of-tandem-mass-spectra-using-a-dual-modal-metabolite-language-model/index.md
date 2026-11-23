@@ -1,4 +1,6 @@
 ---
+citations: 0
+citation_source: "Google Scholar"
 title: "Deciphering the Biological Function of Tandem Mass Spectra Using a Dual-Modal Metabolite Language Model"
 date: "2026-11-17"
 publishDate: "2026-11-17"
@@ -31,7 +33,7 @@ publication_types:
 - "3"
 doi: "10.64898/2026.11.16.766993"
 featured: false
-citation_url: "https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:EUQCXRtRnyEC"
+citation_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3TK9yz8AAAAJ&citation_for_view=3TK9yz8AAAAJ:EUQCXRtRnyEC"
 links:
 - icon: link
   icon_pack: fas
